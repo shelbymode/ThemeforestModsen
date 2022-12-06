@@ -25,7 +25,9 @@ export default defineConfig({
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
-    Pages(),
+    Pages({
+      dirs: 'src/ui/components/pages',
+    }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
