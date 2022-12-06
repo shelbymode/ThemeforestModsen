@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.6.0",
+    "neverthrow": "^5.1.0",
     "pinia": "^2.0.27",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
@@ -23,6 +24,7 @@
     "@iconify-json/fluent": "^1.1.17",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
+    "@unocss/reset": "^0.47.2",
     "@vitejs/plugin-vue": "^3.2.0",
     "@vue-macros/volar": "^0.5.4",
     "@vue/eslint-config-standard": "^8.0.1",
@@ -38,7 +40,6 @@
     "taze": "^0.8.4",
     "typescript": "^4.9.3",
     "unocss": "^0.47.2",
-    "@unocss/reset": "^0.47.2",
     "unplugin-auto-import": "^0.12.0",
     "unplugin-vue-components": "^0.22.11",
     "unplugin-vue-macros": "^1.0.3",

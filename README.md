@@ -13,6 +13,7 @@
 - [Pinia](https://pinia.vuejs.org/) - store manager
 - [ZOD](https://github.com/colinhacks/zod) - typescript first schema validation
 - [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
+- [Neverthrow](https://github.com/neverthrow) - types safe handling errors
 
 ### CSS Engine
 
