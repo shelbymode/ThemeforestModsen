@@ -7,6 +7,9 @@ import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import 'uno.css'
 
+import '../assets/styles/variables.scss'
+import '../assets/styles/global.scss'
+
 const app = createApp(App)
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

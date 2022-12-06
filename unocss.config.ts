@@ -8,6 +8,8 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
+// import './assets/styles/variables.scss'
+
 export default defineConfig({
   shortcuts: [
     [
@@ -35,11 +37,24 @@ export default defineConfig({
     }),
     presetWebFonts({
       fonts: {
-        sans: 'DM Sans',
+        sans: ['Manrope:100,200,300,400,500,600,700', 'Open Sans:100,200,300,400,500,600,700'],
         serif: 'DM Serif Display',
         mono: 'DM Mono',
       },
     }),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
+  theme: {
+    colors: {
+      primary: 'rgba(var(--primary))',
+      secondary: 'rgba(var(--secondary))',
+      helperBlueOne: 'rgba(var(--helper-blue-one))',
+      helperBlueTwo: 'rgba(var(--helper-blue-two))',
+      helperBlueThree: 'rgba(var(--helper-blue-three))',
+      cBlack: 'rgba(var(--c-black))',
+      cGrey: 'rgba(var(--c-grey))',
+      cBackground: 'rgba(var(--c-background))',
+      cRed: 'rgba(var(--c-red))',
+    },
+  },
 })
