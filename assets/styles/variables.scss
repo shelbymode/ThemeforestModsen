@@ -1,0 +1,35 @@
+:root {
+	--primary: 24, 95, 225, var(--opacity);
+	--secondary: 0, 43, 78, var(--opacity);
+	--helper-blue-one: 207, 59, 24, var(--opacity);
+	--helper-blue-two: 207, 21, 48, var(--opacity);
+	--helper-blue-three: 207, 48, 86, var(--opacity);
+	--c-black: 41, 45, 51, var(--opacity);
+	--c-grey: 148, 151, 161, var(--opacity);
+	--c-background: 241, 246, 250, var(--opacity);
+	--c-red: 193, 64, 64, var(--opacity);
+	--opacity: 1;
+}
+
+
+
+
+/* html.light {
+  --mainAccent: var(--white);
+  --main: var(--light-300);
+  --mainWeakAnti: var(--light-500);
+
+  --antiMain: var(--dark-900);
+  --antiMainAccent: var(--black);
+}
+
+// Override variables for dark theme
+html.dark {
+  --mainAccent: var(--black);
+  --main: var(--dark-900);
+  --mainWeakAnti: var(--dark-700);
+
+  --antiMain: var(--light-50);
+  --antiMainAccent: var(--white);
+}
+  */
