@@ -20,3 +20,13 @@
 	- global - `global constants (usually are initialised from .env)`
 	- routes - `meta information related with routes`
 ```
+
+``` typescript
+/utils - `things like calculating, external functions, formatters, etc`
+```
+
+``` typescript
+/libs - `similiar to /utils but based on external dependencies`
+```
+
+

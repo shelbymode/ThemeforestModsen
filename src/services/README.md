@@ -2,7 +2,7 @@
 
 * Services are independant and interact with external world
 * API requests, localstorage API, etc…
-* 
+*
 ``` typescript
 	/api - `our fake api, that gets blog articles(?) and ensome services(?)`
 ```

@@ -7,3 +7,7 @@
 ``` typescript
 	/ports - `stores interfaces for adapters. These interfaces express which way our application wants to interact with outside world. These adapters are stored in /services.`
 ```
+
+``` typescript
+	/store - `contains live-data of the application and using usecases interacts with user (invoke these usecases and reflects result of their completion)`
+```
