@@ -9,13 +9,16 @@ const props = withDefaults(defineProps<PropsButton>(), {
 </script>
 
 <template>
-  <button :disabled="isDisabled" class="transition-300 flex items-center gap-x-3 rounded-md px-5 py-3">
+  <button :disabled="isDisabled" class="button">
     <slot name="icon" />
     <slot name="text" />
   </button>
 </template>
 
 <style lang="scss" scoped>
+.button {
+  @apply flex items-center gap-x-3 px-5 py-3 rounded-md transition-300 hover:scale-98;
+}
 button[disabled] {
   color: white;
   background-color: rgba(var(--c-grey));

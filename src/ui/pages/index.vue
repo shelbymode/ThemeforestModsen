@@ -9,6 +9,8 @@
           <span class="text-2xl" i-fluent-play-circle-24-regular></span>
         </template>
       </AtomButton>
+
+      <AtomCircleButton class="bg-primary hover:bg-primary/80">Learn more</AtomCircleButton>
     </div>
   </main>
 </template>
