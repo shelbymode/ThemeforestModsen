@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AtomButton: typeof import('./src/ui/components/atoms/buttons/AtomButton.vue')['default']
+    AtomButtonSearch: typeof import('./src/ui/components/atoms/buttons/AtomButtonSearch.vue')['default']
     AtomCircleButton: typeof import('./src/ui/components/atoms/buttons/AtomCircleButton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
