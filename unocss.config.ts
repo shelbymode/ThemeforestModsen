@@ -53,6 +53,7 @@ export default defineConfig({
       cBlack: 'rgb(var(--c-black))',
       cGrey: 'rgb(var(--c-grey))',
       cBackground: 'rgb(var(--c-background))',
+      tertiary: 'rgb(var(--tertiary))',
       cRed: 'rgb(var(--c-red))',
     },
   },

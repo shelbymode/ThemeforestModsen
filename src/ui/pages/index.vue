@@ -2,7 +2,7 @@
 
 <template>
   <main class="w-2/3 h-screen mx-auto bg-neutral-300 flex flex-col items-center justify-center">
-    <div flex items-center bg-dark-100 p-10 gap-10 class="w-1/2 h-1/2">
+    <div flex items-center bg-light-900 p-10 gap-10 class="w-1/2 h-1/2">
       <AtomButton class="bg-primary hover:bg-primary/80">
         <template #text> Watch the demo </template>
         <template #icon>
@@ -12,6 +12,7 @@
 
       <AtomCircleButton class="bg-primary hover:bg-primary/80">Learn more</AtomCircleButton>
       <AtomButtonSearch class="bg-primary hover:bg-primary/80" />
+      <AtomDirection class="bg-tertiary"></AtomDirection>
     </div>
   </main>
 </template>
