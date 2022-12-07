@@ -8,8 +8,6 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
-// import './assets/styles/variables.scss'
-
 export default defineConfig({
   shortcuts: [
     [
@@ -46,15 +44,16 @@ export default defineConfig({
   transformers: [transformerDirectives(), transformerVariantGroup()],
   theme: {
     colors: {
-      primary: 'rgba(var(--primary))',
-      secondary: 'rgba(var(--secondary))',
-      helperBlueOne: 'rgba(var(--helper-blue-one))',
-      helperBlueTwo: 'rgba(var(--helper-blue-two))',
-      helperBlueThree: 'rgba(var(--helper-blue-three))',
-      cBlack: 'rgba(var(--c-black))',
-      cGrey: 'rgba(var(--c-grey))',
-      cBackground: 'rgba(var(--c-background))',
-      cRed: 'rgba(var(--c-red))',
+      primary: 'rgb(var(--primary))',
+      secondary: 'rgb(var(--secondary))',
+      helperBlueOne: 'rgb(var(--helper-blue-one))',
+      helperBlueTwo: 'rgb(var(--helper-blue-two))',
+      helperBlueThree: 'rgb(var(--helper-blue-three))',
+      cWhite: 'rgb(var(--c-white))',
+      cBlack: 'rgb(var(--c-black))',
+      cGrey: 'rgb(var(--c-grey))',
+      cBackground: 'rgb(var(--c-background))',
+      cRed: 'rgb(var(--c-red))',
     },
   },
 })

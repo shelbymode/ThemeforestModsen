@@ -26,20 +26,21 @@ export default defineConfig({
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
-      dirs: 'src/ui/components/pages',
+      dirs: './src/ui/pages',
     }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: ['vue', 'vue/macros', 'vue-router', '@vueuse/core'],
       dts: true,
-      dirs: ['./src/composables'],
+      dirs: ['./src/shared/composables'],
       vueTemplate: true,
     }),
 
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
+      dirs: ['./src/ui/components'],
     }),
 
     // https://github.com/antfu/unocss
