@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface DirectionControl {
-  direction: 'left' | 'right'
+  direction?: 'left' | 'right'
   isDisabled?: boolean
 }
 
