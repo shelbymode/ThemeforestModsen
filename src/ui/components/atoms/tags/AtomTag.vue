@@ -7,7 +7,7 @@ const props = withDefaults(defineProps<ITag>(), {
   isDisabled: false,
 })
 
-const availableClass = props.isDisabled === true ? 'element-disabled' : 'text-primary'
+const availableClass = props.isDisabled === true ? 'element-disabled' : ' text-primary'
 </script>
 
 <template>

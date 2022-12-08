@@ -24,7 +24,7 @@ const availableClass = props.isDisabled === true ? 'text-cGrey' : 'text-primary'
 
 <style lang="scss" scoped>
 .link {
-  @apply flex items-center gap-x-3 font-medium transition-300 px-6 py-4 text-xl;
+  @apply flex items-center gap-x-3 font-medium transition-300 px-6 py-4 text-sm;
 }
 .link-hover {
   @apply hover:text-secondary hover:scale-98;

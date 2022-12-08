@@ -55,7 +55,7 @@ html[opacity="lowOpacity"] {
 .element-disabled {
   opacity: 0.66;
   pointer-events: none;
-  color: rgba(var(--cGray));
+  color: rgba(var(--c-grey));
   &:hover {
     transform: scale(1) !important;
   }

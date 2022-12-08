@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import IconBrain3d from '/assets/images/svg-icons/3d/icon_brain_isometric_3d.svg?component'
+
 export interface IDoubleSwitch {
   name: string
   left: {
@@ -24,8 +26,8 @@ const dSwitchOptions: IDoubleSwitch = {
 </script>
 
 <template>
-  <main class="w-screen h-screen mx-auto bg-neutral-300 flex flex-col items-center justify-center">
-    <div flex items-center flex-wrap bg-light-900 p-10 gap-10 class="w-1/2 h-1/2">
+  <main class="w-screen min-h-screen h-full mx-auto bg-neutral-300 flex flex-col items-center justify-center">
+    <div flex items-center flex-wrap bg-white p-10 gap-10 class="w-1/2">
       <button bg-red-500 text-dark-500 px-5 py-2 rounded-xl @click="toggleDark()">
         Toggle theme - right know [{{ isDark === true ? 'dark' : 'light' }}]
       </button>
@@ -43,6 +45,27 @@ const dSwitchOptions: IDoubleSwitch = {
       <AtomLink link="/page">Read more</AtomLink>
       <AtomHeaderLink link="/">Home</AtomHeaderLink>
       <AtomTag link="/">Home</AtomTag>
+
+      <MoleculeServiceCard
+        title="Machine Learning"
+        text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure."
+        :link-info="{ label: 'Read more', to: '/' }"
+      >
+        <template #icon>
+          <IconBrain3d></IconBrain3d>
+        </template>
+      </MoleculeServiceCard>
+
+      <MoleculeBlogCard
+        title="Machine Learning"
+        date="22 June 2022"
+        text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure..."
+        :link-info="{ label: 'Read more', to: '/' }"
+      >
+        <template #icon>
+          <IconBrain3d></IconBrain3d>
+        </template>
+      </MoleculeBlogCard>
     </div>
   </main>
 </template>
