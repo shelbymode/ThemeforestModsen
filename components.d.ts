@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     AtomCircleButton: typeof import('./src/ui/components/atoms/buttons/AtomCircleButton.vue')['default']
     AtomDirection: typeof import('./src/ui/components/atoms/directions/AtomDirection.vue')['default']
     AtomDoubleSwitch: typeof import('./src/ui/components/atoms/switches/AtomDoubleSwitch.vue')['default']
+    AtomHeaderLink: typeof import('./src/ui/components/atoms/links/AtomHeaderLink.vue')['default']
     AtomLink: typeof import('./src/ui/components/atoms/links/AtomLink.vue')['default']
     AtomSwitch: typeof import('./src/ui/components/atoms/switch/AtomDoubleSwitch.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
