@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     AtomHeaderLink: typeof import('./src/ui/components/atoms/links/AtomHeaderLink.vue')['default']
     AtomLink: typeof import('./src/ui/components/atoms/links/AtomLink.vue')['default']
     AtomSwitch: typeof import('./src/ui/components/atoms/switch/AtomDoubleSwitch.vue')['default']
+    AtomTag: typeof import('./src/ui/components/atoms/tags/AtomTag.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheCounter: typeof import('./src/components/TheCounter.vue')['default']

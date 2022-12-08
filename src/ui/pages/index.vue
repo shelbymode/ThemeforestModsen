@@ -41,7 +41,8 @@ const dSwitchOptions: IDoubleSwitch = {
       <AtomDirection class="bg-tertiary"></AtomDirection>
       <AtomDoubleSwitch v-bind="dSwitchOptions"></AtomDoubleSwitch>
       <AtomLink link="/page">Read more</AtomLink>
-      <AtomHeaderLink link="/dsds">Home</AtomHeaderLink>
+      <AtomHeaderLink link="/">Home</AtomHeaderLink>
+      <AtomTag link="/">Home</AtomTag>
     </div>
   </main>
 </template>

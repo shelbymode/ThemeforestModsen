@@ -52,7 +52,11 @@ html[opacity="lowOpacity"] {
 	border-radius: 6px;
 }
 
-.disabled-element {
+.element-disabled {
   opacity: 0.66;
   pointer-events: none;
+  color: rgba(var(--cGray));
+  &:hover {
+    transform: scale(1) !important;
+  }
 }

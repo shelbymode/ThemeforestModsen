@@ -1,9 +1,9 @@
 <script setup lang="ts">
-interface PropsButton {
+interface IPropsButton {
   isDisabled?: boolean
 }
 
-const props = withDefaults(defineProps<PropsButton>(), {
+const props = withDefaults(defineProps<IPropsButton>(), {
   isDisabled: false,
 })
 </script>
@@ -19,8 +19,7 @@ const props = withDefaults(defineProps<PropsButton>(), {
 .button {
   @apply flex items-center gap-x-3 px-5 py-3 rounded-md transition-300 hover:scale-98;
 }
-button[disabled] {
-  color: white;
-  background-color: rgba(var(--c-grey));
+.button[disabled] {
+  @apply text-white bg-cGrey;
 }
 </style>

@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<DirectionControl>(), {
 })
 
 const arrowIconClass = props.direction === 'left' ? 'i-fluent-arrow-left-24-regular' : 'i-fluent-arrow-right-24-regular'
-const availableClass = props.isDisabled === true ? 'opacity-20' : 'opacity-100'
+const availableClass = props.isDisabled === true ? 'element-disabled' : ''
 </script>
 
 <template>

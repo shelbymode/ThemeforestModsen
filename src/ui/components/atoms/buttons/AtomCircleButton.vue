@@ -1,9 +1,9 @@
 <script setup lang="ts">
-interface PropsCircleButton {
+interface IPropsButton {
   isDisabled?: boolean
 }
 
-const props = withDefaults(defineProps<PropsCircleButton>(), {
+const props = withDefaults(defineProps<IPropsButton>(), {
   isDisabled: false,
 })
 </script>
@@ -24,8 +24,7 @@ const props = withDefaults(defineProps<PropsCircleButton>(), {
 .button-circle__inner {
   @apply grid place-items-center rounded-full border-1 w-9/10 h-9/10;
 }
-button[disabled] {
-  color: white;
-  background-color: rgba(var(--c-grey));
+.button-circle[disabled] {
+  @apply text-white bg-cGrey;
 }
 </style>
