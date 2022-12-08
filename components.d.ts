@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AtomButton: typeof import('./src/ui/components/atoms/buttons/AtomButton.vue')['default']
     AtomButtonSearch: typeof import('./src/ui/components/atoms/buttons/AtomButtonSearch.vue')['default']
+    AtomCircleAvatar: typeof import('./src/ui/components/atoms/avatars/AtomCircleAvatar.vue')['default']
     AtomCircleButton: typeof import('./src/ui/components/atoms/buttons/AtomCircleButton.vue')['default']
     AtomDirection: typeof import('./src/ui/components/atoms/directions/AtomDirection.vue')['default']
     AtomDoubleSwitch: typeof import('./src/ui/components/atoms/switches/AtomDoubleSwitch.vue')['default']
@@ -17,7 +18,10 @@ declare module '@vue/runtime-core' {
     AtomSwitch: typeof import('./src/ui/components/atoms/switch/AtomDoubleSwitch.vue')['default']
     AtomTag: typeof import('./src/ui/components/atoms/tags/AtomTag.vue')['default']
     MoleculeBlogCard: typeof import('./src/ui/components/molecules/cards/MoleculeBlogCard.vue')['default']
+    MoleculeReviewCardIn: typeof import('./src/ui/components/molecules/cards/MoleculeReviewCardIn.vue')['default']
+    MoleculeReviewCardOut: typeof import('./src/ui/components/molecules/cards/MoleculeReviewCardOut.vue')['default']
     MoleculeServiceCard: typeof import('./src/ui/components/molecules/cards/MoleculeServiceCard.vue')['default']
+    ReviewCard: typeof import('./src/ui/components/molecules/cards/MoleculeReviewCardOut.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ServiceCard: typeof import('./src/ui/components/molecules/cards/MoleculeServiceCard.vue')['default']

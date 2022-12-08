@@ -13,7 +13,7 @@ const isLinkExists = props.linkInfo && Object.keys(props.linkInfo).length > 0
 </script>
 
 <template>
-  <div class="card">
+  <div class="card shadow-card-3">
     <slot name="icon">
       <span v-if="props?.iconClass" class="card__icon" :class="[props.iconClass]" />
     </slot>
@@ -26,7 +26,7 @@ const isLinkExists = props.linkInfo && Object.keys(props.linkInfo).length > 0
 
 <style lang="scss" scoped>
 .card {
-  @apply shadow-card-3 max-w-[470px] flex flex-col gap-y-5 p-6 rounded items-start;
+  @apply max-w-[470px] flex flex-col gap-y-5 p-6 rounded items-start;
 }
 .card__icon {
   @apply text-5xl text-primary;

@@ -27,7 +27,7 @@ const dSwitchOptions: IDoubleSwitch = {
 
 <template>
   <main class="w-screen min-h-screen h-full mx-auto bg-neutral-300 flex flex-col items-center justify-center">
-    <div flex items-center flex-wrap bg-white p-10 gap-10 class="w-1/2">
+    <div flex items-center flex-wrap bg-light-800 p-10 gap-10 class="w-1/2">
       <button bg-red-500 text-dark-500 px-5 py-2 rounded-xl @click="toggleDark()">
         Toggle theme - right know [{{ isDark === true ? 'dark' : 'light' }}]
       </button>
@@ -66,6 +66,20 @@ const dSwitchOptions: IDoubleSwitch = {
           <IconBrain3d></IconBrain3d>
         </template>
       </MoleculeBlogCard>
+
+      <MoleculeReviewCardOut
+        name="Alex Bern"
+        position="CEO by PixelPerfect"
+        text="Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum."
+      >
+      </MoleculeReviewCardOut>
+
+      <MoleculeReviewCardIn
+        name="Alex Bern"
+        position="CEO by PixelPerfect"
+        text="Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum."
+      >
+      </MoleculeReviewCardIn>
     </div>
   </main>
 </template>
