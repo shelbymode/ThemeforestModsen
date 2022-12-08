@@ -37,6 +37,7 @@ const dSwitchOptions: IDoubleSwitch = {
       <AtomButtonSearch class="bg-primary hover:bg-primary/80" />
       <AtomDirection class="bg-tertiary"></AtomDirection>
       <AtomDoubleSwitch v-bind="dSwitchOptions"></AtomDoubleSwitch>
+      <AtomLink link="/page">Read more</AtomLink>
     </div>
   </main>
 </template>
