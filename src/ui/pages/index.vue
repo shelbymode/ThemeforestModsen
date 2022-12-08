@@ -23,6 +23,9 @@ const dSwitchOptions: IDoubleSwitch = {
     value: 'Big angly frightening dog',
   },
 }
+
+const mulitiTab = ref('')
+const mulitiTab2 = ref('')
 </script>
 
 <template>
@@ -80,6 +83,24 @@ const dSwitchOptions: IDoubleSwitch = {
         text="Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum."
       >
       </MoleculeReviewCardIn>
+
+      <AtomTabsSquare
+        v-model="mulitiTab"
+        name="food"
+        :tab-list="[
+          { id: 'mo', value: 'Mo', active: true },
+          { id: 'yr', value: 'Yr' },
+        ]"
+      ></AtomTabsSquare>
+
+      <AtomTabsRounded
+        v-model="mulitiTab2"
+        name="food-2"
+        :tab-list="[
+          { id: 'mo2', value: 'Monthly', active: true },
+          { id: 'yr2', value: 'Yearly fdfd Weekly' },
+        ]"
+      ></AtomTabsRounded>
     </div>
   </main>
 </template>
