@@ -5,7 +5,7 @@ interface ITabs {
     value: string
     active?: boolean
   }[]
-  modelValue: string
+  modelValue?: string
   name: string
 }
 const props = defineProps<ITabs>()
@@ -16,7 +16,7 @@ const emit = defineEmits<{
 
 <template>
   <div class="tabs-square">
-    <main v-for="tab in tabList" :key="tab.id" class="flex items-center">
+    <div v-for="tab in tabList" :key="tab.id" class="flex items-center">
       <input
         :id="tab.id"
         type="radio"
@@ -26,24 +26,24 @@ const emit = defineEmits<{
         @input="(e) => $emit('update:modelValue', (e.target as HTMLInputElement).value)"
       />
       <label :for="tab.id">{{ tab.value }}</label>
-    </main>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .tabs-square {
-  @apply flex items-center gap-x-5;
+  @apply flex items-center gap-x-1;
 
   input[type='radio'] {
     @apply appearance-none w-0 h-0;
   }
 
   label {
-    @apply px-8 py-4 font-bold text-white bg-primary border-primary border-2 hover:cursor-pointer rounded text-base duration-500 opacity-50 scale-90;
+    @apply px-4 py-2 font-bold text-white bg-primary border-white border-2 hover:cursor-pointer rounded text-sm duration-500 opacity-50 scale-90;
   }
 
   input:checked + label {
-    @apply text-primary bg-white opacity-100 scale-100;
+    @apply text-primary bg-white border-primary opacity-100 scale-100;
   }
 }
 </style>

@@ -18,7 +18,7 @@ const mulitiTab = ref(props.tabList.find((tab) => tab.active)?.value)
 
 <template>
   <div class="tabs-rounded">
-    <main v-for="tab in tabList" :key="tab.id" class="flex items-center">
+    <div v-for="tab in tabList" :key="tab.id" class="flex items-center">
       <input
         :id="tab.id"
         type="radio"
@@ -28,7 +28,7 @@ const mulitiTab = ref(props.tabList.find((tab) => tab.active)?.value)
         @input="(e) => $emit('update:modelValue', (e.target as HTMLInputElement).value)"
       />
       <label :for="tab.id">{{ tab.value }}</label>
-    </main>
+    </div>
   </div>
 </template>
 
