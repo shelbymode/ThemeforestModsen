@@ -30,10 +30,10 @@ const [isRevealed, toggleReveal] = useToggle(props.isRevealed)
         {{ props.title }}
       </h3>
       <slot v-if="!isRevealed" name="control-icon-inactive">
-        <span i-fluent-chevron-down-12-regular text-4xl></span>
+        <span i-fluent-chevron-down-12-regular text-4xl text-black></span>
       </slot>
       <slot v-else name="control-icon-active">
-        <span i-fluent-chevron-up-12-regular text-4xl></span>
+        <span i-fluent-chevron-up-12-regular text-4xl text-black></span>
       </slot>
     </header>
     <Transition name="dropdown" mode="out-in" appear>

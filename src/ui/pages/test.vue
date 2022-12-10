@@ -25,7 +25,11 @@ const customClasses: IInputClasses = {
 
 <template>
   <main class="w-screen min-h-screen h-full mx-auto bg-neutral-300 flex flex-col items-center justify-center">
-    <div flex items-center flex-wrap bg-light-800 p-10 gap-10 class="w-1/2">
+    <button bg-red-500 text-dark-500 px-5 py-2 rounded-xl @click="toggleDark()">
+      Toggle theme - right know [{{ isDark === true ? 'dark' : 'light' }}]
+    </button>
+
+    <div flex items-center flex-wrap bg-light-800 p-10 gap-10 class="w-full">
       <p>{{ isFormValid }}</p>
       <p>{{ getMessage('email') }}</p>
       <p>{{ isDirtyAndError('email') }}</p>
@@ -55,6 +59,8 @@ const customClasses: IInputClasses = {
         title-inactive-classes="text-black"
         title-active-classes="text-primary"
       />
+
+      <OrganismHeader></OrganismHeader>
     </div>
   </main>
 </template>

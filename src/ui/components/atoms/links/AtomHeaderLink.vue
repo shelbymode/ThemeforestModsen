@@ -29,10 +29,10 @@ const availableClass = props.isDisabled === true ? 'text-cGrey' : 'text-black'
 
 <style lang="scss" scoped>
 .h-link {
-  @apply flex items-center gap-x-3 px-6 py-4;
+  @apply flex items-center gap-x-3 px-2 py-1;
 }
 .h-link__link {
-  @apply text-sm font-medium text-cGrey hover:text-black;
+  @apply text-sm font-medium text-cGrey duration-300 hover:text-black;
 }
 .h-link__link-dark {
   @apply dark:text-white dark:hover:text-neutral-500;
