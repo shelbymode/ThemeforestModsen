@@ -5,7 +5,7 @@ import { IInputClasses } from '../components/inputs/AtomInput.vue'
 
 const rulesEmail = computed(() => ({
   email: {
-    required: helpers.withMessage('Where is value, Dog?', required),
+    required: helpers.withMessage('Input an email, please', required),
     email: helpers.withMessage("It doesn't look as email", email),
   },
 }))
@@ -45,6 +45,15 @@ const customClasses: IInputClasses = {
         type="text"
         :status-validation="getStatusValidation('email')"
         @input="touch('email')"
+      />
+
+      <AtomDropdown
+        title="What are data analytics?"
+        content="Phasellus tristique eu nisl eu consectetur. Morbi urna massa,
+        imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor
+        orci. Sed quis lobortis eros."
+        title-inactive-classes="text-black"
+        title-active-classes="text-primary"
       />
     </div>
   </main>

@@ -14,6 +14,7 @@ declare module '@vue/runtime-core' {
     AtomDirection: typeof import('./src/ui/components/atoms/directions/AtomDirection.vue')['default']
     AtomDoubleLabel: typeof import('./src/ui/components/atoms/labels/AtomDoubleLabel.vue')['default']
     AtomDoubleSwitch: typeof import('./src/ui/components/atoms/switches/AtomDoubleSwitch.vue')['default']
+    AtomDropdown: typeof import('./src/ui/components/atoms/dropdowns/AtomDropdown.vue')['default']
     AtomHeaderLink: typeof import('./src/ui/components/atoms/links/AtomHeaderLink.vue')['default']
     AtomInput: typeof import('./src/ui/components/inputs/AtomInput.vue')['default']
     AtomInputFilled: typeof import('./src/ui/components/inputs/AtomInputFilled.vue')['default']
