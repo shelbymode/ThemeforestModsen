@@ -24,6 +24,6 @@ const availableClass = props.isDisabled === true ? 'element-disabled' : ' text-p
   @apply hover:text-white hover:bg-primary hover:border-primary;
 }
 .icon {
-  @apply i-fluent-arrow-right-24-regular text-3xl;
+  @apply i-ic-outline-arrow-right-alt text-3xl;
 }
 </style>

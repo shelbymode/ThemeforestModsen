@@ -1,3 +1,8 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+}
+</script>
 <script setup lang="ts">
 interface IDirectionControl {
   isDisabled?: boolean
@@ -16,6 +21,7 @@ const availableClass = props.isDisabled === true ? 'text-cGrey' : 'text-black'
 <template>
   <button :disabled="isDisabled" class="h-link" :class="[availableClass]">
     <router-link
+      v-bind="$attrs"
       class="h-link__link h-link__link-dark"
       active-class="active active-dark"
       :class="{ 'element-disabled': isDisabled }"
@@ -44,6 +50,6 @@ const availableClass = props.isDisabled === true ? 'text-cGrey' : 'text-black'
   @apply dark:text-white  dark:border-b-2 dark:hover:text-cGray dark:hover:font-semibold  dark:hover:border-transparent;
 }
 .icon {
-  @apply i-fluent-arrow-right-24-regular text-3xl;
+  @apply i-ic-outline-arrow-right-alt text-3xl;
 }
 </style>

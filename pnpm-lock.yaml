@@ -1,7 +1,9 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@iconify-json/carbon': ^1.1.11
   '@iconify-json/fluent': ^1.1.17
+  '@iconify-json/ic': ^1.1.10
   '@types/node': ^18.11.12
   '@typescript-eslint/eslint-plugin': ^5.46.0
   '@typescript-eslint/parser': ^5.46.0
@@ -52,7 +54,9 @@ dependencies:
   zod: 3.19.1
 
 devDependencies:
+  '@iconify-json/carbon': 1.1.11
   '@iconify-json/fluent': 1.1.17
+  '@iconify-json/ic': 1.1.10
   '@types/node': 18.11.12
   '@typescript-eslint/eslint-plugin': 5.46.0_5mle7isnkfgjmrghnnczirv6iy
   '@typescript-eslint/parser': 5.46.0_ha6vam6werchizxrnqvarmz2zu
@@ -200,8 +204,20 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
+  /@iconify-json/carbon/1.1.11:
+    resolution: {integrity: sha512-IHkHSNmTM6q6b8DuKSzd+AEMYPZywSxcb+37kZU7ywtcwsGen3aVEvWFykopIWjjwj3xdZ/5UdwJRqhZDQMlNg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify-json/fluent/1.1.17:
     resolution: {integrity: sha512-9lVhbn05enIkLEuVRNeFRPnAYVr/6PusVFQKE+8Br6Zrhp92CpR0hSqebXAgWfk48zwEdb1ymz4N50YkrmRSFA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/ic/1.1.10:
+    resolution: {integrity: sha512-EmyoOv/MHYEZcpRtvU/+PTSd3vGv81bpdaUiLzym3XI7Y8kLMWVGr/rnztgb12Mzwi/hHkwfRq1GgdbyNSVPPQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

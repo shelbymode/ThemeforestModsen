@@ -61,6 +61,7 @@ const customClasses: IInputClasses = {
       />
 
       <OrganismHeader></OrganismHeader>
+      <OrganismFooter></OrganismFooter>
     </div>
   </main>
 </template>
