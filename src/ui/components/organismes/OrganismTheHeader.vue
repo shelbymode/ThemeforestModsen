@@ -18,6 +18,10 @@ console.log(generatedLinksList)
 
 <template>
   <TemplateHeader>
+    <template #theme-switcher>
+      <AtomToggleDarkMode></AtomToggleDarkMode>
+    </template>
+
     <template #logo>
       <span class="icon"></span>
     </template>

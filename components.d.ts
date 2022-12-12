@@ -21,6 +21,7 @@ declare module '@vue/runtime-core' {
     AtomTabsRounded: typeof import('./src/ui/components/atoms/tabs/AtomTabsRounded.vue')['default']
     AtomTabsSquare: typeof import('./src/ui/components/atoms/tabs/AtomTabsSquare.vue')['default']
     AtomTag: typeof import('./src/ui/components/atoms/tags/AtomTag.vue')['default']
+    AtomToggleDarkMode: typeof import('./src/ui/components/atoms/switches/AtomToggleDarkMode.vue')['default']
     MoleculeBlogCard: typeof import('./src/ui/components/molecules/cards/MoleculeBlogCard.vue')['default']
     MoleculePriceCard: typeof import('./src/ui/components/molecules/cards/MoleculePriceCard.vue')['default']
     MoleculeReviewCardIn: typeof import('./src/ui/components/molecules/cards/MoleculeReviewCardIn.vue')['default']
