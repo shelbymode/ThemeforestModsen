@@ -7,6 +7,11 @@ html, body {
   min-height: 100vh;
 }
 
+#app {
+  min-height: 100vh;
+  height: 1px;
+}
+
 html[opacity="fullOpacity"] {
 	--opacity: 1;
 }

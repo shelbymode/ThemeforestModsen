@@ -60,8 +60,6 @@ const customClasses: IInputClasses = {
         title-active-classes="text-primary"
       />
 
-      <TheOrganismHeader></TheOrganismHeader>
-      <TheOrganismFooter></TheOrganismFooter>
       <MoleculeSection></MoleculeSection>
     </div>
   </main>
