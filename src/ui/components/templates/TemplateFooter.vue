@@ -22,6 +22,7 @@
 .footer {
   @apply w-full flex items-center justify-center py-10 bg-cBackground;
   @apply dark:bg-secondary;
+
   // .footer__header
 
   &__header {

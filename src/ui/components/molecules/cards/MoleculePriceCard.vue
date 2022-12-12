@@ -28,7 +28,7 @@ const checkValues = ['For small teams - 5 users', 'Community support', 'Individu
     </div>
 
     <AtomButton class="card-price__button" :class="{ 'card-price__button--selected': props.isSelected }">
-      <template #text> Get started </template>
+      Get started
     </AtomButton>
 
     <div class="card-price__checks-wrapper" :class="{ 'card-price__checks-wrapper--selected': props.isSelected }">

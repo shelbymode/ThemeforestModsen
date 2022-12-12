@@ -15,12 +15,10 @@ const props = withDefaults(
     icon: true,
   }
 )
-
-const availableClass = props.isDisabled === true ? 'text-cGrey' : 'text-primary dark:(text-sky hover:text-sky)'
 </script>
 
 <template>
-  <button :disabled="isDisabled" class="link link-hover" :class="[availableClass]">
+  <button :disabled="isDisabled" class="link">
     <router-link v-bind="$attrs" :class="{ 'element-disabled': isDisabled }" :to="props.link">
       <slot />
     </router-link>
@@ -30,10 +28,13 @@ const availableClass = props.isDisabled === true ? 'text-cGrey' : 'text-primary 
 
 <style lang="scss" scoped>
 .link {
-  @apply flex items-center gap-x-3 font-medium transition-300 p-1 text-sm;
+  @apply flex items-center gap-x-3 text-primary font-medium transition-300 p-1 text-sm;
+  @apply hover:(text-secondary scale-98);
+  @apply dark:(text-sky);
+  @apply dark:hover:(text-sky);
 }
-.link-hover {
-  @apply hover:text-secondary hover:scale-98;
+.link[disabled] {
+  @apply opacity-50 text-cGrey pointer-events-none;
 }
 .icon {
   @apply i-ic-outline-arrow-right-alt text-3xl;

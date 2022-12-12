@@ -56,9 +56,6 @@ const isTagsExists = props.tagsInfo && Object.keys(props.tagsInfo).length > 0
 .card__text {
   @apply text-cGrey text-base text-left;
 }
-/**
-  * Tag element
-*/
 .tag-wrapper {
   @apply flex w-full flex-wrap gap-3;
 }

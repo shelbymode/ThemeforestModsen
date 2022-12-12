@@ -32,10 +32,11 @@ declare module '@vue/runtime-core' {
     MoleculePriceCard: typeof import('./src/ui/components/molecules/cards/MoleculePriceCard.vue')['default']
     MoleculeReviewCardIn: typeof import('./src/ui/components/molecules/cards/MoleculeReviewCardIn.vue')['default']
     MoleculeReviewCardOut: typeof import('./src/ui/components/molecules/cards/MoleculeReviewCardOut.vue')['default']
+    MoleculeSection: typeof import('./src/ui/components/molecules/sections/MoleculeSection.vue')['default']
     MoleculeServiceCard: typeof import('./src/ui/components/molecules/cards/MoleculeServiceCard.vue')['default']
     MoleculeStarterPriceCard: typeof import('./src/ui/components/molecules/cards/MoleculePriceCard.vue')['default']
-    OrganismFooter: typeof import('./src/ui/components/organismes/OgranismFooter/OrganismFooter.vue')['default']
-    OrganismHeader: typeof import('./src/ui/components/organismes/OrganismHeader.vue')['default']
+    OrganismFooter: typeof import('./src/ui/components/organismes/OgranismFooter/TheOrganismFooter.vue')['default']
+    OrganismHeader: typeof import('./src/ui/components/organismes/TheOrganismHeader.vue')['default']
     ReviewCard: typeof import('./src/ui/components/molecules/cards/MoleculeReviewCardOut.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
@@ -45,5 +46,7 @@ declare module '@vue/runtime-core' {
     TheCounter: typeof import('./src/components/TheCounter.vue')['default']
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
     TheInput: typeof import('./src/components/TheInput.vue')['default']
+    TheOrganismFooter: typeof import('./src/ui/components/organismes/OgranismFooter/TheOrganismFooter.vue')['default']
+    TheOrganismHeader: typeof import('./src/ui/components/organismes/TheOrganismHeader.vue')['default']
   }
 }

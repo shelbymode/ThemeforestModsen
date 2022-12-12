@@ -1,5 +1,6 @@
 .icon {
-  @apply inline-block bg-primary dark:bg-white;
+  @apply inline-block bg-primary;
+  @apply dark:(bg-white);
   width: 150px;
   height: 49px;
   mask-image: url('../../../../../assets/images/svg-icons/logo_blue.svg');

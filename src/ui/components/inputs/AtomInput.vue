@@ -22,7 +22,6 @@ const props = withDefaults(defineProps<IInputProps>(), {
   skipInitValue: true,
   type: 'text',
   statusValidation: 'inactive',
-
   inactiveClasses: '',
   commonClasses: '',
   errorClasses: '',
@@ -30,15 +29,28 @@ const props = withDefaults(defineProps<IInputProps>(), {
   successClasses: '',
 })
 
+const configClasses: Required<IInputClasses> = {
+  commonClasses:
+    'px-6 py-4 w-85 font-bold placeholder:(text-black font-bold) hover:scale-x-95 duration-300 rounded-lg focus:outline-none',
+  inactiveClasses: 'bg-tertiary',
+  errorClasses: 'bg-[#F6E2E2] text-cRed',
+  successClasses: 'bg-emerald-100 text-emerald-900',
+  errorLabelClasses: 'text-cRed',
+}
+
+;(Object.keys(configClasses) as (keyof IInputClasses)[]).forEach((classesCategory) => {
+  props[classesCategory] !== '' ? (configClasses[classesCategory] = props[classesCategory]) : null
+})
+
 const waitCondition = props.skipInitValue === true ? ['inactive', 'initial-error'] : ['inactive']
 const [isFocus, toggleFocus] = useToggle(false)
 </script>
 
 <template>
-  <div class="flex flex-col items-left gap-y-2">
+  <div class="input-wrapper">
     <label
       v-if="props.label"
-      class="font-semibold text-cGrey text-sm"
+      class="label"
       :class="{ [props.errorLabelClasses]: props.statusValidation === 'dirty-error' }"
       :for="id"
       >{{ props.label }}</label
@@ -49,12 +61,11 @@ const [isFocus, toggleFocus] = useToggle(false)
       :value="modelValue"
       :type="type"
       :placeholder="placeholder"
-      class="px-6 py-4 w-85 font-bold placeholder:(text-black font-bold) hover:scale-x-95 duration-300 rounded-lg focus:outline-none"
       :class="{
-        [props.commonClasses]: true,
-        [props.inactiveClasses]: waitCondition.includes(props.statusValidation),
-        [props.errorClasses]: props.statusValidation === 'dirty-error',
-        [props.successClasses]: props.statusValidation === 'correct',
+        [configClasses.commonClasses]: true,
+        [configClasses.inactiveClasses]: waitCondition.includes(props.statusValidation),
+        [configClasses.errorClasses]: props.statusValidation === 'dirty-error',
+        [configClasses.successClasses]: props.statusValidation === 'correct',
       }"
       @focus="toggleFocus()"
       @blur="toggleFocus()"
@@ -63,4 +74,11 @@ const [isFocus, toggleFocus] = useToggle(false)
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.input-wrapper {
+  @apply flex flex-col items-left gap-y-2;
+}
+.label {
+  @apply font-semibold text-cGrey text-sm;
+}
+</style>

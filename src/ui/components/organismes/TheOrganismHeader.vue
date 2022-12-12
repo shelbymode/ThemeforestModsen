@@ -29,11 +29,9 @@ console.log(generatedLinksList)
     </template>
 
     <template #demo>
-      <AtomButton
-        class="bg-primary dark:(bg-white text-black hover:bg-black hover:text-white) text-white hover:bg-primary/80"
-      >
-        <template #text> Watch the demo </template>
-        <template #icon><span class="text-2xl" i-fluent-play-circle-24-regular></span></template>
+      <AtomButton class="demo-button">
+        Watch the demo
+        <span class="text-2xl" i-fluent-play-circle-24-regular></span>
       </AtomButton>
     </template>
   </TemplateHeader>
@@ -44,12 +42,19 @@ console.log(generatedLinksList)
   * Literally there is no another way in the universe how to change this svg color
 */
 .icon {
-  @apply inline-block bg-primary dark:bg-white;
+  @apply inline-block bg-primary;
+  @apply dark:(bg-white);
   width: 150px;
   height: 49px;
   mask-image: url('../../../../assets/images/svg-icons/logo_blue.svg');
   -webkit-mask-image: url('../../../../assets/images/svg-icons/logo_blue.svg');
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
+}
+.demo-button {
+  @apply bg-primary text-white;
+  @apply hover:(bg-primary/80);
+  @apply dark:(bg-white text-black);
+  @apply dark:hover:(hover:bg-black hover:text-white);
 }
 </style>

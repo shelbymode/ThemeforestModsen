@@ -24,7 +24,7 @@ const customClasses: IInputClasses = {
 </script>
 
 <template>
-  <main class="w-screen min-h-screen h-full mx-auto bg-neutral-300 flex flex-col items-center justify-center">
+  <main class="w-full min-h-screen h-full mx-auto bg-neutral-300 flex flex-col items-center justify-center">
     <button bg-red-500 text-dark-500 px-5 py-2 rounded-xl @click="toggleDark()">
       Toggle theme - right know [{{ isDark === true ? 'dark' : 'light' }}]
     </button>
@@ -60,8 +60,9 @@ const customClasses: IInputClasses = {
         title-active-classes="text-primary"
       />
 
-      <OrganismHeader></OrganismHeader>
-      <OrganismFooter></OrganismFooter>
+      <TheOrganismHeader></TheOrganismHeader>
+      <TheOrganismFooter></TheOrganismFooter>
+      <MoleculeSection></MoleculeSection>
     </div>
   </main>
 </template>

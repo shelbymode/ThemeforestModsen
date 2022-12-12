@@ -1,5 +1,12 @@
 @import './variables.scss';
 
+html, body {
+  max-width: 1920px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
 html[opacity="fullOpacity"] {
 	--opacity: 1;
 }

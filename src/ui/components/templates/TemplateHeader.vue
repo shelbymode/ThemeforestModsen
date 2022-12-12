@@ -16,7 +16,8 @@
 
 <style lang="scss" scoped>
 .header {
-  @apply flex items-center justify-center w-full py-10 bg-white dark:(bg-secondary);
+  @apply flex items-center justify-center w-full py-10 bg-white;
+  @apply dark:(bg-secondary);
 
   // .header__links
 

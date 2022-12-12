@@ -16,9 +16,10 @@ const props = withDefaults(defineProps<IPropsButton>(), {
 
 <style lang="scss" scoped>
 .button-search {
-  @apply grid place-items-center rounded-md transition-300 px-6 py-4 text-3xl hover:scale-98;
+  @apply grid place-items-center rounded-md transition-300 px-6 py-4 text-3xl;
+  @apply hover:(scale-98);
 }
 .button[disabled] {
-  @apply text-white bg-cGrey;
+  @apply opacity-50 pointer-events-none;
 }
 </style>
