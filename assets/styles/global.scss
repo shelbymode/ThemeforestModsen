@@ -1,5 +1,17 @@
 @import './variables.scss';
 
+html, body {
+  max-width: 1920px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+  height: 1px;
+}
+
 html[opacity="fullOpacity"] {
 	--opacity: 1;
 }
@@ -46,8 +58,17 @@ html[opacity="lowOpacity"] {
 
 .shadow-dropdown {
 	background: #FFFFFF;
-	
+
 	/* Shadow_dropdown */
 	box-shadow: 0px 2px 6px rgba(0, 43, 78, 0.15), 0px 1px 2px rgba(0, 43, 78, 0.3);
 	border-radius: 6px;
+}
+
+.element-disabled {
+  opacity: 0.66;
+  pointer-events: none;
+  color: rgba(var(--c-grey));
+  &:hover {
+    transform: scale(1) !important;
+  }
 }

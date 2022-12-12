@@ -8,6 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
+import svgLoader from 'vite-svg-loader'
 
 export default defineConfig({
   resolve: {
@@ -26,25 +27,27 @@ export default defineConfig({
 
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
-      dirs: 'src/ui/components/pages',
+      dirs: './src/ui/pages',
     }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
       imports: ['vue', 'vue/macros', 'vue-router', '@vueuse/core'],
       dts: true,
-      dirs: ['./src/composables'],
+      dirs: ['./src/shared/composables'],
       vueTemplate: true,
     }),
 
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
+      dirs: ['./src/ui/components'],
     }),
 
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
     Unocss(),
+    svgLoader(),
   ],
 
   // https://github.com/vitest-dev/vitest
