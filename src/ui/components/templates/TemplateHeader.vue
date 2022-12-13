@@ -18,7 +18,7 @@
 
 <style lang="scss" scoped>
 .header {
-  @apply flex items-center justify-center w-full h-full max-h-35 bg-white;
+  @apply flex items-center justify-center w-full h-full min-h-35 h-35 bg-white;
   @apply dark:(bg-secondary);
 
   // .header__links
@@ -28,6 +28,6 @@
   }
 }
 .header-container {
-  @apply flex h-full items-center justify-between min-w-[57%];
+  @apply flex h-full items-center justify-between min-w-[57.8125%];
 }
 </style>

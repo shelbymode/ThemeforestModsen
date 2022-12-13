@@ -1,0 +1,111 @@
+.home {
+  @apply flex flex-col items-center bg-white;
+}
+.learn-more-section {
+  @apply flex justify-between max-w-[57.8125%] w-full items-start py-18;
+  // .learn-more-section__title
+
+  &__title {
+    @apply max-w-135 text-left text-[46px] font-extrabold text-black;
+    letter-spacing: -0.015em;
+  }
+
+  // .learn-more-section__special-title
+
+  &__special-title {
+    @apply text-primary;
+  }
+
+  // .learn-more-section__text
+
+  &__text {
+    @apply max-w-115 text-left text-base leading-relaxed text-cGrey;
+
+  }
+
+  // .learn-more-section__image-wrapper
+
+  &__image-wrapper {
+    @apply relative;
+
+  }
+
+  // .learn-more-section__image
+
+  &__image {
+    @apply w-full object-cover min-h-[590px];
+  }
+
+  // .learn-more-section__button-learn-more
+
+  &__button-learn-more {
+    @apply absolute right-[40%] outline-white outline-8 top-0 translate-y-[-50%] bg-primary;
+    outline-style: solid ;
+  }
+}
+.discover-section {
+  @apply flex w-full py-30 max-w-[57.8125%] justify-between items-start;
+
+  // .discover-section__title
+
+  &__title {
+    @apply max-w-115 text-left text-[46px] font-extrabold text-black;
+    letter-spacing: -0.015em;
+
+  }
+
+  &__special-title {
+    @apply text-primary;
+  }
+
+  // .discover-section__content
+
+  &__content {
+    @apply flex flex-col gap-y-8 items-start;
+  }
+
+  // .discover-section__text
+
+  &__text {
+    @apply max-w-115 text-left text-base leading-relaxed text-cGrey;
+  }
+
+  // .discover-section__button
+
+  &__button {
+    @apply bg-primary;
+  }
+}
+.promo-section {
+  @apply flex w-full justify-start items-center bg-cBackground;
+  // .promo-section__image
+
+  &__image {
+    @apply min-h-[740px] w-1/2 object-cover;
+  }
+
+  // .promo-section__content
+
+  &__content {
+    @apply max-w-135 flex flex-col items-start gap-y-7 px-12 mr-0;
+  }
+
+  // .promo-section__title
+
+  &__title {
+    @apply text-4xl text-black font-extrabold;
+  }
+
+  // .promo-section__text
+
+  &__text {
+    @apply max-w-115 text-left text-base leading-relaxed text-cGrey;
+  }
+
+  // .promo-section__button-learn-more
+
+  &__button-learn-more {
+    @apply bg-primary;
+
+  }
+}

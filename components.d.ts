@@ -17,6 +17,7 @@ declare module '@vue/runtime-core' {
     AtomHeaderLink: typeof import('./src/ui/components/atoms/links/AtomHeaderLink.vue')['default']
     AtomInput: typeof import('./src/ui/components/inputs/AtomInput.vue')['default']
     AtomInputTranslucent: typeof import('./src/ui/components/inputs/AtomInputTranslucent.vue')['default']
+    AtomLabelStats: typeof import('./src/ui/components/atoms/labels/AtomLabelStats.vue')['default']
     AtomLink: typeof import('./src/ui/components/atoms/links/AtomLink.vue')['default']
     AtomTabsRounded: typeof import('./src/ui/components/atoms/tabs/AtomTabsRounded.vue')['default']
     AtomTabsSquare: typeof import('./src/ui/components/atoms/tabs/AtomTabsSquare.vue')['default']

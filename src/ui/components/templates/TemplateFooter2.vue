@@ -36,6 +36,6 @@
   }
 }
 .footer-container {
-  @apply min-w-[57%] flex flex-col items-start gap-y-10;
+  @apply min-w-[57.8125%] flex flex-col items-start gap-y-10;
 }
 </style>

@@ -35,7 +35,7 @@ export default defineConfig({
     }),
     presetWebFonts({
       fonts: {
-        sans: ['Manrope:100,200,300,400,500,600,700', 'Open Sans:100,200,300,400,500,600,700'],
+        sans: ['Manrope:100,200,300,400,500,600,700,800,900', 'Open Sans:100,200,300,400,500,600,700,800,900'],
         serif: 'DM Serif Display',
         mono: 'DM Mono',
       },

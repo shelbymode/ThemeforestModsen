@@ -47,7 +47,7 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
   @apply dark:bg-secondary;
 }
 .section {
-  @apply max-w-[57%] w-full flex justify-between items-center py-20;
+  @apply max-w-[57.8125%] w-full flex justify-between items-center py-20;
 }
 .section-content {
   @apply flex flex-col items-start gap-y-6 max-w-110;

@@ -50,7 +50,7 @@
   }
 }
 .footer-container {
-  @apply min-w-[57%] flex flex-col gap-y-15 items-start;
+  @apply min-w-[57.8125%] flex flex-col gap-y-15 items-start;
 }
 
 .additional {

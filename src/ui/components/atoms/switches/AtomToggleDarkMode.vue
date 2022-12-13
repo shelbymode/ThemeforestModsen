@@ -8,8 +8,8 @@
 </template>
 
 <style lang="scss" scoped>
-$size: 40px;
-$radius: 25px;
+$size: 30px;
+$radius: 20px;
 
 $left: calc($radius / 3.33);
 $top: calc($radius / 5);
@@ -20,7 +20,7 @@ $top: calc($radius / 5);
   &__label {
     @apply w-full bg-dark cursor-pointer rounded-[50px];
     height: calc(1.25 * $size);
-    width: 100px;
+    width: 80px;
     // transform: translate(50%, 50%);
   }
 
@@ -42,7 +42,7 @@ $top: calc($radius / 5);
       width: $size;
       top: $top;
       left: $left;
-      box-shadow: inset 28px -4px 0px 0px var(--light);
+      box-shadow: inset 10px -4px 0px 0px var(--light);
     }
   }
 }
