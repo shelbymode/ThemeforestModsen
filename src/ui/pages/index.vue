@@ -99,8 +99,6 @@ const mulitiTab2 = ref('')
           { id: 'yr2', value: 'Yearly fdfd Weekly' },
         ]"
       ></AtomTabsRounded>
-
-      <MoleculePriceCard />
     </div>
   </main>
 </template>

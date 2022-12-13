@@ -6,6 +6,7 @@
       <OrganismHomePresentation />
       <OgranismHomeBenefits />
       <OrganismHomeTestimonials />
+      <OrganismHomePricing />
     </main>
   </TemplatePage>
 </template>

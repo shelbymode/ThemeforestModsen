@@ -33,6 +33,7 @@ declare module '@vue/runtime-core' {
     MoleculeSection: typeof import('./src/ui/components/molecules/sections/MoleculeSection.vue')['default']
     MoleculeServiceCard: typeof import('./src/ui/components/molecules/cards/MoleculeServiceCard.vue')['default']
     OgranismHomeBenefits: typeof import('./src/ui/components/organismes/Home/OgranismHomeBenefits.vue')['default']
+    OrganismHomeAdditional: typeof import('./src/ui/components/organismes/Home/OrganismHomeAdditional.vue')['default']
     OrganismHomeOurBlog: typeof import('./src/ui/components/organismes/Home/OrganismHomeOurBlog.vue')['default']
     OrganismHomePresentation: typeof import('./src/ui/components/organismes/Home/OrganismHomePresentation.vue')['default']
     OrganismHomePricing: typeof import('./src/ui/components/organismes/Home/OrganismHomePricing.vue')['default']

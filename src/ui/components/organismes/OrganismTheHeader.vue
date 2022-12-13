@@ -12,8 +12,6 @@ const generatedLinksList: TLink[] = linksList.map((word) => ({
   name: useChangeCase(word, 'capitalCase').value,
   link: `/${useChangeCase(word, 'paramCase').value}`,
 }))
-
-console.log(generatedLinksList)
 </script>
 
 <template>

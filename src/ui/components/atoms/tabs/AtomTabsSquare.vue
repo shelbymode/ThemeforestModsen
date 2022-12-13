@@ -5,7 +5,7 @@ interface ITabs {
     value: string
     active?: boolean
   }[]
-  modelValue?: string
+  modelValue: string
   name: string
 }
 const props = defineProps<ITabs>()
