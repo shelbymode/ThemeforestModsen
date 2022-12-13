@@ -1,13 +1,9 @@
 @import './variables.scss';
 
-html, body {
-  max-width: 1920px;
-  overflow-x: hidden;
-  margin: 0 auto;
-  min-height: 100vh;
-}
-
 #app {
+  margin: 0 auto;
+  max-width: 1920px;
+  width: 100%;
   min-height: 100vh;
   height: 1px;
 }

@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AtomBigTitle: typeof import('./src/ui/components/atoms/titles/AtomBigTitle.vue')['default']
     AtomButton: typeof import('./src/ui/components/atoms/buttons/AtomButton.vue')['default']
     AtomButtonSearch: typeof import('./src/ui/components/atoms/buttons/AtomButtonSearch.vue')['default']
     AtomCircleAvatar: typeof import('./src/ui/components/atoms/avatars/AtomCircleAvatar.vue')['default']
@@ -19,9 +20,11 @@ declare module '@vue/runtime-core' {
     AtomInputTranslucent: typeof import('./src/ui/components/inputs/AtomInputTranslucent.vue')['default']
     AtomLabelStats: typeof import('./src/ui/components/atoms/labels/AtomLabelStats.vue')['default']
     AtomLink: typeof import('./src/ui/components/atoms/links/AtomLink.vue')['default']
+    AtomMiddleTitle: typeof import('./src/ui/components/atoms/titles/AtomMiddleTitle.vue')['default']
     AtomTabsRounded: typeof import('./src/ui/components/atoms/tabs/AtomTabsRounded.vue')['default']
     AtomTabsSquare: typeof import('./src/ui/components/atoms/tabs/AtomTabsSquare.vue')['default']
     AtomTag: typeof import('./src/ui/components/atoms/tags/AtomTag.vue')['default']
+    AtomText: typeof import('./src/ui/components/atoms/text/AtomText.vue')['default']
     AtomToggleDarkMode: typeof import('./src/ui/components/atoms/switches/AtomToggleDarkMode.vue')['default']
     MoleculeBlogCard: typeof import('./src/ui/components/molecules/cards/MoleculeBlogCard.vue')['default']
     MoleculePriceCard: typeof import('./src/ui/components/molecules/cards/MoleculePriceCard.vue')['default']

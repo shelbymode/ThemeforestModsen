@@ -25,7 +25,7 @@ const props = withDefaults(
 
 <style lang="scss" scoped>
 .card {
-  @apply max-w-[540px] flex flex-col gap-y-5 p-6 rounded items-start;
+  @apply max-w-[350px] flex flex-col gap-y-5 p-6 rounded items-start;
 }
 .card__header {
   @apply grid items-center gap-x-5 grid-cols-[fit-content_1fr] grid-rows-2;

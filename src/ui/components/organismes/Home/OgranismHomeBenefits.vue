@@ -23,45 +23,47 @@ const dataAnalyticsCard = {
 </script>
 
 <template>
-  <section class="section-benefits">
-    <div class="section-benefits__content">
-      <h3 class="section-benefits__title">The benefits of Ensome</h3>
-      <p class="section-benefits__text">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      </p>
-    </div>
-
-    <div class="section-benefits__cards">
-      <div class="section-benefits__high-wrapper">
-        <MoleculeServiceCard :title="machineLearningCard.title" :text="machineLearningCard.text">
-          <template #icon>
-            <BrainIcon />
-          </template>
-        </MoleculeServiceCard>
-
-        <MoleculeServiceCard :title="accessControlCard.title" :text="accessControlCard.text">
-          <template #icon>
-            <AccessControlIcon />
-          </template>
-        </MoleculeServiceCard>
+  <div class="benefits-container">
+    <section class="benefits">
+      <div class="benefits__content">
+        <AtomMiddleTitle class="benefits__title">The benefits of Ensome</AtomMiddleTitle>
+        <AtomText class="benefits__text">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </AtomText>
       </div>
 
-      <div class="section-benefits__low-wrapper">
-        <MoleculeServiceCard :title="embedAnalyticsCard.title" :text="embedAnalyticsCard.text">
-          <template #icon>
-            <EmbedAnalyticsIcon />
-          </template>
-        </MoleculeServiceCard>
+      <div class="benefits__cards">
+        <div class="benefits__high-wrapper">
+          <MoleculeServiceCard :title="machineLearningCard.title" :text="machineLearningCard.text">
+            <template #icon>
+              <BrainIcon />
+            </template>
+          </MoleculeServiceCard>
 
-        <MoleculeServiceCard :title="dataAnalyticsCard.title" :text="dataAnalyticsCard.text">
-          <template #icon>
-            <DataAnalyticsIcon />
-          </template>
-        </MoleculeServiceCard>
+          <MoleculeServiceCard :title="accessControlCard.title" :text="accessControlCard.text">
+            <template #icon>
+              <AccessControlIcon />
+            </template>
+          </MoleculeServiceCard>
+        </div>
+
+        <div class="benefits__low-wrapper">
+          <MoleculeServiceCard :title="embedAnalyticsCard.title" :text="embedAnalyticsCard.text">
+            <template #icon>
+              <EmbedAnalyticsIcon />
+            </template>
+          </MoleculeServiceCard>
+
+          <MoleculeServiceCard :title="dataAnalyticsCard.title" :text="dataAnalyticsCard.text">
+            <template #icon>
+              <DataAnalyticsIcon />
+            </template>
+          </MoleculeServiceCard>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>

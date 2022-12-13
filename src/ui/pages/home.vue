@@ -5,6 +5,7 @@
     <main class="home">
       <OrganismHomePresentation />
       <OgranismHomeBenefits />
+      <OrganismHomeTestimonials />
     </main>
   </TemplatePage>
 </template>

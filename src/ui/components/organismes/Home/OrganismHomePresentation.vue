@@ -7,51 +7,51 @@ const labelStats = [
 </script>
 
 <template>
-  <section class="learn-more-section">
-    <h3 class="learn-more-section__title">
-      Find true power in your data with <span class="learn-more-section__special-title">Ensome</span>
-    </h3>
-    <p class="learn-more-section__text">
+  <section class="learn-more">
+    <AtomBigTitle class="learn-more__title">
+      Find true power in your data with <span class="learn-more__special-title">Ensome</span>
+    </AtomBigTitle>
+    <AtomText class="learn-more__text">
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque lauda, totam rem aperiam,
       eaque ipsa quae ab illo inventore veritatis et quasi.
-    </p>
+    </AtomText>
   </section>
 
-  <div class="learn-more-section__image-wrapper">
-    <img src="https://api.lorem.space/image/fashion?w=1920&h=590&hash=kmt2qny0" class="learn-more-section__image" />
-    <AtomCircleButton class="learn-more-section__button-learn-more">Learn more</AtomCircleButton>
+  <div class="learn-more__image-wrapper">
+    <img src="https://api.lorem.space/image/fashion?w=1920&h=590&hash=kmt2qny0" class="learn-more__image" />
+    <AtomCircleButton class="learn-more__button-learn-more">Learn more</AtomCircleButton>
   </div>
 
-  <section class="discover-section">
-    <h3 class="discover-section__title">
-      The <span class="discover-section__special-title">newest</span> business analytics platform
-    </h3>
-    <div class="discover-section__content">
-      <p class="discover-section__text">
+  <section class="discover">
+    <AtomBigTitle class="discover__title"
+      >The <span class="discover__special-title">newest</span> business analytics platform</AtomBigTitle
+    >
+    <div class="discover__content">
+      <AtomText class="discover__text">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
         aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      </p>
-      <AtomButton class="discover-section__button">Discover more</AtomButton>
+      </AtomText>
+      <AtomButton class="discover__button">Discover more</AtomButton>
     </div>
   </section>
 
-  <section class="promo-section">
-    <img src="https://api.lorem.space/image/fashion?w=929&h=740&hash=kmt2qny0" class="promo-section__image" />
-    <div class="promo-section__content">
-      <h3 class="promo-section__title">Radically new solutions for data</h3>
-      <p class="promo-section__text">
+  <section class="promo">
+    <img src="https://api.lorem.space/image/fashion?w=929&h=740&hash=kmt2qny0" class="promo__image" />
+    <div class="promo__content">
+      <AtomMiddleTitle class="promo__title">Radically new solutions for data</AtomMiddleTitle>
+      <AtomText class="promo__text">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
         aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-      </p>
-      <AtomButton class="promo-section__button-learn-more">Learn more</AtomButton>
+      </AtomText>
+      <AtomButton class="promo__button-learn-more">Learn more</AtomButton>
     </div>
   </section>
 
-  <section class="stats-section">
-    <div class="stats-section__title">We provide services that guarantee your success</div>
+  <section class="stats">
+    <AtomMiddleTitle class="stats__title">We provide services that guarantee your success</AtomMiddleTitle>
 
-    <div class="stats-section__content">
-      <div class="stats-section__stats">
+    <div class="stats__content">
+      <div class="stats__stats">
         <AtomLabelStats
           v-for="labelStat in labelStats"
           :key="labelStat.text"
@@ -60,13 +60,13 @@ const labelStats = [
         ></AtomLabelStats>
       </div>
 
-      <div class="stats-section__text">
+      <AtomText class="stats__text">
         Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque laudantium, totam rem
         aperiam, eaque ipsa quaeab illo inventore. Donec tincidunt tempor quam, non mollis quam finibus nec.
-      </div>
+      </AtomText>
     </div>
 
-    <img src="../../../../../assets/images/clients-logos-section.png" class="stats-section__clients" />
+    <img src="../../../../../assets/images/clients-logos-section.png" class="stats__clients" />
   </section>
 </template>
 

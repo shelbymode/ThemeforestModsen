@@ -2,7 +2,7 @@
 
 <template>
   <label class="toggle-switch__label relative">
-    <input type="checkbox" class="toggle-switch__input" @click="toggleDark()" />
+    <input :checked="!isDark" type="checkbox" class="toggle-switch__input" @click="toggleDark()" />
     <div class="toggle-switch__slider"></div>
   </label>
 </template>

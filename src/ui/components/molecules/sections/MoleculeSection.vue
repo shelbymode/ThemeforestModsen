@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { helpers, required, email } from '@vuelidate/validators'
 import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
-import { IInputClasses } from '../../inputs/AtomInput.vue'
 
 const rulesEmail = computed(() => ({
   email: {
