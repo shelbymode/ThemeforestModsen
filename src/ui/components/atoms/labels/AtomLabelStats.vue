@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const props = defineProps<{
-  digit: string
+  indicator: string
   text: string
 }>()
 </script>
 
 <template>
   <div class="label-stats">
-    <h3 class="label-stats__digit">{{ props.digit }}</h3>
+    <h3 class="label-stats__indicator">{{ props.indicator }}</h3>
     <p class="label-stats__text">{{ props.text }}</p>
   </div>
 </template>
@@ -15,9 +15,9 @@ const props = defineProps<{
 <style lang="scss" scoped>
 .label-stats {
   @apply flex flex-col items-start gap-y-2;
-  // .label-stats__digit
+  // .label-stats__indicator
 
-  &__digit {
+  &__indicator {
     @apply text-5xl font-extrabold text-left text-primary;
   }
 

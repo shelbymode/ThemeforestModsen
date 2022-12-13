@@ -1,0 +1,39 @@
+.section-benefits {
+  @apply flex items-center justify-between w-full max-w-[57.8125%] py-37;
+  // .section-benefits__content
+
+  &__content {
+    @apply flex flex-col gap-y-7  max-w-120;
+  }
+
+  // .section-benefits__title
+
+  &__title {
+    @apply text-black font-extrabold text-4xl;
+  }
+
+  // .section-benefits__text
+
+  &__text {
+    @apply text-base text-cGrey text-left;
+  }
+
+  // .section-benefits__cards
+
+  &__cards {
+    @apply flex justify-start gap-x-7;
+  }
+
+  // .section-benefits__high-wrapper
+
+  &__high-wrapper {
+    @apply flex flex-col gap-y-7 translate-y--6;
+  }
+
+  // .section-benefits__low-wrapper
+
+  &__low-wrapper {
+    @apply flex flex-col gap-y-7 translate-y-6;
+
+  }
+}

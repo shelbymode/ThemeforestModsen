@@ -1,6 +1,4 @@
-.home {
-  @apply flex flex-col items-center bg-white;
-}
+
 .learn-more-section {
   @apply flex justify-between max-w-[57.8125%] w-full items-start py-18;
   // .learn-more-section__title
@@ -43,6 +41,8 @@
     outline-style: solid ;
   }
 }
+
+
 .discover-section {
   @apply flex w-full py-30 max-w-[57.8125%] justify-between items-start;
 
@@ -76,6 +76,8 @@
     @apply bg-primary;
   }
 }
+
+
 .promo-section {
   @apply flex w-full justify-start items-center bg-cBackground;
   // .promo-section__image
@@ -107,5 +109,40 @@
   &__button-learn-more {
     @apply bg-primary;
 
+  }
+}
+
+
+.stats-section {
+  @apply max-w-[57.8125%] w-full flex flex-col items-start;
+
+  // .stats-section__title
+
+  &__title {
+    @apply text-4xl w-full text-black font-extrabold pt-30 text-center;
+  }
+
+  // .stats-section__content
+
+  &__content {
+    @apply flex w-full justify-between items-start py-16;
+  }
+
+  // .stats-section__stats
+
+  &__stats {
+    @apply flex items-start gap-x-6;
+  }
+
+  // .stats-section__text
+
+  &__text {
+    @apply max-w-135 text-xl text-cGrey;
+  }
+
+  // .stats-section__partners
+
+  &__clients {
+    @apply w-full;
   }
 }

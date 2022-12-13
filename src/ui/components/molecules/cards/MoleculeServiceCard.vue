@@ -26,7 +26,7 @@ const isLinkExists = props.linkInfo && Object.keys(props.linkInfo).length > 0
 
 <style lang="scss" scoped>
 .card {
-  @apply max-w-[470px] flex flex-col gap-y-5 p-6 rounded items-start;
+  @apply max-w-65 flex flex-col gap-y-5 p-6 rounded items-start;
 }
 .card__icon {
   @apply text-5xl text-primary;
