@@ -1,18 +1,4 @@
-<script setup lang="ts">
-import { helpers, required, email } from '@vuelidate/validators'
-import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
-
-const rulesEmail = computed(() => ({
-  email: {
-    required: helpers.withMessage('Input an email, please', required),
-    email: helpers.withMessage("It doesn't look as email", email),
-  },
-}))
-
-const form = reactive({ email: '' })
-
-const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEmail, form)
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="section-wrapper">
@@ -22,19 +8,6 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
         <p class="section-content__text">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
         </p>
-      </div>
-
-      <div class="section-email" flex items-center gap-x-3>
-        <AtomInput
-          id="email"
-          v-model="form.email"
-          class="section-email__input-email"
-          placeholder="Your email"
-          type="text"
-          :status-validation="getStatusValidation('email')"
-          @input="touch('email')"
-        ></AtomInput>
-        <AtomButton :is-disabled="!isFormValid" class="section-email__button"> Send </AtomButton>
       </div>
     </div>
   </div>
@@ -61,19 +34,6 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
 
   &__text {
     @apply text-xl text-white;
-  }
-}
-.section-email {
-  // .section-email__input-email
-
-  &__input-email {
-  }
-
-  // .section-email__button
-
-  &__button {
-    @apply bg-white py-4 text-black text-base font-bold;
-    @apply hover:(scale-100);
   }
 }
 </style>

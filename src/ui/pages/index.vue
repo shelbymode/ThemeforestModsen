@@ -57,17 +57,6 @@ const mulitiTab2 = ref('')
         </template>
       </MoleculeServiceCard>
 
-      <MoleculeBlogCard
-        title="Machine Learning"
-        date="22 June 2022"
-        text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure..."
-        :link-info="{ label: 'Read more', to: '/' }"
-      >
-        <template #icon>
-          <IconBrain3d></IconBrain3d>
-        </template>
-      </MoleculeBlogCard>
-
       <MoleculeReviewCardOut
         name="Alex Bern"
         position="CEO by PixelPerfect"

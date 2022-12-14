@@ -21,7 +21,7 @@ const isTagsExists = props.tagsInfo && Object.keys(props.tagsInfo).length > 0
 </script>
 
 <template>
-  <div class="card shadow-card-3">
+  <div class="card">
     <img class="card__image" :src="props.imgSrc" alt="image" />
     <span class="card__date">{{ props.date }}</span>
     <h3 class="card__title">{{ title }}</h3>
@@ -39,7 +39,8 @@ const isTagsExists = props.tagsInfo && Object.keys(props.tagsInfo).length > 0
 
 <style lang="scss" scoped>
 .card {
-  @apply max-w-[635px] flex flex-col gap-y-5 p-6 rounded items-start;
+  @apply flex flex-col gap-y-5 items-start;
+  max-width: 350px;
 }
 .card__image {
   @apply rounded-lg;

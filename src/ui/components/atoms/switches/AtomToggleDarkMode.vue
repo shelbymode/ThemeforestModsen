@@ -1,57 +1,46 @@
 <script setup lang="ts"></script>
 
 <template>
-  <label class="toggle-switch__label relative">
+  <label class="toggle-switch__label">
     <input :checked="!isDark" type="checkbox" class="toggle-switch__input" @click="toggleDark()" />
-    <div class="toggle-switch__slider"></div>
+    <div class="toggle-switch__slider">
+      <span class="toggle-switch__slider-weather"></span>
+    </div>
   </label>
 </template>
 
 <style lang="scss" scoped>
-$size: 30px;
-$radius: 20px;
-
-$left: calc($radius / 3.33);
-$top: calc($radius / 5);
+$height: 40px;
+$width: 80px;
 
 .toggle-switch {
   // .toggle-switch__label
 
   &__label {
-    @apply w-full bg-dark cursor-pointer rounded-[50px];
-    height: calc(1.25 * $size);
-    width: 80px;
-    // transform: translate(50%, 50%);
+    @apply w-full ml-10 cursor-pointer border-1 bg-cBackground rounded-3xl;
+    @apply dark:(bg-dark border-cGrey);
+    height: $height;
+    width: $width;
   }
 
   // .toggle-switch__input
 
   &__input {
-    @apply absolute display-none;
+    @apply display-none;
   }
 
   // .toggle-switch__slider
 
   &__slider {
-    @apply absolute w-full h-full transition-300 rounded-[50px];
-
-    &::before {
-      @apply absolute rounded-[50px] bg-dark duration-300;
-      content: '';
-      height: $size;
-      width: $size;
-      top: $top;
-      left: $left;
-      box-shadow: inset 10px -4px 0px 0px var(--light);
-    }
+    @apply flex items-center w-full h-full text-4xl transition-300;
   }
-}
 
-.toggle-switch__input:checked ~ .toggle-switch__slider {
-  @apply bg-light;
-}
-.toggle-switch__input:checked ~ .toggle-switch__slider::before {
-  @apply bg-dark shadow-none;
-  transform: translateX(calc($radius * 2));
+  // .toggle-switch__slider-weather
+
+  &__slider-weather {
+    transform: translateX(calc($width / 2));
+    @apply duration-300 i-fluent-weather-sunny-24-filled bg-black;
+    @apply dark:(i-fluent-weather-moon-20-filled bg-white rotate-z-135 translate-x-0);
+  }
 }
 </style>

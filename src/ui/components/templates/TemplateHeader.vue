@@ -12,7 +12,7 @@
       <slot name="demo"></slot>
     </div>
 
-    <AtomToggleDarkMode class="ml-10" />
+    <AtomToggleDarkMode />
   </header>
 </template>
 

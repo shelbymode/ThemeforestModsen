@@ -7,6 +7,8 @@
       <OgranismHomeBenefits />
       <OrganismHomeTestimonials />
       <OrganismHomePricing />
+      <OrganismHomeOurBlog />
+      <OrganismHomeAdditional />
     </main>
   </TemplatePage>
 </template>
