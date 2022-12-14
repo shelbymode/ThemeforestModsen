@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import IconBrain3d from '/assets/images/svg-icons/3d/icon_brain_isometric_3d.svg?component'
 
 export interface IDoubleSwitch {
   name: string
@@ -46,16 +45,6 @@ const mulitiTab2 = ref('')
       <AtomLink link="/page">Read more</AtomLink>
       <AtomHeaderLink link="/">Home</AtomHeaderLink>
       <AtomTag link="/">Home</AtomTag>
-
-      <MoleculeServiceCard
-        title="Machine Learning"
-        text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure."
-        :link-info="{ label: 'Read more', to: '/' }"
-      >
-        <template #icon>
-          <IconBrain3d></IconBrain3d>
-        </template>
-      </MoleculeServiceCard>
 
       <MoleculeReviewCardOut
         name="Alex Bern"

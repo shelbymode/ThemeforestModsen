@@ -38,6 +38,7 @@ declare module '@vue/runtime-core' {
     OrganismHomePresentation: typeof import('./src/ui/components/organismes/Home/OrganismHomePresentation.vue')['default']
     OrganismHomePricing: typeof import('./src/ui/components/organismes/Home/OrganismHomePricing.vue')['default']
     OrganismHomeTestimonials: typeof import('./src/ui/components/organismes/Home/OrganismHomeTestimonials.vue')['default']
+    OrganismServicesCollection: typeof import('./src/ui/components/organismes/Services/OrganismServicesCollection.vue')['default']
     OrganismTheFooter: typeof import('./src/ui/components/organismes/OgranismFooter/OrganismTheFooter.vue')['default']
     OrganismTheFooter2: typeof import('./src/ui/components/organismes/OgranismFooter2/OrganismTheFooter2.vue')['default']
     OrganismTheHeader: typeof import('./src/ui/components/organismes/OrganismTheHeader.vue')['default']
