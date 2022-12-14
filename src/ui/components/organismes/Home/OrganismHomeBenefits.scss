@@ -25,6 +25,12 @@
     @apply flex justify-start gap-x-7;
   }
 
+  // .benefits__card
+
+  &__card {
+    @apply bg-white shadow-card-3;
+  }
+
   // .benefits__high-wrapper
 
   &__high-wrapper {

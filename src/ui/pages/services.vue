@@ -4,6 +4,7 @@
   <TemplatePage>
     <main class="services">
       <OrganismServicesCollection />
+      <OrganismServicesAdditional />
     </main>
   </TemplatePage>
 </template>
