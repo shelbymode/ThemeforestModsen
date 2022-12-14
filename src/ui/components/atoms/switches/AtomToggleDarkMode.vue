@@ -18,7 +18,7 @@ $width: 80px;
 
   &__label {
     @apply w-full ml-10 cursor-pointer border-1 bg-cBackground rounded-3xl;
-    @apply dark:(bg-dark border-cGrey);
+    @apply dark:(bg-dark border-helperBlueTwo);
     height: $height;
     width: $width;
   }

@@ -56,6 +56,5 @@
   &__button {
     @apply bg-cBlack text-white py-4 text-base font-bold;
     @apply dark:(bg-white text-black);
-    @apply hover:(scale-100);
   }
 }
