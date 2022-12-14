@@ -23,8 +23,11 @@
   // .social__icon
 
   &__icon {
-    @apply text-4xl text-primary rounded-full;
+    @apply text-4xl text-primary rounded-full transition-300 ;
+    @apply hover:(text-sky-500 cursor-pointer scale-115);
     @apply dark:text-white;
+    @apply dark:hover:(text-emerald-500);
+
   }
 }
 

@@ -70,5 +70,5 @@ const serviceLinks = ['Pages', 'Elements', 'Site map', 'Pricing', 'FAQ']
 </template>
 
 <style lang="scss" scoped>
-@import './OrganismTheFooter.scss';
+@import './OrganismTheFooter2.scss';
 </style>
