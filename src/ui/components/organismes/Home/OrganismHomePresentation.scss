@@ -35,7 +35,7 @@
   // .learn-more__button-learn-more
 
   &__button-learn-more {
-    @apply absolute right-[40%] outline-white outline-8 top-0 translate-y-[-50%] bg-primary;
+    @apply absolute right-[40%] text-white outline-white outline-8 top-0 translate-y-[-50%] bg-primary;
     outline-style: solid ;
   }
 }
@@ -69,7 +69,7 @@
   // .discover__button
 
   &__button {
-    @apply bg-primary;
+    @apply text-white bg-primary;
   }
 }
 
@@ -102,7 +102,7 @@
   // .promo__button-learn-more
 
   &__button-learn-more {
-    @apply bg-primary;
+    @apply text-white bg-primary;
 
   }
 }

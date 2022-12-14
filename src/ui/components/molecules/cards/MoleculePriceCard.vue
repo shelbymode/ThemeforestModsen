@@ -73,7 +73,9 @@ const selectCurrentCard = (idx: number) => {
     >
       <div v-for="(check, idx) in props.options.checks" :key="idx" class="card-price__checks">
         <span class="card-price__check" :class="{ 'card-price__check--selected': props.options.isSelected }" />
-        <p>{{ check }}</p>
+        <p class="card-price__check-text" :class="{ 'card-price__check-text--selected': props.options.isSelected }">
+          {{ check }}
+        </p>
       </div>
     </div>
   </div>
@@ -125,6 +127,13 @@ const selectCurrentCard = (idx: number) => {
 }
 .card-price__check {
   @apply i-fluent-checkmark-24-filled text-primary text-3xl;
+  &--selected {
+    @apply text-white;
+  }
+}
+
+.card-price__check-text {
+  @apply text-black;
   &--selected {
     @apply text-white;
   }
