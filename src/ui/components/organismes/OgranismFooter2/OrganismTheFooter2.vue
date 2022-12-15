@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const aboutLinks = ['Home', 'About Us', 'Services', 'Solutions']
+const aboutLinks = [
+  { name: 'Home', link: '/home' },
+  { name: 'About Us', link: '/about' },
+  { name: 'Services', link: '/services' },
+  { name: 'Solutions', link: '/solutions' },
+]
 const infoLinks = ['Contacts', 'Out team', 'Blog', 'FAQ']
 const serviceLinks = ['Pages', 'Elements', 'Site map', 'Pricing', 'FAQ']
 </script>
@@ -14,8 +19,8 @@ const serviceLinks = ['Pages', 'Elements', 'Site map', 'Pricing', 'FAQ']
       <div class="footer-links">
         <div class="footer-links-container">
           <h3 class="footer-links__title">About</h3>
-          <AtomHeaderLink v-for="itemLink in aboutLinks" :key="itemLink" :link="itemLink">{{
-            itemLink
+          <AtomHeaderLink v-for="itemLink in aboutLinks" :key="itemLink.name" :link="itemLink.link">{{
+            itemLink.name
           }}</AtomHeaderLink>
         </div>
 

@@ -68,6 +68,17 @@ const servicesCardsCollection = [
 </script>
 
 <template>
+  <section class="service-links">
+    <div class="service-link-container">
+      <AtomDivideLink
+        :links="[
+          { name: 'Home', link: '/home' },
+          { name: 'Services', link: '/services' },
+        ]"
+      />
+    </div>
+  </section>
+
   <section class="service-header">
     <div class="service-header__small-title">Services</div>
     <AtomBigTitle class="service-header__title">Data Analytics Services</AtomBigTitle>
@@ -96,6 +107,14 @@ const servicesCardsCollection = [
 </template>
 
 <style lang="scss" scoped>
+.service-links {
+  @apply flex items-center justify-center w-full py-5 dark:bg-secondary/95;
+}
+
+.service-link-container {
+  @apply flex w-full items-start max-w-[57.8125%];
+}
+
 .service-header {
   @apply max-w-[730px] w-full flex flex-col items-center gap-y-4 mt-25;
   // .service-header__small-title

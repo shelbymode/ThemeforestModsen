@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     AtomCircleAvatar: typeof import('./src/ui/components/atoms/avatars/AtomCircleAvatar.vue')['default']
     AtomCircleButton: typeof import('./src/ui/components/atoms/buttons/AtomCircleButton.vue')['default']
     AtomDirection: typeof import('./src/ui/components/atoms/directions/AtomDirection.vue')['default']
+    AtomDivideLink: typeof import('./src/ui/components/atoms/links/AtomDivideLink.vue')['default']
     AtomDoubleSwitch: typeof import('./src/ui/components/atoms/switches/AtomDoubleSwitch.vue')['default']
     AtomDropdown: typeof import('./src/ui/components/atoms/dropdowns/AtomDropdown.vue')['default']
     AtomHeaderLink: typeof import('./src/ui/components/atoms/links/AtomHeaderLink.vue')['default']
@@ -37,6 +38,10 @@ declare module '@vue/runtime-core' {
     MoleculeStatsServiceSection: typeof import('./src/ui/components/molecules/MoleculeStatsServiceSection.vue')['default']
     MoleculeSubscribeSection: typeof import('./src/ui/components/molecules/MoleculeSubscribeSection.vue')['default']
     OgranismHomeBenefits: typeof import('./src/ui/components/organismes/Home/OgranismHomeBenefits.vue')['default']
+    OrganismAboutCustomers: typeof import('./src/ui/components/organismes/About/OrganismAboutCustomers.vue')['default']
+    OrganismAboutCustomersReviews: typeof import('./src/ui/components/organismes/About/OrganismAboutCustomersReviews.vue')['default']
+    OrganismAboutPromo: typeof import('./src/ui/components/organismes/About/OrganismAboutPromo.vue')['default']
+    OrganismContactUs: typeof import('./src/ui/components/organismes/OrganismContactUs.vue')['default']
     OrganismHomeAdditional: typeof import('./src/ui/components/organismes/Home/OrganismHomeAdditional.vue')['default']
     OrganismHomeOurBlog: typeof import('./src/ui/components/organismes/Home/OrganismHomeOurBlog.vue')['default']
     OrganismHomePresentation: typeof import('./src/ui/components/organismes/Home/OrganismHomePresentation.vue')['default']
@@ -53,5 +58,6 @@ declare module '@vue/runtime-core' {
     TemplateFooter2: typeof import('./src/ui/components/templates/TemplateFooter2.vue')['default']
     TemplateHeader: typeof import('./src/ui/components/templates/TemplateHeader.vue')['default']
     TemplatePage: typeof import('./src/ui/components/templates/TemplatePage.vue')['default']
+    TemplatePageContainer: typeof import('./src/ui/components/templates/TemplatePageContainer.vue')['default']
   }
 }
