@@ -29,6 +29,8 @@ declare module '@vue/runtime-core' {
     AtomText: typeof import('./src/ui/components/atoms/text/AtomText.vue')['default']
     AtomToggleDarkMode: typeof import('./src/ui/components/atoms/switches/AtomToggleDarkMode.vue')['default']
     MoleculeBlogCard: typeof import('./src/ui/components/molecules/cards/MoleculeBlogCard.vue')['default']
+    MoleculeContactUsForm: typeof import('./src/ui/components/molecules/MoleculeContactUsForm.vue')['default']
+    MoleculeContactUsInfo: typeof import('./src/ui/components/molecules/MoleculeContactUsInfo.vue')['default']
     MoleculeHelpSection: typeof import('./src/ui/components/molecules/MoleculeHelpSection.vue')['default']
     MoleculePriceCard: typeof import('./src/ui/components/molecules/cards/MoleculePriceCard.vue')['default']
     MoleculeReviewCardIn: typeof import('./src/ui/components/molecules/cards/MoleculeReviewCardIn.vue')['default']
