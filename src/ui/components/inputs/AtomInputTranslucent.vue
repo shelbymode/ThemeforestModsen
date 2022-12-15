@@ -12,6 +12,7 @@ const props = withDefaults(
     statusValidation?: 'inactive' | 'initial-error' | 'dirty-error' | 'correct'
     commonClasses?: string
     inactiveClasses?: string
+    activeClasses?: string
     errorClasses?: string
     successClasses?: string
     errorLabelClasses?: string
@@ -23,6 +24,7 @@ const props = withDefaults(
     statusValidation: 'inactive',
     type: 'text',
     commonClasses: '',
+    activeClasses: '',
     inactiveClasses: '',
     errorClasses: '',
     successClasses: '',
@@ -30,8 +32,9 @@ const props = withDefaults(
   }
 )
 const customClasses: IInputClasses = {
-  commonClasses: `${props.commonClasses} border-b-2 bg-transparent rounded-none outline-none`,
+  commonClasses: `${props.commonClasses} pb-2 pl-1 border-b-2 font-bold bg-transparent placeholder:(font-normal) rounded-none outline-none`,
   inactiveClasses: `${props.inactiveClasses} border-black`,
+  activeClasses: `${props.activeClasses}`,
   errorClasses: `${props.errorClasses} border-cRed`,
   successClasses: `${props.successClasses} border-emerald`,
 }

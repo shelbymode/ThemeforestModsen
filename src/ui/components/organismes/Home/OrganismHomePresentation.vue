@@ -66,7 +66,7 @@ const labelStats = [
       </AtomText>
     </div>
 
-    <img src="../../../../../assets/images/clients-logos-section.png" class="stats__clients" />
+    <AtomStatsClient />
   </section>
 </template>
 

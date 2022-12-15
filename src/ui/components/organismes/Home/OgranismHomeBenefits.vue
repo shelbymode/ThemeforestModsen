@@ -35,13 +35,17 @@ const dataAnalyticsCard = {
 
       <div class="benefits__cards">
         <div class="benefits__high-wrapper">
-          <MoleculeServiceCard :title="machineLearningCard.title" :text="machineLearningCard.text">
+          <MoleculeServiceCard
+            class="benefits__card"
+            :title="machineLearningCard.title"
+            :text="machineLearningCard.text"
+          >
             <template #icon>
               <BrainIcon />
             </template>
           </MoleculeServiceCard>
 
-          <MoleculeServiceCard :title="accessControlCard.title" :text="accessControlCard.text">
+          <MoleculeServiceCard class="benefits__card" :title="accessControlCard.title" :text="accessControlCard.text">
             <template #icon>
               <AccessControlIcon />
             </template>
@@ -49,13 +53,13 @@ const dataAnalyticsCard = {
         </div>
 
         <div class="benefits__low-wrapper">
-          <MoleculeServiceCard :title="embedAnalyticsCard.title" :text="embedAnalyticsCard.text">
+          <MoleculeServiceCard class="benefits__card" :title="embedAnalyticsCard.title" :text="embedAnalyticsCard.text">
             <template #icon>
               <EmbedAnalyticsIcon />
             </template>
           </MoleculeServiceCard>
 
-          <MoleculeServiceCard :title="dataAnalyticsCard.title" :text="dataAnalyticsCard.text">
+          <MoleculeServiceCard class="benefits__card" :title="dataAnalyticsCard.title" :text="dataAnalyticsCard.text">
             <template #icon>
               <DataAnalyticsIcon />
             </template>

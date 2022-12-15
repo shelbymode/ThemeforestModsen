@@ -22,7 +22,7 @@ const mulitiTab = ref('')
 <template>
   <section class="testimonials">
     <header class="testimonials__header">
-      <AtomMiddleTitle class="testimonials__title">Testimonials</AtomMiddleTitle>
+      <AtomMiddleTitle class="testimonials__title">What our customers say</AtomMiddleTitle>
       <div class="testimonials__arrows">
         <AtomButton class="testimonials__arrow">
           <span class="testimonials__arrow-left i-ic-outline-arrow-right-alt"
@@ -34,21 +34,22 @@ const mulitiTab = ref('')
     </header>
 
     <main class="testimonials__content">
-      <MoleculeReviewCardIn
+      <MoleculeReviewCardOut
         v-for="cardReview in cardReviews"
         :key="cardReview.name"
+        class="testimonials__card"
         :name="cardReview.name"
         :position="cardReview.position"
         :text="cardReview.text"
       >
-      </MoleculeReviewCardIn>
+      </MoleculeReviewCardOut>
     </main>
   </section>
 </template>
 
 <style lang="scss" scoped>
 .testimonials {
-  @apply flex flex-col items-left w-full max-w-[57.8125%] gap-y-22 my-30;
+  @apply flex flex-col items-left w-full max-w-[57.8125%] gap-y-22 pt-30 pb-15 mb-15 overflow-x-hidden;
 
   // .testimonials__header
 
@@ -83,7 +84,13 @@ const mulitiTab = ref('')
   // .testimonials__content
 
   &__content {
-    @apply w-full flex justify-between;
+    @apply w-full flex gap-x-[2%] justify-between;
+  }
+
+  // .testimonials__card
+
+  &__card {
+    @apply min-w-[49%];
   }
 }
 </style>

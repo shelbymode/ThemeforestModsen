@@ -1,5 +1,14 @@
 <script setup lang="ts">
-const navigationLinks = ['Home', 'Solutions', 'Blog', 'Contacts', 'Our team', 'About Us', 'Services', 'FAQ']
+const navigationLinks = [
+  { name: 'Home', link: '/home' },
+  { name: 'Solutions', link: '/solutions' },
+  { name: 'Blog', link: '/blog' },
+  { name: 'Contacts', link: '/contacts' },
+  { name: 'Our team', link: '/team' },
+  { name: 'About Us', link: '/about' },
+  { name: 'Services', link: '/services' },
+  { name: 'FAQ', link: '/faq' },
+]
 const serviceLinks = ['Pages', 'Elements', 'FAQ', 'Pricing', 'Site map']
 </script>
 
@@ -29,8 +38,8 @@ const serviceLinks = ['Pages', 'Elements', 'FAQ', 'Pricing', 'Site map']
       <div class="navigation">
         <div class="navigation-links">
           <h3 class="navigation-links__title">Quick link</h3>
-          <AtomHeaderLink v-for="itemLink in navigationLinks" :key="itemLink" :link="itemLink">{{
-            itemLink
+          <AtomHeaderLink v-for="itemLink in navigationLinks" :key="itemLink.name" :link="itemLink.link">{{
+            itemLink.name
           }}</AtomHeaderLink>
         </div>
 

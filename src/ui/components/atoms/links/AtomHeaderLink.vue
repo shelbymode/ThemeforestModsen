@@ -45,10 +45,9 @@ const props = withDefaults(defineProps<IDirectionControl>(), {
   @apply dark:hover:(text-neutral-500);
 }
 .active {
-  @apply text-black font-bold;
-  @apply hover:(font-semibold);
-  @apply dark:(text-white border-b-2);
-  @apply dark:hover:(text-cGray font-semibold border-transparent);
+  @apply text-black font-bold border-b-2 border-transparent;
+  @apply dark:(text-white border-b-2 border-white);
+  @apply dark:hover:(text-cGray border-transparent);
 }
 .icon {
   @apply i-ic-outline-arrow-right-alt text-3xl;
