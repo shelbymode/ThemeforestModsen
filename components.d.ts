@@ -54,6 +54,7 @@ declare module '@vue/runtime-core' {
     OrganismBlogPost: typeof import('./src/ui/components/organismes/Blog/OrganismBlogPost.vue')['default']
     OrganismBlogRelatedPosts: typeof import('./src/ui/components/organismes/Blog/OrganismBlogRelatedPosts.vue')['default']
     OrganismBlogSearch: typeof import('./src/ui/components/organismes/Blog/OrganismBlogSearch.vue')['default']
+    OrganismBlogTags: typeof import('./src/ui/components/organismes/Blog/OrganismBlogTags.vue')['default']
     OrganismContactUs: typeof import('./src/ui/components/organismes/OrganismContactUs.vue')['default']
     OrganismHomeAdditional: typeof import('./src/ui/components/organismes/Home/OrganismHomeAdditional.vue')['default']
     OrganismHomeOurBlog: typeof import('./src/ui/components/organismes/Home/OrganismHomeOurBlog.vue')['default']

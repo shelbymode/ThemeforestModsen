@@ -1,4 +1,20 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const tags = [
+  'App',
+  'Management',
+  'CMR',
+  'Big data',
+  'Media',
+  'Future',
+  'CIO',
+  'Startup',
+  'Team',
+  'Data',
+  'Data analytics',
+  'Information security',
+  'Proxy',
+]
+</script>
 
 <template>
   <TemplatePage>
@@ -25,7 +41,9 @@
           <OrganismBlogCategories />
         </template>
 
-        <template #tags></template>
+        <template #tags>
+          <OrganismBlogTags :tags="tags" />
+        </template>
       </TemplateBlogPageContent>
     </main>
   </TemplatePage>

@@ -71,7 +71,6 @@
   // .blog-page-container__tags
 
   &__tags {
-    @apply h-[130px] border-2 border-red-500;
   }
 }
 </style>
