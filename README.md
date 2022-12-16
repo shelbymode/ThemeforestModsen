@@ -12,9 +12,10 @@
 ### Main libs
 
 - [Pinia](https://pinia.vuejs.org/) - store manager
-- [ZOD](https://github.com/colinhacks/zod) - typescript first schema validation
-- [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
+- [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs (hooks)
 - [Neverthrow](https://github.com/neverthrow) - types safe handling errors
+- [Vuelidate](https://vuelidate-next.netlify.app/) - form validation
+- [ZOD](https://github.com/colinhacks/zod) - typescript first schema validation
 
 ### CSS Engine
 
