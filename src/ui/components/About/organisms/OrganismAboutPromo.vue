@@ -27,7 +27,7 @@ const labelStats = [
       class="about-links__links"
       :links="[
         { name: 'Home', link: '/home' },
-        { name: 'About Us', link: '/about' },
+        { name: 'About', link: '/about' },
       ]"
     />
   </section>

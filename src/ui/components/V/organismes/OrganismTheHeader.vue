@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useChangeCase } from '@vueuse/integrations/useChangeCase'
 
-const linksList = ['home', 'solutions', 'pages', 'elements', 'blog', 'contacts']
+const linksList = ['home', 'services', 'about', 'blog', 'contacts', 'solutions']
 
 interface TLink {
   name: string
