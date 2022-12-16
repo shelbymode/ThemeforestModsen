@@ -10,9 +10,9 @@
       </main>
 
       <slot name="demo"></slot>
-    </TemplatePageContainer>
 
-    <AtomToggleDarkMode />
+      <AtomToggleDarkMode class="dark-toggler" />
+    </TemplatePageContainer>
   </header>
 </template>
 
@@ -28,6 +28,10 @@
   }
 }
 .header-container {
-  @apply flex h-full items-center justify-between;
+  @apply flex relative h-full items-center justify-between;
+}
+
+.dark-toggler {
+  @apply absolute right-0 translate-x-[200%];
 }
 </style>

@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <MoleculesAboutLinks />
-  <MoleculesAboutCards />
-  <MoleculesAboutStats />
+  <MoleculeAboutLinks />
+  <MoleculeAboutCards />
+  <MoleculeAboutStats />
   <MoleculeAboutCustomers />
 </template>
 
