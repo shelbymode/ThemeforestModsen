@@ -1,0 +1,14 @@
+.blog-links {
+  @apply flex flex-col items-center justify-center w-full gap-y-5 py-36 bg-cBackground;
+  @apply dark:(bg-secondary/95);
+  // .blog-links__title
+
+  &__title {
+    @apply  max-w-180 text-center dark:text-white;
+  }
+
+  // .blog-links__links
+
+  &__links {
+  }
+}
