@@ -2,14 +2,14 @@
 
 <template>
   <div class="benefits-container">
-    <section class="benefits">
+    <TemplatePageContainer class="benefits">
       <MoleculeHomeBenefitsContent />
 
       <div class="benefits__cards">
         <MoleculeHomeBenefitsHigh />
         <MoleculeHomeBenefitsLow />
       </div>
-    </section>
+    </TemplatePageContainer>
   </div>
 </template>
 
@@ -18,7 +18,7 @@
   @apply w-full flex justify-center bg-cBackground;
 }
 .benefits {
-  @apply flex items-center justify-between  w-full max-w-[57.8125%] py-37;
+  @apply flex items-center justify-between py-37;
 
   // .benefits__cards
 

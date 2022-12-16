@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="learn-more">
+  <TemplatePageContainer class="learn-more">
     <AtomBigTitle class="learn-more__title">
       Find true power in your data with <span class="learn-more__special-title">Ensome</span>
     </AtomBigTitle>
@@ -10,7 +10,7 @@
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque lauda, totam rem aperiam,
       eaque ipsa quae ab illo inventore veritatis et quasi.
     </AtomText>
-  </section>
+  </TemplatePageContainer>
 
   <div class="learn-more__image-wrapper">
     <img src="https://api.lorem.space/image/fashion?w=1920&h=590&hash=kmt2qny0" class="learn-more__image" />
@@ -20,7 +20,7 @@
 
 <style lang="scss" scoped>
 .learn-more {
-  @apply flex justify-between max-w-[57.8125%] w-full items-start my-18;
+  @apply flex justify-between items-start my-18;
   // .learn-more__title
 
   &__title {

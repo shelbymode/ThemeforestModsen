@@ -15,7 +15,7 @@ const aboutCards = [
 
 <template>
   <section class="about-cards">
-    <div class="about-links-container">
+    <TemplatePageContainer class="about-links-container">
       <div v-for="card in aboutCards" :key="card.title" class="card">
         <div class="card__content">
           <AtomBigTitle class="card__title">{{ card.title }}</AtomBigTitle>
@@ -23,7 +23,7 @@ const aboutCards = [
         </div>
         <img class="card__image" src="https://api.lorem.space/image/fashion?w=635&h=425&hash=66a90khq" alt="random" />
       </div>
-    </div>
+    </TemplatePageContainer>
   </section>
 </template>
 
@@ -33,7 +33,7 @@ const aboutCards = [
 }
 
 .about-links-container {
-  @apply flex flex-wrap gap-y-35 w-full max-w-[57.8125%];
+  @apply flex flex-wrap gap-y-35;
 }
 
 .card {

@@ -7,7 +7,7 @@ const labelStats = [
 </script>
 
 <template>
-  <section class="stats">
+  <TemplatePageContainer class="stats">
     <AtomMiddleTitle class="stats__title">We provide services that guarantee your success</AtomMiddleTitle>
 
     <div class="stats__content">
@@ -27,12 +27,12 @@ const labelStats = [
     </div>
 
     <AtomStatsClient />
-  </section>
+  </TemplatePageContainer>
 </template>
 
 <style lang="scss" scoped>
 .stats {
-  @apply max-w-[57.8125%] w-full flex flex-col items-start pt-30 pb-20;
+  @apply flex flex-col items-start pt-30 pb-20;
 
   // .stats__title
 

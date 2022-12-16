@@ -9,7 +9,7 @@ const labelStats = [
 
 <template>
   <section class="about-stats">
-    <div class="about-stats-container">
+    <TemplatePageContainer class="about-stats-container">
       <AtomBigTitle class="about-stats__title">Ensome in numbers</AtomBigTitle>
       <div class="about-stats__stats">
         <template v-for="labelStat in labelStats" :key="labelStat.text">
@@ -17,7 +17,7 @@ const labelStats = [
           <div class="about-stats__stat-divider"></div>
         </template>
       </div>
-    </div>
+    </TemplatePageContainer>
   </section>
 </template>
 
@@ -52,6 +52,6 @@ const labelStats = [
 }
 
 .about-stats-container {
-  @apply flex flex-col items-center gap-y-15 w-full max-w-[57.8125%];
+  @apply flex flex-col items-center gap-y-15;
 }
 </style>

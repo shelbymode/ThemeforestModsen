@@ -69,7 +69,7 @@ const servicesCardsCollection = [
 
 <template>
   <section class="service-collection">
-    <div class="service-collection-wrapper">
+    <TemplatePageContainer class="service-collection-container">
       <MoleculeServiceCard
         v-for="serviceCard in servicesCardsCollection"
         :key="serviceCard.title"
@@ -82,7 +82,7 @@ const servicesCardsCollection = [
           <component :is="serviceCard.icon"></component>
         </template>
       </MoleculeServiceCard>
-    </div>
+    </TemplatePageContainer>
   </section>
 </template>
 
@@ -93,7 +93,7 @@ const servicesCardsCollection = [
     @apply min-w-[470px] p-0;
   }
 }
-.service-collection-wrapper {
-  @apply flex w-full justify-center max-w-[57.8125%] flex-wrap gap-x-26 gap-y-22;
+.service-collection-container {
+  @apply flex justify-center flex-wrap gap-x-26 gap-y-22;
 }
 </style>

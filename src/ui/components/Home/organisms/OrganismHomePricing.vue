@@ -109,7 +109,7 @@ const selectCurrentCard = (idx: number) => {
 </script>
 
 <template>
-  <section class="price">
+  <TemplatePageContainer class="price">
     <AtomMiddleTitle class="price__title">Our pricing</AtomMiddleTitle>
     <div class="price-container">
       <MoleculePriceCard
@@ -121,12 +121,12 @@ const selectCurrentCard = (idx: number) => {
         @update:select-card="selectCurrentCard"
       />
     </div>
-  </section>
+  </TemplatePageContainer>
 </template>
 
 <style lang="scss" scoped>
 .price {
-  @apply flex flex-col items-start gap-y-12 max-w-[57.8125%] w-full mb-30;
+  @apply flex flex-col items-start gap-y-12 mb-30;
 
   // .price__title
 

@@ -2,7 +2,7 @@
 
 <template>
   <footer class="footer">
-    <div class="footer-container">
+    <TemplatePageContainer class="footer-container">
       <div class="flex justify-between items-start w-full">
         <div class="footer__social">
           <slot name="logo"></slot>
@@ -22,7 +22,7 @@
       <div class="additional">
         <slot name="addtional"></slot>
       </div>
-    </div>
+    </TemplatePageContainer>
   </footer>
 </template>
 
@@ -50,7 +50,7 @@
   }
 }
 .footer-container {
-  @apply min-w-[57.8125%] flex flex-col gap-y-15 items-start;
+  @apply flex flex-col gap-y-15 items-start;
 }
 
 .additional {

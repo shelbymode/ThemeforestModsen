@@ -8,7 +8,7 @@ const labelStats = [
 
 <template>
   <section class="service-stats">
-    <div class="service-stats-container">
+    <TemplatePageContainer class="service-stats-container">
       <AtomMiddleTitle class="service-stats__title">We provide services that guarantee your success</AtomMiddleTitle>
 
       <div class="service-stats__content">
@@ -29,7 +29,7 @@ const labelStats = [
       </div>
 
       <AtomStatsClient />
-    </div>
+    </TemplatePageContainer>
   </section>
 </template>
 
@@ -60,6 +60,6 @@ const labelStats = [
   }
 }
 .service-stats-container {
-  @apply flex flex-col items-center max-w-[57.8125%] gap-y-12 w-full;
+  @apply flex flex-col items-center gap-y-12;
 }
 </style>

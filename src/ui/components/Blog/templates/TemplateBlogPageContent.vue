@@ -30,7 +30,7 @@
 
 <style lang="scss" scoped>
 .blog-page-container {
-  @apply flex-row justify-between items-start py-30;
+  @apply flex flex-row justify-between items-start py-30;
   // .blog-page-container__content
 
   &__content {

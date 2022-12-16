@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="discover">
+  <TemplatePageContainer class="discover">
     <AtomBigTitle class="discover__title">
       The <span class="discover__special-title">newest</span> business analytics platform
     </AtomBigTitle>
@@ -13,12 +13,12 @@
       </AtomText>
       <AtomButton class="discover__button">Discover more</AtomButton>
     </div>
-  </section>
+  </TemplatePageContainer>
 </template>
 
 <style lang="scss" scoped>
 .discover {
-  @apply flex w-full py-30 max-w-[57.8125%] justify-between items-start;
+  @apply flex py-30 justify-between items-start;
 
   // .discover__title
 

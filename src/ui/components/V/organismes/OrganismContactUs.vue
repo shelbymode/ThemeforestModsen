@@ -2,7 +2,7 @@
 
 <template>
   <div class="contact-us">
-    <TemplatePageContainer class="contact-us__container">
+    <TemplatePageContainer class="contact-us-container">
       <MoleculeContactUsInfo class="contact-us__info" />
       <MoleculeContactUsForm class="contact-us__form" />
     </TemplatePageContainer>
@@ -22,7 +22,7 @@
   &__form {
   }
 }
-.contact-us__container {
-  @apply flex flex-row w-full justify-between items-start;
+.contact-us-container {
+  @apply flex flex-row justify-between items-start;
 }
 </style>

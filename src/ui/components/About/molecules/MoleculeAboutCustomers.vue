@@ -32,6 +32,6 @@
   }
 }
 .about-customers-container {
-  @apply items-start gap-y-8;
+  @apply flex flex-col items-start gap-y-8;
 }
 </style>

@@ -2,7 +2,7 @@
 
 <template>
   <header class="header">
-    <div class="header-container">
+    <TemplatePageContainer class="header-container">
       <slot name="logo"></slot>
 
       <main class="header__links">
@@ -10,7 +10,7 @@
       </main>
 
       <slot name="demo"></slot>
-    </div>
+    </TemplatePageContainer>
 
     <AtomToggleDarkMode />
   </header>
@@ -28,6 +28,6 @@
   }
 }
 .header-container {
-  @apply flex h-full items-center justify-between min-w-[57.8125%];
+  @apply flex h-full items-center justify-between;
 }
 </style>

@@ -16,7 +16,7 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
 
 <template>
   <section class="subscribe">
-    <div class="subscribe-container">
+    <TemplatePageContainer class="subscribe-container">
       <div class="subscribe__content">
         <AtomMiddleTitle class="subscribe__title">Subscribe to our newsletter</AtomMiddleTitle>
         <AtomText class="subscribe__text">
@@ -36,7 +36,7 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
         />
         <AtomButton :is-disabled="!isFormValid" class="subscribe-email__button"> Send </AtomButton>
       </div>
-    </div>
+    </TemplatePageContainer>
   </section>
 </template>
 
@@ -65,7 +65,7 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
   }
 }
 .subscribe-container {
-  @apply flex w-full items-center justify-between py-20 max-w-[57.8125%];
+  @apply flex items-center justify-between py-20;
 }
 .subscribe-email {
   // .subscribe-email__input-email
