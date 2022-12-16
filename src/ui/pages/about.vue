@@ -4,7 +4,6 @@
   <TemplatePage>
     <main class="about">
       <OrganismAboutPromo />
-      <OrganismAboutCustomers />
       <OrganismAboutCustomersReviews />
       <OrganismContactUs />
       <MoleculeSubscribeSection />
