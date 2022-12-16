@@ -23,6 +23,7 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
         </AtomText>
       </div>
+
       <div class="subscribe-email" flex items-center gap-x-3>
         <AtomInput
           id="email"
@@ -32,7 +33,7 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
           type="text"
           :status-validation="getStatusValidation('email')"
           @input="touch('email')"
-        ></AtomInput>
+        />
         <AtomButton :is-disabled="!isFormValid" class="subscribe-email__button"> Send </AtomButton>
       </div>
     </div>

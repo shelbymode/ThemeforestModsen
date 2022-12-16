@@ -84,6 +84,7 @@ const selectCurrentCard = (idx: number) => {
 <style lang="scss" scoped>
 .card-price {
   @apply max-w-[255px] flex flex-col items-start p-5 gap-y-9 duration-600;
+  @apply hover:(cursor-pointer);
   &--selected {
     @apply bg-primary;
   }
