@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 export interface IDoubleSwitch {
   name: string
   left: {
@@ -35,13 +34,13 @@ const mulitiTab2 = ref('')
       </button>
       <AtomButton class="bg-primary text-white hover:bg-primary/80">
         Watch the demo
-        <span class="text-2xl" i-fluent-play-circle-24-regular></span>
+        <span class="text-2xl" i-fluent-play-circle-24-regular />
       </AtomButton>
 
       <AtomCircleButton class="bg-primary text-white hover:bg-primary/80">Learn more</AtomCircleButton>
       <AtomButtonSearch class="bg-primary text-white hover:bg-primary/80" />
-      <AtomDirection class="bg-tertiary"></AtomDirection>
-      <AtomDoubleSwitch v-bind="dSwitchOptions"></AtomDoubleSwitch>
+      <AtomDirection class="bg-tertiary" />
+      <AtomDoubleSwitch v-bind="dSwitchOptions" />
       <AtomLink link="/page">Read more</AtomLink>
       <AtomHeaderLink link="/">Home</AtomHeaderLink>
       <AtomTag link="/">Home</AtomTag>
@@ -49,16 +48,16 @@ const mulitiTab2 = ref('')
       <MoleculeReviewCardOut
         name="Alex Bern"
         position="CEO by PixelPerfect"
-        text="Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum."
-      >
-      </MoleculeReviewCardOut>
+        text="Ut enim ad minima veniam, quis
+      nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
+      vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum."
+      />
 
       <MoleculeReviewCardIn
         name="Alex Bern"
         position="CEO by PixelPerfect"
         text="Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum."
-      >
-      </MoleculeReviewCardIn>
+      />
 
       <AtomTabsSquare
         v-model="mulitiTab"
@@ -67,7 +66,7 @@ const mulitiTab2 = ref('')
           { id: 'mo', value: 'Mo', active: true },
           { id: 'yr', value: 'Yr' },
         ]"
-      ></AtomTabsSquare>
+      />
 
       <AtomTabsRounded
         v-model="mulitiTab2"
@@ -76,7 +75,7 @@ const mulitiTab2 = ref('')
           { id: 'mo2', value: 'Monthly', active: true },
           { id: 'yr2', value: 'Yearly fdfd Weekly' },
         ]"
-      ></AtomTabsRounded>
+      />
     </div>
   </main>
 </template>
