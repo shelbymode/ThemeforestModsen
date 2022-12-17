@@ -35,7 +35,7 @@ const leave = (el: HTMLElement) => (el.style.height = '0')
         {{ props.title }}
       </h3>
       <slot name="control-icon">
-        <span class="dropdown__icon" :class="{ 'rotate-z--180 ': isRevealed }"></span>
+        <span class="dropdown__icon" :class="{ 'rotate-z--180 ': isRevealed }" />
       </slot>
     </header>
 

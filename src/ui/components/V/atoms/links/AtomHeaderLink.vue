@@ -27,7 +27,7 @@ const props = withDefaults(defineProps<IDirectionControl>(), {
     >
       <slot />
     </router-link>
-    <span v-if="props.icon" class="icon"></span>
+    <span v-if="props.icon" class="icon" />
   </button>
 </template>
 

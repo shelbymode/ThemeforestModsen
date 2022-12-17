@@ -6,7 +6,7 @@ const props = defineProps<{
 
 <template>
   <section class="blog-tags">
-    <AtomMiddleTitle class="blog-tags__title">Tags</AtomMiddleTitle>
+    <AtomSmallTitle class="blog-tags__title">Tags</AtomSmallTitle>
     <div class="blog-tags__content">
       <AtomTag v-for="tag in tags" :key="tag">{{ tag }}</AtomTag>
     </div>

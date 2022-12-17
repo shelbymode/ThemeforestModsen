@@ -60,3 +60,27 @@ body {
     transform: scale(1) !important;
   }
 }
+
+.scroll-invisible {
+  overflow: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

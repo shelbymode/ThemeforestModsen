@@ -19,7 +19,7 @@ const popularPosts = [
 </script>
 <template>
   <div class="popular-posts">
-    <AtomMiddleTitle class="popular-posts__title">Popular posts</AtomMiddleTitle>
+    <AtomSmallTitle class="popular-posts__title">Popular posts</AtomSmallTitle>
     <div class="popular-posts__cards">
       <MoleculeBlogPopularPost
         v-for="post in popularPosts"

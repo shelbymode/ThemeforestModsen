@@ -4,7 +4,7 @@
   <label class="toggle-switch__label">
     <input :checked="!isDark" type="checkbox" class="toggle-switch__input" @click="toggleDark()" />
     <div class="toggle-switch__slider">
-      <span class="toggle-switch__slider-weather"></span>
+      <span class="toggle-switch__slider-weather" />
     </div>
   </label>
 </template>

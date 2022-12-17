@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<IPropsButton>(), {
 
 <template>
   <button :disabled="isDisabled" class="button-search">
-    <span i-fluent-search-28-regular></span>
+    <span i-fluent-search-28-regular />
   </button>
 </template>
 

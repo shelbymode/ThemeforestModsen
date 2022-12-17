@@ -27,7 +27,7 @@ const isRevealed = ref(false)
       {{ props.rootCategory.category.name }}
     </button>
 
-    <span v-if="props.rootCategory.subCategories" class="category-slider__icon"></span>
+    <span v-if="props.rootCategory.subCategories" class="category-slider__icon" />
 
     <Transition name="side-slader" mode="out-in">
       <template v-if="props.rootCategory.subCategories && isRevealed">

@@ -2,9 +2,9 @@
 
 <template>
   <div class="container-page">
-    <OrganismTheHeader></OrganismTheHeader>
+    <OrganismTheHeader />
     <slot />
-    <OrganismTheFooter></OrganismTheFooter>
+    <OrganismTheFooter />
   </div>
 </template>
 

@@ -59,10 +59,6 @@ const isErrorSignal = computed(
 )
 
 const isInactiveSignal = computed(() => waitCondition.includes(props.statusValidation))
-
-setInterval(() => {
-  console.log(configClasses.errorLabelClasses, isErrorSignal.value)
-}, 5000)
 </script>
 
 <template>

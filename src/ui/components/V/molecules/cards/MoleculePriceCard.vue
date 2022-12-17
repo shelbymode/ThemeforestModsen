@@ -60,7 +60,7 @@ const selectCurrentCard = (idx: number) => {
         currentTariff?.price
       }}</span>
 
-      <AtomTabsSquare v-model="tabValue" :name="props.options.title" :tab-list="tabListOptions"></AtomTabsSquare>
+      <AtomTabsSquare v-model="tabValue" :name="props.options.title" :tab-list="tabListOptions" />
     </div>
 
     <AtomButton class="card-price__button" :class="{ 'card-price__button--selected': props.options.isSelected }">

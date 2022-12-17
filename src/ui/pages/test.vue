@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { required, email, minLength, helpers, sameAs } from '@vuelidate/validators'
 import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
-import { IInputClasses } from '../components/inputs/AtomInput.vue'
+import { IInputClasses } from '../components/V/atoms/inputs/AtomInput.vue'
 
 const rulesEmail = computed(() => ({
   email: {
@@ -60,7 +60,7 @@ const customClasses: IInputClasses = {
         title-active-classes="text-primary"
       />
 
-      <MoleculeSection></MoleculeSection>
+      <MoleculeSection />
     </div>
   </main>
 </template>

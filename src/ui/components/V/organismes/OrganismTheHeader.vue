@@ -17,13 +17,17 @@ const generatedLinksList: TLink[] = linksList.map((word) => ({
 <template>
   <TemplateHeader>
     <template #logo>
-      <span class="icon"></span>
+      <span class="icon" />
     </template>
 
     <template #links>
-      <AtomHeaderLink v-for="linkItem in generatedLinksList" :key="linkItem.link" :link="linkItem.link">{{
-        linkItem.name
-      }}</AtomHeaderLink>
+      <AtomHeaderLink
+        v-for="linkItem in generatedLinksList"
+        :key="linkItem.link"
+        class="header-link"
+        :link="linkItem.link"
+        >{{ linkItem.name }}</AtomHeaderLink
+      >
     </template>
 
     <template #demo>
@@ -54,5 +58,8 @@ const generatedLinksList: TLink[] = linksList.map((word) => ({
   @apply hover:(bg-primary/80);
   @apply dark:(bg-white text-black);
   @apply dark:hover:(hover:bg-black hover:text-white);
+}
+.header-link {
+  @apply px-4 py-4;
 }
 </style>

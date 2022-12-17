@@ -68,7 +68,7 @@ const categories: ICategoryItem[] = [
 
 <template>
   <div class="blog-categories">
-    <AtomMiddleTitle class="blog-categories__title"></AtomMiddleTitle>
+    <AtomSmallTitle class="blog-categories__title">Categories</AtomSmallTitle>
     <ul relative>
       <AtomCategorySlider v-for="(category, idx) in categories" :key="idx" :root-category="category" />
     </ul>
@@ -76,5 +76,7 @@ const categories: ICategoryItem[] = [
 </template>
 
 <style lang="scss" scoped>
-@import './OrganismBlogCategories.scss';
+.blog-categories {
+  @apply flex flex-col gap-y-10;
+}
 </style>
