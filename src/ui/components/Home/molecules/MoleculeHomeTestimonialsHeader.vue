@@ -5,11 +5,11 @@
     <AtomMiddleTitle class="testimonials__title">Testimonials</AtomMiddleTitle>
 
     <div class="testimonials__arrows">
-      <AtomButton class="testimonials__arrow">
+      <AtomButton class="testimonials__arrow" aria-label="Left navigation">
         <span class="testimonials__arrow-left i-ic-outline-arrow-right-alt" />
       </AtomButton>
 
-      <AtomButton class="testimonials__arrow">
+      <AtomButton class="testimonials__arrow" aria-label="Right navigation">
         <span class="testimonials__right i-ic-outline-arrow-right-alt" />
       </AtomButton>
     </div>

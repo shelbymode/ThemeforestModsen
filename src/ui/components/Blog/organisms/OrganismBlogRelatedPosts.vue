@@ -19,5 +19,23 @@
 </template>
 
 <style lang="scss" scoped>
-@import './OrganismBlogRelatedPosts.scss';
+.related-posts {
+  @apply flex w-full flex-col items-start gap-y-9 py-15;
+
+  // .related-posts__title
+
+  &__title {
+  }
+
+  // .related-posts__cards
+
+  &__cards {
+    @apply flex flex-col items-start gap-y-10;
+  }
+
+  // .related-posts__card
+
+  &__card {
+  }
+}
 </style>

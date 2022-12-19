@@ -18,12 +18,12 @@ const props = withDefaults(
 </script>
 
 <template>
-  <button :disabled="isDisabled" class="link">
+  <div class="link">
     <router-link v-bind="$attrs" :class="{ 'element-disabled': isDisabled }" :to="props.link">
       <slot />
     </router-link>
     <span v-if="props.icon" class="icon text-sky"></span>
-  </button>
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -13,7 +13,11 @@
   </TemplatePageContainer>
 
   <div class="learn-more__image-wrapper">
-    <img src="https://api.lorem.space/image/fashion?w=1920&h=590&hash=kmt2qny0" class="learn-more__image" />
+    <img
+      src="https://api.lorem.space/image/fashion?w=1920&h=590&hash=kmt2qny0"
+      alt="Home learn more"
+      class="learn-more__image"
+    />
     <AtomCircleButton class="learn-more__button-learn-more">Learn more</AtomCircleButton>
   </div>
 </template>

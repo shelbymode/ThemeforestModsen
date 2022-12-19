@@ -6,7 +6,13 @@ const isEmpty = computed(() => inputValue.value === '')
 
 <template>
   <div class="blog-search">
-    <input v-model="inputValue" placeholder="Search..." class="blog-search__input-email" type="text" />
+    <input
+      v-model="inputValue"
+      aria-label="Search"
+      placeholder="Search..."
+      class="blog-search__input-email"
+      type="text"
+    />
     <AtomButton :is-disabled="isEmpty" class="blog-search__button">Search</AtomButton>
   </div>
 </template>

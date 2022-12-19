@@ -15,11 +15,11 @@ const props = withDefaults(
 <template>
   <div class="popular-post">
     <img :src="props.imgSrc" alt="" class="popular-post__image" />
-    <div class="popular-post__content">
+    <section class="popular-post__content">
       <AtomText class="popular-post__date">{{ props.date }}</AtomText>
       <p class="popular-post__text">{{ props.title }}</p>
       <AtomLink :link="props.link">Read more</AtomLink>
-    </div>
+    </section>
   </div>
 </template>
 

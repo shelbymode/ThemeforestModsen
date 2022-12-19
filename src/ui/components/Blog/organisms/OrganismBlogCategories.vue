@@ -69,9 +69,9 @@ const categories: ICategoryItem[] = [
 <template>
   <div class="blog-categories">
     <AtomSmallTitle class="blog-categories__title">Categories</AtomSmallTitle>
-    <ul relative>
+    <div relative>
       <AtomCategorySlider v-for="(category, idx) in categories" :key="idx" :root-category="category" />
-    </ul>
+    </div>
   </div>
 </template>
 

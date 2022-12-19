@@ -1,9 +1,12 @@
-<script setup lang="ts"></script>
-
+<script setup lang="ts">
+const { tag = 'h2' } = defineProps<{
+  tag?: 'h1' | 'h2' | 'h3'
+}>()
+</script>
 <template>
-  <h3 class="title-middle">
+  <component :is="tag" class="title-middle">
     <slot />
-  </h3>
+  </component>
 </template>
 
 <style lang="scss" scoped>

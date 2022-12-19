@@ -2,14 +2,14 @@
 const props = withDefaults(
   defineProps<{
     title: string
-    imgSrc?: string
     date: string
     text: string
-    linkInfo?: {
+    linkInfo: {
       to: string
       label: string
     }
     tagsInfo?: Record<string, boolean>
+    imgSrc?: string
   }>(),
   {
     imgSrc: 'https://api.lorem.space/image/game?w=685&h=235&hash=pjy9rusa',

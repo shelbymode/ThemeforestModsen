@@ -19,7 +19,7 @@ const contactsInfo = [
     <div class="contact-info-container">
       <template v-for="contactInfo in contactsInfo" :key="contactInfo.label">
         <div class="contact-info">
-          <h4 class="contact-info__label">{{ contactInfo.label }}</h4>
+          <h3 class="contact-info__label">{{ contactInfo.label }}</h3>
           <p class="contact-info__text">{{ contactInfo.text }}</p>
         </div>
       </template>

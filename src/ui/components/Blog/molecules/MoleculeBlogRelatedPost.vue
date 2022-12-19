@@ -5,7 +5,7 @@ const props = withDefaults(
     imgSrc?: string
     date: string
     text: string
-    linkInfo?: {
+    linkInfo: {
       to: string
       label: string
     }
@@ -20,11 +20,11 @@ const props = withDefaults(
   <div class="related-post">
     <img class="related-post__image" :src="props.imgSrc" alt="image" />
 
-    <div class="related-post__content">
+    <section class="related-post__content">
       <span class="related-post__date">{{ props.date }}</span>
       <h3 class="related-post__title">{{ title }}</h3>
       <p class="related-post__text">{{ text }}</p>
-    </div>
+    </section>
   </div>
 </template>
 

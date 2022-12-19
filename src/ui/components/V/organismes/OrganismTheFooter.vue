@@ -26,12 +26,16 @@ const serviceLinks = ['Pages', 'Elements', 'FAQ', 'Pricing', 'Site map']
     </template>
 
     <template #social-links>
-      <router-link to="/" class="social__icon i-carbon-logo-facebook"></router-link>
-      <router-link to="/" class="social__icon i-carbon-logo-twitter"></router-link>
-      <router-link to="/" class="social__icon i-carbon-logo-linkedin"></router-link>
-      <router-link to="/" class="social__icon i-carbon-logo-youtube"></router-link>
-      <router-link to="/" class="social__icon i-fluent-sport-basketball-24-filled"></router-link>
-      <router-link to="/" class="social__icon i-carbon-logo-instagram"></router-link>
+      <router-link aria-label="Social media" to="/" class="social__icon i-carbon-logo-facebook"></router-link>
+      <router-link aria-label="Social media" to="/" class="social__icon i-carbon-logo-twitter"></router-link>
+      <router-link aria-label="Social media" to="/" class="social__icon i-carbon-logo-linkedin"></router-link>
+      <router-link aria-label="Social media" to="/" class="social__icon i-carbon-logo-youtube"></router-link>
+      <router-link
+        aria-label="Social media"
+        to="/"
+        class="social__icon i-fluent-sport-basketball-24-filled"
+      ></router-link>
+      <router-link aria-label="Social media" to="/" class="social__icon i-carbon-logo-instagram"></router-link>
     </template>
 
     <template #links>

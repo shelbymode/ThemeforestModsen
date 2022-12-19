@@ -17,7 +17,7 @@ const isLinkExists = props.linkInfo && Object.keys(props.linkInfo).length > 0
     <slot name="icon">
       <span v-if="props?.iconClass" class="card__icon" :class="[props.iconClass]" />
     </slot>
-    <h3 class="card__title">{{ title }}</h3>
+    <h2 class="card__title">{{ title }}</h2>
     <p class="card__text">{{ text }}</p>
 
     <AtomLink v-if="isLinkExists" :link="linkInfo!.to">{{ linkInfo!.label }}</AtomLink>

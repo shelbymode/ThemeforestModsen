@@ -20,7 +20,7 @@ const mulitiTab = ref('')
 </script>
 
 <template>
-  <main class="testimonials__content">
+  <section class="testimonials__content">
     <MoleculeReviewCardIn
       v-for="cardReview in cardReviews"
       :key="cardReview.name"
@@ -28,7 +28,7 @@ const mulitiTab = ref('')
       :position="cardReview.position"
       :text="cardReview.text"
     />
-  </main>
+  </section>
 </template>
 
 <style lang="scss" scoped>

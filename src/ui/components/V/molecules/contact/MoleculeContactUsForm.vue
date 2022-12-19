@@ -78,7 +78,7 @@ const customClassesTranslucent: IInputClasses = {
     <form class="contact-form__form">
       <AtomInputTranslucent
         v-for="formInfo in formInfoAll"
-        id="email_id"
+        :id="formInfo.id"
         :key="formInfo.id"
         v-model="form[formInfo.field]"
         v-bind="customClassesTranslucent"

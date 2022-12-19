@@ -5,9 +5,9 @@
     <TemplatePageContainer class="header-container">
       <slot name="logo"></slot>
 
-      <main class="header__links">
+      <div class="header__links">
         <slot name="links"></slot>
-      </main>
+      </div>
 
       <slot name="demo"></slot>
 

@@ -21,24 +21,26 @@ const isRevealed = ref(false)
     :to="props.rootCategory.category.link"
     class="category-slider"
     @mouseenter="isRevealed = true"
+    @focus="isRevealed = true"
     @mouseleave="isRevealed = false"
+    @blur="isRevealed = false"
   >
-    <button class="category-slider__button">
+    <span class="category-slider__button">
       {{ props.rootCategory.category.name }}
-    </button>
+    </span>
 
     <span v-if="props.rootCategory.subCategories" class="category-slider__icon" />
 
     <Transition name="side-slader" mode="out-in">
       <template v-if="props.rootCategory.subCategories && isRevealed">
-        <ul class="category-slider__parent">
+        <div class="category-slider__parent">
           <AtomCategorySlider
-            v-for="rootCategory in props.rootCategory.subCategories"
-            :key="rootCategory.category.name"
+            v-for="rootCat in props.rootCategory.subCategories"
+            :key="rootCat.category.name"
             class="category-slider__child"
-            :root-category="rootCategory"
+            :root-category="rootCat"
           />
-        </ul>
+        </div>
       </template>
     </Transition>
   </RouterLink>

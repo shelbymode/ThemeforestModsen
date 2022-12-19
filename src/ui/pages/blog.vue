@@ -19,7 +19,7 @@ const tags = [
 <template>
   <TemplatePage>
     <main class="blog">
-      <OrganismBlogPost />
+      <MoleculeBlogPost />
       <TemplateBlogPageContent>
         <template #current-post>
           <OrganismBlogCurrentPost />

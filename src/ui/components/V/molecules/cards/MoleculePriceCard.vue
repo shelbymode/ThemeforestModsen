@@ -40,8 +40,8 @@ watch(
   }
 )
 
-const selectCurrentCard = (idx: number) => {
-  emit('update:select-card', idx)
+const selectCurrentCard = (index: number) => {
+  emit('update:select-card', index)
 }
 </script>
 
@@ -49,7 +49,9 @@ const selectCurrentCard = (idx: number) => {
   <div
     class="card-price shadow-card-3"
     :class="{ 'card-price--selected': props.options.isSelected }"
+    tabindex="0"
     @click="selectCurrentCard(props.idx)"
+    @keypress="selectCurrentCard(props.idx)"
   >
     <h3 class="card-price__title" :class="{ 'card-price__title--selected': props.options.isSelected }">
       {{ props.options.title }}
@@ -71,7 +73,7 @@ const selectCurrentCard = (idx: number) => {
       class="card-price__checks-wrapper"
       :class="{ 'card-price__checks-wrapper--selected': props.options.isSelected }"
     >
-      <div v-for="(check, idx) in props.options.checks" :key="idx" class="card-price__checks">
+      <div v-for="(check, index) in props.options.checks" :key="index" class="card-price__checks">
         <span class="card-price__check" :class="{ 'card-price__check--selected': props.options.isSelected }" />
         <p class="card-price__check-text" :class="{ 'card-price__check-text--selected': props.options.isSelected }">
           {{ check }}

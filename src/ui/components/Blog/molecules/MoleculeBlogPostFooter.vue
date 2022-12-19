@@ -28,9 +28,10 @@ const socialIcons = [
       <a
         v-for="socialIcon in socialIcons"
         :key="socialIcon"
+        aria-label="Social media"
         class="post-footer__social-icon"
         :class="socialIcon"
-        href=""
+        href="external-resource"
       ></a>
     </AtomText>
 
@@ -39,11 +40,74 @@ const socialIcons = [
         <span class="post-footer__tag-icon" />
         Tags:
       </AtomButton>
-      <AtomTag class="post-footer__tag" v-for="tag in tags" :key="tag">{{ tag }}</AtomTag>
+      <AtomTag v-for="tag in tags" :key="tag" class="post-footer__tag">{{ tag }}</AtomTag>
     </AtomText>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import './MoleculeBlogPostFooter.scss';
+.post-footer {
+  @apply flex items-center w-full gap-x-8;
+  // .post-footer__views
+
+  &__views {
+    @apply flex items-center gap-x-2 text-sm;
+  }
+
+  // .post-footer__views-icon
+
+  &__views-icon {
+    @apply i-fluent-data-line-24-regular text-3xl;
+  }
+
+  // .post-footer__social-links
+
+  &__social-links {
+    @apply flex items-center gap-x-1;
+  }
+
+  // .post-footer__share-button
+
+  &__share-button {
+    @apply text-sm px-0 mr-2;
+  }
+
+  // .post-footer__share-icon
+
+  &__share-icon {
+    @apply i-fluent-share-20-regular text-black text-xl;
+  }
+
+  // .post-footer__social-icon
+
+  &__social-icon {
+    @apply text-2xl text-black;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  // .post-footer__social-tags
+
+  &__social-tags {
+    @apply flex text-sm items-center gap-x-3;
+  }
+
+  // .post-footer__tag-button
+
+  &__tag-button {
+    @apply px-0;
+  }
+
+  // .post-footer__tag
+  &__tag {
+    @apply py-1;
+  }
+
+  // .post-footer__tag-icon
+
+  &__tag-icon {
+    @apply i-carbon-tag text-black;
+  }
+}
 </style>

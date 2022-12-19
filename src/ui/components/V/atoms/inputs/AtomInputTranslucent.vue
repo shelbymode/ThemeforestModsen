@@ -1,42 +1,44 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
-import { IInputClasses } from './AtomInput.vue'
 
-const props = withDefaults(
-  defineProps<{
-    id: string
-    modelValue: string
-    placeholder?: string
-    label?: string
-    type?: 'text' | 'password'
-    statusValidation?: 'inactive' | 'initial-error' | 'dirty-error' | 'correct'
-    commonClasses?: string
-    inactiveClasses?: string
-    activeClasses?: string
-    errorClasses?: string
-    successClasses?: string
-    errorLabelClasses?: string
-    class?: never
-    skipInitValue?: boolean
-  }>(),
-  {
-    skipInitValue: true,
-    statusValidation: 'inactive',
-    type: 'text',
-    commonClasses: '',
-    activeClasses: '',
-    inactiveClasses: '',
-    errorClasses: '',
-    successClasses: '',
-    errorLabelClasses: '',
-  }
-)
+interface IInputClasses {
+  inactiveClasses?: string
+  activeClasses?: string
+  commonClasses?: string
+  errorClasses?: string
+  commonLabelClasses?: string
+  errorLabelClasses?: string
+  successClasses?: string
+}
+
+interface IInputProps extends IInputClasses {
+  id: string
+  modelValue: string
+  statusValidation: 'inactive' | 'initial-error' | 'dirty-error' | 'correct'
+  placeholder?: string
+  label?: string | undefined
+  type?: 'text' | 'password'
+  skipInitValue?: boolean
+}
+
+const props = withDefaults(defineProps<IInputProps>(), {
+  placeholder: 'Placeholder',
+  skipInitValue: true,
+  type: 'text',
+  statusValidation: 'inactive',
+  label: undefined,
+})
+
+const $r = (str: string | undefined) => (typeof str === 'undefined' ? '' : str)
+
 const customClasses: IInputClasses = {
-  commonClasses: `${props.commonClasses} pb-2 pl-1 border-b-2 font-bold bg-transparent placeholder:(font-normal) rounded-none outline-none`,
-  inactiveClasses: `${props.inactiveClasses} border-black`,
-  activeClasses: `${props.activeClasses}`,
-  errorClasses: `${props.errorClasses} border-cRed`,
-  successClasses: `${props.successClasses} border-emerald`,
+  commonClasses: `${$r(
+    props.commonClasses
+  )} pb-2 pl-1 border-b-2 font-bold bg-transparent placeholder:(font-normal) rounded-none outline-none`,
+  inactiveClasses: `${$r(props.inactiveClasses)} border-black`,
+  activeClasses: `${$r(props.activeClasses)}`,
+  errorClasses: `${$r(props.errorClasses)} border-cRed`,
+  successClasses: `${$r(props.successClasses)} border-emerald`,
 }
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void

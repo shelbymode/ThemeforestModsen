@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <img src="/assets/images/clients-logos-section.png" class="stats__clients" />
+  <img src="/assets/images/clients-logos-section.png" class="stats__clients" alt="clients" />
 </template>
 
 <style lang="scss" scoped>

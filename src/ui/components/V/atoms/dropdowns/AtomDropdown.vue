@@ -24,7 +24,7 @@ const leave = (el: HTMLElement) => (el.style.height = '0')
 
 <template>
   <div class="dropdown">
-    <header class="dropdown__header" @click="toggleReveal()">
+    <header class="dropdown__header" @click="toggleReveal()" @keypress="toggleReveal()">
       <h3
         class="dropdown__title"
         :class="{
@@ -47,7 +47,7 @@ const leave = (el: HTMLElement) => (el.style.height = '0')
       @before-leave="beforeLeave"
       @leave="leave"
     >
-      <main v-show="isRevealed" class="dropdown__content">{{ props.content }}</main>
+      <div v-show="isRevealed" class="dropdown__content">{{ props.content }}</div>
     </Transition>
   </div>
 </template>

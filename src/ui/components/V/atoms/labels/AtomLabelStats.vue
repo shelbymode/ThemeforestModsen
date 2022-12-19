@@ -7,7 +7,7 @@ const props = defineProps<{
 
 <template>
   <div class="label-stats">
-    <h3 class="label-stats__indicator">{{ props.indicator }}</h3>
+    <h2 class="label-stats__indicator">{{ props.indicator }}</h2>
     <p class="label-stats__text">{{ props.text }}</p>
   </div>
 </template>

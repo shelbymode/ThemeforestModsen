@@ -24,14 +24,12 @@ const props = withDefaults(defineProps<IInputProps>(), {
   skipInitValue: true,
   type: 'text',
   statusValidation: 'inactive',
-  activeClasses: '',
-  inactiveClasses: '',
-  commonClasses: '',
-  errorClasses: '',
-  errorLabelClasses: '',
-  commonLabelClasses: '',
-  successClasses: '',
+  label: undefined,
 })
+
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string): void
+}>()
 
 const configClasses: Required<IInputClasses> = {
   commonClasses:
@@ -45,7 +43,9 @@ const configClasses: Required<IInputClasses> = {
 }
 
 ;(Object.keys(configClasses) as (keyof IInputClasses)[]).forEach((classesCategory) => {
-  props[classesCategory] !== '' ? (configClasses[classesCategory] = props[classesCategory]) : null
+  typeof props[classesCategory] !== 'undefined'
+    ? (configClasses[classesCategory] = props[classesCategory] as string)
+    : null
 })
 
 const waitCondition = props.skipInitValue === true ? ['inactive', 'initial-error'] : ['inactive']
@@ -72,7 +72,6 @@ const isInactiveSignal = computed(() => waitCondition.includes(props.statusValid
     <input
       :id="id"
       :name="id"
-      :value="modelValue"
       :type="type"
       :placeholder="placeholder"
       :class="{
@@ -84,7 +83,7 @@ const isInactiveSignal = computed(() => waitCondition.includes(props.statusValid
       }"
       @focus="toggleFocus()"
       @blur="toggleFocus()"
-      @input="(e) => $emit('update:modelValue', (e.target as HTMLInputElement).value)"
+      @input="(e) => emit('update:modelValue', (e.target as HTMLInputElement).value)"
     />
   </div>
 </template>

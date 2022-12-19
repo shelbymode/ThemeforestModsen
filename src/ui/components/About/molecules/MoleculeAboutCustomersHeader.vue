@@ -4,11 +4,11 @@
   <header class="customers__header">
     <AtomMiddleTitle class="customers__title">What our customers say</AtomMiddleTitle>
     <div class="customers__arrows">
-      <AtomButton class="customers__arrow">
+      <AtomButton class="customers__arrow" aria-label="Left navigation">
         <span class="customers__arrow-left i-ic-outline-arrow-right-alt" />
       </AtomButton>
 
-      <AtomButton class="customers__arrow">
+      <AtomButton class="customers__arrow" aria-label="Right navigation">
         <span class="customers__right i-ic-outline-arrow-right-alt" />
       </AtomButton>
     </div>

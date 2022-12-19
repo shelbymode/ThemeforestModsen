@@ -4,11 +4,11 @@
   <header class="blog__header">
     <AtomMiddleTitle class="blog__title">Our blog</AtomMiddleTitle>
     <div class="blog__arrows">
-      <AtomButton class="blog__arrow">
+      <AtomButton class="blog__arrow" aria-label="Left navigation">
         <span class="blog__arrow-left i-ic-outline-arrow-right-alt" />
       </AtomButton>
 
-      <AtomButton class="blog__arrow">
+      <AtomButton class="blog__arrow" aria-label="Right navigation">
         <span class="blog__right i-ic-outline-arrow-right-alt" />
       </AtomButton>
     </div>

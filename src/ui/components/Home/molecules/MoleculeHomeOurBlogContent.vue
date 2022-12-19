@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <main class="blog__content">
+  <section class="blog__content">
     <MoleculeBlogCard
       v-for="card in 3"
       :key="card"
@@ -10,7 +10,7 @@
       text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure..."
       :link-info="{ label: 'Read more', to: '/' }"
     />
-  </main>
+  </section>
 </template>
 
 <style lang="scss" scoped>

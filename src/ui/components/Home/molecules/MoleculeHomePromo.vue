@@ -2,7 +2,7 @@
 
 <template>
   <section class="promo">
-    <img src="https://api.lorem.space/image/fashion?w=929&h=740&hash=kmt2qny0" class="promo__image" />
+    <img src="https://api.lorem.space/image/fashion?w=929&h=740&hash=kmt2qny0" alt="promo image" class="promo__image" />
     <div class="promo__content">
       <AtomMiddleTitle class="promo__title">Radically new solutions for data</AtomMiddleTitle>
       <AtomText class="promo__text">

@@ -2,14 +2,14 @@
 -->
 <template>
   <TemplatePageContainer class="blog-page-container">
-    <div class="blog-page-container__content">
+    <section class="blog-page-container__content">
       <div class="blog-page-container__current-post">
         <slot name="current-post" />
       </div>
       <div class="blog-page-container__related-post">
         <slot name="related-post" />
       </div>
-    </div>
+    </section>
 
     <div class="blog-page-container__side">
       <div class="blog-page-container__search">
