@@ -44,12 +44,11 @@ const generatedLinksList: TLink[] = linksList.map((word) => ({
   * Literally there is no another way in the universe how to change this svg color
 */
 .icon {
-  @apply inline-block bg-primary;
+  @apply inline-block bg-primary w-[150px] h-[49px] scale-80 translate-x-[-10%];
   @apply dark:(bg-white);
-  width: 150px;
-  height: 49px;
-  mask-image: url('../../../../assets/images/svg-icons/logo_blue.svg');
-  -webkit-mask-image: url('../../../../assets/images/svg-icons/logo_blue.svg');
+  @apply sm:(scale-100 translate-x-0);
+  mask-image: url('/assets/images/svg-icons/logo_blue.svg');
+  -webkit-mask-image: url('/assets/images/svg-icons/logo_blue.svg');
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
 }

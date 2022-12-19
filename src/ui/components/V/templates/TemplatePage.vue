@@ -4,12 +4,12 @@
   <div class="container-page">
     <OrganismTheHeader />
     <slot />
-    <OrganismTheFooter />
+    <!-- <OrganismTheFooter /> -->
   </div>
 </template>
 
 <style lang="scss" scoped>
 .container-page {
-  @apply flex flex-col justify-between items-left w-full h-full;
+  @apply flex flex-col justify-between items-left w-full h-full mx-a;
 }
 </style>

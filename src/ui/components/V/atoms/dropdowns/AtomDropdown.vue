@@ -2,7 +2,6 @@
 const props = withDefaults(
   defineProps<{
     title: string
-    content: string
     titleActiveClasses: string
     titleInactiveClasses: string
     isRevealed?: boolean
@@ -47,7 +46,9 @@ const leave = (el: HTMLElement) => (el.style.height = '0')
       @before-leave="beforeLeave"
       @leave="leave"
     >
-      <div v-show="isRevealed" class="dropdown__content">{{ props.content }}</div>
+      <div v-show="isRevealed" class="dropdown__content">
+        <slot />
+      </div>
     </Transition>
   </div>
 </template>

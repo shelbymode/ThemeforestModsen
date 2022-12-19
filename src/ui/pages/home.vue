@@ -2,14 +2,14 @@
 
 <template>
   <TemplatePage>
-    <main class="home">
+  <!--   <main class="home">
       <OrganismHomePresentation />
       <OgranismHomeBenefits />
       <OrganismHomeTestimonials />
       <OrganismHomePricing />
       <OrganismHomeOurBlog />
       <OrganismHomeAdditional />
-    </main>
+    </main> -->
   </TemplatePage>
 </template>
 
