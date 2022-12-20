@@ -57,7 +57,7 @@ const leave = (el: HTMLElement) => (el.style.height = '0')
 
 <style lang="scss" scoped>
 .header-container {
-  @apply fixed z-1 flex items-center justify-center w-full bg-white;
+  @apply fixed left-1/2 translate-x-[-50%] z-1 flex items-center justify-center max-w-[1920px] w-full bg-cBackground;
   @apply dark:(bg-secondary);
 }
 .header {

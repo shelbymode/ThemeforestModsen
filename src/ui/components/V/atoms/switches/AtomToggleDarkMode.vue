@@ -17,7 +17,7 @@ $width: 80px;
   // .toggle-switch__label
 
   &__label {
-    @apply w-full cursor-pointer border-1 bg-cBackground rounded-3xl;
+    @apply w-full cursor-pointer border-1 bg-white border-2 rounded-3xl;
     @apply dark:(bg-dark border-helperBlueTwo);
     height: $height;
     width: $width;

@@ -1,23 +1,27 @@
 <script setup lang="ts">
+defineOptions({
+  inheritAttrs: false,
+})
+
 const props = withDefaults(
   defineProps<{
     title: string
-    titleActiveClasses: string
-    titleInactiveClasses: string
+    titleActiveClasses?: string
+    titleInactiveClasses?: string
     isRevealed?: boolean
   }>(),
   {
     titleActiveClasses: '',
     titleInactiveClasses: '',
-    isRevealed: true,
+    isRevealed: false,
   }
 )
 
 const [isRevealed, toggleReveal] = useToggle(props.isRevealed)
 
 const beforeEnter = (el: HTMLElement) => (el.style.height = '0')
-const enter = (el: HTMLElement) => (el.style.height = el.scrollHeight + 'px')
-const beforeLeave = (el: HTMLElement) => (el.style.height = el.scrollHeight + 'px')
+const enter = (el: HTMLElement) => (el.style.height = el.scrollHeight * 1.2 + 'px')
+const beforeLeave = (el: HTMLElement) => (el.style.height = el.scrollHeight * 1.2 + 'px')
 const leave = (el: HTMLElement) => (el.style.height = '0')
 </script>
 
@@ -34,7 +38,7 @@ const leave = (el: HTMLElement) => (el.style.height = '0')
         {{ props.title }}
       </h3>
       <slot name="control-icon">
-        <span class="dropdown__icon" :class="{ 'rotate-z--180 ': isRevealed }" />
+        <span class="dropdown__icon" :class="{ 'rotate-z--180 ': !isRevealed }" />
       </slot>
     </header>
 
@@ -46,7 +50,7 @@ const leave = (el: HTMLElement) => (el.style.height = '0')
       @before-leave="beforeLeave"
       @leave="leave"
     >
-      <div v-show="isRevealed" class="dropdown__content">
+      <div v-show="isRevealed" class="dropdown__content" v-bind="$attrs">
         <slot />
       </div>
     </Transition>
@@ -55,31 +59,33 @@ const leave = (el: HTMLElement) => (el.style.height = '0')
 
 <style lang="scss" scoped>
 .dropdown {
-  @apply flex flex-col w-200 items-center gap-y-0 border-b-2 p-5 overflow-hidden border-cGrey;
+  @apply flex flex-col items-center border-b-2 py-5 px-3 overflow-hidden border-cGrey;
 
   // .dropdown__header
 
   &__header {
-    @apply flex items-center w-full justify-between py-3;
+    @apply flex items-center w-full justify-between px-5;
+    @apply sm:px-20;
     @apply hover:(opacity-66 cursor-pointer);
   }
 
   // .dropdown__icon
 
   &__icon {
-    @apply i-fluent-chevron-up-12-regular text-4xl text-black transition-300;
+    @apply i-fluent-chevron-up-12-regular text-4xl transition-300;
   }
 
   // .dropdown__title
 
   &__title {
-    @apply text-2xl font-bold;
+    @apply text-xl font-bold;
+    @apply sm:text-2xl;
   }
 
   // .dropdown__content
 
   &__content {
-    @apply text-xl text-cGrey;
+    @apply text-xl w-full px-10 text-cGrey translate-y-[10%];
   }
 }
 
