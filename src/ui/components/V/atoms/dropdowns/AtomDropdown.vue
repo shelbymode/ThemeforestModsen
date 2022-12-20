@@ -19,10 +19,7 @@ const props = withDefaults(
 
 const [isRevealed, toggleReveal] = useToggle(props.isRevealed)
 
-const beforeEnter = (el: HTMLElement) => (el.style.height = '0')
-const enter = (el: HTMLElement) => (el.style.height = el.scrollHeight * 1.2 + 'px')
-const beforeLeave = (el: HTMLElement) => (el.style.height = el.scrollHeight * 1.2 + 'px')
-const leave = (el: HTMLElement) => (el.style.height = '0')
+const { beforeEnter, enter, beforeLeave, leave } = useSmoothHeight(1.2)
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AtomDropdown from '~/ui/components/V/atoms/dropdowns/AtomDropdown.vue'
-import MoleculeFooterWrapper from '~/ui/components/V/molecules/footer/MoleculeFooterWrapper.vue'
+import MoleculeFooterWrapper from '~/ui/components/Footer/molecules/MoleculeFooterWrapper.vue'
 defineOptions({
   components: {
     AtomDropdown,
