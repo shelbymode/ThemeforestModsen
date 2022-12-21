@@ -3,8 +3,7 @@
 <template>
   <div class="container-page">
     <OrganismTheHeader />
-    <!-- <slot /> -->
-    <h1 class="my-50">Contents</h1>
+    <slot />
     <OrganismTheFooter />
   </div>
 </template>

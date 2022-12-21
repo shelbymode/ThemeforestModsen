@@ -8,7 +8,6 @@ const rulesEmail = computed(() => ({
     email: helpers.withMessage("It doesn't look as email", email),
   },
 }))
-
 const form = reactive({ email: '' })
 
 const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEmail, form)
@@ -18,17 +17,20 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
   <section class="subscribe">
     <TemplatePageContainer class="subscribe-container">
       <div class="subscribe__content">
-        <AtomMiddleTitle class="subscribe__title">Subscribe to our newsletter</AtomMiddleTitle>
+        <AtomMiddleTitle class="subscribe__title"
+          >Subscribe <br class="sm:hidden" />
+          to our newsletter</AtomMiddleTitle
+        >
         <AtomText class="subscribe__text">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
         </AtomText>
       </div>
 
-      <div class="subscribe-email" flex items-center gap-x-3>
+      <div class="subscribe-email">
         <AtomInput
           id="email"
           v-model="form.email"
-          class="subscribe-email__input-email"
+          class="subscribe-email__input-email sm:(w-full)"
           placeholder="Your email"
           type="text"
           :status-validation="getStatusValidation('email')"
@@ -53,24 +55,32 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
   // .subscribe__title
 
   &__title {
-    @apply text-black;
+    @apply text-center font-bold text-black w-full;
+    @apply sm:min-w-full;
     @apply dark:(text-white);
   }
 
   // .subscribe__text
 
   &__text {
-    @apply text-cGrey;
+    @apply hidden text-cGrey;
+    @apply md:block;
     @apply dark:(text-white);
   }
 }
 .subscribe-container {
-  @apply flex items-center justify-between py-20;
+  @apply flex flex-col items-center justify-between py-10 gap-y-6;
+  @apply md:(flex-col);
 }
 .subscribe-email {
+  @apply flex flex-col gap-y-6 gap-x-3 w-4/5;
+  @apply sm:(items-center w-3/5);
+  @apply md:(flex-row);
+
   // .subscribe-email__input-email
 
   &__input-email {
+    @apply sm:(w-full);
   }
 
   // .subscribe-email__button

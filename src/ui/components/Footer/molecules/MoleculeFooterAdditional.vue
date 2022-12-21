@@ -2,8 +2,8 @@
 
 <template>
   <section class="additional">
-    <AtomLink icon link="/policy" class="additional__policy md:text-2xl lg:text-xl">Privacy policy</AtomLink>
-    <AtomLink icon link="/terms" class="additional__terms md:text-2xl lg:text-xl">Terms of us</AtomLink>
+    <AtomLink icon link="/policy" class="additional__policy text-xl md:text-2xl lg:text-xl">Privacy policy</AtomLink>
+    <AtomLink icon link="/terms" class="additional__terms text-xl md:text-2xl lg:text-xl">Terms of us</AtomLink>
   </section>
 </template>
 
@@ -17,7 +17,6 @@
   // .additional__policy
 
   &__policy {
-    @apply lg:text-xl;
   }
 
   // .additional__terms

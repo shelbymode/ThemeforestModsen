@@ -23,7 +23,7 @@ const props = withDefaults(
 
 <style lang="scss" scoped>
 .card {
-  @apply max-w-[540px] flex flex-col gap-y-5 pb-6 px-6 rounded items-start;
+  @apply md:max-w-[540px] flex flex-col gap-y-5 pb-6 px-6 rounded items-start;
 }
 .card__avatar {
   @apply translate-y-[-50%];

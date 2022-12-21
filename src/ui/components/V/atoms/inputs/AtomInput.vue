@@ -33,7 +33,7 @@ const emit = defineEmits<{
 
 const configClasses: Required<IInputClasses> = {
   commonClasses:
-    'px-6 py-4 w-85 font-bold placeholder:(text-black) hover:scale-95 transition-300 rounded-lg focus:(outline-black-900 outline-1) outline-0',
+    'px-6 py-4 font-bold placeholder:(text-black) hover:scale-95 transition-300 rounded-lg focus:(outline-black-900 outline-1) outline-0',
   activeClasses: 'text-blue border-b-2 border-blue-500',
   inactiveClasses: 'bg-tertiary',
   errorClasses: 'bg-[#F6E2E2] text-cRed',

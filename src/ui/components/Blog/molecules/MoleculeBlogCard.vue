@@ -39,8 +39,8 @@ const isTagsExists = props.tagsInfo && Object.keys(props.tagsInfo).length > 0
 
 <style lang="scss" scoped>
 .card {
-  @apply flex flex-col gap-y-5 items-start;
-  max-width: 350px;
+  @apply min-w-full flex flex-col gap-y-5 p-6 rounded items-start;
+  @apply md:(min-w-[350px]);
 }
 .card__image {
   @apply rounded-lg;

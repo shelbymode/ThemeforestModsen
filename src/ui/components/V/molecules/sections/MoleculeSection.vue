@@ -22,7 +22,7 @@
   @apply flex justify-between items-center py-20;
 }
 .section-content {
-  @apply flex flex-col items-start gap-y-6 max-w-110;
+  @apply flex flex-col items-start gap-y-6 md:max-w-110;
 
   // .section-content__title
 

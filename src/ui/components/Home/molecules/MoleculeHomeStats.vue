@@ -32,7 +32,8 @@ const labelStats = [
 
 <style lang="scss" scoped>
 .stats {
-  @apply flex flex-col items-start pt-30 pb-20;
+  @apply flex flex-col items-start px-6 gap-y-6;
+  @apply md:(gap-y-12);
 
   // .stats__title
 
@@ -43,19 +44,20 @@ const labelStats = [
   // .stats__content
 
   &__content {
-    @apply flex w-full justify-between items-start py-16;
+    @apply flex flex-col w-full gap-y-5 gap-x-8 justify-between items-start;
+    @apply md:flex-row;
   }
 
   // .stats__stats
 
   &__stats {
-    @apply flex items-start gap-x-6;
+    @apply flex w-full items-start justify-around gap-x-6;
   }
 
   // .stats__text
 
   &__text {
-    @apply max-w-135;
+    @apply md:max-w-135;
   }
 }
 </style>

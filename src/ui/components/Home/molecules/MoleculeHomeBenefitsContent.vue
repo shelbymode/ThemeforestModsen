@@ -15,7 +15,8 @@
   // .benefits__content
 
   &__content {
-    @apply flex flex-col gap-y-7  max-w-120;
+    @apply flex flex-col gap-y-7 max-w-120 py-8;
+    @apply lg:(w-3/5);
   }
 
   // .benefits__title

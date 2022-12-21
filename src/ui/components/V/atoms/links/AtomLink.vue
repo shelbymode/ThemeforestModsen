@@ -28,7 +28,7 @@ const props = withDefaults(
 
 <style lang="scss" scoped>
 .link {
-  @apply flex items-center gap-x-3 text-primary font-medium transition-300 p-1 text-base;
+  @apply flex items-center gap-x-3 text-primary font-medium transition-300 p-1;
   @apply hover:(text-secondary scale-98);
   @apply dark:(text-sky);
   @apply dark:hover:(text-sky);

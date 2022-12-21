@@ -13,7 +13,8 @@
 
 <style lang="scss" scoped>
 .help {
-  @apply w-full grid place-items-center gap-y-8 bg-cBackground py-25;
+  @apply w-full grid place-items-center gap-y-8 bg-cBackground px-6 py-7;
+  @apply lg:(py-20 mb--20);
   // .help__title
 
   &__title {
@@ -23,7 +24,7 @@
   // .help__text
 
   &__text {
-    @apply max-w-135 text-center;
+    @apply md:max-w-135 text-center;
   }
 
   // .help__button-contact-us

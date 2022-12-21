@@ -1,8 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const bigImageFactor = 'https://api.lorem.space/image/fashion?w=1920&h=960&hash=kmt2qny0'
+const smallImageFactor = 'https://api.lorem.space/image/fashion?w=929&h=740&hash=kmt2qny0'
+
+const isMdScreen = useMediaQuery(`(min-width: 768px)`)
+
+const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : smallImageFactor))
+</script>
 
 <template>
   <section class="promo">
-    <img src="https://api.lorem.space/image/fashion?w=929&h=740&hash=kmt2qny0" alt="promo image" class="promo__image" />
+    <img :src="srcMedia" alt="promo image" class="promo__image" />
     <div class="promo__content">
       <AtomMiddleTitle class="promo__title">Radically new solutions for data</AtomMiddleTitle>
       <AtomText class="promo__text">
@@ -16,17 +23,21 @@
 
 <style lang="scss" scoped>
 .promo {
-  @apply flex w-full justify-start items-center bg-cBackground;
+  @apply flex flex-col w-full justify-start bg-cBackground px-6;
+  @apply md:(flex-row gap-x-6);
   // .promo__image
 
   &__image {
-    @apply min-h-[740px] w-1/2 object-cover;
+    @apply md:w-1/2 object-cover;
   }
 
   // .promo__content
 
   &__content {
-    @apply max-w-135 flex flex-col items-start gap-y-7 px-12 mr-0;
+    @apply flex flex-col items-start gap-y-7 py-4 mr-0;
+    @apply sm:(items-center);
+    @apply md:(items-start py-10 w-1/2);
+    @apply lg:(px-10);
   }
 
   // .promo__title
@@ -37,7 +48,7 @@
   // .promo__text
 
   &__text {
-    @apply max-w-115 leading-relaxed;
+    @apply md:max-w-115 leading-relaxed;
   }
 
   // .promo__button-learn-more

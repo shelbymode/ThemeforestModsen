@@ -56,7 +56,7 @@ const labelStats = [
   // .service-stats__text
 
   &__text {
-    @apply max-w-135;
+    @apply md:max-w-135;
   }
 }
 .service-stats-container {

@@ -1,4 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const bigImageFactor = 'https://api.lorem.space/image/fashion?w=1920&h=590&hash=kmt2qny0'
+const smallImageFactor = 'https://api.lorem.space/image/fashion?w=1920&h=1230&hash=kmt2qny0'
+
+const isMdScreen = useMediaQuery(`(min-width: 768px)`)
+
+const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : smallImageFactor))
+</script>
 
 <template>
   <TemplatePageContainer class="learn-more">
@@ -13,22 +20,20 @@
   </TemplatePageContainer>
 
   <div class="learn-more__image-wrapper">
-    <img
-      src="https://api.lorem.space/image/fashion?w=1920&h=590&hash=kmt2qny0"
-      alt="Home learn more"
-      class="learn-more__image"
-    />
+    <img :src="srcMedia" alt="Home learn more" class="learn-more__image" />
     <AtomCircleButton class="learn-more__button-learn-more">Learn more</AtomCircleButton>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .learn-more {
-  @apply flex justify-between items-start my-18;
+  @apply flex flex-col gap-y-5 justify-start items-start my-10 px-6;
+  @apply md:(flex-row gap-x-6);
+
   // .learn-more__title
 
   &__title {
-    @apply max-w-135;
+    @apply max-w-1/2 leading-snug;
   }
 
   // .learn-more__special-title
@@ -40,7 +45,7 @@
   // .learn-more__text
 
   &__text {
-    @apply max-w-115 leading-relaxed;
+    @apply w-1/2 w-full md:max-w-115 leading-relaxed;
   }
 
   // .learn-more__image-wrapper
@@ -52,14 +57,15 @@
   // .learn-more__image
 
   &__image {
-    @apply w-full object-cover min-h-[590px];
+    @apply w-full object-cover;
   }
 
   // .learn-more__button-learn-more
 
   &__button-learn-more {
-    @apply absolute right-[40%] text-white outline-white outline-8 top-0 translate-y-[-50%] bg-primary;
+    @apply text-[12px] absolute right-[15%] text-white outline-white outline-8 top-0 translate-y-[-50%] bg-primary;
     outline-style: solid;
+    @apply md:text-base;
   }
 }
 </style>
