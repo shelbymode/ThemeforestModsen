@@ -12,7 +12,6 @@ const { tag = 'h1' } = defineProps<{
 
 <style lang="scss" scoped>
 .title-middle {
-  @apply text-left text-[46px] font-extrabold text-black;
-  letter-spacing: -0.015em;
+  @apply text-left text-2xl md:text-4xl lg:text-[46px] font-extrabold text-black;
 }
 </style>

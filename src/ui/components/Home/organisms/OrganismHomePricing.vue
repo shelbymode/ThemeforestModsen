@@ -111,13 +111,13 @@ const selectCurrentCard = (idx: number) => {
 <template>
   <TemplatePageContainer class="price">
     <AtomMiddleTitle class="price__title">Our pricing</AtomMiddleTitle>
-    <div class="price-container">
+    <div class="price__cards">
       <MoleculePriceCard
         v-for="(priceCard, idx) in priceCards"
         :key="priceCard.title"
         :options="priceCard"
         :idx="idx"
-        class="price__card"
+        class="price__card border"
         @update:select-card="selectCurrentCard"
       />
     </div>
@@ -126,19 +126,27 @@ const selectCurrentCard = (idx: number) => {
 
 <style lang="scss" scoped>
 .price {
-  @apply flex flex-col items-start gap-y-12 mb-30;
+  @apply flex flex-col items-start gap-y-12 px-6;
 
   // .price__title
 
   &__title {
+    @apply w-full text-center;
   }
 
   // .price__card
 
   &__card {
   }
-}
-.price-container {
-  @apply flex justify-between w-full;
+
+  // .price__cards {
+
+  &__cards {
+    @apply flex justify-between w-full overflow-scroll gap-x-8 pb-10;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 </style>

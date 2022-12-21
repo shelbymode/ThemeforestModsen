@@ -18,8 +18,9 @@ const props = withDefaults(defineProps<IPropsButton>(), {
 
 <style lang="scss" scoped>
 .button-circle {
-  @apply grid place-items-center w-30 h-30 rounded-full transition-300;
+  @apply grid place-items-center w-22 h-22  rounded-full transition-300;
   @apply hover:(scale-98);
+  @apply md:(w-30 h-30);
 }
 
 .button-circle__inner {

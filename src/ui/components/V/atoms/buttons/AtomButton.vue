@@ -16,7 +16,8 @@ const props = withDefaults(defineProps<IPropsButton>(), {
 
 <style lang="scss" scoped>
 .button {
-  @apply flex items-center gap-x-3 px-10 py-3 rounded-md transition-300;
+  @apply flex items-center justify-center gap-x-3 px-10 py-3 rounded-md transition-300 w-full;
+  @apply sm:(w-fit);
   @apply hover:(scale-90);
 }
 .button[disabled] {

@@ -39,7 +39,8 @@ const dataAnalyticsCard = {
   // .benefits__low-wrapper
 
   &__low-wrapper {
-    @apply flex flex-col gap-y-7 translate-y-6;
+    @apply flex gap-y-7 gap-x-5;
+    @apply md:(flex-col translate-y-6);
   }
 }
 </style>

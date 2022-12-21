@@ -33,13 +33,13 @@ const props = withDefaults(defineProps<IDirectionControl>(), {
 
 <style lang="scss" scoped>
 .h-link {
-  @apply flex text-black items-center gap-x-3 px-2 py-1;
+  @apply flex items-center gap-x-3 px-2 py-1;
 }
 .h-link[disabled] {
   @apply text-cGrey opacity-50 pointer-events-none;
 }
 .h-link__link {
-  @apply text-sm font-medium text-cGrey duration-300;
+  @apply font-medium duration-300;
   @apply hover:(text-black);
   @apply dark:(text-white);
   @apply dark:hover:(text-neutral-500);

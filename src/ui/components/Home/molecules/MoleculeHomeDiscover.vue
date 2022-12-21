@@ -18,12 +18,12 @@
 
 <style lang="scss" scoped>
 .discover {
-  @apply flex py-30 justify-between items-start;
-
+  @apply flex flex-col gap-y-5 gap-x-6 justify-between items-start px-6;
+  @apply md:flex-row;
   // .discover__title
 
   &__title {
-    @apply max-w-115;
+    @apply md:w-1/2 md:max-w-115 leading-snug;
   }
 
   &__special-title {
@@ -33,19 +33,23 @@
   // .discover__content
 
   &__content {
-    @apply flex flex-col gap-y-8 items-start;
+    @apply flex flex-col gap-y-8 items-stretch;
+    @apply sm:(items-center);
+    @apply md:(items-start w-1/2);
+    @apply lg:(px-10);
   }
 
   // .discover__text
 
   &__text {
-    @apply max-w-115 leading-relaxed;
+    @apply md:max-w-115 leading-relaxed;
   }
 
   // .discover__button
 
   &__button {
     @apply text-white bg-primary;
+    @apply md:self-start;
   }
 }
 </style>

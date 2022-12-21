@@ -18,13 +18,15 @@ const props = defineProps<{
   // .label-stats__indicator
 
   &__indicator {
-    @apply text-5xl font-extrabold text-left text-primary;
+    @apply text-3xl font-extrabold text-left text-primary;
+    @apply md:text-5xl;
   }
 
   // .label-stats__text
 
   &__text {
-    @apply text-cGrey text-base text-left;
+    @apply text-cGrey text-[12px] text-center
+    @apply md:(text-base text-left);
   }
 }
 </style>

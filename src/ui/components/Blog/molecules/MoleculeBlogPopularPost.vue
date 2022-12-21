@@ -14,11 +14,11 @@ const props = withDefaults(
 
 <template>
   <div class="popular-post">
-    <img :src="props.imgSrc" alt="" class="popular-post__image" />
+    <img :src="props.imgSrc" alt="random image" class="popular-post__image" />
     <section class="popular-post__content">
       <AtomText class="popular-post__date">{{ props.date }}</AtomText>
-      <p class="popular-post__text">{{ props.title }}</p>
-      <AtomLink :link="props.link">Read more</AtomLink>
+      <h3 class="popular-post__text">{{ props.title }}</h3>
+      <AtomLink class="popular-post__link text-sm" :link="props.link">Read more</AtomLink>
     </section>
   </div>
 </template>
@@ -29,13 +29,13 @@ const props = withDefaults(
   // .popular-post__image
 
   &__image {
-    @apply rounded-md w-1/2;
+    @apply object-cover rounded-md max-w-1/2;
   }
 
   // .popular-post__content
 
   &__content {
-    @apply flex flex-col items-start w-1/2 gap-y-4;
+    @apply flex flex-col items-start w-1/2 gap-y-4  md:(p-4 shadow);
   }
 
   // .popular-post__date
@@ -46,7 +46,12 @@ const props = withDefaults(
   // .popular-post__text
 
   &__text {
-    @apply text-black text-base font-bold;
+    @apply text-black text-sm font-bold;
+  }
+
+  // .popular-post__link {
+
+  &__link {
   }
 }
 </style>

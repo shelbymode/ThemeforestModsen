@@ -17,7 +17,7 @@ $width: 80px;
   // .toggle-switch__label
 
   &__label {
-    @apply w-full ml-10 cursor-pointer border-1 bg-cBackground rounded-3xl;
+    @apply w-full cursor-pointer border-1 bg-white border-2 rounded-3xl;
     @apply dark:(bg-dark border-helperBlueTwo);
     height: $height;
     width: $width;
@@ -26,7 +26,7 @@ $width: 80px;
   // .toggle-switch__input
 
   &__input {
-    @apply display-none;
+    @apply display-none outline-0 border-0;
   }
 
   // .toggle-switch__slider
