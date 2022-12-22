@@ -103,7 +103,7 @@ const selectCurrentCard = (index: number) => {
 }
 
 .card-price__price {
-  @apply text-2xl font-extrabold text-black text-left;
+  @apply text-2xl font-bold text-black text-left;
   letter-spacing: -0.05em;
 
   &--selected {

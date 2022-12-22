@@ -1,10 +1,20 @@
 <script setup lang="ts">
-const labelStats = [
+const isLgScreen = useMediaQuery(`(min-width: 1024px)`)
+
+const labelStatsBig = [
   { indicator: '1830+', text: 'Project executed' },
   { indicator: '834+', text: 'Satisfied customers' },
   { indicator: '390', text: 'Data management' },
   { indicator: '834', text: 'Satisfied customers' },
 ]
+
+const labelStatsSmall = [
+  { indicator: '1830+', text: 'Project executed' },
+  { indicator: '834+', text: 'Satisfied customers' },
+  { indicator: '390', text: 'Data management' },
+]
+
+const currentLabelStats = computed(() => (isLgScreen.value ? labelStatsBig : labelStatsSmall))
 </script>
 
 <template>
@@ -12,9 +22,9 @@ const labelStats = [
     <TemplatePageContainer class="about-stats-container">
       <AtomBigTitle class="about-stats__title">Ensome in numbers</AtomBigTitle>
       <div class="about-stats__stats">
-        <template v-for="labelStat in labelStats" :key="labelStat.text">
+        <template v-for="labelStat in currentLabelStats" :key="labelStat.text">
           <AtomLabelStats class="about-stats__stat" :indicator="labelStat.indicator" :text="labelStat.text" />
-          <div class="about-stats__stat-divider"></div>
+          <div v-if="isLgScreen" class="about-stats__stat-divider"></div>
         </template>
       </div>
     </TemplatePageContainer>
@@ -23,7 +33,7 @@ const labelStats = [
 
 <style lang="scss" scoped>
 .about-stats {
-  @apply grid w-full place-items-center py-25 bg-cBackground;
+  @apply grid w-full place-items-center py-10 px-6 bg-cBackground;
   // .about-stats__title
 
   &__title {
@@ -32,7 +42,7 @@ const labelStats = [
   // .about-stats__stats
 
   &__stats {
-    @apply flex justify-between items-center;
+    @apply flex justify-around gap-x-6 items-start;
   }
 
   // .about-stats__stat
@@ -52,6 +62,6 @@ const labelStats = [
 }
 
 .about-stats-container {
-  @apply flex flex-col items-center gap-y-15;
+  @apply flex flex-col items-center gap-y-9 md:gap-y-15;
 }
 </style>

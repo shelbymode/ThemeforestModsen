@@ -29,7 +29,7 @@ const scrollCard = (direction: TDirection) => {
 <template>
   <header class="slider__header">
     <slot name="default">
-      <AtomMiddleTitle class="slider__title">{{ props.title }}</AtomMiddleTitle>
+      <AtomSliderTitle class="slider__title">{{ props.title }}</AtomSliderTitle>
     </slot>
 
     <div v-if="!props?.hideControls" class="slider__arrows">
@@ -65,8 +65,6 @@ const scrollCard = (direction: TDirection) => {
   // .slider__title
 
   &__title {
-    @apply tracking-tighter;
-    @apply sm:tracking-normal;
   }
 
   // .slider__arrows

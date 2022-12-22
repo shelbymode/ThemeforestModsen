@@ -27,7 +27,7 @@
   // .section-content__title
 
   &__title {
-    @apply text-4xl text-white font-extrabold w-max;
+    @apply text-4xl text-white font-bold w-max;
   }
 
   // .section-content__text

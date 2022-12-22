@@ -11,7 +11,7 @@
 
 <style lang="scss" scoped>
 .contact-us {
-  @apply flex w-full bg-cBackground py-30;
+  @apply flex w-full bg-cBackground py-30 px-6;
   // .contact-us__info
 
   &__info {
@@ -23,6 +23,6 @@
   }
 }
 .contact-us-container {
-  @apply flex flex-row justify-between items-start;
+  @apply flex flex-row justify-between gap-x-9 items-start;
 }
 </style>

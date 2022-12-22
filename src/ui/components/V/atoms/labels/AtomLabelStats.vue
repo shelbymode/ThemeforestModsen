@@ -18,7 +18,7 @@ const props = defineProps<{
   // .label-stats__indicator
 
   &__indicator {
-    @apply text-3xl font-extrabold items-center text-primary;
+    @apply text-3xl font-bold items-center text-primary;
     @apply md:text-5xl;
   }
 

@@ -28,6 +28,7 @@ declare module '@vue/runtime-core' {
     AtomLabelStats: typeof import('./src/ui/components/V/atoms/labels/AtomLabelStats.vue')['default']
     AtomLink: typeof import('./src/ui/components/V/atoms/links/AtomLink.vue')['default']
     AtomMiddleTitle: typeof import('./src/ui/components/V/atoms/titles/AtomMiddleTitle.vue')['default']
+    AtomSliderTitle: typeof import('./src/ui/components/V/atoms/titles/AtomSliderTitle.vue')['default']
     AtomSmallTitle: typeof import('./src/ui/components/V/atoms/titles/AtomSmallTitle.vue')['default']
     AtomStatsClient: typeof import('./src/ui/components/V/atoms/AtomStatsClient.vue')['default']
     AtomTabsRounded: typeof import('./src/ui/components/V/atoms/tabs/AtomTabsRounded.vue')['default']
