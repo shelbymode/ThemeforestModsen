@@ -2,8 +2,8 @@
 
 <template>
   <section class="additional">
-    <AtomLink icon link="/policy" class="additional__policy text-xl md:text-2xl lg:text-xl">Privacy policy</AtomLink>
-    <AtomLink icon link="/terms" class="additional__terms text-xl md:text-2xl lg:text-xl">Terms of us</AtomLink>
+    <AtomLink icon link="/policy" class="additional__policy">Privacy policy</AtomLink>
+    <AtomLink icon link="/terms" class="additional__terms">Terms of us</AtomLink>
   </section>
 </template>
 
@@ -13,21 +13,25 @@
   @apply sm:(flex-row justify-center gap-x-10);
   @apply md:py-10;
   @apply lg:justify-end;
+}
 
-  // .additional__policy
+::v-deep {
+  .additional {
+    // .additional__policy
 
-  &__policy {
-  }
+    &__policy {
+      @apply text-xl
+      @apply md:text-2xl
+      @apply lg:text-xl;
+    }
 
-  // .additional__terms
+    // .additional__terms
 
-  &__terms {
-  }
-
-  // .additional__rights
-
-  &__rights {
-    @apply mr-a;
+    &__terms {
+      @apply text-xl
+      @apply md:text-2xl
+      @apply lg:text-xl;
+    }
   }
 }
 </style>

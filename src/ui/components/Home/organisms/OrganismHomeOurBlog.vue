@@ -22,7 +22,7 @@ const { directionSignal, controlsStatus, interceptScrollSide, updateControlsStat
 
 <style lang="scss" scoped>
 .blog {
-  @apply flex flex-col items-left gap-y-12 px-6;
+  @apply flex flex-col items-left gap-y-12 px-6 overflow-hidden;
 }
 
 .blog__title {

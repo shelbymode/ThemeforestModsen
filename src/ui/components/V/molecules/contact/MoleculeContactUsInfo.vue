@@ -29,7 +29,9 @@ const contactsInfo = [
 
 <style lang="scss" scoped>
 .contact {
-  @apply md:max-w-135 w-full flex flex-col items-start gap-y-6;
+  @apply w-full flex flex-col items-start gap-y-6;
+  @apply md:max-w-135;
+
   // .contact__title
 
   &__title {

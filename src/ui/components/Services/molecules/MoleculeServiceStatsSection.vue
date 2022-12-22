@@ -39,7 +39,8 @@ const labelStats = [
   // .service-stats__title
 
   &__title {
-    @apply text-center leading-tight md:(leading-normal);
+    @apply text-center leading-tight
+    @apply md:(leading-normal);
   }
 
   // .service-stats__content
@@ -52,7 +53,8 @@ const labelStats = [
   // .service-stats__stats
 
   &__stats {
-    @apply flex justify-around w-full gap-x-5 md:w-1/2;
+    @apply flex justify-around w-full gap-x-5;
+    @apply md:w-1/2;
   }
 
   // .service-stats__text

@@ -23,7 +23,8 @@
   // .discover__title
 
   &__title {
-    @apply md:w-1/2 md:max-w-115 leading-snug;
+    @apply leading-snug;
+    @apply md:(w-1/2 max-w-115);
   }
 
   &__special-title {
@@ -42,7 +43,8 @@
   // .discover__text
 
   &__text {
-    @apply md:max-w-115 leading-relaxed;
+    @apply leading-relaxed;
+    @apply md:max-w-115;
   }
 
   // .discover__button

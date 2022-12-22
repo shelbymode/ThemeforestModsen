@@ -54,13 +54,15 @@ const currentCards = computed(() => (isLgScreen.value === true ? aboutCardsBig :
   // .card__content
 
   &__content {
-    @apply lg:max-w-2/5 w-full flex flex-col items-start gap-y-8;
+    @apply w-full flex flex-col items-start gap-y-8;
+    @apply lg:max-w-2/5;
   }
 
   // .card__title
 
   &__title {
-    @apply text-center w-full lg:text-left;
+    @apply text-center w-full;
+    @apply lg:text-left;
   }
 
   // .card__text

@@ -35,7 +35,7 @@
 
     <template #rights>
       <section class="rights flex items-center">
-        <p class="additional__rights md:text-2xl lg:text-xl">© 2022 Ensome. All Rights Reserved.</p>
+        <p class="additional__rights">© 2022 Ensome. All Rights Reserved.</p>
       </section>
     </template>
   </TemplateFooter>
@@ -54,5 +54,7 @@
 
 .rights {
   @apply flex w-full items-center justify-left p-3;
+  @apply md:text-2xl;
+  @apply lg:text-xl;
 }
 </style>

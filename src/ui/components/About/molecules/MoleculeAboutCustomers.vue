@@ -14,11 +14,14 @@
 
 <style lang="scss" scoped>
 .about-customers {
-  @apply flex w-full md:py-15 px-6;
+  @apply flex w-full px-6;
+  @apply md:py-15;
+
   // .about-customers__title
 
   &__title {
-    @apply w-full text-center lg:text-left;
+    @apply w-full text-center;
+    @apply lg:text-left;
   }
 
   // .about-customers__text

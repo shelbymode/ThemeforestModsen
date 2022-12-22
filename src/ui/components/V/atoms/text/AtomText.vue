@@ -8,6 +8,7 @@
 
 <style lang="scss" scoped>
 .standard-text {
-  @apply text-sm md:text-xl text-cGrey text-left;
+  @apply text-sm text-cGrey text-left;
+  @apply md:text-xl;
 }
 </style>

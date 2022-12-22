@@ -20,11 +20,13 @@
   @apply my-5 flex w-full items-center justify-between p-3 gap-x-2;
   @apply sm:(justify-evenly);
   @apply lg:(my-0);
+
   // .social__link
 
   &__link {
     @apply text-4xl text-primary rounded-full transition-300;
-    @apply md:text-6xl md:py-10 lg:text-4xl;
+    @apply md:(text-6xl py-10)
+    @apply lg:text-4xl;
     @apply hover:(text-sky-500 cursor-pointer scale-115);
     @apply dark:text-white;
     @apply dark:hover:(text-emerald-500);
