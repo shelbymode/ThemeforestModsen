@@ -28,12 +28,13 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
 
       <div class="subscribe-email">
         <AtomInput
-          id="email"
+          v-bind="{
+            id: 'email',
+            placeholder: 'Your email',
+            statusValidation: getStatusValidation('email'),
+          }"
           v-model="form.email"
           class="subscribe-email__input-email sm:(w-full)"
-          placeholder="Your email"
-          type="text"
-          :status-validation="getStatusValidation('email')"
           @input="touch('email')"
         />
         <AtomButton :is-disabled="!isFormValid" class="subscribe-email__button"> Send </AtomButton>

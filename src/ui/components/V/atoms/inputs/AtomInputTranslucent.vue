@@ -1,44 +1,26 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
+import { u } from '~/shared/utils/u'
+import { IInputClasses, IInputOptions } from './AtomInput.vue'
 
-interface IInputClasses {
-  inactiveClasses?: string
-  activeClasses?: string
-  commonClasses?: string
-  errorClasses?: string
-  commonLabelClasses?: string
-  errorLabelClasses?: string
-  successClasses?: string
-}
+interface IInputProps extends IInputClasses, IInputOptions {}
 
-interface IInputProps extends IInputClasses {
-  id: string
-  modelValue: string
-  statusValidation: 'inactive' | 'initial-error' | 'dirty-error' | 'correct'
-  placeholder?: string
-  label?: string | undefined
-  type?: 'text' | 'password'
-  skipInitValue?: boolean
-}
+const props = defineProps<IInputProps>()
 
-const props = withDefaults(defineProps<IInputProps>(), {
-  placeholder: 'Placeholder',
-  skipInitValue: true,
-  type: 'text',
-  statusValidation: 'inactive',
-  label: undefined,
-})
-
-const $r = (str: string | undefined) => (typeof str === 'undefined' ? '' : str)
-
+/**
+ * If we pass down some categoryClass != '' -> it overrides default category class in AtomInput
+ */
 const customClasses: IInputClasses = {
-  commonClasses: `${$r(
+  commonClasses: `${u(
     props.commonClasses
-  )} pb-2 pl-1 border-b-2 font-bold bg-transparent placeholder:(font-normal) rounded-none outline-none`,
-  inactiveClasses: `${$r(props.inactiveClasses)} border-black`,
-  activeClasses: `${$r(props.activeClasses)}`,
-  errorClasses: `${$r(props.errorClasses)} border-cRed`,
-  successClasses: `${$r(props.successClasses)} border-emerald`,
+  )} pb-2 pl-1 border-b-1 font-semibold bg-transparent placeholder:(font-normal) rounded-none outline-none`,
+  activeClasses: `${u(props.activeClasses)} border-b-2 border-primary`,
+  activeLabelClasses: `${u(props.activeLabelClasses)}`,
+  inactiveClasses: `${u(props.inactiveClasses)} border-b-black`,
+  errorClasses: `${u(props.errorClasses)} border-cRed text-cRed`,
+  commonLabelClasses: `${u(props.commonLabelClasses)}`,
+  errorLabelClasses: `${u(props.errorLabelClasses)}`,
+  successClasses: `${u(props.successClasses)} border-emerald text-emerald-800`,
 }
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
@@ -48,15 +30,7 @@ const proxyModelValue = useVModel(props, 'modelValue', emit)
 </script>
 
 <template>
-  <AtomInput
-    :id="props.id"
-    v-model="proxyModelValue"
-    :label="props.label"
-    :placeholder="props.placeholder"
-    :status-validation="props.statusValidation"
-    v-bind="customClasses"
-    :type="props.type"
-  />
+  <AtomInput v-bind="{ ...props, ...customClasses }" v-model="proxyModelValue" />
 </template>
 
 <style lang="scss" scoped></style>

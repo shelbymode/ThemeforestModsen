@@ -2,14 +2,14 @@
 export interface IInputClasses {
   inactiveClasses?: string
   activeClasses?: string
+  activeLabelClasses?: string
   commonClasses?: string
   errorClasses?: string
   commonLabelClasses?: string
   errorLabelClasses?: string
   successClasses?: string
 }
-
-interface IInputProps extends IInputClasses {
+export interface IInputOptions {
   id: string
   modelValue: string
   statusValidation: 'inactive' | 'initial-error' | 'dirty-error' | 'correct'
@@ -18,6 +18,7 @@ interface IInputProps extends IInputClasses {
   type?: 'text' | 'password'
   skipInitValue?: boolean
 }
+interface IInputProps extends IInputClasses, IInputOptions {}
 
 const props = withDefaults(defineProps<IInputProps>(), {
   placeholder: 'Placeholder',
@@ -32,21 +33,30 @@ const emit = defineEmits<{
 }>()
 
 const configClasses: Required<IInputClasses> = {
-  commonClasses:
-    'px-6 py-4 font-bold placeholder:(text-black) hover:scale-95 transition-300 rounded-lg focus:(outline-black-900 outline-1) outline-0',
-  activeClasses: 'text-blue border-b-2 border-blue-500',
+  commonClasses: `px-6 py-4 font-bold placeholder:(text-black) hover:scale-95
+    transition-300 rounded-lg focus:(outline-black-900 outline-none) outline-none`,
+  commonLabelClasses: 'font-semibold text-sm',
+  activeClasses: 'border-b-2 border-blue-500',
+  activeLabelClasses: 'text-primary',
   inactiveClasses: 'bg-tertiary',
-  errorClasses: 'bg-[#F6E2E2] text-cRed',
-  successClasses: 'bg-emerald-100 text-emerald-900',
-  commonLabelClasses: 'font-semibold text-black text-sm',
-  errorLabelClasses: 'font-semibold text-cRed text-sm',
+  errorClasses: 'bg-red-100/50 text-cRed',
+  errorLabelClasses: 'text-cRed',
+  successClasses: 'bg-emerald-100/50 text-emerald-900',
 }
 
-;(Object.keys(configClasses) as (keyof IInputClasses)[]).forEach((classesCategory) => {
-  typeof props[classesCategory] !== 'undefined'
-    ? (configClasses[classesCategory] = props[classesCategory] as string)
-    : null
-})
+/**
+ * Traverses configClasses and if props with this classes category is empty or undefined -> do nothing,
+ * else - overrides it
+ */
+function initConfigClasses() {
+  ;(Object.keys(configClasses) as (keyof IInputClasses)[]).forEach((classesCategory) => {
+    if (!(props[classesCategory] === '' || typeof props[classesCategory] === 'undefined')) {
+      configClasses[classesCategory] = props[classesCategory] as string
+    }
+  })
+}
+
+initConfigClasses()
 
 const waitCondition = props.skipInitValue === true ? ['inactive', 'initial-error'] : ['inactive']
 const [isFocus, toggleFocus] = useToggle(false)
@@ -65,7 +75,11 @@ const isInactiveSignal = computed(() => waitCondition.includes(props.statusValid
   <div class="input-wrapper">
     <label
       v-if="props.label"
-      :class="{ [configClasses.commonLabelClasses]: !isErrorSignal, [configClasses.errorLabelClasses]: isErrorSignal }"
+      :class="{
+        [configClasses.commonLabelClasses]: true,
+        [configClasses.errorLabelClasses]: isErrorSignal && !isFocus,
+        [configClasses.activeLabelClasses]: isFocus,
+      }"
       :for="id"
       >{{ props.label }}</label
     >
@@ -76,10 +90,10 @@ const isInactiveSignal = computed(() => waitCondition.includes(props.statusValid
       :placeholder="placeholder"
       :class="{
         [configClasses.commonClasses]: true,
-        [configClasses.inactiveClasses]: isInactiveSignal,
+        [configClasses.inactiveClasses]: isInactiveSignal && !isFocus,
         [configClasses.errorClasses]: isErrorSignal,
         [configClasses.successClasses]: props.statusValidation === 'correct',
-        [configClasses.activeClasses]: isFocus && isEmpty,
+        [configClasses.activeClasses]: isFocus,
       }"
       @focus="toggleFocus()"
       @blur="toggleFocus()"
