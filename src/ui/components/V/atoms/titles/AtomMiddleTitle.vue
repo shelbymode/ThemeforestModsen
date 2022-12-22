@@ -11,7 +11,7 @@ const { tag = 'h2' } = defineProps<{
 
 <style lang="scss" scoped>
 .title-middle {
-  @apply text-[28px] font-extrabold text-black;
+  @apply text-[28px] font-bold text-black;
   @apply md:text-4xl;
 }
 </style>

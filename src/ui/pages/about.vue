@@ -13,6 +13,6 @@
 
 <style lang="scss" scoped>
 .about {
-  @apply flex flex-col items-center bg-white;
+  @apply flex flex-col items-center mt-20 bg-white;
 }
 </style>

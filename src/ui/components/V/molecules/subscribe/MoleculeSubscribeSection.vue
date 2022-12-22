@@ -44,7 +44,7 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
 
 <style lang="scss" scoped>
 .subscribe {
-  @apply w-full grid place-items-center;
+  @apply w-full grid place-items-center py-10;
   @apply dark:(bg-secondary border-b border-helperBlueTwo);
   // .subscribe__content
 

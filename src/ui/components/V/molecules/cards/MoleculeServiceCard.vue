@@ -13,7 +13,7 @@ const isLinkExists = props.linkInfo && Object.keys(props.linkInfo).length > 0
 </script>
 
 <template>
-  <div class="card shadow">
+  <div class="card">
     <slot name="icon">
       <span v-if="props?.iconClass" class="card__icon" :class="[props.iconClass]" />
     </slot>
