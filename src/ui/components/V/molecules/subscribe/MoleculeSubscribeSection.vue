@@ -14,8 +14,8 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
 </script>
 
 <template>
-  <section class="subscribe">
-    <TemplatePageContainer class="subscribe-container">
+  <section class="subscribe-container">
+    <TemplatePageRestrictor class="subscribe">
       <div class="subscribe__content">
         <AtomMiddleTitle class="subscribe__title"
           >Subscribe <br class="sm:hidden" />
@@ -39,18 +39,25 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
         />
         <AtomButton :is-disabled="!isFormValid" class="subscribe-email__button"> Send </AtomButton>
       </div>
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </section>
 </template>
 
 <style lang="scss" scoped>
-.subscribe {
+.subscribe-container {
   @apply w-full grid place-items-center py-10;
   @apply dark:(bg-secondary border-b border-helperBlueTwo);
+}
+.subscribe {
+  @apply flex flex-col items-center justify-between py-10 gap-y-9;
+  @apply xl:(flex-row gap-x-10);
+
   // .subscribe__content
 
   &__content {
     @apply w-full flex flex-col items-start gap-y-6 max-w-135;
+    @apply md:gap-y-9;
+    @apply xl:max-w-1/2;
   }
 
   // .subscribe__title
@@ -59,24 +66,24 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
     @apply text-center font-bold text-black w-full;
     @apply sm:min-w-full;
     @apply dark:(text-white);
+    @apply xl:(text-left);
   }
 
   // .subscribe__text
 
   &__text {
-    @apply hidden text-cGrey;
+    @apply hidden text-cGrey text-center;
     @apply md:block;
     @apply dark:(text-white);
+    @apply xl:(text-left);
   }
 }
-.subscribe-container {
-  @apply flex flex-col items-center justify-between py-10 gap-y-6;
-  @apply md:(flex-col);
-}
+
 .subscribe-email {
   @apply flex flex-col gap-y-6 gap-x-3 w-4/5;
   @apply sm:(items-center w-3/5);
   @apply md:(flex-row);
+  @apply xl:max-w-1/2;
 
   // .subscribe-email__input-email
 

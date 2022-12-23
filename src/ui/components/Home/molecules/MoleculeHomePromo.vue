@@ -25,6 +25,7 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
 .promo {
   @apply flex flex-col w-full justify-start bg-cBackground px-6;
   @apply md:(flex-row gap-x-6);
+  @apply lg:px-0;
   // .promo__image
 
   &__image {
@@ -35,7 +36,7 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
   // .promo__content
 
   &__content {
-    @apply flex flex-col items-start gap-y-7 py-4 mr-0;
+    @apply flex flex-col items-start justify-center gap-y-7 py-4 mr-0;
     @apply sm:(items-center);
     @apply md:(items-start py-10 w-1/2);
     @apply lg:(px-10);
@@ -44,6 +45,8 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
   // .promo__title
 
   &__title {
+    @apply w-full text-center;
+    @apply md:text-left;
   }
 
   // .promo__text

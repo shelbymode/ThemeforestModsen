@@ -7,11 +7,16 @@ const { closeButtonClass, headerLinksClass, isHeaderLinksOpened, toggleClose } =
 <template>
   <TemplateHeader>
     <template #logo>
-      <span class="icon" />
+      <RouterLink to="/home" class="icon" />
     </template>
 
     <template #close-button>
-      <AtomHeaderCloseButton :class="[closeButtonClass]" @click="toggleClose()" @keypress="toggleClose()" />
+      <AtomHeaderCloseButton
+        class="md:order-3"
+        :class="[closeButtonClass]"
+        @click="toggleClose()"
+        @keypress="toggleClose()"
+      />
     </template>
 
     <template #links>
@@ -29,12 +34,12 @@ const { closeButtonClass, headerLinksClass, isHeaderLinksOpened, toggleClose } =
       </transition>
     </template>
 
-    <template #theme-switcher>
-      <AtomToggleDarkMode class="header__dark-toggler" />
-    </template>
-
     <template #demo>
       <MoleculeHeaderDemoButton />
+    </template>
+
+    <template #theme-switcher>
+      <AtomToggleDarkMode class="header__dark-toggler" />
     </template>
   </TemplateHeader>
 </template>
@@ -44,7 +49,7 @@ const { closeButtonClass, headerLinksClass, isHeaderLinksOpened, toggleClose } =
   * Literally there is no another way in the universe how to change this svg color
 */
 .icon {
-  @apply inline-block bg-primary w-[150px] h-[49px] scale-80 translate-x-[-10%];
+  @apply inline-block bg-primary w-[150px] h-[49px] scale-80 translate-x-[-10%] order-1;
   @apply dark:(bg-white);
   @apply sm:(scale-100 translate-x-0);
   mask-image: url('/assets/images/svg-icons/logo_blue.svg');
@@ -56,7 +61,8 @@ const { closeButtonClass, headerLinksClass, isHeaderLinksOpened, toggleClose } =
 // .header__dark-toggler
 
 .header__dark-toggler {
-  @apply max-w-1/3;
+  @apply max-w-1/3 order-2 fixed left-1/2 top-0 translate-y-[50%];
+  @apply md:(static translate-y-0);
 }
 
 // .header__links

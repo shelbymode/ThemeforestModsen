@@ -45,10 +45,10 @@ const cardReviews = [
   },
 ]
 
-const updateControlsStatus = (activeCardIndex: number, totalSlideAmount: number) => {
+const updateControlsStatus = (left: boolean, right: boolean) => {
   emit('update-controls-status', {
-    left: activeCardIndex !== 0 ? 'enabled' : 'disabled',
-    right: activeCardIndex < totalSlideAmount - 1 ? 'enabled' : 'disabled',
+    left: left === true ? 'enabled' : 'disabled',
+    right: right === true ? 'enabled' : 'disabled',
   })
 }
 
@@ -56,7 +56,6 @@ const { unlockControls } = useSlider({
   shiftedElement: () => getElement('.testimonials__content'),
   widthShiftedArea: () => getWidthElement('.testimonials__card') + 2.5 * 16,
   directionSignal: computed(() => props.directionSignal),
-  totalSlideAmount: cardReviews.length,
   updateControlsStatus,
 })
 </script>

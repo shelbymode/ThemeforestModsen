@@ -109,7 +109,7 @@ const selectCurrentCard = (idx: number) => {
 </script>
 
 <template>
-  <TemplatePageContainer class="price">
+  <TemplatePageRestrictor class="price">
     <AtomMiddleTitle class="price__title">Our pricing</AtomMiddleTitle>
     <div class="price__cards">
       <MoleculePriceCard
@@ -121,7 +121,7 @@ const selectCurrentCard = (idx: number) => {
         @update:select-card="selectCurrentCard"
       />
     </div>
-  </TemplatePageContainer>
+  </TemplatePageRestrictor>
 </template>
 
 <style lang="scss" scoped>

@@ -40,14 +40,14 @@ const props = withDefaults(defineProps<IDirectionControl>(), {
 }
 .h-link__link {
   @apply font-medium duration-300;
-  @apply hover:(text-black);
+  @apply hover:(scale-110 text-black);
   @apply dark:(text-white);
   @apply dark:hover:(text-neutral-500);
 }
 .active {
-  @apply text-black font-bold border-b-2 border-transparent;
-  @apply dark:(text-white border-b-2 border-white);
-  @apply dark:hover:(text-cGray border-transparent);
+  @apply text-black font-bold border-b-2 border-black;
+  @apply dark:(text-white  border-white);
+  @apply hover:(text-cGray border-transparent);
 }
 .icon {
   @apply i-ic-outline-arrow-right-alt text-3xl;

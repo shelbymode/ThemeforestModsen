@@ -15,18 +15,16 @@ const emit = defineEmits<{
   (e: 'update-controls-status', value: IControlsStatus): void
 }>()
 
-const updateControlsStatus = (activeCardIndex: number, totalSlideAmount: number) => {
+const updateControlsStatus = (left: boolean, right: boolean) => {
   emit('update-controls-status', {
-    left: activeCardIndex !== 0 ? 'enabled' : 'disabled',
-    right: activeCardIndex < totalSlideAmount - 1 ? 'enabled' : 'disabled',
+    left: left === true ? 'enabled' : 'disabled',
+    right: right === true ? 'enabled' : 'disabled',
   })
 }
-
 const { unlockControls } = useSlider({
   shiftedElement: () => getElement('.blog__content'),
   widthShiftedArea: () => getWidthElement('.home-our-blog__card') + 2.5 * 16,
   directionSignal: computed(() => props.directionSignal),
-  totalSlideAmount: TOTAL_SLIDE_AMOUNT,
   updateControlsStatus,
 })
 </script>

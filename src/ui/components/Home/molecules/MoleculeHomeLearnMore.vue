@@ -8,16 +8,18 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
 </script>
 
 <template>
-  <TemplatePageContainer class="learn-more">
+  <TemplatePageRestrictor class="learn-more">
     <AtomBigTitle class="learn-more__title">
       Find true power in your data with <span class="learn-more__special-title">Ensome</span>
     </AtomBigTitle>
 
-    <AtomText class="learn-more__text">
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque lauda, totam rem aperiam,
-      eaque ipsa quae ab illo inventore veritatis et quasi.
-    </AtomText>
-  </TemplatePageContainer>
+    <div class="learn-more__content">
+      <AtomText class="learn-more__text">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque lauda, totam rem aperiam,
+        eaque ipsa quae ab illo inventore veritatis et quasi.
+      </AtomText>
+    </div>
+  </TemplatePageRestrictor>
 
   <div class="learn-more__image-wrapper">
     <img :src="srcMedia" alt="Home learn more" class="learn-more__image" />
@@ -27,38 +29,51 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
 
 <style lang="scss" scoped>
 .learn-more {
-  @apply flex flex-col gap-y-5 justify-start items-start my-10 px-6;
-  @apply md:(flex-row gap-x-6);
-
+  @apply flex flex-col gap-y-5 gap-x-6 justify-between items-start pt-10 px-6;
+  @apply md:flex-row;
   // .learn-more__title
 
   &__title {
-    @apply max-w-1/2 leading-snug;
+    @apply w-full text-center leading-snug;
+    @apply md:(w-1/2 max-w-115 text-left);
   }
-
-  // .learn-more__special-title
 
   &__special-title {
     @apply text-primary;
   }
 
+  // .learn-more__content
+
+  &__content {
+    @apply flex flex-col gap-y-8 items-stretch;
+    @apply sm:(items-center);
+    @apply md:(items-start w-1/2);
+    @apply lg:(px-10);
+  }
+
   // .learn-more__text
 
   &__text {
-    @apply w-1/2 w-full leading-relaxed;
+    @apply leading-relaxed;
     @apply md:max-w-115;
   }
 
-  // .learn-more__image-wrapper
+  // .learn-more__button
 
+  &__button {
+    @apply text-white bg-primary;
+    @apply md:self-start;
+  }
+
+  // .learn-more__image-wrapper
   &__image-wrapper {
-    @apply relative;
+    @apply relative w-full;
   }
 
   // .learn-more__image
 
   &__image {
-    @apply w-full object-cover;
+    @apply w-full object-cover max-h-[590px];
   }
 
   // .learn-more__button-learn-more

@@ -13,7 +13,7 @@ const props = defineProps<IInputProps>()
 const customClasses: IInputClasses = {
   commonClasses: `${u(
     props.commonClasses
-  )} pb-2 pl-1 border-b-1 font-semibold bg-transparent placeholder:(font-normal) rounded-none outline-none`,
+  )} pb-2 pl-3 border-b-2 font-semibold border-b-black/50 bg-transparent placeholder:(font-normal) rounded-none outline-none`,
   activeClasses: `${u(props.activeClasses)} border-b-2 border-primary`,
   activeLabelClasses: `${u(props.activeLabelClasses)}`,
   inactiveClasses: `${u(props.inactiveClasses)} border-b-black`,
@@ -25,6 +25,8 @@ const customClasses: IInputClasses = {
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
 }>()
+
+console.log(customClasses.activeClasses)
 
 const proxyModelValue = useVModel(props, 'modelValue', emit)
 </script>

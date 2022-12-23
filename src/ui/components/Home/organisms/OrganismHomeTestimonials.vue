@@ -5,17 +5,18 @@ const { directionSignal, controlsStatus, interceptScrollSide, updateControlsStat
 </script>
 
 <template>
-  <TemplatePageContainer class="testimonials">
+  <TemplatePageRestrictor class="testimonials">
     <MoleculeSliderHeader title="Testimonials" :controls-status="controlsStatus" @scroll-side="interceptScrollSide" />
     <MoleculeHomeTestimonialsContent
       :direction-signal="directionSignal"
       @update-controls-status="updateControlsStatus"
     />
-  </TemplatePageContainer>
+  </TemplatePageRestrictor>
 </template>
 
 <style lang="scss" scoped>
 .testimonials {
   @apply flex flex-col items-left gap-y-5 px-6 overflow-hidden;
+  @apply lg:px-0;
 }
 </style>

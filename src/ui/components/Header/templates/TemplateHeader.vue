@@ -2,12 +2,10 @@
 
 <template>
   <header class="header-container">
-    <TemplatePageContainer class="header">
+    <TemplatePageRestrictor class="header">
       <div class="header__logo">
         <slot name="logo"></slot>
       </div>
-
-      <slot name="theme-switcher"></slot>
 
       <slot name="close-button"></slot>
 
@@ -16,13 +14,15 @@
       <div class="header__demo">
         <slot name="demo"></slot>
       </div>
-    </TemplatePageContainer>
+
+      <slot name="theme-switcher"></slot>
+    </TemplatePageRestrictor>
   </header>
 </template>
 
 <style lang="scss" scoped>
 .header-container {
-  @apply fixed left-1/2 translate-x-[-50%] z-1 flex items-center justify-center max-w-[1920px] w-full bg-cBackground;
+  @apply fixed left-1/2 translate-x-[-50%] z-1 flex items-center justify-center w-full bg-cBackground;
   @apply dark:(bg-secondary);
 }
 .header {

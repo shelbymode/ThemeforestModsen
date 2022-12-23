@@ -14,25 +14,34 @@ export const useSlider = ({
   shiftedElement,
   widthShiftedArea,
   directionSignal,
-  totalSlideAmount,
   updateControlsStatus,
 }: {
   shiftedElement: () => HTMLElement | null
   widthShiftedArea: () => number
   directionSignal: ComputedRef<TDirection | null>
-  totalSlideAmount: number
-  updateControlsStatus: (activeCardIndex: number, totalSlideAmount: number) => void
+  updateControlsStatus: (left: boolean, right: boolean) => void
 }) => {
+  let contentWidth
+  let screenWidth
+  let deltaWidth
+  let totalSlideAmount: number
+
   let isControlsAreLocked = $ref(false)
   let activeCardIndex = $ref(0)
 
   const unlockControls = () => (isControlsAreLocked = false)
   const lockControls = () => (isControlsAreLocked = true)
 
-  const isScrollToLeftOk = $computed(() => directionSignal.value === 'left' && activeCardIndex > 0)
-  const isScrollToRightOk = $computed(() => directionSignal.value === 'right' && activeCardIndex < totalSlideAmount - 1)
+  const isScrollToLeft = $computed(() => directionSignal.value === 'left')
+  const isScrollToRight = $computed(() => directionSignal.value === 'right')
 
   onMounted(() => {
+    contentWidth = shiftedElement()?.scrollWidth || 0
+    screenWidth = shiftedElement()?.getBoundingClientRect().width || 0
+    deltaWidth = widthShiftedArea()
+
+    totalSlideAmount = Math.ceil((contentWidth - screenWidth) / deltaWidth)
+
     if (shiftedElement()) {
       watch(directionSignal, (newDirectionSignal) => {
         if (newDirectionSignal) {
@@ -46,18 +55,18 @@ export const useSlider = ({
     if (!isControlsAreLocked) {
       let shiftX = 0
       const widthContent = widthShiftedArea()
-      if (isScrollToLeftOk) {
+      if (isScrollToLeft) {
         activeCardIndex--
         shiftX = -widthContent
-      } else if (isScrollToRightOk) {
+      } else if (isScrollToRight) {
         activeCardIndex++
         shiftX = widthContent
       }
       lockControls()
       translateXElement(shiftedElement()!, shiftX)
-      updateControlsStatus(activeCardIndex, totalSlideAmount)
+      updateControlsStatus(activeCardIndex > 0, activeCardIndex < totalSlideAmount)
     }
   }
 
-  return { isControlsAreLocked, activeCardIndex, unlockControls, lockControls, isScrollToLeftOk, isScrollToRightOk }
+  return { isControlsAreLocked, activeCardIndex, unlockControls, lockControls }
 }

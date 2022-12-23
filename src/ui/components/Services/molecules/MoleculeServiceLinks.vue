@@ -2,14 +2,14 @@
 
 <template>
   <section class="service-links">
-    <TemplatePageContainer class="service-link-container">
+    <TemplatePageRestrictor class="service-link-container">
       <AtomDivideLink
         :links="[
           { name: 'Home', link: '/home' },
           { name: 'Services', link: '/services' },
         ]"
       />
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </section>
 </template>
 

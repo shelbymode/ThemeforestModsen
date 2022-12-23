@@ -7,7 +7,7 @@ const { directionSignal, controlsStatus, interceptScrollSide, updateControlsStat
 </script>
 
 <template>
-  <TemplatePageContainer class="blog">
+  <TemplatePageRestrictor class="blog">
     <MoleculeSliderHeader
       :hide-controls="!isMdScreen"
       :controls-status="controlsStatus"
@@ -17,12 +17,13 @@ const { directionSignal, controlsStatus, interceptScrollSide, updateControlsStat
     </MoleculeSliderHeader>
 
     <MoleculeHomeOurBlogContent :direction-signal="directionSignal" @update-controls-status="updateControlsStatus" />
-  </TemplatePageContainer>
+  </TemplatePageRestrictor>
 </template>
 
 <style lang="scss" scoped>
 .blog {
   @apply flex flex-col items-left gap-y-12 px-6 overflow-hidden;
+  @apply lg:px-0;
 }
 
 .blog__title {

@@ -8,7 +8,7 @@ const labelStats = [
 
 <template>
   <section class="service-stats">
-    <TemplatePageContainer class="service-stats-container">
+    <TemplatePageRestrictor class="service-stats-container">
       <AtomMiddleTitle class="service-stats__title">We provide services that guarantee your success</AtomMiddleTitle>
 
       <div class="service-stats__content">
@@ -29,7 +29,7 @@ const labelStats = [
       </div>
 
       <AtomStatsClient />
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </section>
 </template>
 

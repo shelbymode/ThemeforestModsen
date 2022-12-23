@@ -2,13 +2,13 @@
 
 <template>
   <section class="about-customers">
-    <TemplatePageContainer class="about-customers-container">
+    <TemplatePageRestrictor class="about-customers-container">
       <AtomBigTitle class="about-customers__title">Our customers</AtomBigTitle>
       <AtomText class="about-customers__text">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan, totam rem aperiam.
       </AtomText>
       <AtomStatsClient class="about-customers__clients" />
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </section>
 </template>
 

@@ -32,15 +32,15 @@ $width: 80px;
   // .toggle-switch__slider
 
   &__slider {
-    @apply flex items-center w-full h-full text-4xl transition-300;
+    @apply flex items-center w-full h-full text-3xl transition-300;
   }
 
   // .toggle-switch__slider-weather
 
   &__slider-weather {
     transform: translateX(calc($width / 2));
-    @apply duration-300 i-fluent-weather-sunny-24-filled bg-black;
-    @apply dark:(i-fluent-weather-moon-20-filled bg-white rotate-z-135 translate-x-0);
+    @apply duration-300 i-fluent-weather-sunny-16-filled bg-black translate-x-[20%];
+    @apply dark:(i-fluent-weather-moon-16-filled translate-x-[150%]);
   }
 }
 </style>

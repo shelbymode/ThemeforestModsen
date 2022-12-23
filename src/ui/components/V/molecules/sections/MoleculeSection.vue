@@ -2,14 +2,14 @@
 
 <template>
   <div class="section-wrapper">
-    <TemplatePageContainer class="section">
+    <TemplatePageRestrictor class="section">
       <div class="section-content">
         <h3 class="section-content__title">Subscribe to our newsletter</h3>
         <p class="section-content__text">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
         </p>
       </div>
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </div>
 </template>
 
@@ -23,7 +23,7 @@
 }
 .section-content {
   @apply flex flex-col items-start gap-y-6;
-  @apply md:max-w-110;
+  @apply md:(max-w-110);
 
   // .section-content__title
 
