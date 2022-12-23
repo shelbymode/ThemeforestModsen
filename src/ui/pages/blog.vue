@@ -19,7 +19,8 @@ const tags = [
 <template>
   <TemplatePage>
     <main class="blog">
-      <MoleculeBlogPost />
+      <MoleculeBlogLinks />
+
       <TemplateBlogPageContent>
         <template #current-post>
           <OrganismBlogCurrentPost />
@@ -44,7 +45,13 @@ const tags = [
         <template #tags>
           <OrganismBlogTags :tags="tags" />
         </template>
+
+        <template #subscribe>
+          <MoleculeSubscribeSection />
+        </template>
       </TemplateBlogPageContent>
+
+      <MoleculeSubscribeSection />
     </main>
   </TemplatePage>
 </template>

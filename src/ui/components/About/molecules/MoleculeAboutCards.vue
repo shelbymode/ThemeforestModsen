@@ -27,7 +27,7 @@ const currentCards = computed(() => (isLgScreen.value === true ? aboutCardsBig :
 
 <template>
   <section class="about-cards">
-    <TemplatePageContainer class="about-links-container">
+    <TemplatePageRestrictor class="about-links-container">
       <div v-for="card in currentCards" :key="card.title" class="card">
         <section class="card__content">
           <AtomBigTitle class="card__title">{{ card.title }}</AtomBigTitle>
@@ -35,7 +35,7 @@ const currentCards = computed(() => (isLgScreen.value === true ? aboutCardsBig :
         </section>
         <img class="card__image" src="https://api.lorem.space/image/fashion?w=635&h=425&hash=66a90khq" alt="random" />
       </div>
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </section>
 </template>
 

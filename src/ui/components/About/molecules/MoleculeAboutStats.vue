@@ -19,7 +19,7 @@ const currentLabelStats = computed(() => (isLgScreen.value ? labelStatsBig : lab
 
 <template>
   <section class="about-stats">
-    <TemplatePageContainer class="about-stats-container">
+    <TemplatePageRestrictor class="about-stats-container">
       <AtomBigTitle class="about-stats__title">Ensome in numbers</AtomBigTitle>
       <div class="about-stats__stats">
         <template v-for="labelStat in currentLabelStats" :key="labelStat.text">
@@ -27,7 +27,7 @@ const currentLabelStats = computed(() => (isLgScreen.value ? labelStatsBig : lab
           <div v-if="isLgScreen" class="about-stats__stat-divider"></div>
         </template>
       </div>
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </section>
 </template>
 

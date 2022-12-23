@@ -21,12 +21,19 @@ const containerLinkComponent = useFoooterSwapComponent()
 </template>
 
 <style lang="scss" scoped>
-::v-deep {
+.service-links {
+  @apply flex flex-col items-center gap-y-3;
+  @apply sm:gap-y-6;
+  @apply lg:(items-start);
+}
+
+:deep {
   .service-links {
-    @apply flex flex-col items-center gap-y-3
+    @apply flex flex-col items-center gap-y-3;
     @apply sm:gap-y-6;
     @apply lg:(items-start);
-
+  }
+  .service-links {
     // .service-links__link
 
     &__link {

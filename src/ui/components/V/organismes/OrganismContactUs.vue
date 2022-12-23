@@ -2,10 +2,10 @@
 
 <template>
   <div class="contact-us">
-    <TemplatePageContainer class="contact-us-container">
+    <TemplatePageRestrictor class="contact-us-container">
       <MoleculeContactUsInfo class="contact-us__info" />
       <MoleculeContactUsForm class="contact-us__form" />
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </div>
 </template>
 

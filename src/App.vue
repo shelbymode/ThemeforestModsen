@@ -12,17 +12,13 @@
 }
 .page-enter-from {
   opacity: 0;
-  transform: translateX(66%);
-
-  // transform: /* translateX(50%) */ scaleX(0.05);
 }
 .page-leave-to {
   opacity: 0;
-  transform: translateX(-66%);
 }
 
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease-in-out;
 }
 </style>

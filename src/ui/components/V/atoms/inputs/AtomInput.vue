@@ -33,15 +33,15 @@ const emit = defineEmits<{
 }>()
 
 const configClasses: Required<IInputClasses> = {
-  commonClasses: `px-6 py-4 font-bold placeholder:(text-black) hover:scale-95
+  commonClasses: `px-6 py-4 font-bold placeholder:(text-cGrey) hover:scale-95
     transition-300 rounded-lg focus:(outline-black-900 outline-none) outline-none`,
   commonLabelClasses: 'font-semibold text-sm',
-  activeClasses: 'border-b-2 border-blue-500',
+  activeClasses: 'border-b-2 mb-[-2px] border-blue-500',
   activeLabelClasses: 'text-primary',
   inactiveClasses: 'bg-tertiary',
-  errorClasses: 'bg-red-100/50 text-cRed',
+  errorClasses: 'bg-red-100 text-cRed',
   errorLabelClasses: 'text-cRed',
-  successClasses: 'bg-emerald-100/50 text-emerald-900',
+  successClasses: 'bg-emerald-100 text-emerald-900',
 }
 
 /**
@@ -69,6 +69,8 @@ const isErrorSignal = computed(
 )
 
 const isInactiveSignal = computed(() => waitCondition.includes(props.statusValidation))
+
+console.log(configClasses.activeClasses)
 </script>
 
 <template>
@@ -103,6 +105,9 @@ const isInactiveSignal = computed(() => waitCondition.includes(props.statusValid
 </template>
 
 <style lang="scss" scoped>
+input {
+  caret-color: black;
+}
 .input-wrapper {
   @apply flex flex-col items-left gap-y-2;
 }

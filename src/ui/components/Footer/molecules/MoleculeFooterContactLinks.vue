@@ -41,19 +41,26 @@ const containerLinkComponent = useFoooterSwapComponent()
     @apply lg:(text-base);
   }
 }
-::v-deep .contact-links {
-  // .contact-links__email
 
-  &__email {
-    @apply md:text-2xl;
-    @apply lg:(text-base);
-  }
+:deep {
+  .contact-links {
+    @apply flex flex-col items-left gap-y-3;
+    @apply sm:(gap-y-6 items-center);
+    @apply lg:(items-start);
 
-  // .contact-links__driving
+    // .contact-links__email
 
-  &__driving {
-    @apply md:text-2xl;
-    @apply lg:(text-base);
+    &__email {
+      @apply md:text-2xl;
+      @apply lg:(text-base);
+    }
+
+    // .contact-links__driving
+
+    &__driving {
+      @apply md:text-2xl;
+      @apply lg:(text-base);
+    }
   }
 }
 </style>

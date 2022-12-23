@@ -2,14 +2,14 @@
 
 <template>
   <div class="benefits-container">
-    <TemplatePageContainer class="benefits">
+    <TemplatePageRestrictor class="benefits">
       <MoleculeHomeBenefitsContent />
 
       <div class="benefits__cards">
         <MoleculeHomeBenefitsHigh />
         <MoleculeHomeBenefitsLow />
       </div>
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </div>
 </template>
 

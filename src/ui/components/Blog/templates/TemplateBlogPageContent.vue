@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 -->
 <template>
-  <TemplatePageContainer class="blog-page-container">
+  <TemplatePageRestrictor class="blog-page-container">
     <section class="blog-page-container__content">
       <div class="blog-page-container__current-post">
         <slot name="current-post" />
@@ -25,7 +25,7 @@
         <slot name="tags" />
       </div>
     </div>
-  </TemplatePageContainer>
+  </TemplatePageRestrictor>
 </template>
 
 <style lang="scss" scoped>

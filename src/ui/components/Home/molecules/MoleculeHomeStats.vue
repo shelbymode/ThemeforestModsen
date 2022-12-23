@@ -7,7 +7,7 @@ const labelStats = [
 </script>
 
 <template>
-  <TemplatePageContainer class="stats">
+  <TemplatePageRestrictor class="stats">
     <AtomMiddleTitle class="stats__title">We provide services that guarantee your success</AtomMiddleTitle>
 
     <div class="stats__content">
@@ -27,13 +27,14 @@ const labelStats = [
     </div>
 
     <AtomStatsClient />
-  </TemplatePageContainer>
+  </TemplatePageRestrictor>
 </template>
 
 <style lang="scss" scoped>
 .stats {
   @apply flex flex-col items-start px-6 gap-y-6;
   @apply md:(gap-y-12);
+  @apply xl:(gap-y-20);
 
   // .stats__title
 

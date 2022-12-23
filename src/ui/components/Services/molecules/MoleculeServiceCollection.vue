@@ -69,7 +69,7 @@ const servicesCardsCollection = [
 
 <template>
   <section class="service-collection">
-    <TemplatePageContainer class="service-collection-container">
+    <TemplatePageRestrictor class="service-collection-container">
       <MoleculeServiceCard
         v-for="serviceCard in servicesCardsCollection"
         :key="serviceCard.title"
@@ -82,7 +82,7 @@ const servicesCardsCollection = [
           <component :is="serviceCard.icon"></component>
         </template>
       </MoleculeServiceCard>
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </section>
 </template>
 

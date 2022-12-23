@@ -10,7 +10,7 @@
  * 7. MoleculeSliderHeader updates itself state.
  */
 
-import { IControlsStatus, TDirection } from '~/ui/components/V/molecules/MoleculeSliderHeader.vue'
+import { IControlsStatus, TDirection } from '~/ui/components/V/molecules/slider/MoleculeSliderHeader.vue'
 
 export const useSliderMediator = () => {
   const directionSignal = ref<TDirection | null>(null)

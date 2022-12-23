@@ -34,17 +34,21 @@ const containerLinkComponent = useFoooterSwapComponent()
 </template>
 
 <style lang="scss" scoped>
-::v-deep {
+.quick-links {
+  @apply flex flex-col items-center gap-y-3 transition-all duration-500;
+  @apply sm:gap-y-6;
+  @apply lg:(items-start);
+}
+
+:deep {
   .quick-links {
     @apply flex flex-col items-center gap-y-3 transition-all duration-500;
     @apply sm:gap-y-6;
     @apply lg:(items-start);
-    // .quick-links__link
-
-    &__link {
-      @apply md:text-2xl;
-      @apply lg:(text-base);
-    }
+  }
+  .quick-links__link {
+    @apply md:text-2xl;
+    @apply lg:(text-base);
   }
 }
 </style>

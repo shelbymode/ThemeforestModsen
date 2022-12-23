@@ -2,7 +2,7 @@
 
 <template>
   <footer class="footer-container">
-    <TemplatePageContainer class="footer">
+    <TemplatePageRestrictor class="footer">
       <div class="footer__logo">
         <slot name="logo" />
       </div>
@@ -34,7 +34,7 @@
       <div class="footer__rights">
         <slot name="rights" />
       </div>
-    </TemplatePageContainer>
+    </TemplatePageRestrictor>
   </footer>
 </template>
 
@@ -42,6 +42,7 @@
 .footer-container {
   @apply h-full w-full py-6 bg-cBackground;
   @apply dark:(bg-secondary);
+  @apply lg:(py-20);
 }
 .footer {
   @apply flex flex-col px-3;
