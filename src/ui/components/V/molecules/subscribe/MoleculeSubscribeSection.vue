@@ -50,7 +50,7 @@ const sendMessage = () => (isMessageSent = true)
 
       <transition name="subscribe" mode="out-in">
         <template v-if="isMessageSent">
-          <MoleculeNotification type="warning">
+          <MoleculeNotification type="success">
             <template #message> You have successfully subscribed! </template>
           </MoleculeNotification>
         </template>

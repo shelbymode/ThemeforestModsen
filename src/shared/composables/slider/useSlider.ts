@@ -21,6 +21,7 @@ export const useSlider = ({
   directionSignal: ComputedRef<TDirection | null>
   updateControlsStatus: (left: boolean, right: boolean) => void
 }) => {
+  let element: HTMLElement | null
   let contentWidth
   let screenWidth
   let deltaWidth
@@ -36,23 +37,24 @@ export const useSlider = ({
   const isScrollToRight = $computed(() => directionSignal.value === 'right')
 
   onMounted(() => {
-    contentWidth = shiftedElement()?.scrollWidth || 0
-    screenWidth = shiftedElement()?.getBoundingClientRect().width || 0
-    deltaWidth = widthShiftedArea()
+    element = shiftedElement()
+    if (element) {
+      contentWidth = element.scrollWidth || 0
+      screenWidth = element.getBoundingClientRect().width || 0
+      deltaWidth = widthShiftedArea()
 
-    totalSlideAmount = Math.ceil((contentWidth - screenWidth) / deltaWidth)
+      totalSlideAmount = Math.ceil((contentWidth - screenWidth) / deltaWidth)
 
-    if (shiftedElement()) {
       watch(directionSignal, (newDirectionSignal) => {
         if (newDirectionSignal) {
-          runShifting()
+          runShifting(element)
         }
       })
     }
   })
 
-  function runShifting() {
-    if (!isControlsAreLocked) {
+  function runShifting(element: HTMLElement | null) {
+    if (!isControlsAreLocked && element) {
       let shiftX = 0
       const widthContent = widthShiftedArea()
       if (isScrollToLeft) {
@@ -63,7 +65,7 @@ export const useSlider = ({
         shiftX = widthContent
       }
       lockControls()
-      translateXElement(shiftedElement()!, shiftX)
+      translateXElement(element, shiftX)
       updateControlsStatus(activeCardIndex > 0, activeCardIndex < totalSlideAmount)
     }
   }

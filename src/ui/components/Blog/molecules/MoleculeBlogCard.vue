@@ -12,6 +12,7 @@ const props = withDefaults(
     imgSrc?: string
   }>(),
   {
+    tagsInfo: undefined,
     imgSrc: 'https://api.lorem.space/image/game?w=685&h=235&hash=pjy9rusa',
   }
 )

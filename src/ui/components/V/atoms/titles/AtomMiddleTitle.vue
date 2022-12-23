@@ -1,10 +1,15 @@
 <script setup lang="ts">
-const { tag = 'h2' } = defineProps<{
-  tag?: 'h1' | 'h2' | 'h3'
-}>()
+const props = withDefaults(
+  defineProps<{
+    tag?: 'h1' | 'h2' | 'h3'
+  }>(),
+  {
+    tag: 'h2',
+  }
+)
 </script>
 <template>
-  <component :is="tag" class="title-middle">
+  <component :is="props.tag" class="title-middle">
     <slot />
   </component>
 </template>
