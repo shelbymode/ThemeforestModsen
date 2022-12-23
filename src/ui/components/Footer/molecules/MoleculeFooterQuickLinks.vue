@@ -22,19 +22,29 @@ const containerLinkComponent = useFoooterSwapComponent()
 </script>
 
 <template>
-  <component
-    :is="containerLinkComponent"
-    title="Quick links"
-    class="flex flex-col items-center gap-y-3 sm:gap-y-6 lg:(items-start) transition-all duration-500"
-  >
+  <component :is="containerLinkComponent" title="Quick links" class="quick-links">
     <AtomHeaderLink
       v-for="itemLink in quickLinks"
       :key="itemLink.name"
-      class="md:text-2xl lg:(text-base)"
+      class="quick-links__link"
       :link="itemLink.link"
       >{{ itemLink.name }}</AtomHeaderLink
     >
   </component>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+::v-deep {
+  .quick-links {
+    @apply flex flex-col items-center gap-y-3 transition-all duration-500;
+    @apply sm:gap-y-6;
+    @apply lg:(items-start);
+    // .quick-links__link
+
+    &__link {
+      @apply md:text-2xl;
+      @apply lg:(text-base);
+    }
+  }
+}
+</style>

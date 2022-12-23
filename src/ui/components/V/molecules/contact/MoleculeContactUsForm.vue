@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { required, email, minLength, maxLength, helpers, sameAs } from '@vuelidate/validators'
 import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
-import { IInputClasses } from '../inputs/AtomInput.vue'
+import { IInputClasses } from '../../atoms/inputs/AtomInput.vue'
 
 const rulesForm = computed(() => ({
   email: {
@@ -65,10 +65,7 @@ const formInfoAll: IFormInfo[] = [
 ]
 
 const customClassesTranslucent: IInputClasses = {
-  inactiveClasses: 'bg-tertiary',
-  errorClasses: 'bg-[#F6E2E2] text-cRed',
-  successClasses: 'bg-emerald-100/30 border-green text-emerald-700',
-  errorLabelClasses: 'text-cRed',
+  commonLabelClasses: 'text-cGrey',
 }
 </script>
 
@@ -78,13 +75,13 @@ const customClassesTranslucent: IInputClasses = {
     <form class="contact-form__form">
       <AtomInputTranslucent
         v-for="formInfo in formInfoAll"
-        :id="formInfo.id"
         :key="formInfo.id"
         v-model="form[formInfo.field]"
-        v-bind="customClassesTranslucent"
-        :label="formInfo.label"
-        :placeholder="formInfo.placeholder"
-        :status-validation="getStatusValidation(formInfo.field)"
+        v-bind="{
+          ...formInfo,
+          ...customClassesTranslucent,
+          statusValidation: getStatusValidation(formInfo.field),
+        }"
         @input="touch(formInfo.field)"
       />
     </form>

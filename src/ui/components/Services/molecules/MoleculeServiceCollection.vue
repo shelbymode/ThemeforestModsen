@@ -88,12 +88,12 @@ const servicesCardsCollection = [
 
 <style lang="scss" scoped>
 .service-collection {
-  @apply grid place-items-center w-full py-35;
+  @apply grid place-items-center w-full py;
   &__card {
     @apply min-w-[470px] p-0;
   }
 }
 .service-collection-container {
-  @apply flex justify-center flex-wrap gap-x-26 gap-y-22;
+  @apply flex justify-center flex-wrap gap-x-26 gap-y-22 px-5;
 }
 </style>

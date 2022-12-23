@@ -8,6 +8,7 @@
 
 <style lang="scss" scoped>
 .page-container {
-  @apply mx-a md:max-w-[1280px] w-full;
+  @apply mx-a w-full;
+  @apply md:max-w-[1280px];
 }
 </style>

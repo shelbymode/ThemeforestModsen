@@ -14,11 +14,11 @@ const props = defineProps<{
 
 <style lang="scss" scoped>
 .label-stats {
-  @apply flex flex-col items-start gap-y-2;
+  @apply flex flex-col items-center gap-y-2;
   // .label-stats__indicator
 
   &__indicator {
-    @apply text-3xl font-extrabold text-left text-primary;
+    @apply text-3xl font-bold items-center text-primary;
     @apply md:text-5xl;
   }
 

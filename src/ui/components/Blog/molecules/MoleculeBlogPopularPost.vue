@@ -35,7 +35,8 @@ const props = withDefaults(
   // .popular-post__content
 
   &__content {
-    @apply flex flex-col items-start w-1/2 gap-y-4  md:(p-4 shadow);
+    @apply flex flex-col items-start w-1/2 gap-y-4;
+    @apply md:(p-4 shadow);
   }
 
   // .popular-post__date

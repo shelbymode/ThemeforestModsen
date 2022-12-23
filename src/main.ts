@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import { createPinia } from 'pinia'
+
 import routes from 'virtual:generated-pages'
 import App from './App.vue'
 
@@ -17,6 +19,6 @@ const router = createRouter({
     return { top: 0 }
   },
 })
-
+app.use(router).use(createPinia())
 app.use(router)
 app.mount('#app')

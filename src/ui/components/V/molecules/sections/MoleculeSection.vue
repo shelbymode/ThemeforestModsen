@@ -22,12 +22,13 @@
   @apply flex justify-between items-center py-20;
 }
 .section-content {
-  @apply flex flex-col items-start gap-y-6 md:max-w-110;
+  @apply flex flex-col items-start gap-y-6;
+  @apply md:max-w-110;
 
   // .section-content__title
 
   &__title {
-    @apply text-4xl text-white font-extrabold w-max;
+    @apply text-4xl text-white font-bold w-max;
   }
 
   // .section-content__text

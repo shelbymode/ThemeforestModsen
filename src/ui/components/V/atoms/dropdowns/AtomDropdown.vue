@@ -62,8 +62,8 @@ const { beforeEnter, enter, beforeLeave, leave } = useSmoothHeight(1.2)
 
   &__header {
     @apply flex items-center w-full justify-between px-5;
-    @apply sm:px-20;
     @apply hover:(opacity-66 cursor-pointer);
+    @apply sm:px-20;
   }
 
   // .dropdown__icon

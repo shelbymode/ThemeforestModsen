@@ -28,7 +28,8 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
   // .promo__image
 
   &__image {
-    @apply md:w-1/2 object-cover;
+    @apply object-cover;
+    @apply md:w-1/2;
   }
 
   // .promo__content
@@ -48,7 +49,8 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
   // .promo__text
 
   &__text {
-    @apply md:max-w-115 leading-relaxed;
+    @apply leading-relaxed;
+    @apply md:max-w-115;
   }
 
   // .promo__button-learn-more

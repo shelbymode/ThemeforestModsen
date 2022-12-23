@@ -45,7 +45,8 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
   // .learn-more__text
 
   &__text {
-    @apply w-1/2 w-full md:max-w-115 leading-relaxed;
+    @apply w-1/2 w-full leading-relaxed;
+    @apply md:max-w-115;
   }
 
   // .learn-more__image-wrapper

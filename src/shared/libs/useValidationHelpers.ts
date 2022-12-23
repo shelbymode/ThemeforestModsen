@@ -21,7 +21,7 @@ export const useValidationHelpers = (v$: ReturnType<typeof useValidate>) => {
     if (isNotDirtyAndError(field)) return 'initial-error'
     else if (!getIsDirty(field)) return 'inactive'
     else if (isDirtyAndError(field)) return 'dirty-error'
-    else if (isDirtyAndNotError(field)) return 'correct'
+    else return 'correct'
   }
 
   return {

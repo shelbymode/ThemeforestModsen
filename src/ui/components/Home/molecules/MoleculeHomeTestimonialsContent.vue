@@ -2,8 +2,7 @@
 import { useSlider } from '~/shared/composables/slider/useSlider'
 import { getElement } from '~/shared/utils/getElement'
 import { getWidthElement } from '~/shared/utils/getWidthElement'
-import { IControlsStatus } from '../organisms/OrganismHomeTestimonials.vue'
-import { TDirection } from '../../V/molecules/MoleculeSliderHeader.vue'
+import { IControlsStatus, TDirection } from '../../V/molecules/MoleculeSliderHeader.vue'
 
 const props = defineProps<{
   directionSignal: TDirection | null

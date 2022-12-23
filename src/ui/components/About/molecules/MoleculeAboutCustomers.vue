@@ -14,16 +14,20 @@
 
 <style lang="scss" scoped>
 .about-customers {
-  @apply flex w-full py-30;
+  @apply flex w-full px-6;
+  @apply md:py-15;
+
   // .about-customers__title
 
   &__title {
+    @apply w-full text-center;
+    @apply lg:text-left;
   }
 
   // .about-customers__text
 
   &__text {
-    @apply max-w-110;
+    @apply lg:max-w-110;
   }
 
   // .about-customers__clients
@@ -32,6 +36,6 @@
   }
 }
 .about-customers-container {
-  @apply flex flex-col items-start gap-y-8;
+  @apply flex flex-col items-start gap-y-8 py-6;
 }
 </style>

@@ -13,7 +13,7 @@
 
 <style lang="scss" scoped>
 .service-header {
-  @apply max-w-[730px] w-full flex flex-col items-center gap-y-4 mt-25;
+  @apply max-w-[730px] w-full flex flex-col items-center gap-y-4 px-5;
   // .service-header__small-title
 
   &__small-title {

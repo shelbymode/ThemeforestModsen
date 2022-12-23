@@ -89,7 +89,7 @@
   // .current-post__special-text
 
   &__special-text {
-    @apply font-extrabold;
+    @apply font-bold;
   }
 
   // .current-post__footer

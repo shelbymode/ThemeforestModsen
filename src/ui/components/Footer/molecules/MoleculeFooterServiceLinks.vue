@@ -13,19 +13,26 @@ const containerLinkComponent = useFoooterSwapComponent()
 </script>
 
 <template>
-  <component
-    :is="containerLinkComponent"
-    title="Services"
-    class="flex flex-col items-center gap-y-3 sm:gap-y-6 lg:(items-start)"
-  >
-    <AtomHeaderLink
-      v-for="itemLink in serviceLinks"
-      :key="itemLink"
-      class="md:text-2xl lg:(text-base)"
-      :link="itemLink"
-      >{{ itemLink }}</AtomHeaderLink
-    >
+  <component :is="containerLinkComponent" title="Services" class="service-links">
+    <AtomHeaderLink v-for="itemLink in serviceLinks" :key="itemLink" class="service-links__link" :link="itemLink">{{
+      itemLink
+    }}</AtomHeaderLink>
   </component>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+::v-deep {
+  .service-links {
+    @apply flex flex-col items-center gap-y-3
+    @apply sm:gap-y-6;
+    @apply lg:(items-start);
+
+    // .service-links__link
+
+    &__link {
+      @apply md:text-2xl;
+      @apply lg:(text-base);
+    }
+  }
+}
+</style>

@@ -51,6 +51,6 @@ const tags = [
 
 <style lang="scss" scoped>
 .blog {
-  @apply flex flex-col items-center bg-white;
+  @apply flex flex-col items-center mt-20 bg-white;
 }
 </style>

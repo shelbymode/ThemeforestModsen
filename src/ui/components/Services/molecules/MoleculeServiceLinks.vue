@@ -18,6 +18,6 @@
   @apply flex items-center justify-center w-full py-5 dark:bg-secondary/95;
 }
 .service-link-container {
-  @apply flex items-start;
+  @apply flex items-start px-5;
 }
 </style>

@@ -63,7 +63,7 @@
   &__logo {
     @apply flex w-full;
     @apply sm:justify-center;
-    @apply md:justify-start md:items-start;
+    @apply md:(justify-start items-start);
     grid-area: logo;
   }
 
@@ -94,7 +94,8 @@
   // .footer__social-text
 
   &__social-text {
-    @apply hidden lg:flex;
+    @apply hidden
+    @apply lg:flex;
     grid-area: social-text;
   }
 
