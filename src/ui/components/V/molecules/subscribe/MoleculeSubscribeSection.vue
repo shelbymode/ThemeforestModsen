@@ -11,34 +11,50 @@ const rulesEmail = computed(() => ({
 const form = reactive({ email: '' })
 
 const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEmail, form)
+
+let isMessageSent = $ref(false)
+
+const sendMessage = () => (isMessageSent = true)
 </script>
 
 <template>
   <section class="subscribe-container">
     <TemplatePageRestrictor class="subscribe">
-      <div class="subscribe__content">
-        <AtomMiddleTitle class="subscribe__title"
-          >Subscribe <br class="sm:hidden" />
-          to our newsletter</AtomMiddleTitle
-        >
-        <AtomText class="subscribe__text">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
-        </AtomText>
-      </div>
+      <template v-if="!isMessageSent">
+        <div class="subscribe__content">
+          <AtomMiddleTitle class="subscribe__title"
+            >Subscribe <br class="sm:hidden" />
+            to our newsletter</AtomMiddleTitle
+          >
+          <AtomText class="subscribe__text">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+          </AtomText>
+        </div>
 
-      <div class="subscribe-email">
-        <AtomInput
-          v-bind="{
-            id: 'email',
-            placeholder: 'Your email',
-            statusValidation: getStatusValidation('email'),
-          }"
-          v-model="form.email"
-          class="subscribe-email__input-email sm:(w-full)"
-          @input="touch('email')"
-        />
-        <AtomButton :is-disabled="!isFormValid" class="subscribe-email__button"> Send </AtomButton>
-      </div>
+        <div class="subscribe-email">
+          <AtomInput
+            v-bind="{
+              id: 'email',
+              placeholder: 'Your email',
+              statusValidation: getStatusValidation('email'),
+            }"
+            v-model="form.email"
+            class="subscribe-email__input-email sm:(w-full)"
+            @input="touch('email')"
+          />
+          <AtomButton :is-disabled="!isFormValid" class="subscribe-email__button" @click="sendMessage">
+            Send
+          </AtomButton>
+        </div>
+      </template>
+
+      <transition name="subscribe" mode="out-in">
+        <template v-if="isMessageSent">
+          <MoleculeNotification type="warning">
+            <template #message> You have successfully subscribed! </template>
+          </MoleculeNotification>
+        </template>
+      </transition>
     </TemplatePageRestrictor>
   </section>
 </template>
@@ -97,5 +113,23 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
     @apply bg-cBlack text-white py-4 text-base font-bold;
     @apply dark:(bg-white text-black);
   }
+}
+
+/**
+* Transition classes
+*/
+
+.subscribe-enter-from {
+  opacity: 0;
+  transform: scale(0);
+}
+.subscribe-leave-to {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.subscribe-enter-active,
+.subscribe-leave-active {
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 </style>

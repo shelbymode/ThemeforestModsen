@@ -7,7 +7,7 @@
  * in order to calculate how controls will behave after translation
  */
 import { ComputedRef } from 'vue'
-import { TDirection } from '~/ui/components/V/molecules/MoleculeSliderHeader.vue'
+import { TDirection } from '~/ui/components/V/molecules/slider/MoleculeSliderHeader.vue'
 import { translateXElement } from '../../utils/translateXElement'
 
 export const useSlider = ({

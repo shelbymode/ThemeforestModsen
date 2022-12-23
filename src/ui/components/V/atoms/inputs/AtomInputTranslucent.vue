@@ -13,10 +13,10 @@ const props = defineProps<IInputProps>()
 const customClasses: IInputClasses = {
   commonClasses: `${u(
     props.commonClasses
-  )} pb-2 pl-3 border-b-2 font-semibold border-b-black/50 bg-transparent placeholder:(font-normal) rounded-none outline-none`,
+  )} pb-2 pl-3 border-b-2 font-semibold bg-transparent placeholder:(font-normal) rounded-none outline-none`,
   activeClasses: `${u(props.activeClasses)} border-b-2 border-primary`,
   activeLabelClasses: `${u(props.activeLabelClasses)}`,
-  inactiveClasses: `${u(props.inactiveClasses)} border-b-black`,
+  inactiveClasses: `${u(props.inactiveClasses)} border-b-black/50`,
   errorClasses: `${u(props.errorClasses)} border-cRed text-cRed`,
   commonLabelClasses: `${u(props.commonLabelClasses)}`,
   errorLabelClasses: `${u(props.errorLabelClasses)}`,
