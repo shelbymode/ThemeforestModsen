@@ -8,6 +8,9 @@ interface ICategoryItem {
   category: TCategory
   subCategories?: ICategoryItem[]
 }
+
+const is4XlScreen = useMediaQuery(`(min-width: 2240px)`)
+
 const categories: ICategoryItem[] = [
   {
     category: {
@@ -64,13 +67,20 @@ const categories: ICategoryItem[] = [
     },
   },
 ]
+
+const getCategories = computed(() => {
+  if (!is4XlScreen.value) {
+    categories.forEach((cat) => (cat.subCategories = undefined))
+  }
+  return categories
+})
 </script>
 
 <template>
   <div class="blog-categories">
     <AtomSmallTitle class="blog-categories__title">Categories</AtomSmallTitle>
     <div relative>
-      <AtomCategorySlider v-for="(category, idx) in categories" :key="idx" :root-category="category" />
+      <AtomCategorySlider v-for="(category, idx) in getCategories" :key="idx" :root-category="category" />
     </div>
   </div>
 </template>

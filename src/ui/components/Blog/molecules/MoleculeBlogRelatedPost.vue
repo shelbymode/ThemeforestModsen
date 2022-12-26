@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const isMdScreen = useMediaQuery(`(min-width: 768px)`)
+
 const props = withDefaults(
   defineProps<{
     title: string
@@ -23,7 +25,8 @@ const props = withDefaults(
     <section class="related-post__content">
       <span class="related-post__date">{{ props.date }}</span>
       <h3 class="related-post__title">{{ title }}</h3>
-      <p class="related-post__text">{{ text }}</p>
+      <p v-if="isMdScreen" class="related-post__text">{{ text }}</p>
+      <AtomLink class="popular-post__link text-sm" :link="props.linkInfo.to">Read more</AtomLink>
     </section>
   </div>
 </template>
@@ -53,7 +56,7 @@ const props = withDefaults(
   // .related-post__title
 
   &__title {
-    @apply font-bold text-black text-2xl text-left;
+    @apply font-bold text-black text-base sm:text-xl md:text-2xl text-left;
   }
 
   // .related-post__text

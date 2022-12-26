@@ -56,6 +56,7 @@
   // .current-post__image
 
   &__image {
+    @apply object-cover w-full;
   }
 
   // .current-post__caption

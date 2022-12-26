@@ -50,6 +50,8 @@ export default defineConfig({
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px',
+      '3xl': '1920px',
+      '4xl': '2240px',
     },
     colors: {
       primary: 'rgb(var(--primary))',

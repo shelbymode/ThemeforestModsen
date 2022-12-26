@@ -19,7 +19,7 @@ const props = defineProps<{
   // .nav-links__title
 
   &__title {
-    @apply order-1 text-primary;
+    @apply order-1 text-primary text-center;
     @apply dark:text-white;
     @apply lg:(order-0 text-black);
   }

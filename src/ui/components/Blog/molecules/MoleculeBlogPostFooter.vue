@@ -47,7 +47,8 @@ const socialIcons = [
 
 <style lang="scss" scoped>
 .post-footer {
-  @apply flex items-center w-full gap-x-8;
+  @apply flex w-full gap-y-2 flex-col items-start;
+  @apply sm:(flex-row items-center gap-x-8 justify-between);
   // .post-footer__views
 
   &__views {
