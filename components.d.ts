@@ -51,6 +51,7 @@ declare module '@vue/runtime-core' {
     MoleculeAboutLinks: typeof import('./src/ui/components/About/molecules/MoleculeAboutLinks.vue')['default']
     MoleculeAboutStats: typeof import('./src/ui/components/About/molecules/MoleculeAboutStats.vue')['default']
     MoleculeBlogCard: typeof import('./src/ui/components/Blog/molecules/MoleculeBlogCard.vue')['default']
+    MoleculeBlogCategory: typeof import('./src/ui/components/Blog/molecules/MoleculeBlogCategory.vue')['default']
     MoleculeBlogLinks: typeof import('./src/ui/components/Blog/molecules/MoleculeBlogLinks.vue')['default']
     MoleculeBlogPopularPost: typeof import('./src/ui/components/Blog/molecules/MoleculeBlogPopularPost.vue')['default']
     MoleculeBlogPost: typeof import('./src/ui/components/Blog/molecules/MoleculeBlogLinks.vue')['default']

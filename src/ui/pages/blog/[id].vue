@@ -14,12 +14,16 @@ const tags = [
   'Information security',
   'Proxy',
 ]
+
+// 2022 software development trends
 </script>
 
 <template>
   <TemplatePage>
     <main class="blog-current">
-      <MoleculeBlogLinks />
+      <TemplateNavLinksCenter title="2022 software development trends explained with benefits">
+        <MoleculeNavLinks />
+      </TemplateNavLinksCenter>
 
       <TemplateBlogCurrentPageContent>
         <template #current-post>

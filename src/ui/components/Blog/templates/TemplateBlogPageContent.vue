@@ -1,19 +1,27 @@
 <script setup lang="ts"></script>
 
 <template>
-  <TemplatePageRestrictor class="blog-page-container">
-    <section class="blog-page-container__content">
+  <TemplatePageRestrictor class="template-blog">
+    <section class="template-blog__categories">
+      <slot name="menu-categories"></slot>
+    </section>
+    <section class="template-blog__content">
       <slot name="current-posts"></slot>
     </section>
   </TemplatePageRestrictor>
 </template>
 
 <style lang="scss" scoped>
-.blog-page-container {
-  @apply flex flex-row justify-between items-start py-10;
+.template-blog {
+  @apply flex flex-col justify-between items-start py-10;
   @apply md:py-15;
+  // .template-blog__categories
 
-  // .blog-page-container__content
+  &__categories {
+    @apply w-full mt-10 mb-15;
+  }
+
+  // .template-blog__content
 
   &__content {
     @apply flex flex-col items-start px-4 sm:px-12 gap-y-6;

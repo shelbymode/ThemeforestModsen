@@ -39,7 +39,7 @@ const props = withDefaults(defineProps<IDirectionControl>(), {
   @apply text-cGrey opacity-50 pointer-events-none;
 }
 .h-link__link {
-  @apply font-medium duration-300;
+  @apply font-medium;
   @apply hover:(text-cGrey);
   @apply dark:(text-white);
   @apply dark:hover:(text-neutral-500);

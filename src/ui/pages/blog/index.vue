@@ -8,6 +8,9 @@
       </TemplateNavLinksCenter>
 
       <TemplateBlogPageContent>
+        <template #menu-categories>
+          <MoleculeBlogCategory />
+        </template>
         <template #blog-title>Discover new things with Ensome blog</template>
         <template #blog-text
           >Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
