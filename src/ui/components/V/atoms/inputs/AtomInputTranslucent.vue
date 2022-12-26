@@ -1,8 +1,26 @@
 <script setup lang="ts">
 import { useVModel } from '@vueuse/core'
 import { u } from '~/shared/utils/u'
-import { IInputClasses, IInputOptions } from './AtomInput.vue'
 
+export interface IInputClasses {
+  inactiveClasses?: string
+  activeClasses?: string
+  activeLabelClasses?: string
+  commonClasses?: string
+  errorClasses?: string
+  commonLabelClasses?: string
+  errorLabelClasses?: string
+  successClasses?: string
+}
+export interface IInputOptions {
+  id: string
+  modelValue: string
+  statusValidation: 'inactive' | 'initial-error' | 'dirty-error' | 'correct'
+  placeholder?: string
+  label?: string
+  type?: 'text' | 'password'
+  skipInitValue?: boolean
+}
 interface IInputProps extends IInputClasses, IInputOptions {}
 
 const props = defineProps<IInputProps>()

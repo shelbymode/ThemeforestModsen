@@ -18,10 +18,10 @@ const tags = [
 
 <template>
   <TemplatePage>
-    <main class="blog">
+    <main class="blog-current">
       <MoleculeBlogLinks />
 
-      <TemplateBlogPageContent>
+      <TemplateBlogCurrentPageContent>
         <template #current-post>
           <OrganismBlogCurrentPost />
         </template>
@@ -49,7 +49,7 @@ const tags = [
         <template #subscribe>
           <MoleculeSubscribeSection />
         </template>
-      </TemplateBlogPageContent>
+      </TemplateBlogCurrentPageContent>
 
       <MoleculeSubscribeSection />
     </main>
@@ -57,7 +57,7 @@ const tags = [
 </template>
 
 <style lang="scss" scoped>
-.blog {
+.blog-current {
   @apply flex flex-col items-center mt-20 bg-white;
 }
 </style>

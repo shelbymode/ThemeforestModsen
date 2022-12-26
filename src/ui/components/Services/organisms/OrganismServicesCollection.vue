@@ -1,7 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <MoleculeServiceLinks />
+  <TemplateNavLinksCompact>
+    <MoleculeNavLinks />
+  </TemplateNavLinksCompact>
+
   <MoleculeServiceHeaderInfo />
   <MoleculeServiceCollection />
 </template>

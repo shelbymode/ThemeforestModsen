@@ -42,7 +42,7 @@ const containerLinkComponent = useFoooterSwapComponent()
   }
 }
 
-:deep {
+:deep() {
   .contact-links {
     @apply flex flex-col items-left gap-y-3;
     @apply sm:(gap-y-6 items-center);

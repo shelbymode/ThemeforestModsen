@@ -40,7 +40,7 @@ const containerLinkComponent = useFoooterSwapComponent()
   @apply lg:(items-start);
 }
 
-:deep {
+:deep() {
   .quick-links {
     @apply flex flex-col items-center gap-y-3 transition-all duration-500;
     @apply sm:gap-y-6;

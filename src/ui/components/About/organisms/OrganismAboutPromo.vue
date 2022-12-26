@@ -1,7 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <MoleculeAboutLinks />
+  <TemplateNavLinksCenter title="About">
+    <MoleculeNavLinks />
+  </TemplateNavLinksCenter>
+
   <MoleculeAboutCards />
   <MoleculeAboutStats />
   <MoleculeAboutCustomers />

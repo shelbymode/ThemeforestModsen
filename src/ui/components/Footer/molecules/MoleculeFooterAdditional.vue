@@ -15,7 +15,7 @@
   @apply lg:justify-end;
 }
 
-:deep {
+:deep() {
   .additional {
     // .additional__policy
 

@@ -2,7 +2,13 @@
 import { useSlider } from '~/shared/composables/slider/useSlider'
 import { getElement } from '~/shared/utils/getElement'
 import { getWidthElement } from '~/shared/utils/getWidthElement'
-import { IControlsStatus, TDirection } from '../../V/molecules/slider/MoleculeSliderHeader.vue'
+
+type TDirection = 'left' | 'right'
+type TDirectionAvailable = 'enabled' | 'disabled'
+interface IControlsStatus {
+  left: TDirectionAvailable
+  right: TDirectionAvailable
+}
 
 const props = defineProps<{
   directionSignal: TDirection | null

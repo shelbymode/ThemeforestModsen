@@ -27,7 +27,7 @@ const containerLinkComponent = useFoooterSwapComponent()
   @apply lg:(items-start);
 }
 
-:deep {
+:deep() {
   .service-links {
     @apply flex flex-col items-center gap-y-3;
     @apply sm:gap-y-6;

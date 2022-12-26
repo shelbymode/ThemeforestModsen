@@ -16,7 +16,7 @@ setInterval(() => {
   // testArray.reinitArray(['z', 'y', 't'])
 }, 3500)
 watch(testArray.getArray, (newValue) => {
-  console.log('Array updated:', newValue)
+  // console.log('Array updated:', newValue)
 })
 </script>
 

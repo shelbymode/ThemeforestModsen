@@ -69,8 +69,6 @@ const isErrorSignal = computed(
 )
 
 const isInactiveSignal = computed(() => waitCondition.includes(props.statusValidation))
-
-console.log(configClasses.activeClasses)
 </script>
 
 <template>
