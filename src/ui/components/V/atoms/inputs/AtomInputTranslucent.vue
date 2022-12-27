@@ -44,7 +44,6 @@ const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
 }>()
 
-console.log(customClasses.activeClasses)
 
 const proxyModelValue = useVModel(props, 'modelValue', emit)
 </script>

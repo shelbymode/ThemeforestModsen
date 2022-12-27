@@ -9,6 +9,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import svgLoader from 'vite-svg-loader'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 export default defineConfig({
   resolve: {
@@ -25,6 +26,7 @@ export default defineConfig({
       },
     }),
 
+    VueI18nPlugin({}),
     // https://github.com/hannoeru/vite-plugin-pages
     Pages({
       dirs: './src/ui/pages',
@@ -34,7 +36,7 @@ export default defineConfig({
     AutoImport({
       imports: ['vue', 'vue/macros', 'vue-router', '@vueuse/core'],
       dts: true,
-      dirs: ['./src/shared/composables/**'],
+      dirs: ['./src/shared/composables/**', './src/shared/utils/**'],
       vueTemplate: true,
     }),
 

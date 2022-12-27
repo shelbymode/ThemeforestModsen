@@ -10,20 +10,19 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
 <template>
   <TemplatePageRestrictor class="learn-more">
     <AtomBigTitle class="learn-more__title">
-      Find true power in your data with <span class="learn-more__special-title">Ensome</span>
+      {{ $t(`home.presentationTitle1`) }} <span class="learn-more__special-title">Ensome</span>
     </AtomBigTitle>
 
     <div class="learn-more__content">
-      <AtomText class="learn-more__text">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque lauda, totam rem aperiam,
-        eaque ipsa quae ab illo inventore veritatis et quasi.
-      </AtomText>
+      <AtomText class="learn-more__text">{{ $t(`home.presentationText1`) }}</AtomText>
     </div>
   </TemplatePageRestrictor>
 
   <div class="learn-more__image-wrapper">
     <img :src="srcMedia" alt="Home learn more" class="learn-more__image" />
-    <AtomCircleButton class="learn-more__button-learn-more">Learn more</AtomCircleButton>
+    <AtomCircleButton class="learn-more__button-learn-more"
+      >{{ toCapitalize($t(`common.learnMore`)) }}
+    </AtomCircleButton>
   </div>
 </template>
 

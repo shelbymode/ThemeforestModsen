@@ -28,7 +28,7 @@ const isTagsExists = computed(() => props.tagsInfo && Object.keys(props.tagsInfo
 </script>
 
 <template>
-  <div class="card">
+  <RouterLink :to="linkInfo.to" class="card">
     <img class="card__image" :src="props.imgSrc" alt="image" @keypress="jumpToBlog" @click="jumpToBlog" />
     <span class="card__date">{{ props.date }}</span>
     <h3 class="card__title">{{ title }}</h3>
@@ -41,12 +41,13 @@ const isTagsExists = computed(() => props.tagsInfo && Object.keys(props.tagsInfo
         {{ tag }}
       </AtomTag>
     </div>
-  </div>
+  </RouterLink>
 </template>
 
 <style lang="scss" scoped>
 .card {
-  @apply min-w-full flex flex-col gap-y-5 p-6 rounded items-start;
+  @apply min-w-full flex flex-col gap-y-5 p-6 transition-300 rounded items-start;
+  @apply hover:scale-95;
   @apply md:(min-w-[300px]);
 }
 .card__image {

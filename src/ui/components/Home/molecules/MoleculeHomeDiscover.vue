@@ -3,15 +3,14 @@
 <template>
   <TemplatePageRestrictor class="discover">
     <AtomBigTitle class="discover__title">
-      The <span class="discover__special-title">newest</span> business analytics platform
+      <span class="discover__special-title2"></span> {{ $t('home.presentationTitle2') }}
     </AtomBigTitle>
 
     <div class="discover__content">
       <AtomText class="discover__text">
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        {{ $t('home.presentationText2') }}
       </AtomText>
-      <AtomButton class="discover__button">Discover more</AtomButton>
+      <AtomButton class="discover__button">{{ toCapitalize($t('common.discoverMode')) }}</AtomButton>
     </div>
   </TemplatePageRestrictor>
 </template>

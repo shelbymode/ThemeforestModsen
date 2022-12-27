@@ -1,5 +1,7 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useChangeCase } from '@vueuse/integrations/useChangeCase'
+import { useI18n } from 'vue-i18n'
+import { toCapitalize } from '~/shared/utils/toCapitalize'
 
 const linksList = ['home', 'services', 'about', 'blog', 'contacts', 'solutions']
 
@@ -8,9 +10,11 @@ interface TLink {
   link: string
 }
 
+const { locale } = useI18n()
+
 const generatedLinksList: TLink[] = linksList.map((word) => ({
-  name: useChangeCase(word, 'capitalCase').value,
-  link: `/${useChangeCase(word, 'paramCase').value}`,
+  name: word,
+  link: `/${locale.value}/${useChangeCase(word, 'paramCase').value}`,
 }))
 </script>
 
@@ -20,8 +24,9 @@ const generatedLinksList: TLink[] = linksList.map((word) => ({
     :key="linkItem.link"
     class="text-2xl md:text-sm"
     :link="linkItem.link"
-    >{{ linkItem.name }}</AtomHeaderLink
   >
+    {{ toCapitalize($t(`headerMenu.${linkItem.name}`)) }}
+  </AtomHeaderLink>
 </template>
 
 <style lang="scss" scoped></style>

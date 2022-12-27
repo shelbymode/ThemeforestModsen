@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+</script>
 
 <template>
   <TemplatePage>
@@ -18,14 +22,14 @@
         >
         <template #current-posts>
           <MoleculeBlogCard
-            v-for="card in 5"
+            v-for="(card, idx) in 5"
             :key="card"
             class="blog__card shadow-card-3"
             title="Machine Learning"
             date="22 June 2022"
             :tags-info="{ App: true, CIO: true, Future: true }"
             text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure..."
-            :link-info="{ label: 'Read more', to: '/' }"
+            :link-info="{ label: 'Read more', to: `/${locale}/blog/${idx}` }"
           />
         </template>
       </TemplateBlogPageContent>
