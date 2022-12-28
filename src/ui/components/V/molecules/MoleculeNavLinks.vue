@@ -3,9 +3,11 @@ import { toCapitalize } from '~/shared/utils/toCapitalize'
 
 const route = useRoute()
 
+const currentNameRoute = route.fullPath.split('/').at(-1)
+
 const links = [
   { name: 'Home', link: '/home' },
-  { name: toCapitalize(route.name as string), link: route.path },
+  { name: toCapitalize(currentNameRoute as string), link: route.path },
 ]
 </script>
 

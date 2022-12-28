@@ -36,7 +36,8 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   console.log('to:', to)
   if (!to.path.startsWith('/en') && !to.path.startsWith('/ru')) {
-    const newPath = `/${from.params.lang}${to.path}`
+    const exLang = from.params.lang || 'en'
+    const newPath = `/${exLang}${to.path}`
     console.log('a')
 
     next(newPath)
