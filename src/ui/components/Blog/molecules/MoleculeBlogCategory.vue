@@ -20,7 +20,7 @@ const selectedPerson = ref(people[0])
       <div class="blog-category-listbox w-full">
         <ListboxButton class="blog-category-listbox__button">
           {{ selectedPerson.name }}
-          <span class="i-ic-baseline-unfold-more text-4xl ml-10"> </span>
+          <span class="i-ic-baseline-unfold-more text-3xl ml-10"> </span>
         </ListboxButton>
 
         <transition
@@ -70,7 +70,7 @@ const selectedPerson = ref(people[0])
   // .blog-category-listbox__button
 
   &__button {
-    @apply flex w-full text-black justify-between items-center relative rounded-lg pr-2 text-2xl bg-white py-5 px-10 text-left shadow-md;
+    @apply flex w-full text-black justify-between items-center relative rounded-lg pr-2 text-xl bg-white py-5 px-10 text-left shadow-md;
     @apply focus:outline-none focus-visible:(border-indigo-500 ring-2 ring-white ring-opacity-75 ring-offset-2 ring-offset-orange-300 sm:text-sm);
   }
 
@@ -83,7 +83,7 @@ const selectedPerson = ref(people[0])
   // .blog-category-listbox__option
 
   &__option {
-    @apply relative cursor-default select-none py-4 pl-10 pr-4 text-xl;
+    @apply relative cursor-default select-none py-4 pl-10 pr-4 text-base;
   }
 
   // .blog-category-listbox__icon-wrapper

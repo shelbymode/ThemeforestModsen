@@ -80,6 +80,7 @@ declare module '@vue/runtime-core' {
     MoleculeHomePromo: typeof import('./src/ui/components/Home/molecules/MoleculeHomePromo.vue')['default']
     MoleculeHomeStats: typeof import('./src/ui/components/Home/molecules/MoleculeHomeStats.vue')['default']
     MoleculeHomeTestimonialsContent: typeof import('./src/ui/components/Home/molecules/MoleculeHomeTestimonialsContent.vue')['default']
+    MoleculeLanguageLink: typeof import('./src/ui/components/V/molecules/MoleculeLanguageLink.vue')['default']
     MoleculeNavLinks: typeof import('./src/ui/components/V/molecules/MoleculeNavLinks.vue')['default']
     MoleculeNotification: typeof import('./src/ui/components/V/molecules/notification/MoleculeNotification.vue')['default']
     MoleculePriceCard: typeof import('./src/ui/components/V/molecules/cards/MoleculePriceCard.vue')['default']

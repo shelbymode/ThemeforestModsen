@@ -35,7 +35,7 @@
 
     <template #rights>
       <section class="rights flex items-center">
-        <p class="additional__rights">© 2022 Ensome. All Rights Reserved.</p>
+        <p class="additional__rights capitalize">© 2022 Ensome. {{ $t(`navMenu.allRightsReserved`) }}.</p>
       </section>
     </template>
   </TemplateFooter>

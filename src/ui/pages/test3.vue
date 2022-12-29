@@ -24,6 +24,10 @@ const dSwitchOptions: IDoubleSwitch = {
 
 const mulitiTab = ref('')
 const mulitiTab2 = ref('')
+
+function a<T>(a: T): T {
+  return a
+}
 </script>
 
 <template>

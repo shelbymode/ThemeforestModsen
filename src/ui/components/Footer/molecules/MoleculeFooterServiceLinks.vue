@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import AtomDropdown from '~/ui/components/V/atoms/dropdowns/AtomDropdown.vue'
 import MoleculeFooterWrapper from '~/ui/components/Footer/molecules/MoleculeFooterWrapper.vue'
+import { useChangeCase } from '@vueuse/integrations/useChangeCase'
+import { ComputedRef } from 'vue'
+import { useI18n } from 'vue-i18n'
 defineOptions({
   components: {
     AtomDropdown,
@@ -8,15 +11,33 @@ defineOptions({
   },
 })
 
-const serviceLinks = ['Pages', 'Elements', 'FAQ', 'Pricing', 'Site map']
+interface TLink {
+  name: string
+  link: string
+}
+const { locale } = useI18n()
+const serviceLinks = ['FAQ', 'pricing', 'siteMap']
+
+const generatedLinksList: ComputedRef<TLink[]> = computed(() => {
+  return serviceLinks.map((word) => ({
+    name: word,
+    link: `/${locale.value}/${useChangeCase(word, 'paramCase').value}`,
+  }))
+})
+
 const containerLinkComponent = useFoooterSwapComponent()
 </script>
 
 <template>
-  <component :is="containerLinkComponent" title="Services" class="service-links">
-    <AtomHeaderLink v-for="itemLink in serviceLinks" :key="itemLink" class="service-links__link" :link="itemLink">{{
-      itemLink
-    }}</AtomHeaderLink>
+  <component :is="containerLinkComponent" :title="toCapitalize($t(`navMenu.services`))" class="service-links">
+    <AtomHeaderLink
+      v-for="itemLink in generatedLinksList"
+      :key="itemLink.name"
+      class="service-links__link"
+      :link="itemLink.link"
+    >
+      {{ toCapitalize($t(`navMenu.${itemLink.name}`)) }}
+    </AtomHeaderLink>
   </component>
 </template>
 

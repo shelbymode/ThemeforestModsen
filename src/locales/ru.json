@@ -1,11 +1,21 @@
 {
-  "headerMenu": {
+  "navMenu": {
     "home": "домашняя",
     "services": "сервисы",
     "about": "о нас",
     "blog": "блог",
     "contacts": "контакты",
-    "solutions": "решения"
+    "solutions": "решения",
+    "ourTeam": "наша команда",
+    "FAQ": "ЧАВО",
+    "language": "язык",
+    "pricing": "стоимость",
+    "siteMap": "карта сайта",
+    "quickLinks": "быстрые ссылки",
+    "contactInfo": "контактная информация",
+    "termsOfUs": "Условия соглашения",
+    "privacyPolicy": "Политика приватности",
+    "allRightsReserved": "все права защищены"
   },
   "common": {
     "learnMore": "узнать больше",

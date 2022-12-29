@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import AtomDropdown from '~/ui/components/V/atoms/dropdowns/AtomDropdown.vue'
 import MoleculeFooterWrapper from '~/ui/components/Footer/molecules/MoleculeFooterWrapper.vue'
+import { useChangeCase } from '@vueuse/integrations/useChangeCase'
+import { useI18n } from 'vue-i18n'
+import { toCapitalize } from '~/shared/utils/toCapitalize'
+import { ComputedRef } from 'vue'
 
 defineOptions({
   components: {
@@ -8,28 +12,35 @@ defineOptions({
     MoleculeFooterWrapper,
   },
 })
-const quickLinks = [
-  { name: 'Home', link: '/home' },
-  { name: 'Solutions', link: '/solutions' },
-  { name: 'Blog', link: '/blog' },
-  { name: 'Contacts', link: '/contacts' },
-  { name: 'Our team', link: '/team' },
-  { name: 'About Us', link: '/about' },
-  { name: 'Services', link: '/services' },
-  { name: 'FAQ', link: '/faq' },
-]
+
+const linksList = ['home', 'blog', 'contacts', 'ourTeam', 'about', 'services', 'FAQ']
+
+interface TLink {
+  name: string
+  link: string
+}
+
+const { locale } = useI18n()
+const generatedLinksList: ComputedRef<TLink[]> = computed(() => {
+  return linksList.map((word) => ({
+    name: word,
+    link: `/${locale.value}/${useChangeCase(word, 'paramCase').value}`,
+  }))
+})
+
 const containerLinkComponent = useFoooterSwapComponent()
 </script>
 
 <template>
-  <component :is="containerLinkComponent" title="Quick links" class="quick-links">
+  <component :is="containerLinkComponent" :title="toCapitalize($t(`navMenu.quickLinks`))" class="quick-links">
     <AtomHeaderLink
-      v-for="itemLink in quickLinks"
+      v-for="itemLink in generatedLinksList"
       :key="itemLink.name"
       class="quick-links__link"
       :link="itemLink.link"
-      >{{ itemLink.name }}</AtomHeaderLink
     >
+      {{ toCapitalize($t(`navMenu.${itemLink.name}`)) }}
+    </AtomHeaderLink>
   </component>
 </template>
 

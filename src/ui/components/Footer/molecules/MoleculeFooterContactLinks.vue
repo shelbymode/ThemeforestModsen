@@ -13,7 +13,7 @@ const containerLinkComponent = useFoooterSwapComponent()
 </script>
 
 <template>
-  <component :is="containerLinkComponent" title="Contact info" class="contact-links">
+  <component :is="containerLinkComponent" :title="toCapitalize($t(`navMenu.contactInfo`))" class="contact-links">
     <p class="contact-links__phone">+1 601-201-5580</p>
     <p class="contact-links__address">1642 Washington Avenue, Jackson, MS, 39201</p>
     <AtomLink link="/" class="contact-links__email">ensome@info.co.us</AtomLink>

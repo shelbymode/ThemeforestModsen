@@ -6,7 +6,6 @@ import { createI18n } from 'vue-i18n'
 import en from './locales/en.json'
 import ru from './locales/ru.json'
 
-import routes from 'virtual:generated-pages'
 import App from './App.vue'
 
 import '@unocss/reset/tailwind.css'
@@ -14,6 +13,7 @@ import 'uno.css'
 
 import '../assets/styles/variables.scss'
 import '../assets/styles/global.scss'
+import { routes } from './routes'
 
 const i18n = createI18n({
   locale: 'en',
@@ -25,6 +25,7 @@ const i18n = createI18n({
 })
 
 const app = createApp(App)
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
@@ -34,34 +35,25 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log('to:', to)
-  if (!to.path.startsWith('/en') && !to.path.startsWith('/ru')) {
-    const exLang = from.params.lang || 'en'
-    const newPath = `/${exLang}${to.path}`
+  console.log('run hook beforeEach')
+
+  const currentLanguage = to.params.lang as string
+
+  if (!['en', 'ru'].includes(currentLanguage)) {
     console.log('a')
 
-    next(newPath)
-  } else if (to.matched.length === 0 || (to.matched.length === 1 && to.matched[0].path === '/:lang/:all(.*)')) {
-    i18n.global.locale.value = 'en'
-    console.log('b')
-
-    next('en/home')
-  } else if (!to.params.lang && !from.params.lang) {
-    i18n.global.locale.value = 'en'
-    console.log('c')
-
-    next(`en${to.path}`)
+    const lastLocale = useLocalStorage('locale', 'en').value
+    i18n.global.locale.value = lastLocale as 'en' | 'ru'
+    next(`${lastLocale}${to.path}`)
   } else {
-    let newLocale = to.params.lang as string
-    if (!['en', 'ru'].includes(newLocale)) {
-      newLocale = 'en'
-    }
-    console.log('d')
+    console.log('b', currentLanguage)
 
-    i18n.global.locale.value = newLocale as 'en' | 'ru'
+    i18n.global.locale.value = currentLanguage as 'en' | 'ru'
+    localStorage.setItem('locale', currentLanguage)
     next()
   }
 })
+
 app.use(i18n)
 app.use(createPinia())
 app.use(router)

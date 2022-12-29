@@ -5,10 +5,10 @@ const route = useRoute()
 
 const currentNameRoute = route.fullPath.split('/').at(-1)
 
-const links = [
+const links = computed(() => [
   { name: 'Home', link: '/home' },
   { name: toCapitalize(currentNameRoute as string), link: route.path },
-]
+])
 </script>
 
 <template>

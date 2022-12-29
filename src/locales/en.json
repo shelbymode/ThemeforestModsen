@@ -1,11 +1,21 @@
 {
-  "headerMenu": {
+  "navMenu": {
     "home": "home",
     "services": "services",
     "about": "about",
     "blog": "blog",
     "contacts": "contacts",
-    "solutions": "solutions"
+    "solutions": "solutions",
+    "ourTeam": "our team",
+    "FAQ": "FAQ",
+    "language": "language",
+    "pricing": "pricing",
+    "siteMap": "site map",
+    "quickLinks": "quick links",
+    "contactInfo": "contact info",
+    "termsOfUs": "terms of us",
+    "privacyPolicy": "privacy policy",
+    "allRightsReserved": "all rights reserved"
   },
   "common": {
     "learnMore": "learn more",

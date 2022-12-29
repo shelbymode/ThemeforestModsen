@@ -30,6 +30,7 @@ const { closeButtonClass, headerLinksClass, isHeaderLinksOpened, toggleClose } =
       >
         <div v-if="isHeaderLinksOpened" class="header__links" :class="[headerLinksClass]">
           <MoleculeHeaderLinks />
+          <MoleculeLanguageLink />
         </div>
       </transition>
     </template>
