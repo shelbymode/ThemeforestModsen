@@ -1,10 +1,6 @@
-import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createApp } from 'vue/dist/vue.esm-bundler'
+import { createRouter, createWebHistory, NavigationGuardNext } from 'vue-router'
 import { createPinia } from 'pinia'
-import { createI18n } from 'vue-i18n'
-
-import en from './locales/en.json'
-import ru from './locales/ru.json'
 
 import App from './App.vue'
 
@@ -14,16 +10,20 @@ import 'uno.css'
 import '../assets/styles/variables.scss'
 import '../assets/styles/global.scss'
 import { routes } from './routes'
+import { TLocale, useLocale } from './shared/composables/locales/useLocales'
+import { useLocaleHelpers } from './shared/composables/locales/useLocaleHelpers'
 
-const i18n = createI18n({
-  locale: 'en',
-  legacy: false,
-  messages: {
-    en,
-    ru,
-  },
-})
+const {
+  i18n,
+  changeGlobalLocale,
+  localeIsAvailable,
+  localeIsSupported,
+  loadPreferableLocale,
+  setLoadedLocale,
+  redirectToDefaultLocale,
+} = useLocale()
 
+const { loadLocale, useLastLocaleLS, setLastLocaleLS, removeLocaleParam } = useLocaleHelpers()
 const app = createApp(App)
 
 const router = createRouter({
@@ -34,24 +34,60 @@ const router = createRouter({
   },
 })
 
-router.beforeEach((to, from, next) => {
-  console.log('run hook beforeEach')
-
-  const currentLanguage = to.params.lang as string
-
-  if (!['en', 'ru'].includes(currentLanguage)) {
+async function setLocale(maybeNewlocale: TLocale, path: string, next: NavigationGuardNext) {
+  /**
+   *  Currently we don't have such a locale in storage
+   */
+  if (!localeIsAvailable(maybeNewlocale)) {
     console.log('a')
 
-    const lastLocale = useLocalStorage('locale', 'en').value
-    i18n.global.locale.value = lastLocale as 'en' | 'ru'
-    next(`${lastLocale}${to.path}`)
-  } else {
-    console.log('b', currentLanguage)
+    /**
+     * This locale can be loaded asynchronously
+     */
+    if (localeIsSupported(maybeNewlocale)) {
+      console.log('b')
 
-    i18n.global.locale.value = currentLanguage as 'en' | 'ru'
-    localStorage.setItem('locale', currentLanguage)
+      /**
+       * Try to load this locale
+       */
+      await loadLocale(maybeNewlocale).then((loadedLocale) => {
+        if (loadedLocale) {
+          console.log('c')
+
+          setLoadedLocale(maybeNewlocale, loadedLocale, path, next)
+        } else {
+          console.log('d')
+
+          redirectToDefaultLocale(path, next)
+        }
+      })
+    } else {
+      console.log('e')
+
+      /**
+       * There is not such locale --> use last saved locale and redirect
+       */
+      const lastLocale = useLastLocaleLS()
+
+      changeGlobalLocale(lastLocale.value as TLocale)
+      const correctPath = removeLocaleParam(path)
+
+      next(`${lastLocale.value}/${correctPath}`)
+    }
+  } else {
+    console.log('d')
+    // We have already loaded the locale
+    changeGlobalLocale(maybeNewlocale)
+    setLastLocaleLS(maybeNewlocale)
     next()
   }
+}
+
+router.beforeEach(async (to, _, next) => {
+  const currentLocale = to.params.locale as TLocale
+
+  await loadPreferableLocale()
+  await setLocale(currentLocale, to.path, next)
 })
 
 app.use(i18n)

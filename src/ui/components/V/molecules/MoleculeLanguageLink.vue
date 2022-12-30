@@ -18,7 +18,7 @@ type TLocale = typeof locales[number]
 const changeLocale = (newLocale: TLocale) => {
   router.replace({
     params: {
-      lang: newLocale,
+      locale: newLocale,
     },
   })
 }
