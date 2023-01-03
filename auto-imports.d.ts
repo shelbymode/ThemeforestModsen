@@ -28,7 +28,6 @@ declare global {
   const customRef: typeof import('vue')['customRef']
   const debouncedRef: typeof import('@vueuse/core')['debouncedRef']
   const debouncedWatch: typeof import('@vueuse/core')['debouncedWatch']
-  const default_locale: typeof import('./src/shared/composables/locales/useLocales')['default_locale']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
   const defineComponent: typeof import('vue')['defineComponent']
   const eagerComputed: typeof import('@vueuse/core')['eagerComputed']
@@ -37,6 +36,7 @@ declare global {
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const getElement: typeof import('./src/shared/utils/getElement')['getElement']
+  const getPreferableLocale: typeof import('./src/shared/utils/localeHelpers')['getPreferableLocale']
   const getTranslateX: typeof import('./src/shared/utils/getTranslateX')['getTranslateX']
   const getWidthElement: typeof import('./src/shared/utils/getWidthElement')['getWidthElement']
   const h: typeof import('vue')['h']
@@ -48,6 +48,7 @@ declare global {
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const localeIsSupported: typeof import('./src/shared/utils/localeHelpers')['localeIsSupported']
   const makeDestructurable: typeof import('@vueuse/core')['makeDestructurable']
   const markRaw: typeof import('vue')['markRaw']
   const nextTick: typeof import('vue')['nextTick']
@@ -86,14 +87,15 @@ declare global {
   const refDefault: typeof import('@vueuse/core')['refDefault']
   const refThrottled: typeof import('@vueuse/core')['refThrottled']
   const refWithControl: typeof import('@vueuse/core')['refWithControl']
+  const removeLocaleParam: typeof import('./src/shared/utils/localeHelpers')['removeLocaleParam']
   const resolveComponent: typeof import('vue')['resolveComponent']
   const resolveDirective: typeof import('vue')['resolveDirective']
   const resolveRef: typeof import('@vueuse/core')['resolveRef']
   const resolveUnref: typeof import('@vueuse/core')['resolveUnref']
+  const setLastLocaleLS: typeof import('./src/shared/utils/localeHelpers')['setLastLocaleLS']
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
-  const supported_locales: typeof import('./src/shared/composables/locales/useLocales')['supported_locales']
   const syncRef: typeof import('@vueuse/core')['syncRef']
   const syncRefs: typeof import('@vueuse/core')['syncRefs']
   const templateRef: typeof import('@vueuse/core')['templateRef']
@@ -187,10 +189,10 @@ declare global {
   const useIntervalFn: typeof import('@vueuse/core')['useIntervalFn']
   const useKeyModifier: typeof import('@vueuse/core')['useKeyModifier']
   const useLastChanged: typeof import('@vueuse/core')['useLastChanged']
+  const useLastLocaleLS: typeof import('./src/shared/utils/localeHelpers')['useLastLocaleLS']
   const useLink: typeof import('vue-router')['useLink']
   const useLocalStorage: typeof import('@vueuse/core')['useLocalStorage']
-  const useLocale: typeof import('./src/shared/composables/locales/useLocales')['useLocale']
-  const useLocaleHelpers: typeof import('./src/shared/composables/locales/useLocaleHelpers')['useLocaleHelpers']
+  const useLocale: typeof import('./src/shared/composables/i18n/useLocales')['useLocale']
   const useMagicKeys: typeof import('@vueuse/core')['useMagicKeys']
   const useManualRefHistory: typeof import('@vueuse/core')['useManualRefHistory']
   const useMediaControls: typeof import('@vueuse/core')['useMediaControls']
@@ -320,7 +322,6 @@ declare module 'vue' {
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
     readonly debouncedRef: UnwrapRef<typeof import('@vueuse/core')['debouncedRef']>
     readonly debouncedWatch: UnwrapRef<typeof import('@vueuse/core')['debouncedWatch']>
-    readonly default_locale: UnwrapRef<typeof import('./src/shared/composables/locales/useLocales')['default_locale']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
     readonly defineComponent: UnwrapRef<typeof import('vue')['defineComponent']>
     readonly eagerComputed: UnwrapRef<typeof import('@vueuse/core')['eagerComputed']>
@@ -329,6 +330,7 @@ declare module 'vue' {
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly getElement: UnwrapRef<typeof import('./src/shared/utils/getElement')['getElement']>
+    readonly getPreferableLocale: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['getPreferableLocale']>
     readonly getTranslateX: UnwrapRef<typeof import('./src/shared/utils/getTranslateX')['getTranslateX']>
     readonly getWidthElement: UnwrapRef<typeof import('./src/shared/utils/getWidthElement')['getWidthElement']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
@@ -340,6 +342,7 @@ declare module 'vue' {
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly localeIsSupported: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['localeIsSupported']>
     readonly makeDestructurable: UnwrapRef<typeof import('@vueuse/core')['makeDestructurable']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
@@ -378,14 +381,15 @@ declare module 'vue' {
     readonly refDefault: UnwrapRef<typeof import('@vueuse/core')['refDefault']>
     readonly refThrottled: UnwrapRef<typeof import('@vueuse/core')['refThrottled']>
     readonly refWithControl: UnwrapRef<typeof import('@vueuse/core')['refWithControl']>
+    readonly removeLocaleParam: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['removeLocaleParam']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveDirective: UnwrapRef<typeof import('vue')['resolveDirective']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
+    readonly setLastLocaleLS: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['setLastLocaleLS']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
-    readonly supported_locales: UnwrapRef<typeof import('./src/shared/composables/locales/useLocales')['supported_locales']>
     readonly syncRef: UnwrapRef<typeof import('@vueuse/core')['syncRef']>
     readonly syncRefs: UnwrapRef<typeof import('@vueuse/core')['syncRefs']>
     readonly templateRef: UnwrapRef<typeof import('@vueuse/core')['templateRef']>
@@ -479,10 +483,10 @@ declare module 'vue' {
     readonly useIntervalFn: UnwrapRef<typeof import('@vueuse/core')['useIntervalFn']>
     readonly useKeyModifier: UnwrapRef<typeof import('@vueuse/core')['useKeyModifier']>
     readonly useLastChanged: UnwrapRef<typeof import('@vueuse/core')['useLastChanged']>
+    readonly useLastLocaleLS: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['useLastLocaleLS']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
-    readonly useLocale: UnwrapRef<typeof import('./src/shared/composables/locales/useLocales')['useLocale']>
-    readonly useLocaleHelpers: UnwrapRef<typeof import('./src/shared/composables/locales/useLocaleHelpers')['useLocaleHelpers']>
+    readonly useLocale: UnwrapRef<typeof import('./src/shared/composables/i18n/useLocales')['useLocale']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
     readonly useMediaControls: UnwrapRef<typeof import('@vueuse/core')['useMediaControls']>
