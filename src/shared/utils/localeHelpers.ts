@@ -12,7 +12,8 @@ export function setLastLocaleLS(newValue: TLocale | null) {
 }
 
 export function getPreferableLocale(): string {
-  return window.navigator.language || default_locale
+  //@ts-expect-error for some browsers userLanguage
+  return (window.navigator.language || window.navigator?.userLanguage || default_locale).split('-')[0]
 }
 
 export function removeLocaleParam(path: string) {

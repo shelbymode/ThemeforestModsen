@@ -22,8 +22,8 @@ export const useLocale = () => {
     fallbackLocale: default_locale,
     legacy: false,
     messages: {},
-    dateTimeFormats,
     numberFormats,
+    dateTimeFormats,
   })
 
   function changeGlobalLocale(locale: TLocale) {
@@ -59,17 +59,14 @@ export const useLocale = () => {
      * User didn't set correctly locale -> try to find out preferable
      */
     const preferableLocale = getPreferableLocale()
-    const preferableLocaleISO = preferableLocale.split('-')[0]
 
     let selectedLocale
 
     if (supported_locales.includes(preferableLocale)) {
       selectedLocale = preferableLocale
-    } else if (supported_locales.includes(preferableLocaleISO)) {
-      selectedLocale = preferableLocaleISO
     } else {
       selectedLocale = default_locale
-      console.warn(`user preferable locale is not supported:`, preferableLocale)
+      console.warn(`user preferable locale is not supported: ${preferableLocale}, was setted: ${selectedLocale}`)
     }
 
     userLocale.value = selectedLocale as TLocale
@@ -130,9 +127,17 @@ export const useLocale = () => {
 
         /**
          * There is not such locale --> use last saved locale and redirect
+         * (potentially we can't save not supported locale)
          */
         const lastLocale = useLastLocaleLS()
 
+        /**
+         * But if some way in LS is located not supported locale -> set default and redirect
+         */
+        if (!supported_locales.includes(lastLocale.value as string)) {
+          console.warn('Someone forged our locale! Restore to default...')
+          lastLocale.value = default_locale as TLocale
+        }
         changeGlobalLocale(lastLocale.value as TLocale)
         const correctPath = removeLocaleParam(path)
 

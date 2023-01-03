@@ -71,7 +71,9 @@ const customClassesTranslucent: IInputClasses = {
 
 <template>
   <section class="contact-form shadow-card-2">
-    <AtomMiddleTitle class="contact-form__title">Contact Us</AtomMiddleTitle>
+    <AtomMiddleTitle class="contact-form__title">
+      {{ toCapitalize($t(`common.contactUs`)) }}
+    </AtomMiddleTitle>
     <form class="contact-form__form">
       <AtomInputTranslucent
         v-for="formInfo in formInfoAll"
@@ -85,7 +87,9 @@ const customClassesTranslucent: IInputClasses = {
         @input="touch(formInfo.field)"
       />
     </form>
-    <AtomButton :is-disabled="!isFormValid" class="contact-form__send-button">Send</AtomButton>
+    <AtomButton :is-disabled="!isFormValid" class="contact-form__send-button">
+      {{ toCapitalize($t(`common.send`)) }}
+    </AtomButton>
   </section>
 </template>
 

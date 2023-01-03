@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { helpers, required, email } from '@vuelidate/validators'
+import { useI18n } from 'vue-i18n'
 import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
 
+const { t } = useI18n()
 const rulesEmail = computed(() => ({
   email: {
     required: helpers.withMessage('Input an email, please', required),
@@ -15,6 +17,11 @@ const { isFormValid, touch, getStatusValidation } = useSchemaValidation(rulesEma
 let isMessageSent = $ref(false)
 
 const sendMessage = () => (isMessageSent = true)
+
+const subscribeNewsletter = computed(() => toCapitalize(t(`common.subscribeNewsletter`)))
+
+const subscribeNewsletterFirst = computed(() => subscribeNewsletter.value.split(' ')[0])
+const subscribeNewsletterRest = computed(() => subscribeNewsletter.value.split(' ').slice(1).join(' '))
 </script>
 
 <template>
@@ -22,10 +29,11 @@ const sendMessage = () => (isMessageSent = true)
     <TemplatePageRestrictor class="subscribe">
       <template v-if="!isMessageSent">
         <div class="subscribe__content">
-          <AtomMiddleTitle class="subscribe__title"
-            >Subscribe <br class="sm:hidden" />
-            to our newsletter</AtomMiddleTitle
-          >
+          <AtomMiddleTitle class="subscribe__title">
+            {{ subscribeNewsletterFirst }}
+            <br class="sm:hidden" />
+            {{ subscribeNewsletterRest }}
+          </AtomMiddleTitle>
           <AtomText class="subscribe__text">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
           </AtomText>
@@ -35,7 +43,7 @@ const sendMessage = () => (isMessageSent = true)
           <AtomInput
             v-bind="{
               id: 'email',
-              placeholder: 'Your email',
+              placeholder: toCapitalize($t(`common.yourEmail`)),
               statusValidation: getStatusValidation('email'),
             }"
             v-model="form.email"
@@ -43,7 +51,7 @@ const sendMessage = () => (isMessageSent = true)
             @input="touch('email')"
           />
           <AtomButton :is-disabled="!isFormValid" class="subscribe-email__button" @click="sendMessage">
-            Send
+            {{ toCapitalize($t(`common.send`)) }}
           </AtomButton>
         </div>
       </template>
@@ -51,7 +59,7 @@ const sendMessage = () => (isMessageSent = true)
       <transition name="subscribe" mode="out-in">
         <template v-if="isMessageSent">
           <MoleculeNotification type="success">
-            <template #message> You have successfully subscribed! </template>
+            <template #message> {{ toCapitalize($t(`common.successSubscribed`)) }} </template>
           </MoleculeNotification>
         </template>
       </transition>

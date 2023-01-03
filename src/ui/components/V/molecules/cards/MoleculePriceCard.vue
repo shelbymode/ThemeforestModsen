@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { v4 } from 'uuid'
+import { Ref } from 'vue'
 type TTariff = {
   name: string
   value: string
@@ -8,7 +9,7 @@ type TTariff = {
 }
 interface IPriceCardOptions {
   tariffs: TTariff[]
-  checks: string[]
+  checks: Ref<string>[]
   title: string
   isSelected?: boolean
 }
@@ -66,7 +67,7 @@ const selectCurrentCard = (index: number) => {
     </div>
 
     <AtomButton class="card-price__button" :class="{ 'card-price__button--selected': props.options.isSelected }">
-      Choose plan
+      {{ toCapitalize($t(`common.price.choosePlan`)) }}
     </AtomButton>
 
     <div
@@ -76,7 +77,7 @@ const selectCurrentCard = (index: number) => {
       <div v-for="(check, index) in props.options.checks" :key="index" class="card-price__checks">
         <span class="card-price__check" :class="{ 'card-price__check--selected': props.options.isSelected }" />
         <p class="card-price__check-text" :class="{ 'card-price__check-text--selected': props.options.isSelected }">
-          {{ check }}
+          {{ check.value }}
         </p>
       </div>
     </div>
@@ -129,7 +130,7 @@ const selectCurrentCard = (index: number) => {
   @apply flex items-center justify-start gap-x-3;
 }
 .card-price__check {
-  @apply i-fluent-checkmark-24-filled text-primary text-3xl;
+  @apply i-fluent-checkmark-24-filled text-primary text-3xl min-h-[30px] min-w-[30px];
   &--selected {
     @apply text-white;
   }

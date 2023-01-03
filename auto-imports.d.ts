@@ -48,6 +48,7 @@ declare global {
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const loadLocale: typeof import('./src/shared/utils/localeHelpers')['loadLocale']
   const localeIsSupported: typeof import('./src/shared/utils/localeHelpers')['localeIsSupported']
   const makeDestructurable: typeof import('@vueuse/core')['makeDestructurable']
   const markRaw: typeof import('vue')['markRaw']
@@ -102,6 +103,7 @@ declare global {
   const throttledRef: typeof import('@vueuse/core')['throttledRef']
   const throttledWatch: typeof import('@vueuse/core')['throttledWatch']
   const toCapitalize: typeof import('./src/shared/utils/toCapitalize')['toCapitalize']
+  const toCapitalizeEach: typeof import('./src/shared/utils/toCapitalizeEach')['toCapitalizeEach']
   const toRaw: typeof import('vue')['toRaw']
   const toReactive: typeof import('@vueuse/core')['toReactive']
   const toRef: typeof import('vue')['toRef']
@@ -342,6 +344,7 @@ declare module 'vue' {
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly loadLocale: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['loadLocale']>
     readonly localeIsSupported: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['localeIsSupported']>
     readonly makeDestructurable: UnwrapRef<typeof import('@vueuse/core')['makeDestructurable']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
@@ -396,6 +399,7 @@ declare module 'vue' {
     readonly throttledRef: UnwrapRef<typeof import('@vueuse/core')['throttledRef']>
     readonly throttledWatch: UnwrapRef<typeof import('@vueuse/core')['throttledWatch']>
     readonly toCapitalize: UnwrapRef<typeof import('./src/shared/utils/toCapitalize')['toCapitalize']>
+    readonly toCapitalizeEach: UnwrapRef<typeof import('./src/shared/utils/toCapitalizeEach')['toCapitalizeEach']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toReactive: UnwrapRef<typeof import('@vueuse/core')['toReactive']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>

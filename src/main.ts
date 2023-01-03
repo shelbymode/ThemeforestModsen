@@ -21,6 +21,9 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
+    if (removeLocaleParam(from.path) === removeLocaleParam(to.path)) {
+      return
+    }
     return { top: 0, behavior: 'smooth' }
   },
 })

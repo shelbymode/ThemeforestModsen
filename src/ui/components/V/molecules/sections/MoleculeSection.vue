@@ -4,7 +4,9 @@
   <div class="section-wrapper">
     <TemplatePageRestrictor class="section">
       <div class="section-content">
-        <h3 class="section-content__title">Subscribe to our newsletter</h3>
+        <h3 class="section-content__title">
+          {{ toCapitalize($t(`common.subscribeNewsletter`)) }}
+        </h3>
         <p class="section-content__text">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
         </p>

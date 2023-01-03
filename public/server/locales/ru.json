@@ -17,9 +17,48 @@
     "privacyPolicy": "Политика приватности",
     "allRightsReserved": "все права защищены"
   },
+
   "common": {
     "learnMore": "узнать больше",
-    "discoverMode": "режим обнаружения"
+    "discoverMode": "режим обнаружения",
+    "projectExecuted": "выполненных проектов",
+    "satisfiedCustomers": "удовлетворенные клиенты",
+    "dataManagement": "управление данными",
+    "benefitsTitle": "преимущества {company}",
+    "embedAnalytics": "встроенная аналитика",
+    "accessControl": "контроль тупа",
+    "dataAnalytics": "аналитика данных",
+    "testimonials": "отзывы",
+    "ourBlog": "наш блог",
+    "machineLearning": "машинное обучение",
+    "needHelp?": "нужна помощь?",
+    "contactUs": "связаться с нами",
+    "subscribeNewsletter": "подписаться на нашу рассылку",
+    "yourEmail": "ваш email",
+    "send": "отправить",
+    "success": "успех",
+    "alert": "тревога",
+    "warning": "внимание",
+    "successSubscribed": "вы успешно подписались!",
+    "price": {
+      "mo": "мес",
+      "yr": "год",
+      "choosePlan": "выберите план",
+      "ourPricing": "наши цены",
+      "freeTrial": "пробный",
+      "lite": "облегченный",
+      "basic": "основной",
+      "forEnterprises": "для бизнеса",
+      "smallTeams": "для мини команд - {amount} человек",
+      "communitySupport": "помощь сообщества",
+      "individualData": "персональные данные - {size}{dimension}",
+      "unlimitedIndividualData": "безлимит на индивидуальные данные",
+      "advancedPermissions": "дополнительные разрешения",
+      "dataHistory": "история данных",
+      "auditLog": "журнал аудита",
+      "allIncluded": "все функции включены",
+      "customPrice": "под вас"
+    }
   },
   "home": {
     "presentationTitle1": "Найдите истинную силу в ваших данных с",
@@ -27,6 +66,7 @@
     "presentationTitle2": "Новейшая платформа бизнес-аналитики",
     "presentationText2": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     "sideImageTitle": "Принципиально новые решения для данных",
-    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    "statsTitle": "Мы предоставляем сервисы, которые гарантируют успех"
   }
 }
