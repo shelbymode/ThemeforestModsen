@@ -93,5 +93,10 @@ router.beforeEach(async (to, _, next) => {
 app.use(i18n)
 app.use(createPinia())
 app.use(router)
+/* app.use(VueGoogleMaps, {
+  load: {
+    key: ,
+  },
+}) */
 
 app.mount('#app')

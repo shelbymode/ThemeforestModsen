@@ -17,6 +17,7 @@ export interface IInputOptions {
   label?: string
   type?: 'text' | 'password'
   skipInitValue?: boolean
+  tag?: 'input' | 'textarea'
 }
 interface IInputProps extends IInputClasses, IInputOptions {}
 
@@ -26,6 +27,7 @@ const props = withDefaults(defineProps<IInputProps>(), {
   type: 'text',
   statusValidation: 'inactive',
   label: undefined,
+  tag: 'input',
 })
 
 const emit = defineEmits<{
@@ -33,9 +35,9 @@ const emit = defineEmits<{
 }>()
 
 const configClasses: Required<IInputClasses> = {
-  commonClasses: `px-6 py-4 font-bold placeholder:(text-cGrey) hover:scale-95
+  commonClasses: `px-6 py-4 font-bold placeholder:(text-cGrey) hover:scale-98
     transition-300 rounded-lg focus:(outline-black-900 outline-none) outline-none`,
-  commonLabelClasses: 'font-semibold text-sm',
+  commonLabelClasses: 'font-semibold text-sm text-black ',
   activeClasses: 'border-b-2 mb-[-2px] border-blue-500',
   activeLabelClasses: 'text-primary',
   inactiveClasses: 'bg-tertiary',
@@ -83,7 +85,8 @@ const isInactiveSignal = computed(() => waitCondition.includes(props.statusValid
       :for="id"
       >{{ props.label }}</label
     >
-    <input
+    <component
+      :is="tag"
       :id="id"
       :name="id"
       :type="type"
@@ -97,14 +100,19 @@ const isInactiveSignal = computed(() => waitCondition.includes(props.statusValid
       }"
       @focus="toggleFocus()"
       @blur="toggleFocus()"
-      @input="(e) => emit('update:modelValue', (e.target as HTMLInputElement).value)"
+      @input="(e:Event) => emit('update:modelValue', (e.target as HTMLInputElement).value)"
     />
   </div>
 </template>
 
 <style lang="scss" scoped>
-input {
+input,
+textarea {
   caret-color: black;
+}
+textarea {
+  resize: none;
+  height: 130px;
 }
 .input-wrapper {
   @apply flex flex-col items-left gap-y-2;

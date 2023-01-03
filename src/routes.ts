@@ -28,9 +28,14 @@ export const routes = [
         component: () => import('~/ui/pages/blog/index.vue'),
       },
       {
-        path: 'blog/:id',
-        name: 'BlogId',
-        component: () => import('~/ui/pages/blog/[id].vue'),
+        path: 'blog',
+        name: 'Blog',
+        component: () => import('~/ui/pages/blog/index.vue'),
+      },
+      {
+        path: 'contacts',
+        name: 'Contact',
+        component: () => import('~/ui/pages/contacts.vue'),
         props: true,
       },
       {
