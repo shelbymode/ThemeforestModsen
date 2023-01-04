@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { required, email, minLength, maxLength, helpers, sameAs } from '@vuelidate/validators'
+import { MaybeRef } from '@vueuse/core'
+import { useI18n } from 'vue-i18n'
 import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
 import { IInputClasses } from '../../atoms/inputs/AtomInput.vue'
 
@@ -33,34 +35,41 @@ const { isFormValid, touch, getMessage, getIsDirty, getIsError, isDirtyAndError,
 
 interface IFormInfo {
   id: string
-  label: string
-  placeholder: string
-  field: keyof typeof form
+  label: MaybeRef<string>
+  placeholder: MaybeRef<string>
+  field: keyof typeof form,
+  tag: 'input' | 'textarea'
 }
+const { t } = useI18n()
+
 const formInfoAll: IFormInfo[] = [
   {
     id: 'contact-name-id',
-    label: 'Name',
-    placeholder: 'Contact name',
+    label: computed(() => toCapitalize(t(`common.name`))),
+    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.name`))),
     field: 'name',
+    tag: 'input',
   },
   {
     id: 'contact-email-id',
-    label: 'Email',
-    placeholder: 'Contact email',
+    label: computed(() => toCapitalize(t(`common.email`))),
+    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.email`))),
     field: 'email',
+    tag: 'input',
   },
   {
     id: 'contact-theme-id',
-    label: 'Theme',
-    placeholder: 'Contact theme',
+    label: computed(() => toCapitalize(t(`common.theme`))),
+    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.theme`))),
     field: 'theme',
+    tag: 'input',
   },
   {
     id: 'contact-message-id',
-    label: 'Message',
-    placeholder: 'Contact message',
+    label: computed(() => toCapitalize(t(`common.message`))),
+    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.message`))),
     field: 'message',
+    tag: 'textarea'
   },
 ]
 
@@ -72,7 +81,7 @@ const customClassesTranslucent: IInputClasses = {
 <template>
   <section class="contact-form shadow-card-2">
     <AtomMiddleTitle class="contact-form__title">
-      {{ toCapitalize($t(`common.contactUs`)) }}
+      {{ toCapitalize($t(`common.button.contactUs`)) }}
     </AtomMiddleTitle>
     <form class="contact-form__form">
       <AtomInputTranslucent
@@ -88,7 +97,7 @@ const customClassesTranslucent: IInputClasses = {
       />
     </form>
     <AtomButton :is-disabled="!isFormValid" class="contact-form__send-button">
-      {{ toCapitalize($t(`common.send`)) }}
+      {{ toCapitalize($t(`common.button.send`)) }}
     </AtomButton>
   </section>
 </template>

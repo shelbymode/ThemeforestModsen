@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { required, email, minLength, maxLength, helpers, sameAs } from '@vuelidate/validators'
+import { MaybeRef } from '@vueuse/core'
+import { useI18n } from 'vue-i18n'
 import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
 import { paintHTMLWords } from '~/shared/utils/paintHTMLWords'
 
@@ -31,41 +33,44 @@ const form = reactive({ email: '', name: '', theme: '', message: '' })
 const { isFormValid, touch, getMessage, getIsDirty, getIsError, isDirtyAndError, getStatusValidation } =
   useSchemaValidation(rulesForm, form)
 
+const { t } = useI18n()
+
 interface IFormInfo {
   id: string
-  label: string
-  placeholder: string
+  label: MaybeRef<string>
+  placeholder: MaybeRef<string>
   field: keyof typeof form
   tag: 'input' | 'textarea'
 }
 const formInfoNames: IFormInfo[] = [
   {
     id: 'contact-email-id',
-    label: 'Email',
-    placeholder: 'Contact email',
+    label: computed(() => toCapitalize(t(`common.email`))),
+    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.email`))),
     field: 'email',
     tag: 'input',
   },
   {
     id: 'contact-name-id',
-    label: 'Name',
-    placeholder: 'Contact name',
+    label: computed(() => toCapitalize(t(`common.name`))),
+    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.name`))),
     field: 'name',
     tag: 'input',
   },
 ]
+
 const formInfoOther: IFormInfo[] = [
   {
     id: 'contact-theme-id',
-    label: 'Theme',
-    placeholder: 'Contact theme',
+    label: computed(() => toCapitalize(t(`common.theme`))),
+    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.theme`))),
     field: 'theme',
     tag: 'input',
   },
   {
     id: 'contact-message-id',
-    label: 'Message',
-    placeholder: 'Contact message',
+    label: computed(() => toCapitalize(t(`common.message`))),
+    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.message`))),
     field: 'message',
     tag: 'textarea',
   },
@@ -80,7 +85,7 @@ onMounted(() => {
 
 <template>
   <div class="contacts-form-container">
-    <h1 class="contacts-form__title">How can we help you?</h1>
+    <h1 class="contacts-form__title">{{toCapitalize($t(`common.howWeCanHelp?`))}}</h1>
     <form class="contacts-form">
       <div class="contacts-form__names">
         <AtomInput
@@ -107,7 +112,9 @@ onMounted(() => {
         }"
         @input="touch(formInfo.field)"
       />
-      <AtomButton :is-disabled="!isFormValid" class="contact-form__send-button">Send button</AtomButton>
+      <AtomButton :is-disabled="!isFormValid" class="contact-form__send-button">
+        {{toCapitalize($t(`common.button.send`))}}
+      </AtomButton>
     </form>
   </div>
 </template>

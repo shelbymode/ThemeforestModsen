@@ -15,12 +15,19 @@
     "contactInfo": "contact info",
     "termsOfUs": "terms of us",
     "privacyPolicy": "privacy policy",
-    "allRightsReserved": "all rights reserved"
+    "allRightsReserved": "all rights reserved",
+    "drivingDirections": "driving directions"
   },
 
   "common": {
-    "learnMore": "learn more",
-    "discoverMode": "discover mode",
+    "button": {
+      "learnMore": "learn more",
+      "discoverMode": "discover mode",
+      "contactUs": "contact us",
+      "send": "send",
+      "readMore": "read more",
+      "watchTheDemo": "watch the demo"
+    },
     "projectExecuted": "project executed",
     "satisfiedCustomers": "satisfied customers",
     "dataManagement": "data management",
@@ -32,14 +39,21 @@
     "ourBlog": "our blog",
     "machineLearning": "machine learning",
     "needHelp?": "do you need help?",
-    "contactUs": "contact us",
+    "howWeCanHelp?": "how can we help you?",
     "subscribeNewsletter": "subscribe to our newsletter",
     "yourEmail": "your email",
-    "send": "send",
     "success": "success",
     "alert": "alert",
     "warning": "warning",
     "successSubscribed": "you have successfully subscribed!",
+    "statsTitle": "We provide services that guarantee your success",
+    "email": "email",
+    "phoneNumber": "phone number",
+    "address": "address",
+    "name": "name",
+    "theme": "theme",
+    "message": "message",
+    "contact": "contact",
     "price": {
       "mo": "mo",
       "yr": "yr",
@@ -58,6 +72,19 @@
       "auditLog": "audit log",
       "allIncluded": "all functions included",
       "customPrice": "custom"
+    },
+    "route": {
+      "home": "home",
+      "services": "services",
+      "about": "about",
+      "blog": "blog",
+      "contacts": "contacts"
+    },
+    "formPlaceholder": {
+      "email": "contact email",
+      "name": "contact name",
+      "theme": "contact theme",
+      "message": "your message"
     }
   },
   "home": {
@@ -66,7 +93,24 @@
     "presentationTitle2": "The newest business analytics platform",
     "presentationText2": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     "sideImageTitle": "Radically new solutions for data",
-    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-    "statsTitle": "We provide services that guarantee your success"
+    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+  },
+  "services": {
+    "startTitle": "data analytics services",
+    "services": "services",
+    "bigDataConsulting": "big data consulting",
+    "artificialIntelligence": "artificial intelligence"
+  },
+  "about": {
+    "whoWeAre": "who we are",
+    "ourMission": "our mission",
+    "companyInNumbers": "{company} in numbers",
+    "ourCustomers": "our customers",
+    "ourCustomersSay": "our customers say",
+    "contactUsText": "Left questions? Contacts us now for a free consultation and free trial!",
+    "ourExperience": "we work with 15 years of experience"
+  },
+  "blog": {
+    "chooseCategoryBlog": "choose category blog"
   }
 }

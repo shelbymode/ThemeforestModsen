@@ -11,11 +11,11 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
   <section class="promo">
     <img :src="srcMedia" alt="promo image" class="promo__image" />
     <div class="promo__content">
-      <AtomMiddleTitle class="promo__title">{{ $t('home.sideImageTitle') }}</AtomMiddleTitle>
+      <AtomMiddleTitle class="promo__title">{{ $t(`home.sideImageTitle`) }}</AtomMiddleTitle>
       <AtomText class="promo__text">
         {{ $t('home.sideImageText') }}
       </AtomText>
-      <AtomButton class="promo__button-learn-more">{{ toCapitalize($t('common.learnMore')) }}</AtomButton>
+      <AtomButton class="promo__button-learn-more">{{ toCapitalize($t(`common.button.learnMore`)) }}</AtomButton>
     </div>
   </section>
 </template>

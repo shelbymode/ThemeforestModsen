@@ -8,7 +8,7 @@
         v-for="card in 3"
         :key="card"
         class="related-posts__card"
-        title="Machine Learning"
+        :title="toCapitalizeEach($t(`common.machineLearning`))"
         date="22 June 2022"
         text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure..."
         :link-info="{ label: 'Read more', to: '/' }"

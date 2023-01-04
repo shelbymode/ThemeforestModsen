@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import { MaybeRef } from '@vueuse/core'
+
 const props = defineProps<{
   iconClass?: string
   title: string
   text: string
   linkInfo?: {
     to: string
-    label: string
+    label: MaybeRef<string>
   }
 }>()
 
@@ -20,7 +22,7 @@ const isLinkExists = props.linkInfo && Object.keys(props.linkInfo).length > 0
     <h2 class="card__title">{{ title }}</h2>
     <p class="card__text">{{ text }}</p>
 
-    <AtomLink v-if="isLinkExists" :link="linkInfo!.to">{{ linkInfo!.label }}</AtomLink>
+    <AtomLink v-if="isLinkExists" :link="linkInfo!.to">{{ unref(linkInfo!.label) }}</AtomLink>
   </div>
 </template>
 

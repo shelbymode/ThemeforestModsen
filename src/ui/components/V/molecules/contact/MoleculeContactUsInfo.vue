@@ -1,15 +1,22 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 const contactsInfo = [
-  { label: 'Email address', text: 'ensome@info.co.us' },
-  { label: 'Phone number', text: '+1601-201-5580' },
-  { label: 'Address', text: '1642 Washington Avenue, Jackson, MS, Mississippi, 39201' },
+  { label: computed(() => toCapitalize(t(`common.email`))), text: 'ensome@info.co.us' },
+  { label: computed(() => toCapitalize(t(`common.phoneNumber`))), text: '+1601-201-5580' },
+  {
+    label: computed(() => toCapitalize(t(`common.address`))),
+    text: '1642 Washington Avenue, Jackson, MS, Mississippi, 39201',
+  },
 ]
 </script>
 
 <template>
   <section class="contact">
     <AtomMiddleTitle class="contact__title">
-      Left questions? Contacts us now for a free consultation and free trial!
+      {{ $t(`about.contactUsText`) }}
     </AtomMiddleTitle>
     <AtomText class="contact__text">
       Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
@@ -19,7 +26,7 @@ const contactsInfo = [
     <div class="contact-info-container">
       <template v-for="contactInfo in contactsInfo" :key="contactInfo.label">
         <div class="contact-info">
-          <h3 class="contact-info__label">{{ contactInfo.label }}</h3>
+          <h3 class="contact-info__label">{{ contactInfo.label.value }}</h3>
           <p class="contact-info__text">{{ contactInfo.text }}</p>
         </div>
       </template>

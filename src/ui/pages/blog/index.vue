@@ -2,12 +2,14 @@
 import { useI18n } from 'vue-i18n'
 
 const { locale } = useI18n()
+const route = useRoute()
+
 </script>
 
 <template>
   <TemplatePage>
     <main class="blog">
-      <TemplateNavLinksCenter title="Blog">
+      <TemplateNavLinksCenter :title="toCapitalize($t(`common.route.${(route.name as string).toLowerCase()}`))">
         <MoleculeNavLinks />
       </TemplateNavLinksCenter>
 
@@ -25,7 +27,7 @@ const { locale } = useI18n()
             v-for="(card, idx) in 5"
             :key="card"
             class="blog__card shadow-card-3"
-            title="Machine Learning"
+            :title="toCapitalizeEach($t(`common.machineLearning`))"
             date="22 June 2022"
             :tags-info="{ App: true, CIO: true, Future: true }"
             text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure..."

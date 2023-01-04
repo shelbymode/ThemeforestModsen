@@ -17,7 +17,9 @@ const containerLinkComponent = useFoooterSwapComponent()
     <p class="contact-links__phone">+1 601-201-5580</p>
     <p class="contact-links__address">1642 Washington Avenue, Jackson, MS, 39201</p>
     <AtomLink link="/" class="contact-links__email">ensome@info.co.us</AtomLink>
-    <AtomLink link="/driving" class="contact-links__driving">Driving derections</AtomLink>
+    <AtomLink link="/driving" class="contact-links__driving">
+      {{ toCapitalize($t(`navMenu.drivingDirections`)) }}
+    </AtomLink>
   </component>
 </template>
 

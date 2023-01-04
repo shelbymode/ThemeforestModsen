@@ -12,7 +12,7 @@ const labelStats = [
 
 <template>
   <TemplatePageRestrictor class="stats">
-    <AtomMiddleTitle class="stats__title">{{ $t(`home.statsTitle`) }}</AtomMiddleTitle>
+    <AtomMiddleTitle class="stats__title">{{ $t(`common.statsTitle`) }}</AtomMiddleTitle>
 
     <div class="stats__content">
       <div class="stats__stats">

@@ -2,7 +2,7 @@
 
 <template>
   <AtomButton class="demo-button">
-    Watch the demo
+    {{ toCapitalize($t(`common.button.watchTheDemo`)) }}
     <span class="text-2xl" i-fluent-play-circle-24-regular></span>
   </AtomButton>
 </template>

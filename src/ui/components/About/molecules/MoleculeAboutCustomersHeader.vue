@@ -2,7 +2,9 @@
 
 <template>
   <header class="customers__header">
-    <AtomMiddleTitle class="customers__title">What our customers say</AtomMiddleTitle>
+    <AtomMiddleTitle class="customers__title">
+      {{ toCapitalize($t(`about.ourCustomersSay`)) }}
+    </AtomMiddleTitle>
     <div class="customers__arrows">
       <AtomButton class="customers__arrow" aria-label="Left navigation">
         <span class="customers__arrow-left i-ic-outline-arrow-right-alt" />

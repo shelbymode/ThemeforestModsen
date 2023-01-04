@@ -14,7 +14,9 @@ const selectedPerson = ref(people[0])
 
 <template>
   <div class="blog-category">
-    <AtomMiddleTitle class="blog-category__title">Choose category blog</AtomMiddleTitle>
+    <AtomMiddleTitle class="blog-category__title">
+      {{toCapitalize($t(`blog.chooseCategoryBlog`))}}
+    </AtomMiddleTitle>
 
     <Listbox v-model="selectedPerson">
       <div class="blog-category-listbox w-full">

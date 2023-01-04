@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 const aboutCardsBig = [
   {
-    title: 'Who we are',
+    title: computed(() => toCapitalize(t(`about.whoWeAre`))),
     img: 'https://api.lorem.space/image/?w=635&h=425&hash=nbzuynjb',
     text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Donec tincidunt tempor quam, non mollis quam finibus nec. Quisque finibus consequat felis vel pretium. Aliquam gravida nisi vel convallis ultricies. Integer ante sapien, consequat et dolor vel, cursus lacinia lectus.',
   },
   {
-    title: 'Our mission',
+    title: computed(() => toCapitalize(t(`about.ourMission`))),
     img: 'https://api.lorem.space/image/?w=635&h=425&hash=nbzuynjb',
     text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Donec tincidunt tempor quam, non mollis quam finibus nec. Quisque finibus consequat felis vel pretium. ',
   },
@@ -14,7 +17,7 @@ const aboutCardsBig = [
 
 const aboutCardsSmall = [
   {
-    title: 'We work with 15 years of experience',
+    title: computed(() => toCapitalize(t(`about.ourExperience`))),
     img: 'https://api.lorem.space/image/?w=635&h=425&hash=nbzuynjb',
     text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.',
   },
@@ -28,9 +31,9 @@ const currentCards = computed(() => (isLgScreen.value === true ? aboutCardsBig :
 <template>
   <section class="about-cards">
     <TemplatePageRestrictor class="about-links-container">
-      <div v-for="card in currentCards" :key="card.title" class="card">
+      <div v-for="card in currentCards" :key="card.title.value" class="card">
         <section class="card__content">
-          <AtomBigTitle class="card__title">{{ card.title }}</AtomBigTitle>
+          <AtomBigTitle class="card__title">{{ card.title.value }}</AtomBigTitle>
           <AtomText class="card__text">{{ card.text }}</AtomText>
         </section>
         <img class="card__image" src="https://api.lorem.space/image/fashion?w=635&h=425&hash=66a90khq" alt="random" />

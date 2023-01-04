@@ -1,7 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+const route = useRoute()
+</script>
 
 <template>
-  <TemplateNavLinksCenter title="About">
+  <TemplateNavLinksCenter :title="toCapitalize($t(`common.route.${(route.name as string).toLowerCase()}`))">
     <MoleculeNavLinks />
   </TemplateNavLinksCenter>
 

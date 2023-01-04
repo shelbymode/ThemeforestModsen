@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { MaybeRef } from '@vueuse/core'
+
 export interface IInputClasses {
   inactiveClasses?: string
   activeClasses?: string
@@ -13,8 +15,8 @@ export interface IInputOptions {
   id: string
   modelValue: string
   statusValidation: 'inactive' | 'initial-error' | 'dirty-error' | 'correct'
-  placeholder?: string
-  label?: string
+  placeholder?: MaybeRef<string>
+  label?: MaybeRef<string>
   type?: 'text' | 'password'
   skipInitValue?: boolean
   tag?: 'input' | 'textarea'
@@ -76,21 +78,21 @@ const isInactiveSignal = computed(() => waitCondition.includes(props.statusValid
 <template>
   <div class="input-wrapper">
     <label
-      v-if="props.label"
+      v-if="props.label && unref(props.label)"
       :class="{
         [configClasses.commonLabelClasses]: true,
         [configClasses.errorLabelClasses]: isErrorSignal && !isFocus,
         [configClasses.activeLabelClasses]: isFocus,
       }"
       :for="id"
-      >{{ props.label }}</label
+      >{{ unref(props.label) }}</label
     >
     <component
       :is="tag"
       :id="id"
       :name="id"
       :type="type"
-      :placeholder="placeholder"
+      :placeholder="unref(placeholder)"
       :class="{
         [configClasses.commonClasses]: true,
         [configClasses.inactiveClasses]: isInactiveSignal && !isFocus,

@@ -51,7 +51,7 @@ const subscribeNewsletterRest = computed(() => subscribeNewsletter.value.split('
             @input="touch('email')"
           />
           <AtomButton :is-disabled="!isFormValid" class="subscribe-email__button" @click="sendMessage">
-            {{ toCapitalize($t(`common.send`)) }}
+            {{ toCapitalize($t(`common.button.send`)) }}
           </AtomButton>
         </div>
       </template>

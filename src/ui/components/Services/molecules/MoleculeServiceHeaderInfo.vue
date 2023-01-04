@@ -2,8 +2,10 @@
 
 <template>
   <section class="service-header">
-    <div class="service-header__small-title">Services</div>
-    <AtomBigTitle class="service-header__title">Data Analytics Services</AtomBigTitle>
+    <div class="service-header__small-title">
+      {{ toCapitalize($t(`services.services`)) }}
+    </div>
+    <AtomBigTitle class="service-header__title">{{ toCapitalizeEach($t(`services.startTitle`)) }}</AtomBigTitle>
     <AtomText class="service-header__text">
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
       aperiam, eaque ipsa quaeab illo inventore.

@@ -1,18 +1,20 @@
-<script setup lang="ts">
+<script setup lang="ts">import { useI18n } from 'vue-i18n';
+
+const {t} = useI18n()
 const contactIconLinks = [
   {
     icon: 'i-carbon-email',
-    title: 'Email',
+    title: computed(() => toCapitalize(t(`common.email`))),
     additionalInfo: 'ensome@info.co.us',
   },
   {
     icon: 'i-carbon-phone-filled',
-    title: 'Phone',
+    title: computed(() => toCapitalize(t(`common.phoneNumber`))),
     additionalInfo: '+1 601-201-5580',
   },
   {
     icon: 'i-carbon-location-filled',
-    title: 'Address',
+    title: computed(() => toCapitalize(t(`common.address`))),
     additionalInfo: '1642 Washington Ave, Jackson, MS',
   },
 ]
@@ -22,8 +24,8 @@ const contactIconLinks = [
   <div class="contact-links">
     <AtomContactIconLink
       v-for="iconLink in contactIconLinks"
-      :key="iconLink.title"
-      :title="iconLink.title"
+      :key="iconLink.title.value"
+      :title="iconLink.title.value"
       :additional-info="iconLink.additionalInfo"
     >
       <template #icon>

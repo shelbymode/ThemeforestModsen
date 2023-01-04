@@ -21,7 +21,7 @@ const srcMedia = computed(() => (isMdScreen.value === true ? bigImageFactor : sm
   <div class="learn-more__image-wrapper">
     <img :src="srcMedia" alt="Home learn more" class="learn-more__image" />
     <AtomCircleButton class="learn-more__button-learn-more"
-      >{{ toCapitalize($t(`common.learnMore`)) }}
+      >{{ toCapitalize($t(`common.button.learnMore`)) }}
     </AtomCircleButton>
   </div>
 </template>

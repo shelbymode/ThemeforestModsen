@@ -3,7 +3,9 @@
 <template>
   <section class="about-customers">
     <TemplatePageRestrictor class="about-customers-container">
-      <AtomBigTitle class="about-customers__title">Our customers</AtomBigTitle>
+      <AtomBigTitle class="about-customers__title">
+        {{ toCapitalize($t(`about.ourCustomers`)) }}
+      </AtomBigTitle>
       <AtomText class="about-customers__text">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan, totam rem aperiam.
       </AtomText>

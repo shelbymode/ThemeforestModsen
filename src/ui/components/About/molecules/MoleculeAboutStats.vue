@@ -22,7 +22,15 @@ const currentLabelStats = computed(() => (isLgScreen.value ? labelStatsBig : lab
 <template>
   <section class="about-stats">
     <TemplatePageRestrictor class="about-stats-container">
-      <AtomBigTitle class="about-stats__title">Ensome in numbers</AtomBigTitle>
+      <AtomBigTitle class="about-stats__title">
+        {{
+          toCapitalize(
+            $t(`about.companyInNumbers`, {
+              company: 'Ensome',
+            })
+          )
+        }}
+      </AtomBigTitle>
       <div class="about-stats__stats">
         <template v-for="labelStat in currentLabelStats" :key="labelStat.text">
           <AtomLabelStats class="about-stats__stat" :indicator="labelStat.indicator" :text="labelStat.text" />

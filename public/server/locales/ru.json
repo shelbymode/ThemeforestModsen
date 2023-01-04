@@ -15,31 +15,19 @@
     "contactInfo": "контактная информация",
     "termsOfUs": "Условия соглашения",
     "privacyPolicy": "Политика приватности",
-    "allRightsReserved": "все права защищены"
+    "allRightsReserved": "все права защищены",
+    "drivingDirections": "направление движения"
   },
 
   "common": {
-    "learnMore": "узнать больше",
-    "discoverMode": "режим обнаружения",
-    "projectExecuted": "выполненных проектов",
-    "satisfiedCustomers": "удовлетворенные клиенты",
-    "dataManagement": "управление данными",
-    "benefitsTitle": "преимущества {company}",
-    "embedAnalytics": "встроенная аналитика",
-    "accessControl": "контроль тупа",
-    "dataAnalytics": "аналитика данных",
-    "testimonials": "отзывы",
-    "ourBlog": "наш блог",
-    "machineLearning": "машинное обучение",
-    "needHelp?": "нужна помощь?",
-    "contactUs": "связаться с нами",
-    "subscribeNewsletter": "подписаться на нашу рассылку",
-    "yourEmail": "ваш email",
-    "send": "отправить",
-    "success": "успех",
-    "alert": "тревога",
-    "warning": "внимание",
-    "successSubscribed": "вы успешно подписались!",
+    "button": {
+      "learnMore": "узнать больше",
+      "discoverMode": "режим обнаружения",
+      "contactUs": "связаться с нами",
+      "send": "отправить",
+      "readMore": "читать дальше",
+      "watchTheDemo": "смотреть демо"
+    },
     "price": {
       "mo": "мес",
       "yr": "год",
@@ -58,6 +46,44 @@
       "auditLog": "журнал аудита",
       "allIncluded": "все функции включены",
       "customPrice": "под вас"
+    },
+    "route": {
+      "home": "домой",
+      "services": "сервисы",
+      "about": "о нас",
+      "blog": "блог",
+      "contacts": "контакты"
+    },
+    "projectExecuted": "выполненных проектов",
+    "satisfiedCustomers": "удовлетворенных клиентов",
+    "dataManagement": "управление данными",
+    "benefitsTitle": "преимущества {company}",
+    "embedAnalytics": "встроенная аналитика",
+    "accessControl": "контроль тупа",
+    "dataAnalytics": "аналитика данных",
+    "testimonials": "отзывы",
+    "ourBlog": "наш блог",
+    "machineLearning": "машинное обучение",
+    "needHelp?": "нужна помощь?",
+    "howWeCanHelp?": "как мы можем помочь вам?",
+    "subscribeNewsletter": "подписаться на нашу рассылку",
+    "yourEmail": "ваша электронная почта",
+    "success": "успех",
+    "alert": "тревога",
+    "warning": "внимание",
+    "successSubscribed": "вы успешно подписались!",
+    "statsTitle": "Мы предоставляем сервисы, которые гарантируют успех",
+    "email": "электронная почта",
+    "phoneNumber": "номер телефона",
+    "address": "адрес",
+    "name": "имя",
+    "theme": "тема",
+    "message": "сообщение",
+    "formPlaceholder": {
+      "email": "контактная почта",
+      "name": "контактное имя",
+      "theme": "тема сообщения",
+      "message": "ваше сообщение"
     }
   },
   "home": {
@@ -66,7 +92,24 @@
     "presentationTitle2": "Новейшая платформа бизнес-аналитики",
     "presentationText2": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     "sideImageTitle": "Принципиально новые решения для данных",
-    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
-    "statsTitle": "Мы предоставляем сервисы, которые гарантируют успех"
+    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+  },
+  "services": {
+    "startTitle": "сервисы аналитики данных",
+    "services": "сервисы",
+    "bigDataConsulting": "консалтинг больших данных",
+    "artificialIntelligence": "искусственный интеллект"
+  },
+  "about": {
+    "whoWeAre": "кто мы",
+    "ourMission": "наша миссия",
+    "companyInNumbers": "{company} в цифрах",
+    "ourCustomers": "наши заказчики",
+    "ourCustomersSay": "наши заказчики говорят",
+    "contactUsText": "Остались вопросы? Свяжитесь с нами для получения бесплатной пробной консультации!",
+    "ourExperience": "мы на рынке 15 лет"
+  },
+  "blog": {
+    "chooseCategoryBlog": "выберите категорию блога"
   }
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useVModel } from '@vueuse/core'
+import { MaybeRef, useVModel } from '@vueuse/core'
 import { u } from '~/shared/utils/u'
 
 export interface IInputClasses {
@@ -16,8 +16,8 @@ export interface IInputOptions {
   id: string
   modelValue: string
   statusValidation: 'inactive' | 'initial-error' | 'dirty-error' | 'correct'
-  placeholder?: string
-  label?: string
+  placeholder?: MaybeRef<string>
+  label?: MaybeRef<string>
   type?: 'text' | 'password'
   skipInitValue?: boolean
 }
@@ -43,7 +43,6 @@ const customClasses: IInputClasses = {
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
 }>()
-
 
 const proxyModelValue = useVModel(props, 'modelValue', emit)
 </script>

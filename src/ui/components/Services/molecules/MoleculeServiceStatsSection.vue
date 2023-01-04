@@ -13,7 +13,7 @@ const labelStats = [
 <template>
   <section class="service-stats">
     <TemplatePageRestrictor class="service-stats-container">
-      <AtomMiddleTitle class="service-stats__title">We provide services that guarantee your success</AtomMiddleTitle>
+      <AtomMiddleTitle class="service-stats__title">{{ toCapitalize($t(`common.statsTitle`)) }}</AtomMiddleTitle>
 
       <div class="service-stats__content">
         <div class="service-stats__stats">

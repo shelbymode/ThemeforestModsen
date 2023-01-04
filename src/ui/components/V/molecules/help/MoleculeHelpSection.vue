@@ -8,7 +8,7 @@
       commodi.
     </AtomText>
     <AtomButton class="help__button-contact-us">
-      {{ toCapitalize($t(`common.contactUs`)) }}
+      {{ toCapitalize($t(`common.button.contactUs`)) }}
     </AtomButton>
   </section>
 </template>
