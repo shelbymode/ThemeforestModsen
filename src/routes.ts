@@ -33,6 +33,12 @@ export const routes = [
         component: () => import('~/ui/pages/blog/index.vue'),
       },
       {
+        path: 'blog/:id',
+        name: 'CurrentBlog',
+        component: () => import('~/ui/pages/blog/[id].vue'),
+        props: true,
+      },
+      {
         path: 'contacts',
         name: 'Contact',
         component: () => import('~/ui/pages/contacts.vue'),

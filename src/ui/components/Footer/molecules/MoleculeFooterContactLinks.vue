@@ -23,8 +23,8 @@ const containerLinkComponent = useFoooterSwapComponent()
 
 <style lang="scss" scoped>
 .contact-links {
-  @apply flex flex-col items-left gap-y-3;
-  @apply sm:(gap-y-6 items-center);
+  @apply flex flex-col items-start gap-y-6;
+  @apply sm:(items-center);
   @apply lg:(items-start);
 
   // .contact-links__phone
@@ -44,8 +44,8 @@ const containerLinkComponent = useFoooterSwapComponent()
 
 :deep() {
   .contact-links {
-    @apply flex flex-col items-left gap-y-3;
-    @apply sm:(gap-y-6 items-center);
+    @apply flex flex-col items-start gap-y-3;
+    @apply sm:(items-center gap-y-6);
     @apply lg:(items-start);
 
     // .contact-links__email

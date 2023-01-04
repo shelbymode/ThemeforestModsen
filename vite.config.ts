@@ -25,7 +25,9 @@ export default defineConfig({
       },
     }),
 
-    VueI18nPlugin({}),
+    VueI18nPlugin({
+      runtimeOnly: false,
+    }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
