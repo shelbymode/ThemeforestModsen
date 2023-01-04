@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { required, email, minLength, maxLength, helpers, sameAs } from '@vuelidate/validators'
 import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
-import { IInputClasses } from '../../atoms/inputs/AtomInput.vue'
+import { paintHTMLWords } from '~/shared/utils/paintHTMLWords'
 
 const rulesForm = computed(() => ({
   email: {
@@ -22,7 +22,7 @@ const rulesForm = computed(() => ({
   message: {
     required: helpers.withMessage('Input an email, please', required),
     minLength: helpers.withMessage('Min length equals 2', minLength(2)),
-    maxLength: helpers.withMessage('Max length equals 16', maxLength(16)),
+    maxLength: helpers.withMessage('Max length equals 16', maxLength(255)),
   },
 }))
 
@@ -36,81 +36,119 @@ interface IFormInfo {
   label: string
   placeholder: string
   field: keyof typeof form
+  tag: 'input' | 'textarea'
 }
-const formInfoAll: IFormInfo[] = [
-  {
-    id: 'contact-name-id',
-    label: 'Name',
-    placeholder: 'Contact name',
-    field: 'name',
-  },
+const formInfoNames: IFormInfo[] = [
   {
     id: 'contact-email-id',
     label: 'Email',
     placeholder: 'Contact email',
     field: 'email',
+    tag: 'input',
   },
+  {
+    id: 'contact-name-id',
+    label: 'Name',
+    placeholder: 'Contact name',
+    field: 'name',
+    tag: 'input',
+  },
+]
+const formInfoOther: IFormInfo[] = [
   {
     id: 'contact-theme-id',
     label: 'Theme',
     placeholder: 'Contact theme',
     field: 'theme',
+    tag: 'input',
   },
   {
     id: 'contact-message-id',
     label: 'Message',
     placeholder: 'Contact message',
     field: 'message',
+    tag: 'textarea',
   },
 ]
 
-const customClassesTranslucent: IInputClasses = {
-  commonLabelClasses: 'text-cGrey',
-}
+onMounted(() => {
+  paintHTMLWords('.contacts-form__title', {
+    lastRange: 2,
+  })
+})
 </script>
 
 <template>
-  <section class="contact-form shadow-card-2">
-    <AtomMiddleTitle class="contact-form__title">
-      {{ toCapitalize($t(`common.contactUs`)) }}
-    </AtomMiddleTitle>
-    <form class="contact-form__form">
-      <AtomInputTranslucent
-        v-for="formInfo in formInfoAll"
+  <div class="contacts-form-container">
+    <h1 class="contacts-form__title">How can we help you?</h1>
+    <form class="contacts-form">
+      <div class="contacts-form__names">
+        <AtomInput
+          v-for="formInfo in formInfoNames"
+          :key="formInfo.id"
+          v-model="form[formInfo.field]"
+          class="contacts-form__input w-full"
+          v-bind="{
+            ...formInfo,
+            statusValidation: getStatusValidation(formInfo.field),
+          }"
+          @input="touch(formInfo.field)"
+        />
+      </div>
+
+      <AtomInput
+        v-for="formInfo in formInfoOther"
         :key="formInfo.id"
         v-model="form[formInfo.field]"
+        class="contacts-form__input"
         v-bind="{
           ...formInfo,
-          ...customClassesTranslucent,
           statusValidation: getStatusValidation(formInfo.field),
         }"
         @input="touch(formInfo.field)"
       />
+      <AtomButton :is-disabled="!isFormValid" class="contact-form__send-button">Send button</AtomButton>
     </form>
-    <AtomButton :is-disabled="!isFormValid" class="contact-form__send-button">
-      {{ toCapitalize($t(`common.send`)) }}
-    </AtomButton>
-  </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-.contact-form {
-  @apply flex flex-col items-start py-10 p-13 bg-white rounded-md min-w-110;
-  // .contact-form__title
+.contacts-form-container {
+  @apply flex flex-col w-full;
+  @apply sm:(w-4/5);
+  @apply md:(flex-row w-full justify-between gap-x-8);
+}
+.contacts-form {
+  @apply flex flex-col gap-y-6;
+  @apply md:(w-1/2);
+
+  // .contacs-form__names
+
+  &__names {
+    @apply w-full flex flex-col gap-y-6;
+    @apply lg:(flex-row gap-x-6);
+  }
+  // .contacts-form__title
 
   &__title {
+    @apply text-3xl font-bold w-full text-black mb-12 text-center;
+    @apply sm:(text-4xl);
+    @apply md:(text-6xl max-w-1/2 text-left);
+    @apply lg:(text-7xl);
   }
 
-  // .contact-form__form
+  // .contacts-form__input
 
-  &__form {
-    @apply flex flex-col gap-y-7 mt-10 w-full mb-15;
+  &__input {
+    @apply w-full;
   }
-
+}
+.contact-form {
   // .contact-form__send-button
 
   &__send-button {
-    @apply bg-primary text-white self-end;
+    @apply bg-primary text-white w-full;
+    @apply lg:(self-end w-fit);
   }
 }
 </style>

@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { useSliderMediator } from '~/shared/composables/slider/useSliderMediator'
 
+const { t } = useI18n()
 const { directionSignal, controlsStatus, interceptScrollSide, updateControlsStatus } = useSliderMediator()
+
+const testimonials = computed(() => toCapitalize(t('common.testimonials')))
 </script>
 
 <template>
   <TemplatePageRestrictor class="testimonials">
-    <MoleculeSliderHeader title="Testimonials" :controls-status="controlsStatus" @scroll-side="interceptScrollSide" />
+    <MoleculeSliderHeader :title="testimonials" :controls-status="controlsStatus" @scroll-side="interceptScrollSide" />
     <MoleculeHomeTestimonialsContent
       :direction-signal="directionSignal"
       @update-controls-status="updateControlsStatus"

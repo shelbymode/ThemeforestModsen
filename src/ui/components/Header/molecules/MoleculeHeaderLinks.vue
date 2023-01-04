@@ -5,7 +5,6 @@ import { useI18n } from 'vue-i18n'
 import { toCapitalize } from '~/shared/utils/toCapitalize'
 
 const linksList = ['home', 'services', 'about', 'blog', 'contacts']
-
 interface TLink {
   name: string
   link: string

@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 export type TMessage = 'success' | 'error' | 'warning'
+
+const { t } = useI18n()
 
 const props = defineProps<{
   type: TMessage
@@ -24,9 +28,9 @@ const colorTitle = computed(() => {
 })
 
 const titleString = computed(() => {
-  if (props.type === 'success') return 'Success'
-  else if (props.type === 'error') return 'Alert'
-  return 'Warning'
+  if (props.type === 'success') return toCapitalize(t(`common.success`))
+  else if (props.type === 'error') return toCapitalize(t(`common.alert`))
+  return toCapitalize(t(`common.warning`))
 })
 </script>
 

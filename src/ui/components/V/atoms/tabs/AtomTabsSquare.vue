@@ -39,7 +39,7 @@ const emit = defineEmits<{
   }
 
   label {
-    @apply px-4 py-2 font-bold text-white bg-primary border-white border-2 rounded text-sm duration-500 opacity-50 scale-90;
+    @apply px-2 py-2 font-bold text-white bg-primary border-white border-2 rounded text-sm duration-500 opacity-50 scale-90;
     @apply hover:(cursor-pointer);
   }
 

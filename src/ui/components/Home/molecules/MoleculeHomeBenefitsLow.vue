@@ -1,26 +1,29 @@
 <script setup lang="ts">
 import EmbedAnalyticsIcon from '/assets/images/svg-icons/benefits/icon-embed-analytics.svg?component'
 import DataAnalyticsIcon from '/assets/images/svg-icons/benefits/icon-data-analytics.svg?component'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const embedAnalyticsCard = {
-  title: 'Embed analytics',
+  title: computed(() => toCapitalize(t('common.embedAnalytics'))),
   text: 'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo..',
 }
 const dataAnalyticsCard = {
-  title: 'Data analytics',
+  title: computed(() => toCapitalize(t('common.dataAnalytics'))),
   text: 'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo..',
 }
 </script>
 
 <template>
   <div class="benefits__low-wrapper">
-    <MoleculeServiceCard class="benefits__card" :title="embedAnalyticsCard.title" :text="embedAnalyticsCard.text">
+    <MoleculeServiceCard class="benefits__card" :title="embedAnalyticsCard.title.value" :text="embedAnalyticsCard.text">
       <template #icon>
         <EmbedAnalyticsIcon />
       </template>
     </MoleculeServiceCard>
 
-    <MoleculeServiceCard class="benefits__card" :title="dataAnalyticsCard.title" :text="dataAnalyticsCard.text">
+    <MoleculeServiceCard class="benefits__card" :title="dataAnalyticsCard.title.value" :text="dataAnalyticsCard.text">
       <template #icon>
         <DataAnalyticsIcon />
       </template>

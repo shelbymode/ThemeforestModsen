@@ -1,26 +1,39 @@
 <script setup lang="ts">
 import BrainIcon from '/assets/images/svg-icons/benefits/icon-brain.svg?component'
 import AccessControlIcon from '/assets/images/svg-icons/benefits/icon-access-key.svg?component'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const machineLearningCard = {
-  title: 'The benefits of Ensome',
+  title: computed(() =>
+    toCapitalize(
+      t('common.benefitsTitle', {
+        company: 'Ensome',
+      })
+    )
+  ),
   text: 'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo.',
 }
 const accessControlCard = {
-  title: 'Access control',
+  title: computed(() => toCapitalize(t('common.accessControl'))),
   text: 'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo.',
 }
 </script>
 
 <template>
   <div class="benefits__high-wrapper">
-    <MoleculeServiceCard class="benefits__card" :title="machineLearningCard.title" :text="machineLearningCard.text">
+    <MoleculeServiceCard
+      class="benefits__card"
+      :title="machineLearningCard.title.value"
+      :text="machineLearningCard.text"
+    >
       <template #icon>
         <BrainIcon />
       </template>
     </MoleculeServiceCard>
 
-    <MoleculeServiceCard class="benefits__card" :title="accessControlCard.title" :text="accessControlCard.text">
+    <MoleculeServiceCard class="benefits__card" :title="accessControlCard.title.value" :text="accessControlCard.text">
       <template #icon>
         <AccessControlIcon />
       </template>

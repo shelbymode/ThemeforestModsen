@@ -1,17 +1,19 @@
 <script setup lang="ts">
-const isLgScreen = useMediaQuery(`(min-width: 1024px)`)
+import { useI18n } from 'vue-i18n'
 
+const isLgScreen = useMediaQuery(`(min-width: 1024px)`)
+const { t } = useI18n()
 const labelStatsBig = [
-  { indicator: '1830+', text: 'Project executed' },
-  { indicator: '834+', text: 'Satisfied customers' },
-  { indicator: '390', text: 'Data management' },
-  { indicator: '834', text: 'Satisfied customers' },
+  { indicator: '1830+', text: toCapitalize(t(`common.projectExecuted`)) },
+  { indicator: '834+', text: toCapitalize(t(`common.satisfiedCustomers`)) },
+  { indicator: '390', text: toCapitalize(t(`common.dataManagement`)) },
+  { indicator: '834', text: toCapitalize(t(`common.satisfiedCustomers`)) },
 ]
 
 const labelStatsSmall = [
-  { indicator: '1830+', text: 'Project executed' },
-  { indicator: '834+', text: 'Satisfied customers' },
-  { indicator: '390', text: 'Data management' },
+  { indicator: '1830+', text: toCapitalize(t(`common.projectExecuted`)) },
+  { indicator: '834+', text: toCapitalize(t(`common.satisfiedCustomers`)) },
+  { indicator: '390', text: toCapitalize(t(`common.dataManagement`)) },
 ]
 
 const currentLabelStats = computed(() => (isLgScreen.value ? labelStatsBig : labelStatsSmall))

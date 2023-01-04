@@ -1,14 +1,18 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 const labelStats = [
-  { indicator: '1830+', text: 'Project executed' },
-  { indicator: '834+', text: 'Satisfied customers' },
-  { indicator: '390', text: 'Data management' },
+  { indicator: '1830+', text: toCapitalize(t(`common.projectExecuted`)) },
+  { indicator: '834+', text: toCapitalize(t(`common.satisfiedCustomers`)) },
+  { indicator: '390', text: toCapitalize(t(`common.dataManagement`)) },
 ]
 </script>
 
 <template>
   <TemplatePageRestrictor class="stats">
-    <AtomMiddleTitle class="stats__title">We provide services that guarantee your success</AtomMiddleTitle>
+    <AtomMiddleTitle class="stats__title">{{ $t(`home.statsTitle`) }}</AtomMiddleTitle>
 
     <div class="stats__content">
       <div class="stats__stats">

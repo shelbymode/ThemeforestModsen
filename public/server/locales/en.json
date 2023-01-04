@@ -17,9 +17,48 @@
     "privacyPolicy": "privacy policy",
     "allRightsReserved": "all rights reserved"
   },
+
   "common": {
     "learnMore": "learn more",
-    "discoverMode": "discover mode"
+    "discoverMode": "discover mode",
+    "projectExecuted": "project executed",
+    "satisfiedCustomers": "satisfied customers",
+    "dataManagement": "data management",
+    "benefitsTitle": "The benefits of {company}",
+    "embedAnalytics": "embed analytics",
+    "accessControl": "access control",
+    "dataAnalytics": "data analytics",
+    "testimonials": "testimonials",
+    "ourBlog": "our blog",
+    "machineLearning": "machine learning",
+    "needHelp?": "do you need help?",
+    "contactUs": "contact us",
+    "subscribeNewsletter": "subscribe to our newsletter",
+    "yourEmail": "your email",
+    "send": "send",
+    "success": "success",
+    "alert": "alert",
+    "warning": "warning",
+    "successSubscribed": "you have successfully subscribed!",
+    "price": {
+      "mo": "mo",
+      "yr": "yr",
+      "choosePlan": "choose plan",
+      "ourPricing": "our pricing",
+      "freeTrial": "free trial",
+      "lite": "lite",
+      "basic": "basic",
+      "forEnterprises": "for enterprises",
+      "smallTeams": "for small teams - {amount} users",
+      "communitySupport": "community support",
+      "individualData": "individual data - {size}{dimension}",
+      "unlimitedIndividualData": "unlimited individual data",
+      "advancedPermissions": "advanced permissions",
+      "dataHistory": "data history",
+      "auditLog": "audit log",
+      "allIncluded": "all functions included",
+      "customPrice": "custom"
+    }
   },
   "home": {
     "presentationTitle1": "Find true power in your data with",
@@ -27,6 +66,7 @@
     "presentationTitle2": "The newest business analytics platform",
     "presentationText2": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     "sideImageTitle": "Radically new solutions for data",
-    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    "statsTitle": "We provide services that guarantee your success"
   }
 }

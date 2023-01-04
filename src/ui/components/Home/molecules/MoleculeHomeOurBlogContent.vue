@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { useSlider } from '~/shared/composables/slider/useSlider'
 import { getElement } from '~/shared/utils/getElement'
 import { getWidthElement } from '~/shared/utils/getWidthElement'
 import { IControlsStatus, TDirection } from '../../V/molecules/slider/MoleculeSliderHeader.vue'
+import { toCapitalizeEach } from '~/shared/utils/toCapitalizeEach'
 
 const TOTAL_SLIDE_AMOUNT = 6
 const isMdScreen = useMediaQuery(`(min-width: 768px)`)
@@ -27,6 +29,11 @@ const { unlockControls } = useSlider({
   directionSignal: computed(() => props.directionSignal),
   updateControlsStatus,
 })
+
+const { d } = useI18n()
+// const dateCard = d(new Date(), { dateStyle: 'short' })
+// const dateCard = d(new Date(), 'short')
+// console.log(dateCard)
 </script>
 
 <template>
@@ -36,8 +43,8 @@ const { unlockControls } = useSlider({
         v-for="card in TOTAL_SLIDE_AMOUNT"
         :key="card"
         class="home-our-blog__card"
-        title="Machine Learning"
-        date="22 June 2022"
+        :title="toCapitalizeEach($t(`common.machineLearning`))"
+        :date="$d(new Date(), { dateStyle: 'long' })"
         text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure..."
         :link-info="{ label: 'Read more', to: '/' }"
       />
@@ -47,8 +54,8 @@ const { unlockControls } = useSlider({
       <MoleculeBlogPopularPost
         v-for="card in 3"
         :key="card"
-        title="Machine Learning"
-        date="22 June 2022"
+        :title="toCapitalizeEach($t(`common.machineLearning`))"
+        :date="$d(new Date(), { dateStyle: 'long' })"
         img-src="https://api.lorem.space/image/fashion?w=320&h=192&hash=pozp5q28"
       />
       <AtomButton class="bg-primary text-white">Learn more</AtomButton>
