@@ -36,7 +36,7 @@ declare global {
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const getElement: typeof import('./src/shared/utils/getElement')['getElement']
-  const getPreferableLocale: typeof import('./src/shared/utils/localeHelpers')['getPreferableLocale']
+  const getLocaleFromLanguageNavigator: typeof import('./src/shared/utils/localeHelpers')['getLocaleFromLanguageNavigator']
   const getTranslateX: typeof import('./src/shared/utils/getTranslateX')['getTranslateX']
   const getWidthElement: typeof import('./src/shared/utils/getWidthElement')['getWidthElement']
   const h: typeof import('vue')['h']
@@ -332,7 +332,7 @@ declare module 'vue' {
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly getElement: UnwrapRef<typeof import('./src/shared/utils/getElement')['getElement']>
-    readonly getPreferableLocale: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['getPreferableLocale']>
+    readonly getLocaleFromLanguageNavigator: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['getLocaleFromLanguageNavigator']>
     readonly getTranslateX: UnwrapRef<typeof import('./src/shared/utils/getTranslateX')['getTranslateX']>
     readonly getWidthElement: UnwrapRef<typeof import('./src/shared/utils/getWidthElement')['getWidthElement']>
     readonly h: UnwrapRef<typeof import('vue')['h']>

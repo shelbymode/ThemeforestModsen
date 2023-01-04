@@ -13,7 +13,7 @@ import { routes } from './routes'
 import { useLocale } from './shared/composables/i18n/useLocales'
 import { TLocale } from './shared/constants/i18n.constants'
 
-const { i18n, loadAndAddPreferableLocale, setCurrentLocale } = useLocale()
+const { i18n, setCurrentLocale } = useLocale()
 
 const app = createApp(App)
 
@@ -30,8 +30,6 @@ const router = createRouter({
 
 router.beforeEach(async (to, _, next) => {
   const currentLocale = to.params.locale as TLocale
-
-  await loadAndAddPreferableLocale()
   await setCurrentLocale(currentLocale, to.path, next)
 })
 
