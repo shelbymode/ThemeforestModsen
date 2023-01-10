@@ -100,6 +100,8 @@ declare module '@vue/runtime-core' {
     OrganismServicesCollection: typeof import('./src/ui/components/Services/organisms/OrganismServicesCollection.vue')['default']
     OrganismTheFooter: typeof import('./src/ui/components/Footer/organismes/OrganismTheFooter.vue')['default']
     OrganismTheHeader: typeof import('./src/ui/components/Header/organismes/OrganismTheHeader.vue')['default']
+    OrganismVModal: typeof import('./src/ui/components/V/organismes/OrganismVModal.vue')['default']
+    OrgansimPaymentPriceCard: typeof import('./src/ui/components/V/organismes/OrgansimPaymentPriceCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TemplateBlogCurrentPageContent: typeof import('./src/ui/components/Blog/templates/TemplateBlogCurrentPageContent.vue')['default']

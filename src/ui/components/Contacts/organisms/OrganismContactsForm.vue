@@ -85,7 +85,7 @@ onMounted(() => {
 
 <template>
   <div class="contacts-form-container">
-    <h1 class="contacts-form__title">{{toCapitalize($t(`common.howWeCanHelp?`))}}</h1>
+    <h1 class="contacts-form__title">{{ toCapitalize($t(`common.howWeCanHelp?`)) }}</h1>
     <form class="contacts-form">
       <div class="contacts-form__names">
         <AtomInput
@@ -113,7 +113,7 @@ onMounted(() => {
         @input="touch(formInfo.field)"
       />
       <AtomButton :is-disabled="!isFormValid" class="contact-form__send-button">
-        {{toCapitalize($t(`common.button.send`))}}
+        {{ toCapitalize($t(`common.button.send`)) }}
       </AtomButton>
     </form>
   </div>

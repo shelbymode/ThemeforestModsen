@@ -5,6 +5,7 @@
 declare global {
   type Email = string
   type uuid = string
+  paypal: any
   // ...
 }
 export {}

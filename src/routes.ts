@@ -45,6 +45,11 @@ export const routes = [
         props: true,
       },
       {
+        path: 'modal',
+        name: 'Modal',
+        component: () => import('~/ui/pages/modal.vue'),
+      },
+      {
         path: ':catchAll(.*)',
         name: 'NotFound',
         redirect: {

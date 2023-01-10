@@ -132,11 +132,46 @@ const priceCards = reactive([freeTrialCard, liteCard, basicCard, enterpriseCard]
 let previousIdx = 0
 priceCards[previousIdx].isSelected = true
 
-const selectCurrentCard = (idx: number) => {
-  priceCards[previousIdx].isSelected = false
-  priceCards[idx].isSelected = true
-  previousIdx = idx
+const selectCurrentCard = (idx: number, tariff: string) => {
+  console.log(idx, tariff)
+
+  if (previousIdx !== idx) {
+    priceCards[previousIdx].isSelected = false
+    priceCards[idx].isSelected = true
+    previousIdx = idx
+  }
+  priceCards[idx].tariffs.find((t) => t.isActive === true)!.isActive = false
+  priceCards[idx].tariffs.find((t) => t.value === tariff)!.isActive = true
 }
+
+const isOpen = ref(true)
+const openModal = () => (isOpen.value = true)
+const closeModal = () => (isOpen.value = false)
+
+watch(
+  isOpen,
+  (newValue) => {
+    if (newValue) {
+      document.body.classList.add('scroll-hidden')
+    } else if (!newValue) {
+      document.body.classList.remove('scroll-hidden')
+    }
+  },
+  {
+    immediate: true,
+  }
+)
+
+const paymentInfo = computed(() => {
+  const selectedCard = priceCards.find((el) => el.isSelected === true)
+  const tariff = selectedCard?.tariffs.find((tariff) => tariff.isActive === true)
+
+  return {
+    priceUSD: tariff?.price || '',
+    duration: tariff?.value || '',
+    name: selectedCard?.title || '',
+  }
+})
 </script>
 
 <template>
@@ -149,13 +184,26 @@ const selectCurrentCard = (idx: number) => {
         :options="priceCard"
         :idx="idx"
         class="price__card border"
+        :activate-modal="openModal"
         @update:select-card="selectCurrentCard"
       />
     </div>
   </TemplatePageRestrictor>
+
+  <OrganismVModal v-bind="{ isOpen, openModal, closeModal }">
+    <template #header>
+      <h1 class="text-bold text-3xl text-[#91d3ee] text-center md:text-4xl">Payment</h1>
+    </template>
+    <template #content>
+      <OrgansimPaymentPriceCard :payment-info="paymentInfo" />
+    </template>
+  </OrganismVModal>
 </template>
 
 <style lang="scss" scoped>
+.text {
+  word-wrap: break-word;
+}
 .price {
   @apply flex flex-col items-start gap-y-12 px-6;
 

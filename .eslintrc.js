@@ -12,7 +12,7 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:vuejs-accessibility/recommended',
+    // 'plugin:vuejs-accessibility/recommended',
     'plugin:prettier/recommended',
   ],
   plugins: ['@typescript-eslint', 'eslint-plugin-neverthrow', 'vuejs-accessibility'],

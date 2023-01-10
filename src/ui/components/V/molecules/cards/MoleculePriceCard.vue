@@ -17,10 +17,11 @@ interface IPriceCardOptions {
 const props = defineProps<{
   idx: number
   options: IPriceCardOptions
+  activateModal: () => void
 }>()
 
 const emit = defineEmits<{
-  (e: 'update:select-card', value: number): void
+  (e: 'update:select-card', value: number, newTariff: string): void
 }>()
 const tabListOptions = props.options.tariffs.map((el) => ({
   id: `${el.name}-${v4()}`,
@@ -28,21 +29,23 @@ const tabListOptions = props.options.tariffs.map((el) => ({
   active: el.isActive,
 }))
 
-let currentTariff = ref(props.options.tariffs.find((el) => el.isActive === true) as TTariff | undefined)
+let currentTariff = ref(props.options.tariffs.find((el) => el.isActive === true) as TTariff)
 const tabValue = ref(currentTariff.value?.name || 'Yr')
 
 watch(
   tabValue,
   (newValue: string) => {
-    currentTariff.value = props.options.tariffs.find((el) => el.name === newValue)
+    currentTariff.value = props.options.tariffs.find((el) => el.name === newValue) as TTariff
   },
   {
     immediate: true,
   }
 )
 
-const selectCurrentCard = (index: number) => {
-  emit('update:select-card', index)
+const selectCurrentCard = async (index: number) => {
+  setTimeout(() => {
+    emit('update:select-card', index, currentTariff.value.value)
+  }, 0)
 }
 </script>
 
@@ -52,7 +55,6 @@ const selectCurrentCard = (index: number) => {
     :class="{ 'card-price--selected': props.options.isSelected }"
     tabindex="0"
     @click="selectCurrentCard(props.idx)"
-    @keypress="selectCurrentCard(props.idx)"
   >
     <h3 class="card-price__title" :class="{ 'card-price__title--selected': props.options.isSelected }">
       {{ props.options.title }}
@@ -66,7 +68,11 @@ const selectCurrentCard = (index: number) => {
       <AtomTabsSquare v-model="tabValue" :name="props.options.title" :tab-list="tabListOptions" />
     </div>
 
-    <AtomButton class="card-price__button" :class="{ 'card-price__button--selected': props.options.isSelected }">
+    <AtomButton
+      class="card-price__button"
+      :class="{ 'card-price__button--selected': props.options.isSelected }"
+      @click="activateModal"
+    >
       {{ toCapitalize($t(`common.price.choosePlan`)) }}
     </AtomButton>
 

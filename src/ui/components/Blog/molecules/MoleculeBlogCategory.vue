@@ -15,7 +15,7 @@ const selectedPerson = ref(people[0])
 <template>
   <div class="blog-category">
     <AtomMiddleTitle class="blog-category__title">
-      {{toCapitalize($t(`blog.chooseCategoryBlog`))}}
+      {{ toCapitalize($t(`blog.chooseCategoryBlog`)) }}
     </AtomMiddleTitle>
 
     <Listbox v-model="selectedPerson">
