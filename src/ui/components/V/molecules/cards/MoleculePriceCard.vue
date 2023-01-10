@@ -73,7 +73,7 @@ const selectCurrentCard = async (index: number) => {
       :class="{ 'card-price__button--selected': props.options.isSelected }"
       @click="activateModal"
     >
-      {{ toCapitalize($t(`common.price.choosePlan`)) }}
+      {{ $t(`common.price.choosePlan`) }}
     </AtomButton>
 
     <div

@@ -27,7 +27,7 @@ const generatedLinksList: ComputedRef<TLink[]> = computed(() => {
     class="text-2xl md:text-sm"
     :link="linkItem.link"
   >
-    {{ toCapitalize($t(`navMenu.${linkItem.name}`)) }}
+    {{ $t(`navMenu.${linkItem.name}`) }}
   </AtomHeaderLink>
 </template>
 

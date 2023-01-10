@@ -6,11 +6,11 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const embedAnalyticsCard = {
-  title: computed(() => toCapitalize(t('common.embedAnalytics'))),
+  title: computed(() => t('common.embedAnalytics')),
   text: 'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo..',
 }
 const dataAnalyticsCard = {
-  title: computed(() => toCapitalize(t('common.dataAnalytics'))),
+  title: computed(() => t('common.dataAnalytics')),
   text: 'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo..',
 }
 </script>

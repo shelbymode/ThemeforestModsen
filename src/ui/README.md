@@ -1,9 +1,9 @@
 # UI folder
 
-``` typescript
+```typescript
 /components - `stores ui components (UI kit)`
 ```
 
-``` typescript
+```typescript
 /pages - `full fledged pages`
 ```

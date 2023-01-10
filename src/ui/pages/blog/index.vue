@@ -8,7 +8,7 @@ const route = useRoute()
 <template>
   <TemplatePage>
     <main class="blog">
-      <TemplateNavLinksCenter :title="toCapitalize($t(`common.route.${(route.name as string).toLowerCase()}`))">
+      <TemplateNavLinksCenter :title="($t(`common.route.${(route.name as string).toLowerCase()}`))">
         <MoleculeNavLinks />
       </TemplateNavLinksCenter>
 

@@ -1,20 +1,21 @@
-<script setup lang="ts">import { useI18n } from 'vue-i18n';
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 
-const {t} = useI18n()
+const { t } = useI18n()
 const contactIconLinks = [
   {
     icon: 'i-carbon-email',
-    title: computed(() => toCapitalize(t(`common.email`))),
+    title: computed(() => t(`common.email`)),
     additionalInfo: 'ensome@info.co.us',
   },
   {
     icon: 'i-carbon-phone-filled',
-    title: computed(() => toCapitalize(t(`common.phoneNumber`))),
+    title: computed(() => t(`common.phoneNumber`)),
     additionalInfo: '+1 601-201-5580',
   },
   {
     icon: 'i-carbon-location-filled',
-    title: computed(() => toCapitalize(t(`common.address`))),
+    title: computed(() => t(`common.address`)),
     additionalInfo: '1642 Washington Ave, Jackson, MS',
   },
 ]

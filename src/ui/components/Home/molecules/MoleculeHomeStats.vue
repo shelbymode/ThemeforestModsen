@@ -4,9 +4,9 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const labelStats = [
-  { indicator: '1830+', text: toCapitalize(t(`common.projectExecuted`)) },
-  { indicator: '834+', text: toCapitalize(t(`common.satisfiedCustomers`)) },
-  { indicator: '390', text: toCapitalize(t(`common.dataManagement`)) },
+  { indicator: '1830+', text: computed(() => t(`common.projectExecuted`)) },
+  { indicator: '834+', text: computed(() => t(`common.satisfiedCustomers`)) },
+  { indicator: '390', text: computed(() => t(`common.dataManagement`)) },
 ]
 </script>
 

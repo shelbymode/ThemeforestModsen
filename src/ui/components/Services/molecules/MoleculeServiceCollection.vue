@@ -17,7 +17,7 @@ const servicesCardsCollection = [
     icon: IconBrain3d,
     text,
     linkInfo: {
-      label: computed(() => toCapitalize(t(`common.button.readMore`))),
+      label: computed(() => t(`common.button.readMore`)),
       to: '/',
     },
   },
@@ -26,7 +26,7 @@ const servicesCardsCollection = [
     icon: EmbedAnalytics3d,
     text,
     linkInfo: {
-      label: computed(() => toCapitalize(t(`common.button.readMore`))),
+      label: computed(() => t(`common.button.readMore`)),
       to: '/',
     },
   },
@@ -35,7 +35,7 @@ const servicesCardsCollection = [
     icon: AccessControl3d,
     text,
     linkInfo: {
-      label: computed(() => toCapitalize(t(`common.button.readMore`))),
+      label: computed(() => t(`common.button.readMore`)),
       to: '/',
     },
   },
@@ -44,7 +44,7 @@ const servicesCardsCollection = [
     icon: DataAnalytics3d,
     text,
     linkInfo: {
-      label: computed(() => toCapitalize(t(`common.button.readMore`))),
+      label: computed(() => t(`common.button.readMore`)),
       to: '/',
     },
   },
@@ -53,7 +53,7 @@ const servicesCardsCollection = [
     icon: BigData3d,
     text,
     linkInfo: {
-      label: computed(() => toCapitalize(t(`common.button.readMore`))),
+      label: computed(() => t(`common.button.readMore`)),
       to: '/',
     },
   },
@@ -62,7 +62,7 @@ const servicesCardsCollection = [
     icon: AI3d,
     text,
     linkInfo: {
-      label: computed(() => toCapitalize(t(`common.button.readMore`))),
+      label: computed(() => t(`common.button.readMore`)),
       to: '/',
     },
   },

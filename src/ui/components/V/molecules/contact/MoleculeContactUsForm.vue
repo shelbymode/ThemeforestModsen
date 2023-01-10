@@ -37,7 +37,7 @@ interface IFormInfo {
   id: string
   label: MaybeRef<string>
   placeholder: MaybeRef<string>
-  field: keyof typeof form,
+  field: keyof typeof form
   tag: 'input' | 'textarea'
 }
 const { t } = useI18n()
@@ -45,31 +45,31 @@ const { t } = useI18n()
 const formInfoAll: IFormInfo[] = [
   {
     id: 'contact-name-id',
-    label: computed(() => toCapitalize(t(`common.name`))),
-    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.name`))),
+    label: computed(() => t(`common.name`)),
+    placeholder: computed(() => t(`common.formPlaceholder.name`)),
     field: 'name',
     tag: 'input',
   },
   {
     id: 'contact-email-id',
-    label: computed(() => toCapitalize(t(`common.email`))),
-    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.email`))),
+    label: computed(() => t(`common.email`)),
+    placeholder: computed(() => t(`common.formPlaceholder.email`)),
     field: 'email',
     tag: 'input',
   },
   {
     id: 'contact-theme-id',
-    label: computed(() => toCapitalize(t(`common.theme`))),
-    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.theme`))),
+    label: computed(() => t(`common.theme`)),
+    placeholder: computed(() => t(`common.formPlaceholder.theme`)),
     field: 'theme',
     tag: 'input',
   },
   {
     id: 'contact-message-id',
-    label: computed(() => toCapitalize(t(`common.message`))),
-    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.message`))),
+    label: computed(() => t(`common.message`)),
+    placeholder: computed(() => t(`common.formPlaceholder.message`)),
     field: 'message',
-    tag: 'textarea'
+    tag: 'textarea',
   },
 ]
 
@@ -81,7 +81,7 @@ const customClassesTranslucent: IInputClasses = {
 <template>
   <section class="contact-form shadow-card-2">
     <AtomMiddleTitle class="contact-form__title">
-      {{ toCapitalize($t(`common.button.contactUs`)) }}
+      {{ $t(`common.button.contactUs`) }}
     </AtomMiddleTitle>
     <form class="contact-form__form">
       <AtomInputTranslucent
@@ -97,7 +97,7 @@ const customClassesTranslucent: IInputClasses = {
       />
     </form>
     <AtomButton :is-disabled="!isFormValid" class="contact-form__send-button">
-      {{ toCapitalize($t(`common.button.send`)) }}
+      {{ $t(`common.button.send`) }}
     </AtomButton>
   </section>
 </template>

@@ -18,15 +18,13 @@ interface IPriceCardOption {
   isSelected?: boolean
 }
 
-const smallTeams = computed(() => toCapitalize(t('common.price.smallTeams', { amount: 5 })))
-const communitySupport = computed(() => toCapitalize(t('common.price.communitySupport')))
+const smallTeams = computed(() => t('common.price.smallTeams', { amount: 5 }))
+const communitySupport = computed(() => t('common.price.communitySupport'))
 const individualData60GB = computed(() =>
-  toCapitalize(
-    t('common.price.individualData', {
-      size: 60,
-      dimension: 'GB',
-    })
-  )
+  t('common.price.individualData', {
+    size: 60,
+    dimension: 'GB',
+  })
 )
 const individualData120GB = computed(() =>
   toCapitalize(
@@ -36,25 +34,25 @@ const individualData120GB = computed(() =>
     })
   )
 )
-const unlimitedIndividualData = computed(() => toCapitalize(t('common.price.unlimitedIndividualData')))
-const advancedPermissions = computed(() => toCapitalize(t('common.price.advancedPermissions')))
-const dataHistory = computed(() => toCapitalize(t('common.price.dataHistory')))
-const auditLog = computed(() => toCapitalize(t('common.price.auditLog')))
-const allIncluded = computed(() => toCapitalize(t('common.price.allIncluded')))
-const customPrice = computed(() => toCapitalize(t('common.price.customPrice')))
+const unlimitedIndividualData = computed(() => t('common.price.unlimitedIndividualData'))
+const advancedPermissions = computed(() => t('common.price.advancedPermissions'))
+const dataHistory = computed(() => t('common.price.dataHistory'))
+const auditLog = computed(() => t('common.price.auditLog'))
+const allIncluded = computed(() => t('common.price.allIncluded'))
+const customPrice = computed(() => t('common.price.customPrice'))
 
 const freeTrialCard: IPriceCardOption = {
   checks: [smallTeams, communitySupport],
-  title: computed(() => toCapitalize(t(`common.price.freeTrial`))),
+  title: computed(() => t(`common.price.freeTrial`)),
   tariffs: [
     {
-      name: computed(() => toCapitalize(t(`common.price.mo`))),
+      name: computed(() => t(`common.price.mo`)),
       value: 'month',
       price: '$00',
       isActive: true,
     },
     {
-      name: computed(() => toCapitalize(t(`common.price.yr`))),
+      name: computed(() => t(`common.price.yr`)),
       value: 'year',
       price: '$00',
       isActive: false,
@@ -64,16 +62,16 @@ const freeTrialCard: IPriceCardOption = {
 
 const liteCard: IPriceCardOption = {
   checks: [smallTeams, communitySupport, individualData60GB],
-  title: computed(() => toCapitalize(t(`common.price.lite`))),
+  title: computed(() => t(`common.price.lite`)),
   tariffs: [
     {
-      name: computed(() => toCapitalize(t(`common.price.mo`))),
+      name: computed(() => t(`common.price.mo`)),
       value: 'month',
       price: '$5',
       isActive: true,
     },
     {
-      name: computed(() => toCapitalize(t(`common.price.yr`))),
+      name: computed(() => t(`common.price.yr`)),
       value: 'year',
       price: '$60',
       isActive: false,
@@ -83,16 +81,16 @@ const liteCard: IPriceCardOption = {
 
 const basicCard: IPriceCardOption = {
   checks: [smallTeams, communitySupport, individualData120GB, advancedPermissions],
-  title: computed(() => toCapitalize(t(`common.price.basic`))),
+  title: computed(() => t(`common.price.basic`)),
   tariffs: [
     {
-      name: computed(() => toCapitalize(t(`common.price.mo`))),
+      name: computed(() => t(`common.price.mo`)),
       value: 'month',
       price: '$10',
       isActive: false,
     },
     {
-      name: computed(() => toCapitalize(t(`common.price.yr`))),
+      name: computed(() => t(`common.price.yr`)),
       value: 'year',
       price: '$120',
       isActive: true,
@@ -110,16 +108,16 @@ const enterpriseCard: IPriceCardOption = {
     auditLog,
     allIncluded,
   ],
-  title: computed(() => toCapitalize(t(`common.price.forEnterprises`))),
+  title: computed(() => t(`common.price.forEnterprises`)),
   tariffs: [
     {
-      name: computed(() => toCapitalize(t(`common.price.mo`))),
+      name: computed(() => t(`common.price.mo`)),
       value: 'month',
       price: customPrice,
       isActive: true,
     },
     {
-      name: computed(() => toCapitalize(t(`common.price.yr`))),
+      name: computed(() => t(`common.price.yr`)),
       value: 'year',
       price: customPrice,
       isActive: false,
@@ -176,7 +174,7 @@ const paymentInfo = computed(() => {
 
 <template>
   <TemplatePageRestrictor class="price">
-    <AtomMiddleTitle class="price__title">{{ toCapitalize($t('common.price.ourPricing')) }}</AtomMiddleTitle>
+    <AtomMiddleTitle class="price__title">{{ $t('common.price.ourPricing') }}</AtomMiddleTitle>
     <div class="price__cards">
       <MoleculePriceCard
         v-for="(priceCard, idx) in priceCards"

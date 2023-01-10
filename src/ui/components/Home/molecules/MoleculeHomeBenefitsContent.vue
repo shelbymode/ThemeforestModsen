@@ -2,13 +2,7 @@
 
 <template>
   <div class="benefits__content">
-    <AtomMiddleTitle class="benefits__title">{{
-      toCapitalize(
-        $t('common.benefitsTitle', {
-          company: 'Ensome',
-        })
-      )
-    }}</AtomMiddleTitle>
+    <AtomMiddleTitle class="benefits__title">{{ $t('common.benefitsTitle', { company: 'Ensome' }) }}</AtomMiddleTitle>
     <AtomText class="benefits__text">
       Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
       aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.

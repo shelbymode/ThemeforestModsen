@@ -7,16 +7,14 @@ const { t } = useI18n()
 
 const machineLearningCard = {
   title: computed(() =>
-    toCapitalize(
-      t('common.benefitsTitle', {
-        company: 'Ensome',
-      })
-    )
+    t('common.benefitsTitle', {
+      company: 'Ensome',
+    })
   ),
   text: 'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo.',
 }
 const accessControlCard = {
-  title: computed(() => toCapitalize(t('common.accessControl'))),
+  title: computed(() => t('common.accessControl')),
   text: 'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo.',
 }
 </script>

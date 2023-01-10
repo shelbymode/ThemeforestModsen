@@ -29,14 +29,14 @@ const containerLinkComponent = useFoooterSwapComponent()
 </script>
 
 <template>
-  <component :is="containerLinkComponent" :title="toCapitalize($t(`navMenu.services`))" class="service-links">
+  <component :is="containerLinkComponent" :title="$t(`navMenu.services`)" class="service-links">
     <AtomHeaderLink
       v-for="itemLink in generatedLinksList"
       :key="itemLink.name"
       class="service-links__link"
       :link="itemLink.link"
     >
-      {{ toCapitalize($t(`navMenu.${itemLink.name}`)) }}
+      {{ $t(`navMenu.${itemLink.name}`) }}
     </AtomHeaderLink>
   </component>
 </template>

@@ -45,15 +45,15 @@ interface IFormInfo {
 const formInfoNames: IFormInfo[] = [
   {
     id: 'contact-email-id',
-    label: computed(() => toCapitalize(t(`common.email`))),
-    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.email`))),
+    label: computed(() => t(`common.email`)),
+    placeholder: computed(() => t(`common.formPlaceholder.email`)),
     field: 'email',
     tag: 'input',
   },
   {
     id: 'contact-name-id',
-    label: computed(() => toCapitalize(t(`common.name`))),
-    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.name`))),
+    label: computed(() => t(`common.name`)),
+    placeholder: computed(() => t(`common.formPlaceholder.name`)),
     field: 'name',
     tag: 'input',
   },
@@ -62,15 +62,15 @@ const formInfoNames: IFormInfo[] = [
 const formInfoOther: IFormInfo[] = [
   {
     id: 'contact-theme-id',
-    label: computed(() => toCapitalize(t(`common.theme`))),
-    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.theme`))),
+    label: computed(() => t(`common.theme`)),
+    placeholder: computed(() => t(`common.formPlaceholder.theme`)),
     field: 'theme',
     tag: 'input',
   },
   {
     id: 'contact-message-id',
-    label: computed(() => toCapitalize(t(`common.message`))),
-    placeholder: computed(() => toCapitalize(t(`common.formPlaceholder.message`))),
+    label: computed(() => t(`common.message`)),
+    placeholder: computed(() => t(`common.formPlaceholder.message`)),
     field: 'message',
     tag: 'textarea',
   },
@@ -85,7 +85,7 @@ onMounted(() => {
 
 <template>
   <div class="contacts-form-container">
-    <h1 class="contacts-form__title">{{ toCapitalize($t(`common.howWeCanHelp?`)) }}</h1>
+    <h1 class="contacts-form__title">{{ $t(`common.howWeCanHelp?`) }}</h1>
     <form class="contacts-form">
       <div class="contacts-form__names">
         <AtomInput
@@ -113,7 +113,7 @@ onMounted(() => {
         @input="touch(formInfo.field)"
       />
       <AtomButton :is-disabled="!isFormValid" class="contact-form__send-button">
-        {{ toCapitalize($t(`common.button.send`)) }}
+        {{ $t(`common.button.send`) }}
       </AtomButton>
     </form>
   </div>

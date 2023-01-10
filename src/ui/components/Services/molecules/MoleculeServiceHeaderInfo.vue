@@ -3,7 +3,7 @@
 <template>
   <section class="service-header">
     <div class="service-header__small-title">
-      {{ toCapitalize($t(`services.services`)) }}
+      {{ $t(`services.services`) }}
     </div>
     <AtomBigTitle class="service-header__title">{{ toCapitalizeEach($t(`services.startTitle`)) }}</AtomBigTitle>
     <AtomText class="service-header__text">

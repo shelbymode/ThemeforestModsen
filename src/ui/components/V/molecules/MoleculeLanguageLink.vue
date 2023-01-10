@@ -30,7 +30,7 @@ const currentLocaleIs = (maybeLocale: string) => locale.value === maybeLocale
   <Menu as="div" class="menu">
     <div>
       <MenuButton class="menu__button">
-        {{ toCapitalize($t(`navMenu.language`)) }}
+        {{ $t(`navMenu.language`) }}
         <span class="menu__button-icon" aria-hidden="true" />
       </MenuButton>
     </div>

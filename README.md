@@ -7,7 +7,7 @@
 - [Figma design layout](https://www.figma.com/file/RH6Tg2icMlc7M2DdHEJ9Bl/Themeforest-Modsen-Template?t=uvmjByGTuqVWgrR1-0)
 - [Netlify deploy](https://modsenthemeforest.netlify.app/home)
 - Based on [vitess-lite](https://github.com/antfu/vitesse-lite) template
-<br>
+  <br>
 
 ### Main libs
 

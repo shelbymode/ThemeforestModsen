@@ -4,10 +4,10 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const contactsInfo = [
-  { label: computed(() => toCapitalize(t(`common.email`))), text: 'ensome@info.co.us' },
-  { label: computed(() => toCapitalize(t(`common.phoneNumber`))), text: '+1601-201-5580' },
+  { label: computed(() => t(`common.email`)), text: 'ensome@info.co.us' },
+  { label: computed(() => t(`common.phoneNumber`)), text: '+1601-201-5580' },
   {
-    label: computed(() => toCapitalize(t(`common.address`))),
+    label: computed(() => t(`common.address`)),
     text: '1642 Washington Avenue, Jackson, MS, Mississippi, 39201',
   },
 ]

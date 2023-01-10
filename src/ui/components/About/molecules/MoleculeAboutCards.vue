@@ -4,12 +4,12 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 const aboutCardsBig = [
   {
-    title: computed(() => toCapitalize(t(`about.whoWeAre`))),
+    title: computed(() => t(`about.whoWeAre`)),
     img: 'https://api.lorem.space/image/?w=635&h=425&hash=nbzuynjb',
     text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Donec tincidunt tempor quam, non mollis quam finibus nec. Quisque finibus consequat felis vel pretium. Aliquam gravida nisi vel convallis ultricies. Integer ante sapien, consequat et dolor vel, cursus lacinia lectus.',
   },
   {
-    title: computed(() => toCapitalize(t(`about.ourMission`))),
+    title: computed(() => t(`about.ourMission`)),
     img: 'https://api.lorem.space/image/?w=635&h=425&hash=nbzuynjb',
     text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Donec tincidunt tempor quam, non mollis quam finibus nec. Quisque finibus consequat felis vel pretium. ',
   },
@@ -17,7 +17,7 @@ const aboutCardsBig = [
 
 const aboutCardsSmall = [
   {
-    title: computed(() => toCapitalize(t(`about.ourExperience`))),
+    title: computed(() => t(`about.ourExperience`)),
     img: 'https://api.lorem.space/image/?w=635&h=425&hash=nbzuynjb',
     text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.',
   },

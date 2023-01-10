@@ -1,14 +1,16 @@
 <script setup lang="ts">
+import { MaybeRef } from '@vueuse/core'
+
 const props = defineProps<{
   indicator: string
-  text: string
+  text: MaybeRef<string>
 }>()
 </script>
 
 <template>
   <div class="label-stats">
     <h2 class="label-stats__indicator">{{ props.indicator }}</h2>
-    <p class="label-stats__text">{{ props.text }}</p>
+    <p class="label-stats__text">{{ unref(props.text) }}</p>
   </div>
 </template>
 

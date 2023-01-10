@@ -28,9 +28,9 @@ const colorTitle = computed(() => {
 })
 
 const titleString = computed(() => {
-  if (props.type === 'success') return toCapitalize(t(`common.success`))
-  else if (props.type === 'error') return toCapitalize(t(`common.alert`))
-  return toCapitalize(t(`common.warning`))
+  if (props.type === 'success') return t(`common.success`)
+  else if (props.type === 'error') return t(`common.alert`)
+  return t(`common.warning`)
 })
 </script>
 

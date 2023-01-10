@@ -5,7 +5,7 @@ import { useSliderMediator } from '~/shared/composables/slider/useSliderMediator
 const { t } = useI18n()
 const { directionSignal, controlsStatus, interceptScrollSide, updateControlsStatus } = useSliderMediator()
 
-const testimonials = computed(() => toCapitalize(t('common.testimonials')))
+const testimonials = computed(() => t('common.testimonials'))
 </script>
 
 <template>

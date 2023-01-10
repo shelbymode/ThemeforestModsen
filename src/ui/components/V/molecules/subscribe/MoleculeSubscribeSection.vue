@@ -18,7 +18,7 @@ let isMessageSent = $ref(false)
 
 const sendMessage = () => (isMessageSent = true)
 
-const subscribeNewsletter = computed(() => toCapitalize(t(`common.subscribeNewsletter`)))
+const subscribeNewsletter = computed(() => t(`common.subscribeNewsletter`))
 
 const subscribeNewsletterFirst = computed(() => subscribeNewsletter.value.split(' ')[0])
 const subscribeNewsletterRest = computed(() => subscribeNewsletter.value.split(' ').slice(1).join(' '))
@@ -43,7 +43,7 @@ const subscribeNewsletterRest = computed(() => subscribeNewsletter.value.split('
           <AtomInput
             v-bind="{
               id: 'email',
-              placeholder: toCapitalize($t(`common.yourEmail`)),
+              placeholder: $t(`common.yourEmail`),
               statusValidation: getStatusValidation('email'),
             }"
             v-model="form.email"
@@ -51,7 +51,7 @@ const subscribeNewsletterRest = computed(() => subscribeNewsletter.value.split('
             @input="touch('email')"
           />
           <AtomButton :is-disabled="!isFormValid" class="subscribe-email__button" @click="sendMessage">
-            {{ toCapitalize($t(`common.button.send`)) }}
+            {{ $t(`common.button.send`) }}
           </AtomButton>
         </div>
       </template>
@@ -59,7 +59,7 @@ const subscribeNewsletterRest = computed(() => subscribeNewsletter.value.split('
       <transition name="subscribe" mode="out-in">
         <template v-if="isMessageSent">
           <MoleculeNotification type="success">
-            <template #message> {{ toCapitalize($t(`common.successSubscribed`)) }} </template>
+            <template #message> {{ $t(`common.successSubscribed`) }} </template>
           </MoleculeNotification>
         </template>
       </transition>

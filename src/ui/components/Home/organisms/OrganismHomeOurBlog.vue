@@ -13,7 +13,7 @@ const { directionSignal, controlsStatus, interceptScrollSide, updateControlsStat
       :controls-status="controlsStatus"
       @scroll-side="interceptScrollSide"
     >
-      <AtomMiddleTitle class="blog__title">{{ toCapitalize($t('common.ourBlog')) }}</AtomMiddleTitle>
+      <AtomMiddleTitle class="blog__title">{{ $t('common.ourBlog') }}</AtomMiddleTitle>
     </MoleculeSliderHeader>
 
     <MoleculeHomeOurBlogContent :direction-signal="directionSignal" @update-controls-status="updateControlsStatus" />

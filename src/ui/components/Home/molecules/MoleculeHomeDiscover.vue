@@ -10,7 +10,7 @@
       <AtomText class="discover__text">
         {{ $t('home.presentationText2') }}
       </AtomText>
-      <AtomButton class="discover__button">{{ toCapitalize($t(`common.button.discoverMode`)) }}</AtomButton>
+      <AtomButton class="discover__button">{{ $t(`common.button.discoverMode`) }}</AtomButton>
     </div>
   </TemplatePageRestrictor>
 </template>

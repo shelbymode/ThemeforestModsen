@@ -2,8 +2,8 @@
 
 <template>
   <section class="additional">
-    <AtomLink icon link="/policy" class="additional__policy">{{ toCapitalize($t(`navMenu.privacyPolicy`)) }}</AtomLink>
-    <AtomLink icon link="/terms" class="additional__terms">{{ toCapitalize($t(`navMenu.termsOfUs`)) }}</AtomLink>
+    <AtomLink icon link="/policy" class="additional__policy">{{ $t(`navMenu.privacyPolicy`) }}</AtomLink>
+    <AtomLink icon link="/terms" class="additional__terms">{{ $t(`navMenu.termsOfUs`) }}</AtomLink>
   </section>
 </template>
 

@@ -7,7 +7,7 @@ const { directionSignal, controlsStatus, interceptScrollSide, updateControlsStat
 <template>
   <TemplatePageRestrictor class="customers">
     <MoleculeSliderHeader
-      :title="toCapitalize($t(`about.ourCustomersSay`))"
+      :title="$t(`about.ourCustomersSay`)"
       :controls-status="controlsStatus"
       @scroll-side="interceptScrollSide"
     />

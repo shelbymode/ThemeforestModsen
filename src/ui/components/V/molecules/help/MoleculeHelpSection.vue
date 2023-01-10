@@ -2,13 +2,13 @@
 
 <template>
   <section class="help">
-    <AtomMiddleTitle class="help__title">{{ toCapitalize($t(`common.needHelp?`)) }}</AtomMiddleTitle>
+    <AtomMiddleTitle class="help__title">{{ $t(`common.needHelp?`) }}</AtomMiddleTitle>
     <AtomText class="help__text">
       Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
       commodi.
     </AtomText>
     <AtomButton class="help__button-contact-us">
-      {{ toCapitalize($t(`common.button.contactUs`)) }}
+      {{ $t(`common.button.contactUs`) }}
     </AtomButton>
   </section>
 </template>

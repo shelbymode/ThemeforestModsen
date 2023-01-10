@@ -4,16 +4,16 @@ import { useI18n } from 'vue-i18n'
 const isLgScreen = useMediaQuery(`(min-width: 1024px)`)
 const { t } = useI18n()
 const labelStatsBig = [
-  { indicator: '1830+', text: toCapitalize(t(`common.projectExecuted`)) },
-  { indicator: '834+', text: toCapitalize(t(`common.satisfiedCustomers`)) },
-  { indicator: '390', text: toCapitalize(t(`common.dataManagement`)) },
-  { indicator: '834', text: toCapitalize(t(`common.satisfiedCustomers`)) },
+  { indicator: '1830+', text: computed(() => t(`common.projectExecuted`)) },
+  { indicator: '834+', text: computed(() => t(`common.satisfiedCustomers`)) },
+  { indicator: '390', text: computed(() => t(`common.dataManagement`)) },
+  { indicator: '834', text: computed(() => t(`common.satisfiedCustomers`)) },
 ]
 
 const labelStatsSmall = [
-  { indicator: '1830+', text: toCapitalize(t(`common.projectExecuted`)) },
-  { indicator: '834+', text: toCapitalize(t(`common.satisfiedCustomers`)) },
-  { indicator: '390', text: toCapitalize(t(`common.dataManagement`)) },
+  { indicator: '1830+', text: computed(() => t(`common.projectExecuted`)) },
+  { indicator: '834+', text: computed(() => t(`common.satisfiedCustomers`)) },
+  { indicator: '390', text: computed(() => t(`common.dataManagement`)) },
 ]
 
 const currentLabelStats = computed(() => (isLgScreen.value ? labelStatsBig : labelStatsSmall))
@@ -24,11 +24,9 @@ const currentLabelStats = computed(() => (isLgScreen.value ? labelStatsBig : lab
     <TemplatePageRestrictor class="about-stats-container">
       <AtomBigTitle class="about-stats__title">
         {{
-          toCapitalize(
-            $t(`about.companyInNumbers`, {
-              company: 'Ensome',
-            })
-          )
+          $t(`about.companyInNumbers`, {
+            company: 'Ensome',
+          })
         }}
       </AtomBigTitle>
       <div class="about-stats__stats">

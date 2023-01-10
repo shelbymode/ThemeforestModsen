@@ -8,8 +8,8 @@ const { t } = useI18n()
 const currentNameRoute = route.fullPath.split('/').at(-1)
 
 const links = computed(() => [
-  { name: toCapitalize(t(`common.route.home`)), link: '/home' },
-  { name: toCapitalize(t(`common.route.${currentNameRoute as string}`)), link: route.path },
+  { name: t(`common.route.home`), link: '/home' },
+  { name: t(`common.route.${currentNameRoute as string}`), link: route.path },
 ])
 </script>
 
