@@ -91,7 +91,11 @@
     "presentationTitle2": "Новейшая платформа бизнес-аналитики",
     "presentationText2": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     "sideImageTitle": "Принципиально новые решения для данных",
-    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    "summary": "Итого",
+    "product": "Продукт",
+    "price": "Стоимость",
+    "payment": "Оплата"
   },
   "services": {
     "startTitle": "Сервисы аналитики данных",

@@ -334,9 +334,7 @@ declare module 'vue' {
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
     readonly getElement: UnwrapRef<typeof import('./src/shared/utils/getElement')['getElement']>
-    readonly getLocaleFromLanguageNavigator: UnwrapRef<
-      typeof import('./src/shared/utils/localeHelpers')['getLocaleFromLanguageNavigator']
-    >
+    readonly getLocaleFromLanguageNavigator: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['getLocaleFromLanguageNavigator']>
     readonly getTranslateX: UnwrapRef<typeof import('./src/shared/utils/getTranslateX')['getTranslateX']>
     readonly getWidthElement: UnwrapRef<typeof import('./src/shared/utils/getWidthElement')['getWidthElement']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
@@ -382,9 +380,7 @@ declare module 'vue' {
     readonly reactiveOmit: UnwrapRef<typeof import('@vueuse/core')['reactiveOmit']>
     readonly reactivePick: UnwrapRef<typeof import('@vueuse/core')['reactivePick']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
-    readonly redirectToDefaultLocale: UnwrapRef<
-      typeof import('./src/shared/utils/localeHelpers')['redirectToDefaultLocale']
-    >
+    readonly redirectToDefaultLocale: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['redirectToDefaultLocale']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
     readonly refAutoReset: UnwrapRef<typeof import('@vueuse/core')['refAutoReset']>
     readonly refDebounced: UnwrapRef<typeof import('@vueuse/core')['refDebounced']>
@@ -481,9 +477,7 @@ declare module 'vue' {
     readonly useFileSystemAccess: UnwrapRef<typeof import('@vueuse/core')['useFileSystemAccess']>
     readonly useFocus: UnwrapRef<typeof import('@vueuse/core')['useFocus']>
     readonly useFocusWithin: UnwrapRef<typeof import('@vueuse/core')['useFocusWithin']>
-    readonly useFoooterSwapComponent: UnwrapRef<
-      typeof import('./src/shared/composables/footer/useFooterSwapComponent')['useFoooterSwapComponent']
-    >
+    readonly useFoooterSwapComponent: UnwrapRef<typeof import('./src/shared/composables/footer/useFooterSwapComponent')['useFoooterSwapComponent']>
     readonly useFps: UnwrapRef<typeof import('@vueuse/core')['useFps']>
     readonly useFullscreen: UnwrapRef<typeof import('@vueuse/core')['useFullscreen']>
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
@@ -541,13 +535,9 @@ declare module 'vue' {
     readonly useSessionStorage: UnwrapRef<typeof import('@vueuse/core')['useSessionStorage']>
     readonly useShare: UnwrapRef<typeof import('@vueuse/core')['useShare']>
     readonly useSlider: UnwrapRef<typeof import('./src/shared/composables/slider/useSlider')['useSlider']>
-    readonly useSliderMediator: UnwrapRef<
-      typeof import('./src/shared/composables/slider/useSliderMediator')['useSliderMediator']
-    >
+    readonly useSliderMediator: UnwrapRef<typeof import('./src/shared/composables/slider/useSliderMediator')['useSliderMediator']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
-    readonly useSmoothHeight: UnwrapRef<
-      typeof import('./src/shared/composables/animations/useSmoothHeight')['useSmoothHeight']
-    >
+    readonly useSmoothHeight: UnwrapRef<typeof import('./src/shared/composables/animations/useSmoothHeight')['useSmoothHeight']>
     readonly useSorted: UnwrapRef<typeof import('@vueuse/core')['useSorted']>
     readonly useSpeechRecognition: UnwrapRef<typeof import('@vueuse/core')['useSpeechRecognition']>
     readonly useSpeechSynthesis: UnwrapRef<typeof import('@vueuse/core')['useSpeechSynthesis']>

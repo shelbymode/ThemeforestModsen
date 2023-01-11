@@ -92,7 +92,11 @@
     "presentationTitle2": "The newest business analytics platform",
     "presentationText2": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     "sideImageTitle": "Radically new solutions for data",
-    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+    "sideImageText": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+    "summary": "Summary",
+    "product": "Product",
+    "price": "Price",
+    "payment": "Payment"
   },
   "services": {
     "startTitle": "Data analytics services",

@@ -19,7 +19,7 @@ const labelStats = [
         <div class="service-stats__stats">
           <AtomLabelStats
             v-for="labelStat in labelStats"
-            :key="labelStat.text"
+            :key="labelStat.text.value"
             class="service-stats__stat"
             :indicator="labelStat.indicator"
             :text="labelStat.text"

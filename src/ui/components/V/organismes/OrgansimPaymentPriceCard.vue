@@ -112,15 +112,15 @@ const paymentInfoInput: IFormInfo = {
     </div> -->
   <div class="payment">
     <section class="payment-summary">
-      <h2 class="payment-summary__title">Summary</h2>
+      <h2 class="payment-summary__title">{{ $t(`home.summary`) }}</h2>
 
       <div class="payment-summary__product">
-        <h2 class="payment-summary__product-title">Product:</h2>
+        <h2 class="payment-summary__product-title">{{ $t(`home.product`) }}</h2>
         <p class="payment-summary__product-name">{{ props.paymentInfo.name }}</p>
       </div>
 
       <div class="payment-summary__price">
-        <h2 class="payment-summary__price-title">Price:</h2>
+        <h2 class="payment-summary__price-title">{{ $t(`home.price`) }}</h2>
         <p class="payment-summary__price-name">{{ props.paymentInfo.priceUSD }}</p>
       </div>
     </section>
@@ -163,7 +163,7 @@ const paymentInfoInput: IFormInfo = {
   // .payment-summary__product
 
   &__product {
-    @apply bg-[#0e243a] flex items-center justify-between px-6 py-4 sm:py-6 md:py-8 w-full;
+    @apply bg-[#0e243a] flex items-center justify-between px-6 py-3 flex-wrap sm:py-4 md:py-5 w-full;
   }
 
   // .payment-summary__product-title
@@ -181,7 +181,7 @@ const paymentInfoInput: IFormInfo = {
   // .payment-summary__price
 
   &__price {
-    @apply bg-[#0e243a] flex items-center justify-between px-6 py-4 sm:py-6 md:py-8 w-full;
+    @apply bg-[#0e243a] flex items-center justify-between px-6 py-3 sm:py-4 md:py-5 w-full;
   }
 
   // .payment-summary__price-title

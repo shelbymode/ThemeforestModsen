@@ -54,6 +54,6 @@ const props = defineProps<{
   @apply flex flex-col justify-center items-center w-full overflow-y-auto py-5;
 }
 .modal__close {
-  @apply text-black absolute right-3;
+  @apply text-black absolute top-3 right-3;
 }
 </style>

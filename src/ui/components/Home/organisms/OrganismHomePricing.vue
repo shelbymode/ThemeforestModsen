@@ -142,7 +142,7 @@ const selectCurrentCard = (idx: number, tariff: string) => {
   priceCards[idx].tariffs.find((t) => t.value === tariff)!.isActive = true
 }
 
-const isOpen = ref(true)
+const isOpen = ref(false)
 const openModal = () => (isOpen.value = true)
 const closeModal = () => (isOpen.value = false)
 
@@ -190,8 +190,15 @@ const paymentInfo = computed(() => {
 
   <OrganismVModal v-bind="{ isOpen, openModal, closeModal }">
     <template #header>
-      <h1 class="text-bold text-3xl text-[#91d3ee] text-center md:text-4xl">Payment</h1>
+      <h1 class="text-bold text-3xl text-[#91d3ee] text-center md:text-4xl">{{ $t(`home.payment`) }}</h1>
     </template>
+
+    <template #close>
+      <span
+        class="i-carbon-close text-4xl text-white opacity-50 duration-300 hover:(scale-130 opacity-100 cursor-pointer)"
+      />
+    </template>
+
     <template #content>
       <OrgansimPaymentPriceCard :payment-info="paymentInfo" />
     </template>
