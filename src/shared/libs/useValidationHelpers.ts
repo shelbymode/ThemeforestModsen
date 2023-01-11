@@ -30,6 +30,7 @@ export const useValidationHelpers = (v$: ReturnType<typeof useValidate>) => {
     getIsDirty,
     getMessage,
     isDirtyAndError,
+    isDirtyAndNotError,
     getStatusValidation,
     isFormValid,
   }

@@ -216,6 +216,8 @@ declare global {
   const useOnline: typeof import('@vueuse/core')['useOnline']
   const usePageLeave: typeof import('@vueuse/core')['usePageLeave']
   const useParallax: typeof import('@vueuse/core')['useParallax']
+  const usePaymentInputEmail: typeof import('./src/shared/composables/payment/usePaymentInputEmail')['usePaymentInputEmail']
+  const usePaymentPaypal: typeof import('./src/shared/composables/payment/usePaymentPaypal')['usePaymentPaypal']
   const usePermission: typeof import('@vueuse/core')['usePermission']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']
@@ -514,6 +516,8 @@ declare module 'vue' {
     readonly useOnline: UnwrapRef<typeof import('@vueuse/core')['useOnline']>
     readonly usePageLeave: UnwrapRef<typeof import('@vueuse/core')['usePageLeave']>
     readonly useParallax: UnwrapRef<typeof import('@vueuse/core')['useParallax']>
+    readonly usePaymentInputEmail: UnwrapRef<typeof import('./src/shared/composables/payment/usePaymentInputEmail')['usePaymentInputEmail']>
+    readonly usePaymentPaypal: UnwrapRef<typeof import('./src/shared/composables/payment/usePaymentPaypal')['usePaymentPaypal']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
     readonly usePointerSwipe: UnwrapRef<typeof import('@vueuse/core')['usePointerSwipe']>
