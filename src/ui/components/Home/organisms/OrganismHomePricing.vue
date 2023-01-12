@@ -142,6 +142,7 @@ const selectCurrentCard = (idx: number, tariff: string) => {
   priceCards[idx].tariffs.find((t) => t.value === tariff)!.isActive = true
 }
 
+// TODO: modal switcher
 const isOpen = ref(false)
 const openModal = () => (isOpen.value = true)
 const closeModal = () => (isOpen.value = false)

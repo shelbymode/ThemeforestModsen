@@ -8,6 +8,8 @@
 
 <style lang="scss" scoped>
 .product-name {
-  @apply bg-[#0e243a] text-[#91d3ee] md:text-2xl;
+  @apply text-[#91d3ee] text-sm;
+  @apply md:text-xl;
+  @apply 2xl:text-2xl;
 }
 </style>

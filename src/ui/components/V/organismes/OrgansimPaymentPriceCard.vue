@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { OrderResponseBody } from '@paypal/paypal-js'
+
 const props = defineProps<{
   paymentInfo: {
     name: string
@@ -6,58 +8,71 @@ const props = defineProps<{
     priceUSD: string
   }
 }>()
-
+const orderDetails = reactive({
+  email: '',
+  transactionId: '',
+  amountPaid: '',
+})
 const isInputEmailValidRef = ref(false)
 
+const paymentDetailsReactive = reactive({
+  isPaid: false,
+  paymentDetails: {} as OrderResponseBody | undefined,
+})
+
+const atLeastOneTimeValidInput = ref(false)
+
 const updateInputEmailIsValid = (isInputEmailValid: boolean) => {
-  console.log('update form status')
+  if (isInputEmailValid && !atLeastOneTimeValidInput.value) {
+    atLeastOneTimeValidInput.value = true
+  }
   isInputEmailValidRef.value = isInputEmailValid
+}
+
+const updatePaymentStatus = ({ isPaid, paymentDetails }: { isPaid: boolean; paymentDetails?: OrderResponseBody }) => {
+  paymentDetailsReactive.isPaid = isPaid
+  paymentDetailsReactive.paymentDetails = paymentDetails
+
+  console.log(isPaid)
+  console.log(paymentDetails)
+
+  // orderDetails.email =
+  // orderDetails.transactionId =
+  // orderDetails.amountPaid =
 }
 </script>
 
 <template>
-  <!-- <div v-if="isPaid" class="payement__success-payment text-4xl text-emerald-500 font-bold">
-      You have paid <span text-cGrey> {{ productNameDescription }}</span> successfully!
-    </div> -->
   <div class="payment">
-    <section class="payment-summary">
-      <h2 class="payment-summary__title">{{ $t(`home.summary`) }}</h2>
-
-      <HomePaymentMoleculeBadge>
-        <template #title> {{ $t(`home.product`) }} </template>
-        <template #name>{{ props.paymentInfo.name }} </template>
-      </HomePaymentMoleculeBadge>
-
-      <HomePaymentMoleculeBadge>
-        <template #title>{{ $t(`home.price`) }} </template>
-        <template #name>{{ props.paymentInfo.priceUSD }} </template>
-      </HomePaymentMoleculeBadge>
-    </section>
+    <HomePaymentOrganismSummary :payment-info="props.paymentInfo" />
 
     <section class="payment-interface">
-      <HomePaymentAtomInputEmail @update-input-email-is-valid="updateInputEmailIsValid" />
-      <HomePaymentMoleculePaypal :payment-info="props.paymentInfo" :is-locked="!isInputEmailValidRef" />
+      <template v-if="!paymentDetailsReactive.isPaid">
+        <HomePaymentAtomInputEmail class="w-full" @update-input-email-is-valid="updateInputEmailIsValid" />
+        <Transition name="modal" mode="out-in">
+          <HomePaymentMoleculePaypal
+            v-if="atLeastOneTimeValidInput"
+            :payment-info="props.paymentInfo"
+            :is-locked="!isInputEmailValidRef"
+            @update-payment-status="updatePaymentStatus"
+          />
+        </Transition>
+      </template>
+
+      <HomePaymentOrganismSucessfull v-else v-bind="orderDetails" />
     </section>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .payment {
-  @apply flex flex-col h-full overflow-y-auto w-full gap-y-10;
-  @apply md:(flex-row justify-evenly);
+  @apply flex flex-col w-full gap-y-10;
+  @apply xl:(flex-row justify-evenly);
 }
 
-.payment-summary {
-  @apply flex flex-col w-full px-5 md:px-10 items-start gap-y-5;
-  @apply md:(w-1/2);
-  // .payment-summary__title
-
-  &__title {
-    @apply text-[#91d3ee] text-xl md:text-3xl;
-  }
-}
 .payment-interface {
-  @apply flex flex-col items-start px-5 w-full gap-y-5;
-  @apply md:(w-1/2 px-10);
+  @apply flex flex-col w-full px-4 py-5 items-start gap-y-5 m-x-a;
+  @apply sm:(px-10 w-4/5);
+  @apply xl:(w-1/2);
 }
 </style>

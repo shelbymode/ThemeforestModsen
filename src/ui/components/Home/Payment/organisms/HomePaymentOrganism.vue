@@ -14,21 +14,35 @@ const props = defineProps<{
 </script>
 
 <template>
-  <OrganismVModal v-bind="props.modalControls">
+  <OrganismVModal
+    :is-open="modalControls.isOpen"
+    :open-modal="modalControls.openModal"
+    :close-modal="modalControls.closeModal"
+  >
     <template #header>
-      <h1 class="text-bold text-3xl text-[#91d3ee] text-center md:text-4xl">{{ $t(`home.payment`) }}</h1>
-    </template>
-
-    <template #close>
-      <span
-        class="i-carbon-close text-4xl text-white opacity-50 duration-300 hover:(scale-130 opacity-100 cursor-pointer)"
-      />
+      <h1 class="payment-modal__header">
+        {{ $t(`home.payment`) }}
+      </h1>
     </template>
 
     <template #content>
-      <OrgansimPaymentPriceCard :payment-info="paymentInfo" />
+      <OrgansimPaymentPriceCard class="payment-modal__content" :payment-info="paymentInfo" />
     </template>
   </OrganismVModal>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.payment-modal {
+  // .payment-modal__header
+
+  &__header {
+    @apply text-bold text-3xl text-[#91d3ee] text-center;
+    @apply md:text-4xl;
+  }
+
+  // .payment-modal__content
+
+  &__content {
+  }
+}
+</style>

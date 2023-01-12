@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { OrderResponseBody } from '@paypal/paypal-js'
 import { usePaymentPaypal } from '~/shared/composables/payment/usePaymentPaypal'
 
 const props = defineProps<{
@@ -10,11 +11,19 @@ const props = defineProps<{
   }
 }>()
 
-const { paypalRequest } = usePaymentPaypal({
+const emit = defineEmits<{
+  (e: 'update-payment-status', payment: { isPaid: boolean; paymentDetails?: OrderResponseBody }): void
+}>()
+
+const { paypalRequest, paymentDetailsReactive } = usePaymentPaypal({
   currencyCode: 'USD',
   name: props.paymentInfo.name,
   duration: props.paymentInfo.duration,
   rawPrice: props.paymentInfo.priceUSD,
+})
+
+watchEffect(() => {
+  emit('update-payment-status', paymentDetailsReactive)
 })
 
 onMounted(paypalRequest)

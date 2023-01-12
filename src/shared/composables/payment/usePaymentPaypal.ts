@@ -5,6 +5,7 @@ import {
   OnApproveData,
   OnApproveActions,
   PayPalNamespace,
+  OrderResponseBody,
 } from '@paypal/paypal-js'
 
 const PAYPAL_CLIENT_ID = import.meta.env.VITE_APP_PAYPAL_CLIENT_ID as string
@@ -22,7 +23,10 @@ export const usePaymentPaypal = ({
   duration: string
   rawPrice: string
 }) => {
-  const isPaid = ref(false)
+  const paymentDetailsReactive = reactive({
+    isPaid: false,
+    paymentDetails: {} as OrderResponseBody | undefined,
+  })
 
   const transformedPrice = $computed(() => {
     const tPrice = String(rawPrice.slice(1))
@@ -64,8 +68,10 @@ export const usePaymentPaypal = ({
 
   const onApprove = async (data: OnApproveData, actions: OnApproveActions) => {
     const order = await actions?.order?.capture()
+
     console.log('order:', order)
-    isPaid.value = true
+    paymentDetailsReactive.isPaid = true
+    paymentDetailsReactive.paymentDetails = order
   }
 
   const paypalRequest = async () => {
@@ -82,5 +88,5 @@ export const usePaymentPaypal = ({
     }
   }
 
-  return { paypalRequest }
+  return { paypalRequest, paymentDetailsReactive }
 }
