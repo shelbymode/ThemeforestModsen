@@ -96,7 +96,10 @@
     "product": "Продукт",
     "price": "Стоимость",
     "payment": "Оплата",
-    "duration": "Длительность"
+    "duration": "Длительность",
+    "successfullPayment": "Успешная оплата",
+    "transactionId": "Номер транзакции",
+    "amountPaid": "Сумма платежа"
   },
   "services": {
     "startTitle": "Сервисы аналитики данных",

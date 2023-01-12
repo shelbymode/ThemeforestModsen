@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { isFor } from '@babel/types'
 import { usePaymentInputEmail } from '~/shared/composables/payment/usePaymentInputEmail'
 
 const emit = defineEmits<{
-  (e: 'update-input-email-is-valid', value: boolean): void
+  (e: 'update-input-email-is-valid', value: boolean, email: string): void
 }>()
 
 const { isFormValid, touch, getStatusValidation, paymentInputForm, paymentInfoInput } = usePaymentInputEmail()
@@ -11,12 +10,15 @@ const { isFormValid, touch, getStatusValidation, paymentInputForm, paymentInfoIn
 watch(
   isFormValid,
   (newValue) => {
-    emit('update-input-email-is-valid', newValue)
+    emit('update-input-email-is-valid', newValue, paymentInputForm.email)
   },
   {
     immediate: true,
   }
 )
+watchEffect(() => {
+  emit('update-input-email-is-valid', isFormValid.value, paymentInputForm.email)
+})
 </script>
 
 <template>

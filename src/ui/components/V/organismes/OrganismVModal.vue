@@ -8,24 +8,24 @@ const props = defineProps<{
 
 <template>
   <Teleport to="body">
-    <!-- <Transition name="modal" mode="out-in" appear> -->
-    <div v-if="isOpen" class="modal-overlay" @click.self="closeModal">
-      <div class="modal">
-        <div class="modal__header">
-          <slot name="header"></slot>
-          <div class="modal__close" @click="closeModal">
-            <slot name="close">
-              <span class="payment-modal__close" />
-            </slot>
+    <Transition name="modal" mode="out-in" appear>
+      <div v-if="isOpen" class="modal-overlay" @click.self="closeModal">
+        <div class="modal">
+          <div class="modal__header">
+            <slot name="header"></slot>
+            <div class="modal__close" @click="closeModal">
+              <slot name="close">
+                <span class="payment-modal__close" />
+              </slot>
+            </div>
+          </div>
+
+          <div class="modal__content">
+            <slot name="content"></slot>
           </div>
         </div>
-
-        <div class="modal__content">
-          <slot name="content"></slot>
-        </div>
       </div>
-    </div>
-    <!-- </Transition> -->
+    </Transition>
   </Teleport>
 </template>
 
@@ -41,7 +41,7 @@ const props = defineProps<{
 }
 .modal {
   @apply flex flex-col fixed left-1/2 top-1/2 rounded-2xl w-9/10;
-  @apply md:(max-w-[1300px] w-4/5 h-a pb-10);
+  @apply md:(max-w-[1110px] w-4/5 h-a pb-10);
   transform: translate(-50%, -50%);
   background: #0a1a29;
 }

@@ -97,7 +97,10 @@
     "product": "Product",
     "price": "Price",
     "payment": "Payment",
-    "duration": "Duration"
+    "duration": "Duration",
+    "successfullPayment": "Successfull payment",
+    "transactionId": "Transition Id",
+    "amountPaid": "Amount Paid"
   },
   "services": {
     "startTitle": "Data analytics services",

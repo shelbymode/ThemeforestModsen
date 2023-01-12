@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { OrderResponseBody } from '@paypal/paypal-js'
+import { Captures, OrderResponseBody } from '@paypal/paypal-js'
 
 const props = defineProps<{
   paymentInfo: {
@@ -14,6 +14,7 @@ const orderDetails = reactive({
   amountPaid: '',
 })
 const isInputEmailValidRef = ref(false)
+const userContactEmail = ref('')
 
 const paymentDetailsReactive = reactive({
   isPaid: false,
@@ -22,23 +23,32 @@ const paymentDetailsReactive = reactive({
 
 const atLeastOneTimeValidInput = ref(false)
 
-const updateInputEmailIsValid = (isInputEmailValid: boolean) => {
+const updateInputEmailIsValid = (isInputEmailValid: boolean, email: string) => {
   if (isInputEmailValid && !atLeastOneTimeValidInput.value) {
     atLeastOneTimeValidInput.value = true
   }
+  userContactEmail.value = email
   isInputEmailValidRef.value = isInputEmailValid
 }
 
 const updatePaymentStatus = ({ isPaid, paymentDetails }: { isPaid: boolean; paymentDetails?: OrderResponseBody }) => {
   paymentDetailsReactive.isPaid = isPaid
-  paymentDetailsReactive.paymentDetails = paymentDetails
 
-  console.log(isPaid)
-  console.log(paymentDetails)
+  if (paymentDetails && Object.keys(paymentDetails).length > 0) {
+    paymentDetailsReactive.paymentDetails = paymentDetails
+    console.log(isPaid)
+    console.log(paymentDetails)
 
-  // orderDetails.email =
-  // orderDetails.transactionId =
-  // orderDetails.amountPaid =
+    const orderCaptured = paymentDetails?.purchase_units[0]?.payments.captures[0] as Captures
+    console.log('orderCaptued:', orderCaptured)
+
+    const id = orderCaptured.id as string
+    const { currency_code, value } = orderCaptured?.amount
+
+    orderDetails.email = userContactEmail.value
+    orderDetails.transactionId = id
+    orderDetails.amountPaid = `${value} ${currency_code}`
+  }
 }
 </script>
 

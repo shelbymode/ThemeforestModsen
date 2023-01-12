@@ -9,7 +9,7 @@ const props = defineProps<{
 <template>
   <div class="payment-successfull">
     <div class="payment-successfull__header">
-      <h2 class="payment-successfull__title">Successfull payment</h2>
+      <h2 class="payment-successfull__title">{{ $t(`home.successfullPayment`) }}</h2>
       <AtomVRippleLoader class="payment-successfull__loader">
         <span class="payment-successfull__loader-icon"></span>
       </AtomVRippleLoader>
@@ -25,14 +25,22 @@ const props = defineProps<{
     </HomePaymentMoleculeBadge>
 
     <HomePaymentMoleculeBadge class="payment-successfull--badge">
-      <template #title><span class="text-emerald-500">Transction id</span></template>
+      <template #title
+        ><span class="text-emerald-500">
+          {{ $t(`home.transactionId`) }}
+        </span></template
+      >
       <template #name
         ><span class="text-emerald-500">{{ props.transactionId }}</span></template
       >
     </HomePaymentMoleculeBadge>
 
     <HomePaymentMoleculeBadge class="payment-successfull--badge">
-      <template #title><span class="text-emerald-500">Amount paid</span></template>
+      <template #title
+        ><span class="text-emerald-500">
+          {{ $t(`home.amountPaid`) }}
+        </span></template
+      >
       <template #name
         ><span class="text-emerald-500">{{ props.amountPaid }}</span></template
       >

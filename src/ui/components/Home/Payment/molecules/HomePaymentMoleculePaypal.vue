@@ -23,6 +23,8 @@ const { paypalRequest, paymentDetailsReactive } = usePaymentPaypal({
 })
 
 watchEffect(() => {
+  console.log('reactive updat payment statusL', paymentDetailsReactive)
+
   emit('update-payment-status', paymentDetailsReactive)
 })
 

@@ -8,7 +8,7 @@ const isLgScreen = useMediaQuery(`(min-width: 1024px)`)
       <OrganismAboutPromo />
       <OrganismAboutCustomersReviews />
       <OrganismContactUs v-if="isLgScreen" />
-      <MoleculeHelpSection v-else class="mb--6" />
+      <MoleculeHelpSection v-else class="mb-6" />
       <MoleculeSubscribeSection />
     </main>
   </TemplatePage>

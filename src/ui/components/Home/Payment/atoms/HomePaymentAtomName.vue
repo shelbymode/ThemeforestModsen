@@ -10,6 +10,6 @@
 .product-name {
   @apply text-[#91d3ee] text-sm;
   @apply md:text-xl;
-  @apply 2xl:text-2xl;
+  // @apply 2xl:text-2xl;
 }
 </style>
