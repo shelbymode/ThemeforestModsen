@@ -96,7 +96,8 @@
     "summary": "Summary",
     "product": "Product",
     "price": "Price",
-    "payment": "Payment"
+    "payment": "Payment",
+    "duration": "Duration"
   },
   "services": {
     "startTitle": "Data analytics services",

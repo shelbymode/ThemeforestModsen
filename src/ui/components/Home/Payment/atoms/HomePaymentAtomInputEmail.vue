@@ -22,7 +22,7 @@ watch(
 <template>
   <AtomInput
     v-model="paymentInputForm.email"
-    class="contacts-form__input w-full"
+    class="contacts-form__input"
     v-bind="{
       commonLabelClasses: 'font-semibold  text-[#91d3ee] md:text-2xl',
       ...paymentInfoInput,

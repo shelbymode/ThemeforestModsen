@@ -95,7 +95,8 @@
     "summary": "Итого",
     "product": "Продукт",
     "price": "Стоимость",
-    "payment": "Оплата"
+    "payment": "Оплата",
+    "duration": "Длительность"
   },
   "services": {
     "startTitle": "Сервисы аналитики данных",
