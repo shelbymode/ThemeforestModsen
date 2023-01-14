@@ -5,7 +5,7 @@
     <main class="home">
       <OrganismHomePresentation />
       <OgranismHomeBenefits />
-      <OrganismHomeTestimonials />
+      <OrganismTestimonialsReviews />
       <OrganismHomePricing />
       <OrganismHomeOurBlog />
       <OrganismHomeAdditional />
