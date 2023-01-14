@@ -25,35 +25,35 @@ const tags = [
         <MoleculeNavLinks />
       </TemplateNavLinksCenter>
 
-      <TemplateBlogCurrentPageContent>
+      <TemplateBlogIdPageContent>
         <template #current-post>
-          <OrganismBlogCurrentPost />
+          <OrganismBlogIdPost />
         </template>
 
         <template #related-post>
-          <OrganismBlogRelatedPosts />
+          <OrganismBlogIdRelatedPosts />
         </template>
 
         <template #search>
-          <OrganismBlogSearch />
+          <OrganismBlogIdSearch />
         </template>
 
         <template #popular>
-          <OrganismBlogPopularPosts />
+          <OrganismBlogIdPopularPosts />
         </template>
 
         <template #categories>
-          <OrganismBlogCategories />
+          <OrganismBlogIdCategories />
         </template>
 
         <template #tags>
-          <OrganismBlogTags :tags="tags" />
+          <OrganismBlogIdTags :tags="tags" />
         </template>
 
         <template #subscribe>
           <MoleculeSubscribeSection />
         </template>
-      </TemplateBlogCurrentPageContent>
+      </TemplateBlogIdPageContent>
 
       <MoleculeSubscribeSection />
     </main>

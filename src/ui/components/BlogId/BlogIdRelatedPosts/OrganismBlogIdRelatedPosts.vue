@@ -4,7 +4,7 @@
   <section class="related-posts">
     <AtomMiddleTitle class="related-posts__title">Related Post</AtomMiddleTitle>
     <div class="related-posts__cards">
-      <MoleculeBlogRelatedPost
+      <MoleculeBlogIdRelatedPost
         v-for="card in 3"
         :key="card"
         class="related-posts__card"
@@ -13,7 +13,7 @@
         text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure..."
         :link-info="{ label: 'Read more', to: '/' }"
       >
-      </MoleculeBlogRelatedPost>
+      </MoleculeBlogIdRelatedPost>
     </div>
   </section>
 </template>

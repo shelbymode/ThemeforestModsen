@@ -3,8 +3,8 @@ const props = defineProps<{
   date: string
   author: string
 }>()
+//TODO refactor - it's V component
 </script>
-
 <template>
   <figcaption class="image-caption">
     <AtomText class="image-caption__date">

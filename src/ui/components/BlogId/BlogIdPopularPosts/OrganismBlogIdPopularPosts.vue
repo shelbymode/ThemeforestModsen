@@ -21,7 +21,7 @@ const popularPosts = [
   <div class="popular-posts">
     <AtomSmallTitle class="popular-posts__title">Popular posts</AtomSmallTitle>
     <div class="popular-posts__cards">
-      <MoleculeBlogPopularPost
+      <MoleculeBlogIdPopularPost
         v-for="post in popularPosts"
         :key="post.title"
         class="popular-posts__card"

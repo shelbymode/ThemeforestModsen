@@ -6,9 +6,11 @@
       <img class="current-post__image" src="https://api.lorem.space/image/fashion?w=635&h=330&hash=tugy9511" alt="" />
       <AtomBlogImageCaption class="current-post__caption" date="22 June 2020" author="William Pond" />
     </figure>
+
     <AtomMiddleTitle class="current-post__title">
       2022 software development trends explained with benefits
     </AtomMiddleTitle>
+
     <AtomText class="current-post__text">
       At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
       corrupti quos dolores et quas. Nulla rhoncus consectetur eros non iaculis “Vivamus lectus enim, convallis nec
@@ -45,7 +47,7 @@
       pellentesque, odio ipsum lobortis orci, sit amet fermentum ex nunc ac diam.
     </AtomText>
 
-    <MoleculeBlogPostFooter :views="481" :tags="['Data', 'Future']" class="current-post__footer" />
+    <MoleculeBlogIdPostFooter :views="481" :tags="['Data', 'Future']" class="current-post__footer" />
   </section>
 </template>
 

@@ -51,7 +51,7 @@ const { d } = useI18n()
     </template>
 
     <template v-else>
-      <MoleculeBlogPopularPost
+      <MoleculeBlogIdPopularPost
         v-for="card in 3"
         :key="card"
         :title="toCapitalizeEach($t(`common.machineLearning`))"
