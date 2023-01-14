@@ -23,7 +23,7 @@ const contactIconLinks = [
 
 <template>
   <div class="contact-links">
-    <AtomContactIconLink
+    <AtomContactsLinkIcon
       v-for="iconLink in contactIconLinks"
       :key="iconLink.title.value"
       :title="iconLink.title.value"
@@ -32,7 +32,7 @@ const contactIconLinks = [
       <template #icon>
         <span class="text-xl text-black" :class="[iconLink.icon]"></span>
       </template>
-    </AtomContactIconLink>
+    </AtomContactsLinkIcon>
   </div>
 </template>
 
