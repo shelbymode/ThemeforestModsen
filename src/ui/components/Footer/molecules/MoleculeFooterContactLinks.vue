@@ -2,14 +2,14 @@
 import AtomDropdown from '~/ui/components/V/atoms/dropdowns/AtomDropdown.vue'
 import MoleculeFooterWrapper from '~/ui/components/Footer/molecules/MoleculeFooterWrapper.vue'
 
-import { useFoooterSwapComponent } from '~/shared/composables/footer/useFooterSwapComponent'
 defineOptions({
   components: {
     AtomDropdown,
     MoleculeFooterWrapper,
   },
 })
-const containerLinkComponent = useFoooterSwapComponent()
+
+const containerLinkComponent = useContainerLinkComponent()
 </script>
 
 <template>

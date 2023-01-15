@@ -6,7 +6,7 @@ import {
   numberFormats,
   supported_locales,
   TLocale,
-} from '../../constants/i18n.constants'
+} from '../../shared/constants/i18n.constants'
 import {
   useLastLocaleLS,
   setPrefferableLocale,
@@ -15,7 +15,7 @@ import {
   localeIsSupported,
   loadLocale,
   redirectToDefaultLocale,
-} from '../../utils/localeHelpers'
+} from '../../shared/utils/localeHelpers'
 
 export const useLocale = () => {
   const i18n = createI18n({

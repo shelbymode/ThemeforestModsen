@@ -1,4 +1,13 @@
 import useValidate from '@vuelidate/core'
+import { MaybeRef } from '@vueuse/core'
+
+export interface IFormInfo<F> {
+  id: string
+  label: MaybeRef<string>
+  placeholder: MaybeRef<string>
+  field: keyof F
+  tag: 'input' | 'textarea'
+}
 
 export const useValidationHelpers = (v$: ReturnType<typeof useValidate>) => {
   const isFormValid = computed(() => v$.value.$silentErrors.length === 0)

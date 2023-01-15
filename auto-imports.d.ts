@@ -26,6 +26,7 @@ declare global {
   const createSharedComposable: typeof import('@vueuse/core')['createSharedComposable']
   const createUnrefFn: typeof import('@vueuse/core')['createUnrefFn']
   const customRef: typeof import('vue')['customRef']
+  const cutCurrencyCodeFromPrice: typeof import('./src/shared/utils/cutCurrencyCodeFromPrice')['cutCurrencyCodeFromPrice']
   const debouncedRef: typeof import('@vueuse/core')['debouncedRef']
   const debouncedWatch: typeof import('@vueuse/core')['debouncedWatch']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
@@ -35,10 +36,10 @@ declare global {
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
-  const getElement: typeof import('./src/shared/utils/getElement')['getElement']
+  const getHTMLElement: typeof import('./src/shared/utils/getHTMLElement')['getHTMLElement']
   const getLocaleFromLanguageNavigator: typeof import('./src/shared/utils/localeHelpers')['getLocaleFromLanguageNavigator']
   const getTranslateX: typeof import('./src/shared/utils/getTranslateX')['getTranslateX']
-  const getWidthElement: typeof import('./src/shared/utils/getWidthElement')['getWidthElement']
+  const getWidthHTMLElement: typeof import('./src/shared/utils/getWidthHTMLElement')['getWidthHTMLElement']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
@@ -145,6 +146,7 @@ declare global {
   const useCloned: typeof import('@vueuse/core')['useCloned']
   const useColorMode: typeof import('@vueuse/core')['useColorMode']
   const useConfirmDialog: typeof import('@vueuse/core')['useConfirmDialog']
+  const useContainerLinkComponent: typeof import('./src/shared/composables/footer/useContainerLinkComponent')['useContainerLinkComponent']
   const useCounter: typeof import('@vueuse/core')['useCounter']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVar: typeof import('@vueuse/core')['useCssVar']
@@ -179,12 +181,10 @@ declare global {
   const useFileSystemAccess: typeof import('@vueuse/core')['useFileSystemAccess']
   const useFocus: typeof import('@vueuse/core')['useFocus']
   const useFocusWithin: typeof import('@vueuse/core')['useFocusWithin']
-  const useFoooterSwapComponent: typeof import('./src/shared/composables/footer/useFooterSwapComponent')['useFoooterSwapComponent']
   const useFps: typeof import('@vueuse/core')['useFps']
   const useFullscreen: typeof import('@vueuse/core')['useFullscreen']
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
   const useGeolocation: typeof import('@vueuse/core')['useGeolocation']
-  const useHamburger: typeof import('./src/shared/composables/header/useHamburger')['useHamburger']
   const useIdle: typeof import('@vueuse/core')['useIdle']
   const useImage: typeof import('@vueuse/core')['useImage']
   const useInfiniteScroll: typeof import('@vueuse/core')['useInfiniteScroll']
@@ -196,7 +196,6 @@ declare global {
   const useLastLocaleLS: typeof import('./src/shared/utils/localeHelpers')['useLastLocaleLS']
   const useLink: typeof import('vue-router')['useLink']
   const useLocalStorage: typeof import('@vueuse/core')['useLocalStorage']
-  const useLocale: typeof import('./src/shared/composables/i18n/useLocales')['useLocale']
   const useMagicKeys: typeof import('@vueuse/core')['useMagicKeys']
   const useManualRefHistory: typeof import('@vueuse/core')['useManualRefHistory']
   const useMediaControls: typeof import('@vueuse/core')['useMediaControls']
@@ -216,8 +215,6 @@ declare global {
   const useOnline: typeof import('@vueuse/core')['useOnline']
   const usePageLeave: typeof import('@vueuse/core')['usePageLeave']
   const useParallax: typeof import('@vueuse/core')['useParallax']
-  const usePaymentInputEmail: typeof import('./src/shared/composables/payment/usePaymentInputEmail')['usePaymentInputEmail']
-  const usePaymentPaypal: typeof import('./src/shared/composables/payment/usePaymentPaypal')['usePaymentPaypal']
   const usePermission: typeof import('@vueuse/core')['usePermission']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']
@@ -270,6 +267,7 @@ declare global {
   const useTransition: typeof import('@vueuse/core')['useTransition']
   const useUrlSearchParams: typeof import('@vueuse/core')['useUrlSearchParams']
   const useUserMedia: typeof import('@vueuse/core')['useUserMedia']
+  const useVFetch: typeof import('./src/shared/composables/network/useVFetch')['useVFetch']
   const useVModel: typeof import('@vueuse/core')['useVModel']
   const useVModels: typeof import('@vueuse/core')['useVModels']
   const useVibrate: typeof import('@vueuse/core')['useVibrate']
@@ -326,6 +324,7 @@ declare module 'vue' {
     readonly createSharedComposable: UnwrapRef<typeof import('@vueuse/core')['createSharedComposable']>
     readonly createUnrefFn: UnwrapRef<typeof import('@vueuse/core')['createUnrefFn']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
+    readonly cutCurrencyCodeFromPrice: UnwrapRef<typeof import('./src/shared/utils/cutCurrencyCodeFromPrice')['cutCurrencyCodeFromPrice']>
     readonly debouncedRef: UnwrapRef<typeof import('@vueuse/core')['debouncedRef']>
     readonly debouncedWatch: UnwrapRef<typeof import('@vueuse/core')['debouncedWatch']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
@@ -335,10 +334,10 @@ declare module 'vue' {
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
-    readonly getElement: UnwrapRef<typeof import('./src/shared/utils/getElement')['getElement']>
+    readonly getHTMLElement: UnwrapRef<typeof import('./src/shared/utils/getHTMLElement')['getHTMLElement']>
     readonly getLocaleFromLanguageNavigator: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['getLocaleFromLanguageNavigator']>
     readonly getTranslateX: UnwrapRef<typeof import('./src/shared/utils/getTranslateX')['getTranslateX']>
-    readonly getWidthElement: UnwrapRef<typeof import('./src/shared/utils/getWidthElement')['getWidthElement']>
+    readonly getWidthHTMLElement: UnwrapRef<typeof import('./src/shared/utils/getWidthHTMLElement')['getWidthHTMLElement']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -445,6 +444,7 @@ declare module 'vue' {
     readonly useCloned: UnwrapRef<typeof import('@vueuse/core')['useCloned']>
     readonly useColorMode: UnwrapRef<typeof import('@vueuse/core')['useColorMode']>
     readonly useConfirmDialog: UnwrapRef<typeof import('@vueuse/core')['useConfirmDialog']>
+    readonly useContainerLinkComponent: UnwrapRef<typeof import('./src/shared/composables/footer/useContainerLinkComponent')['useContainerLinkComponent']>
     readonly useCounter: UnwrapRef<typeof import('@vueuse/core')['useCounter']>
     readonly useCssModule: UnwrapRef<typeof import('vue')['useCssModule']>
     readonly useCssVar: UnwrapRef<typeof import('@vueuse/core')['useCssVar']>
@@ -479,12 +479,10 @@ declare module 'vue' {
     readonly useFileSystemAccess: UnwrapRef<typeof import('@vueuse/core')['useFileSystemAccess']>
     readonly useFocus: UnwrapRef<typeof import('@vueuse/core')['useFocus']>
     readonly useFocusWithin: UnwrapRef<typeof import('@vueuse/core')['useFocusWithin']>
-    readonly useFoooterSwapComponent: UnwrapRef<typeof import('./src/shared/composables/footer/useFooterSwapComponent')['useFoooterSwapComponent']>
     readonly useFps: UnwrapRef<typeof import('@vueuse/core')['useFps']>
     readonly useFullscreen: UnwrapRef<typeof import('@vueuse/core')['useFullscreen']>
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
     readonly useGeolocation: UnwrapRef<typeof import('@vueuse/core')['useGeolocation']>
-    readonly useHamburger: UnwrapRef<typeof import('./src/shared/composables/header/useHamburger')['useHamburger']>
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>
     readonly useImage: UnwrapRef<typeof import('@vueuse/core')['useImage']>
     readonly useInfiniteScroll: UnwrapRef<typeof import('@vueuse/core')['useInfiniteScroll']>
@@ -496,7 +494,6 @@ declare module 'vue' {
     readonly useLastLocaleLS: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['useLastLocaleLS']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
     readonly useLocalStorage: UnwrapRef<typeof import('@vueuse/core')['useLocalStorage']>
-    readonly useLocale: UnwrapRef<typeof import('./src/shared/composables/i18n/useLocales')['useLocale']>
     readonly useMagicKeys: UnwrapRef<typeof import('@vueuse/core')['useMagicKeys']>
     readonly useManualRefHistory: UnwrapRef<typeof import('@vueuse/core')['useManualRefHistory']>
     readonly useMediaControls: UnwrapRef<typeof import('@vueuse/core')['useMediaControls']>
@@ -516,8 +513,6 @@ declare module 'vue' {
     readonly useOnline: UnwrapRef<typeof import('@vueuse/core')['useOnline']>
     readonly usePageLeave: UnwrapRef<typeof import('@vueuse/core')['usePageLeave']>
     readonly useParallax: UnwrapRef<typeof import('@vueuse/core')['useParallax']>
-    readonly usePaymentInputEmail: UnwrapRef<typeof import('./src/shared/composables/payment/usePaymentInputEmail')['usePaymentInputEmail']>
-    readonly usePaymentPaypal: UnwrapRef<typeof import('./src/shared/composables/payment/usePaymentPaypal')['usePaymentPaypal']>
     readonly usePermission: UnwrapRef<typeof import('@vueuse/core')['usePermission']>
     readonly usePointer: UnwrapRef<typeof import('@vueuse/core')['usePointer']>
     readonly usePointerSwipe: UnwrapRef<typeof import('@vueuse/core')['usePointerSwipe']>
@@ -570,6 +565,7 @@ declare module 'vue' {
     readonly useTransition: UnwrapRef<typeof import('@vueuse/core')['useTransition']>
     readonly useUrlSearchParams: UnwrapRef<typeof import('@vueuse/core')['useUrlSearchParams']>
     readonly useUserMedia: UnwrapRef<typeof import('@vueuse/core')['useUserMedia']>
+    readonly useVFetch: UnwrapRef<typeof import('./src/shared/composables/network/useVFetch')['useVFetch']>
     readonly useVModel: UnwrapRef<typeof import('@vueuse/core')['useVModel']>
     readonly useVModels: UnwrapRef<typeof import('@vueuse/core')['useVModels']>
     readonly useVibrate: UnwrapRef<typeof import('@vueuse/core')['useVibrate']>

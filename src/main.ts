@@ -10,7 +10,7 @@ import 'uno.css'
 import '../assets/styles/variables.scss'
 import '../assets/styles/global.scss'
 import { routes } from './routes'
-import { useLocale } from './shared/composables/i18n/useLocales'
+import { useLocale } from './libs/i18n/useLocales'
 import { TLocale } from './shared/constants/i18n.constants'
 
 const { i18n, setCurrentLocale } = useLocale()
@@ -21,9 +21,9 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    if (removeLocaleParam(from.path) === removeLocaleParam(to.path)) {
+    /* if (removeLocaleParam(from.path) === removeLocaleParam(to.path)) {
       return
-    }
+    } */
     return { top: 0, behavior: 'smooth' }
   },
 })

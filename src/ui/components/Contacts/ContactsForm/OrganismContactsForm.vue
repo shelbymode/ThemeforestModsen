@@ -2,7 +2,8 @@
 import { required, email, minLength, maxLength, helpers, sameAs } from '@vuelidate/validators'
 import { MaybeRef } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
-import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
+import { useSchemaValidation } from '~/libs/formValidation/useSchemaValidation'
+import { IFormInfo } from '~/libs/formValidation/useValidationHelpers'
 import { paintHTMLWords } from '~/shared/utils/paintHTMLWords'
 
 const rulesForm = computed(() => ({
@@ -35,14 +36,7 @@ const { isFormValid, touch, getMessage, getIsDirty, getIsError, isDirtyAndError,
 
 const { t } = useI18n()
 
-interface IFormInfo {
-  id: string
-  label: MaybeRef<string>
-  placeholder: MaybeRef<string>
-  field: keyof typeof form
-  tag: 'input' | 'textarea'
-}
-const formInfoNames: IFormInfo[] = [
+const formInfoNames: IFormInfo<typeof form>[] = [
   {
     id: 'contact-email-id',
     label: computed(() => t(`common.email`)),
@@ -59,7 +53,7 @@ const formInfoNames: IFormInfo[] = [
   },
 ]
 
-const formInfoOther: IFormInfo[] = [
+const formInfoOther: IFormInfo<typeof form>[] = [
   {
     id: 'contact-theme-id',
     label: computed(() => t(`common.theme`)),

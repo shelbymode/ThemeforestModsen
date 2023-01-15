@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { OrderResponseBody } from '@paypal/paypal-js'
-import { usePaymentPaypal } from '~/shared/composables/payment/usePaymentPaypal'
+import { priceCardsPaypalUC } from '~/application/usecases/PriceCardsPaypalUC'
+import { cutCurrencyCodeFromPrice } from '~/shared/utils/cutCurrencyCodeFromPrice'
 
 const props = defineProps<{
   isLocked: boolean
@@ -11,24 +11,29 @@ const props = defineProps<{
   }
 }>()
 
-const emit = defineEmits<{
-  (e: 'update-payment-status', payment: { isPaid: boolean; paymentDetails?: OrderResponseBody }): void
-}>()
-
-const { paypalRequest, paymentDetailsReactive } = usePaymentPaypal({
-  currencyCode: 'USD',
-  name: props.paymentInfo.name,
-  duration: props.paymentInfo.duration,
-  rawPrice: props.paymentInfo.priceUSD,
-})
+const { generatePaymentUI, storePaymentPriceCards, paymentDetails } = priceCardsPaypalUC(
+  {
+    totalPrice: cutCurrencyCodeFromPrice(props.paymentInfo.priceUSD),
+    currencyCode: 'USD',
+    items: [
+      {
+        name: props.paymentInfo.name,
+        price: cutCurrencyCodeFromPrice(props.paymentInfo.priceUSD),
+        description: `${props.paymentInfo.name} for ${props.paymentInfo.duration}`,
+        quantity: '1',
+      },
+    ],
+  },
+  '#paypal-button-container'
+)
 
 watchEffect(() => {
-  console.log('reactive updat payment statusL', paymentDetailsReactive)
-
-  emit('update-payment-status', paymentDetailsReactive)
+  storePaymentPriceCards.updatePaymentStatus(paymentDetails.value)
 })
 
-onMounted(paypalRequest)
+onMounted(() => {
+  generatePaymentUI()
+})
 </script>
 
 <template>

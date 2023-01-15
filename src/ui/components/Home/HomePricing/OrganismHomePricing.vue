@@ -3,6 +3,7 @@
 import { MaybeRef } from '@vueuse/core'
 import { Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useStorePaymentPriceCards } from '~/application/store/useHomePaymentStore'
 
 const { t } = useI18n()
 type TTariff = {
@@ -142,10 +143,15 @@ const selectCurrentCard = (idx: number, tariff: string) => {
   priceCards[idx].tariffs.find((t) => t.value === tariff)!.isActive = true
 }
 
+const storePaymentPriceCards = useStorePaymentPriceCards()
+
 // TODO: modal switcher
 const isOpen = ref(false)
 const openModal = () => (isOpen.value = true)
-const closeModal = () => (isOpen.value = false)
+const closeModal = () => {
+  isOpen.value = false
+  storePaymentPriceCards.$reset()
+}
 
 watch(
   isOpen,

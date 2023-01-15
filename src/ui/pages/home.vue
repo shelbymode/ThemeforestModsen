@@ -1,4 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ApiBlog } from '~/services/api/'
+
+async function loadData() {
+  const data = await ApiBlog.loadAllBlogs()
+}
+
+loadData()
+</script>
 
 <template>
   <TemplatePage>

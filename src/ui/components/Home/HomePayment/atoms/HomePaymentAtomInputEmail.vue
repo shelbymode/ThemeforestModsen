@@ -1,24 +1,17 @@
 <script setup lang="ts">
-import { usePaymentInputEmail } from '~/shared/composables/payment/usePaymentInputEmail'
+import { useStorePaymentPriceCards } from '~/application/store/useHomePaymentStore'
+import { usePaymentInputEmail } from '~/libs/formValidation/usePaymentInputEmail'
 
-const emit = defineEmits<{
-  (e: 'update-input-email-is-valid', value: boolean, email: string): void
-}>()
+const storePaymentPriceCards = useStorePaymentPriceCards()
 
 const { isFormValid, touch, getStatusValidation, paymentInputForm, paymentInfoInput } = usePaymentInputEmail()
 
 watch(
-  isFormValid,
+  () => paymentInputForm.email,
   (newValue) => {
-    emit('update-input-email-is-valid', newValue, paymentInputForm.email)
-  },
-  {
-    immediate: true,
+    storePaymentPriceCards.updateInputEmailValidStatus(isFormValid.value, newValue)
   }
 )
-watchEffect(() => {
-  emit('update-input-email-is-valid', isFormValid.value, paymentInputForm.email)
-})
 </script>
 
 <template>

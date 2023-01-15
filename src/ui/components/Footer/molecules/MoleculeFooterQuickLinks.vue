@@ -3,7 +3,6 @@ import AtomDropdown from '~/ui/components/V/atoms/dropdowns/AtomDropdown.vue'
 import MoleculeFooterWrapper from '~/ui/components/Footer/molecules/MoleculeFooterWrapper.vue'
 import { useChangeCase } from '@vueuse/integrations/useChangeCase'
 import { useI18n } from 'vue-i18n'
-import { toCapitalize } from '~/shared/utils/toCapitalize'
 import { ComputedRef } from 'vue'
 
 defineOptions({
@@ -28,7 +27,7 @@ const generatedLinksList: ComputedRef<TLink[]> = computed(() => {
   }))
 })
 
-const containerLinkComponent = useFoooterSwapComponent()
+const containerLinkComponent = useContainerLinkComponent()
 </script>
 
 <template>

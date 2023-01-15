@@ -1,0 +1,82 @@
+[
+  {
+    "checks": ["30-day free trial", "Limited access to features", "Limited storage"],
+    "title": "Free Trial",
+    "tariffs": [
+      {
+        "title": "Free",
+        "name": "Free",
+        "durationTime": "month",
+        "price": 0,
+        "currencyCode": "USD",
+        "isActive": true
+      }
+    ]
+  },
+  {
+    "checks": ["Unlimited access to features", "Limited storage", "Limited support"],
+    "title": "Lite",
+    "tariffs": [
+      {
+        "title": "Lite Monthly",
+        "name": "Lite Monthly",
+        "durationTime": "month",
+        "price": 9.99,
+        "currencyCode": "USD",
+        "isActive": true
+      },
+      {
+        "title": "Lite Yearly",
+        "name": "Lite Yearly",
+        "durationTime": "year",
+        "price": 99.99,
+        "currencyCode": "USD",
+        "isActive": false
+      }
+    ]
+  },
+  {
+    "checks": ["Unlimited access to features", "Unlimited storage", "Limited support"],
+    "title": "Basic",
+    "tariffs": [
+      {
+        "title": "Basic Monthly",
+        "name": "Basic Monthly",
+        "durationTime": "month",
+        "price": 19.99,
+        "currencyCode": "USD",
+        "isActive": true
+      },
+      {
+        "title": "Basic Yearly",
+        "name": "Basic Yearly",
+        "durationTime": "year",
+        "price": 199.99,
+        "currencyCode": "USD",
+        "isActive": false
+      }
+    ]
+  },
+  {
+    "checks": ["Unlimited access to features", "Unlimited storage", "Unlimited support", "Customizable features"],
+    "title": "Business",
+    "tariffs": [
+      {
+        "title": "Business Monthly",
+        "name": "Business Monthly",
+        "durationTime": "month",
+        "price": 49.99,
+        "currencyCode": "USD",
+        "isActive": true
+      },
+      {
+        "title": "Business Yearly",
+        "name": "Business Yearly",
+        "durationTime": "year",
+        "price": 499.99,
+        "currencyCode": "USD",
+        "isActive": false
+      }
+    ]
+  }
+]

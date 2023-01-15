@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { useSlider } from '~/shared/composables/slider/useSlider'
-import { getElement } from '~/shared/utils/getElement'
-import { getWidthElement } from '~/shared/utils/getWidthElement'
 
 type TDirection = 'left' | 'right'
 type TDirectionAvailable = 'enabled' | 'disabled'
@@ -59,8 +57,8 @@ const updateControlsStatus = (left: boolean, right: boolean) => {
 }
 
 const { unlockControls } = useSlider({
-  shiftedElement: () => getElement('.testimonials__content'),
-  widthShiftedArea: () => getWidthElement('.testimonials__card') + 2.5 * 16,
+  shiftedElement: () => getHTMLElement('.testimonials__content'),
+  widthShiftedArea: () => getWidthHTMLElement('.testimonials__card') + 2.5 * 16,
   directionSignal: computed(() => props.directionSignal),
   updateControlsStatus,
 })

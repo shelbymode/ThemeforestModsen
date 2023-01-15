@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { useSlider } from '~/shared/composables/slider/useSlider'
-import { getElement } from '~/shared/utils/getElement'
-import { getWidthElement } from '~/shared/utils/getWidthElement'
 import { IControlsStatus, TDirection } from '../../V/molecules/slider/MoleculeSliderHeader.vue'
 import { toCapitalizeEach } from '~/shared/utils/toCapitalizeEach'
 
@@ -24,8 +22,8 @@ const updateControlsStatus = (left: boolean, right: boolean) => {
   })
 }
 const { unlockControls } = useSlider({
-  shiftedElement: () => getElement('.blog__content'),
-  widthShiftedArea: () => getWidthElement('.home-our-blog__card') + 2.5 * 16,
+  shiftedElement: () => getHTMLElement('.blog__content'),
+  widthShiftedArea: () => getWidthHTMLElement('.home-our-blog__card') + 2.5 * 16,
   directionSignal: computed(() => props.directionSignal),
   updateControlsStatus,
 })
@@ -33,7 +31,6 @@ const { unlockControls } = useSlider({
 const { d } = useI18n()
 // const dateCard = d(new Date(), { dateStyle: 'short' })
 // const dateCard = d(new Date(), 'short')
-// console.log(dateCard)
 </script>
 
 <template>

@@ -47,7 +47,7 @@ const { beforeEnter, enter, beforeLeave, leave } = useSmoothHeight(1.2)
       @before-leave="beforeLeave"
       @leave="leave"
     >
-      <div v-show="isRevealed" class="dropdown__content" v-bind="$attrs">
+      <div v-if="isRevealed" class="dropdown__content" v-bind="$attrs">
         <slot />
       </div>
     </Transition>

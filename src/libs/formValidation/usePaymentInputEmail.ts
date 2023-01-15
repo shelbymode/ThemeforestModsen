@@ -1,7 +1,7 @@
 import { helpers, required, email, maxLength } from '@vuelidate/validators'
 import { MaybeRef } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
-import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
+import { useSchemaValidation } from '~/libs/formValidation/useSchemaValidation'
 
 export const usePaymentInputEmail = () => {
   const ruleEmail = computed(() => ({

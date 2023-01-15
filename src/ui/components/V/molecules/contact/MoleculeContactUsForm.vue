@@ -2,7 +2,8 @@
 import { required, email, minLength, maxLength, helpers, sameAs } from '@vuelidate/validators'
 import { MaybeRef } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
-import { useSchemaValidation } from '~/shared/libs/useSchemaValidation'
+import { useSchemaValidation } from '~/libs/formValidation/useSchemaValidation'
+import { IFormInfo } from '~/libs/formValidation/useValidationHelpers'
 import { IInputClasses } from '../../atoms/inputs/AtomInput.vue'
 
 const rulesForm = computed(() => ({
@@ -33,16 +34,9 @@ const form = reactive({ email: '', name: '', theme: '', message: '' })
 const { isFormValid, touch, getMessage, getIsDirty, getIsError, isDirtyAndError, getStatusValidation } =
   useSchemaValidation(rulesForm, form)
 
-interface IFormInfo {
-  id: string
-  label: MaybeRef<string>
-  placeholder: MaybeRef<string>
-  field: keyof typeof form
-  tag: 'input' | 'textarea'
-}
 const { t } = useI18n()
 
-const formInfoAll: IFormInfo[] = [
+const formInfoAll: IFormInfo<typeof form>[] = [
   {
     id: 'contact-name-id',
     label: computed(() => t(`common.name`)),

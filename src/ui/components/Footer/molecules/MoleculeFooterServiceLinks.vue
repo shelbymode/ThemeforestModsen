@@ -25,7 +25,7 @@ const generatedLinksList: ComputedRef<TLink[]> = computed(() => {
   }))
 })
 
-const containerLinkComponent = useFoooterSwapComponent()
+const containerLinkComponent = useContainerLinkComponent()
 </script>
 
 <template>

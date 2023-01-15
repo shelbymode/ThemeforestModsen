@@ -1,8 +1,10 @@
 <script setup lang="ts">
 const props = defineProps<{
-  email: string
-  transactionId: string
-  amountPaid: string
+  orderDetails: {
+    email: string
+    transactionId: string
+    amountPaid: string
+  }
 }>()
 </script>
 
@@ -20,7 +22,7 @@ const props = defineProps<{
         <span class="text-emerald-500">{{ $t(`common.email`) }}</span>
       </template>
       <template #name
-        ><span class="text-emerald-500">{{ props.email }}</span></template
+        ><span class="text-emerald-500">{{ props.orderDetails.email }}</span></template
       >
     </HomePaymentMoleculeBadge>
 
@@ -31,7 +33,7 @@ const props = defineProps<{
         </span></template
       >
       <template #name
-        ><span class="text-emerald-500">{{ props.transactionId }}</span></template
+        ><span class="text-emerald-500">{{ props.orderDetails.transactionId }}</span></template
       >
     </HomePaymentMoleculeBadge>
 
@@ -42,7 +44,7 @@ const props = defineProps<{
         </span></template
       >
       <template #name
-        ><span class="text-emerald-500">{{ props.amountPaid }}</span></template
+        ><span class="text-emerald-500">{{ props.orderDetails.amountPaid }}</span></template
       >
     </HomePaymentMoleculeBadge>
 

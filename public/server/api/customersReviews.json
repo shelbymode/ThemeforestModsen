@@ -1,0 +1,44 @@
+[
+  {
+    "name": "John Doe",
+    "position": "CEO at XYZ Company",
+    "review": "I have been using this product for the past year and it has greatly improved our workflow. The team is responsive and always willing to help.",
+    "imgPreview": "https://example.com/img1.jpg"
+  },
+  {
+    "name": "Jane Smith",
+    "position": "COO at ABC Corporation",
+    "review": "We have been very pleased with the service and the support we have received. The team is knowledgeable and always willing to help.",
+    "imgPreview": "https://example.com/img2.jpg"
+  },
+  {
+    "name": "Bob Johnson",
+    "position": "CTO at LMNOP Inc.",
+    "review": "The product is reliable and easy to use. The team is responsive and helpful. I highly recommend it.",
+    "imgPreview": "https://example.com/img3.jpg"
+  },
+  {
+    "name": "Sara Lee",
+    "position": "CFO at DEF Group",
+    "review": "The product is great and the team is always willing to help. I highly recommend it.",
+    "imgPreview": "https://example.com/img4.jpg"
+  },
+  {
+    "name": "Mike Brown",
+    "position": "CIO at GHI LLC",
+    "review": "The product is very good. The team is always willing to help with any issues we have.",
+    "imgPreview": "https://example.com/img5.jpg"
+  },
+  {
+    "name": "Emily Davis",
+    "position": "CMO at JKL Company",
+    "review": "The product is very good. The team is always willing to help with any issues we have. The customer service is great",
+    "imgPreview": "https://example.com/img6.jpg"
+  },
+  {
+    "name": "David Miller",
+    "position": "CPO at MNO Inc.",
+    "review": "The product is very good. The team is always willing to help with any issues we have. The customer service is great",
+    "imgPreview": "https://example.com/img7.jpg"
+  }
+]
