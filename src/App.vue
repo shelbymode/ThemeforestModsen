@@ -6,7 +6,7 @@
   </router-view>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 [v-cloak] {
   display: none !important;
 }

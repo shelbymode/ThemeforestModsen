@@ -1,4 +1,5 @@
 import Home from '~/ui/pages/home.vue'
+import { RouteNames } from './shared/constants/routes.constant'
 
 export const routes = [
   {
@@ -9,44 +10,39 @@ export const routes = [
     children: [
       {
         path: 'home',
-        name: 'Home',
+        name: RouteNames.HOME,
         component: Home,
       },
       {
         path: 'services',
-        name: 'Services',
+        name: RouteNames.SERVICES,
         component: () => import('~/ui/pages/services.vue'),
       },
       {
         path: 'about',
-        name: 'About',
+        name: RouteNames.ABOUT,
         component: () => import('~/ui/pages/about.vue'),
       },
       {
-        path: 'blog',
-        name: 'Blog',
-        component: () => import('~/ui/pages/blog/index.vue'),
-      },
-      {
-        path: 'blog',
-        name: 'Blog',
+        path: 'blogs',
+        name: RouteNames.BLOGS,
         component: () => import('~/ui/pages/blog/index.vue'),
       },
       {
         path: 'blog/:id',
-        name: 'CurrentBlog',
+        name: RouteNames.BLOG_ID,
         component: () => import('~/ui/pages/blog/[id].vue'),
         props: true,
       },
       {
         path: 'contacts',
-        name: 'Contact',
+        name: RouteNames.CONTACTS,
         component: () => import('~/ui/pages/contacts.vue'),
         props: true,
       },
       {
         path: ':catchAll(.*)',
-        name: 'NotFound',
+        name: RouteNames.NOT_FOUND,
         redirect: {
           name: 'Home',
         },
