@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { priceCardsPaypalUC } from '~/application/usecases/PriceCardsPaypalUC'
-import { cutCurrencyCodeFromPrice } from '~/shared/utils/cutCurrencyCodeFromPrice'
 
 const props = defineProps<{
   isLocked: boolean

@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import { useI18n } from 'vue-i18n'
-import { toCapitalize } from '~/shared/utils/toCapitalize'
 
 const router = useRouter()
 

@@ -10,9 +10,9 @@ import 'uno.css'
 import '../assets/styles/variables.scss'
 import '../assets/styles/global.scss'
 import { routes } from './routes'
-import { useLocale } from './libs/i18n/useLocales'
 import { TLocale } from './shared/constants/i18n.constants'
 import { GlobalConstants } from './shared/constants/global.constant'
+import { useLocale } from './shared/libs/i18n/useLocales'
 
 const { i18n, setCurrentLocale } = useLocale()
 

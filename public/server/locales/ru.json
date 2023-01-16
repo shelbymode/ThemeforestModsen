@@ -3,7 +3,7 @@
     "home": "Домашняя",
     "services": "Сервисы",
     "about": "О нас",
-    "blog": "Блог",
+    "blogs": "Блоги",
     "contacts": "Контакты",
     "solutions": "Решения",
     "ourTeam": "Наша команда",
@@ -50,7 +50,7 @@
       "home": "Домой",
       "services": "Сервисы",
       "about": "О нас",
-      "blog": "Блог",
+      "blogs": "Блоги",
       "contacts": "Контакты"
     },
     "projectExecuted": "Выполненных проектов",

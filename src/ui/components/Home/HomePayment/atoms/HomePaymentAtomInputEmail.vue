@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useStorePaymentPriceCards } from '~/application/store/useHomePaymentStore'
-import { usePaymentInputEmail } from '~/libs/formValidation/usePaymentInputEmail'
+import { usePaymentInputEmail } from '~/shared/libs/formValidation/usePaymentInputEmail'
 
 const storePaymentPriceCards = useStorePaymentPriceCards()
 

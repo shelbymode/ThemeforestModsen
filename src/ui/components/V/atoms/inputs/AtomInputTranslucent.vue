@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { MaybeRef, useVModel } from '@vueuse/core'
-import { u } from '~/shared/utils/u'
 
 export interface IInputClasses {
   inactiveClasses?: string

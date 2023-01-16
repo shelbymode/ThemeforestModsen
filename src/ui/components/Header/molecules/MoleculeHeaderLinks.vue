@@ -2,9 +2,8 @@
 import { useChangeCase } from '@vueuse/integrations/useChangeCase'
 import { ComputedRef, Ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { toCapitalize } from '~/shared/utils/toCapitalize'
 
-const linksList = ['home', 'services', 'about', 'blog', 'contacts']
+const linksList = ['home', 'services', 'about', 'blogs', 'contacts']
 interface TLink {
   name: string
   link: string

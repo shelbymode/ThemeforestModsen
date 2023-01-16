@@ -12,7 +12,7 @@ defineOptions({
   },
 })
 
-const linksList = ['home', 'blog', 'contacts', 'ourTeam', 'about', 'services', 'FAQ']
+const linksList = ['home', 'blogs', 'contacts', 'ourTeam', 'about', 'services', 'FAQ']
 
 interface TLink {
   name: string

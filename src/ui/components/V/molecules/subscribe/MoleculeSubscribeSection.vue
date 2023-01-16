@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { helpers, required, email } from '@vuelidate/validators'
-import { ComputedRef } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useSchemaValidation } from '~/libs/formValidation/useSchemaValidation'
+import { useSchemaValidation } from '~/shared/libs/formValidation/useSchemaValidation'
 
 const { t } = useI18n()
 const rulesEmail = computed(() => ({

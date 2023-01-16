@@ -1,4 +1,4 @@
-import { usePaypalPayment } from '~/services/paypalAdapter'
+import { usePaypalPayment } from '~/services/adapters/paypalAdapter'
 import { TPaymentData } from '../ports'
 import { useStorePaymentPriceCards } from '../store/useHomePaymentStore'
 

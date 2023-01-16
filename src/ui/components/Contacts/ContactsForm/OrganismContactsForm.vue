@@ -2,9 +2,8 @@
 import { required, email, minLength, maxLength, helpers, sameAs } from '@vuelidate/validators'
 import { MaybeRef } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
-import { useSchemaValidation } from '~/libs/formValidation/useSchemaValidation'
-import { IFormInfo } from '~/libs/formValidation/useValidationHelpers'
-import { paintHTMLWords } from '~/shared/utils/paintHTMLWords'
+import { useSchemaValidation } from '~/shared/libs/formValidation/useSchemaValidation'
+import { IFormInfo } from '~/shared/libs/formValidation/useValidationHelpers'
 
 const rulesForm = computed(() => ({
   email: {

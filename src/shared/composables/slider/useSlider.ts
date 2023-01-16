@@ -8,7 +8,7 @@
  */
 import { ComputedRef } from 'vue'
 import { TDirection } from '~/ui/components/V/molecules/slider/MoleculeSliderHeader.vue'
-import { translateXElement } from '../../utils/translateXElement'
+import { translateXElement } from '../../utils/DOM/translateXElement'
 
 export const useSlider = ({
   shiftedElement,

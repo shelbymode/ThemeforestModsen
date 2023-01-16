@@ -2,7 +2,6 @@
 import { useI18n } from 'vue-i18n'
 import { useSlider } from '~/shared/composables/slider/useSlider'
 import { IControlsStatus, TDirection } from '../../V/molecules/slider/MoleculeSliderHeader.vue'
-import { toCapitalizeEach } from '~/shared/utils/toCapitalizeEach'
 
 const TOTAL_SLIDE_AMOUNT = 6
 const isMdScreen = useMediaQuery(`(min-width: 768px)`)

@@ -26,7 +26,7 @@ declare global {
   const createSharedComposable: typeof import('@vueuse/core')['createSharedComposable']
   const createUnrefFn: typeof import('@vueuse/core')['createUnrefFn']
   const customRef: typeof import('vue')['customRef']
-  const cutCurrencyCodeFromPrice: typeof import('./src/shared/utils/cutCurrencyCodeFromPrice')['cutCurrencyCodeFromPrice']
+  const cutCurrencyCodeFromPrice: typeof import('./src/shared/utils/formatters/cutCurrencyCodeFromPrice')['cutCurrencyCodeFromPrice']
   const debouncedRef: typeof import('@vueuse/core')['debouncedRef']
   const debouncedWatch: typeof import('@vueuse/core')['debouncedWatch']
   const defineAsyncComponent: typeof import('vue')['defineAsyncComponent']
@@ -36,10 +36,10 @@ declare global {
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
-  const getHTMLElement: typeof import('./src/shared/utils/getHTMLElement')['getHTMLElement']
+  const getHTMLElement: typeof import('./src/shared/utils/DOM/getHTMLElement')['getHTMLElement']
   const getLocaleFromLanguageNavigator: typeof import('./src/shared/utils/localeHelpers')['getLocaleFromLanguageNavigator']
-  const getTranslateX: typeof import('./src/shared/utils/getTranslateX')['getTranslateX']
-  const getWidthHTMLElement: typeof import('./src/shared/utils/getWidthHTMLElement')['getWidthHTMLElement']
+  const getTranslateX: typeof import('./src/shared/utils/DOM/getTranslateX')['getTranslateX']
+  const getWidthHTMLElement: typeof import('./src/shared/utils/DOM/getWidthHTMLElement')['getWidthHTMLElement']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
@@ -73,7 +73,7 @@ declare global {
   const onStartTyping: typeof import('@vueuse/core')['onStartTyping']
   const onUnmounted: typeof import('vue')['onUnmounted']
   const onUpdated: typeof import('vue')['onUpdated']
-  const paintHTMLWords: typeof import('./src/shared/utils/paintHTMLWords')['paintHTMLWords']
+  const paintHTMLWords: typeof import('./src/shared/utils/DOM/paintHTMLWords')['paintHTMLWords']
   const pausableWatch: typeof import('@vueuse/core')['pausableWatch']
   const provide: typeof import('vue')['provide']
   const reactify: typeof import('@vueuse/core')['reactify']
@@ -105,21 +105,21 @@ declare global {
   const templateRef: typeof import('@vueuse/core')['templateRef']
   const throttledRef: typeof import('@vueuse/core')['throttledRef']
   const throttledWatch: typeof import('@vueuse/core')['throttledWatch']
-  const toCapitalize: typeof import('./src/shared/utils/toCapitalize')['toCapitalize']
-  const toCapitalizeEach: typeof import('./src/shared/utils/toCapitalizeEach')['toCapitalizeEach']
+  const toCapitalize: typeof import('./src/shared/utils/formatters/toCapitalize')['toCapitalize']
+  const toCapitalizeEach: typeof import('./src/shared/utils/formatters/toCapitalizeEach')['toCapitalizeEach']
   const toRaw: typeof import('vue')['toRaw']
   const toReactive: typeof import('@vueuse/core')['toReactive']
   const toRef: typeof import('vue')['toRef']
   const toRefs: typeof import('vue')['toRefs']
   const toggleDark: typeof import('./src/shared/composables/dark')['toggleDark']
-  const translateXElement: typeof import('./src/shared/utils/translateXElement')['translateXElement']
+  const translateXElement: typeof import('./src/shared/utils/DOM/translateXElement')['translateXElement']
   const triggerRef: typeof import('vue')['triggerRef']
   const tryOnBeforeMount: typeof import('@vueuse/core')['tryOnBeforeMount']
   const tryOnBeforeUnmount: typeof import('@vueuse/core')['tryOnBeforeUnmount']
   const tryOnMounted: typeof import('@vueuse/core')['tryOnMounted']
   const tryOnScopeDispose: typeof import('@vueuse/core')['tryOnScopeDispose']
   const tryOnUnmounted: typeof import('@vueuse/core')['tryOnUnmounted']
-  const u: typeof import('./src/shared/utils/u')['u']
+  const u: typeof import('./src/shared/utils/formatters/u')['u']
   const unref: typeof import('vue')['unref']
   const unrefElement: typeof import('@vueuse/core')['unrefElement']
   const until: typeof import('@vueuse/core')['until']
@@ -185,6 +185,7 @@ declare global {
   const useFullscreen: typeof import('@vueuse/core')['useFullscreen']
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
   const useGeolocation: typeof import('@vueuse/core')['useGeolocation']
+  const useHamburger: typeof import('./src/shared/composables/header/useHamburger')['useHamburger']
   const useIdle: typeof import('@vueuse/core')['useIdle']
   const useImage: typeof import('@vueuse/core')['useImage']
   const useInfiniteScroll: typeof import('@vueuse/core')['useInfiniteScroll']
@@ -324,7 +325,7 @@ declare module 'vue' {
     readonly createSharedComposable: UnwrapRef<typeof import('@vueuse/core')['createSharedComposable']>
     readonly createUnrefFn: UnwrapRef<typeof import('@vueuse/core')['createUnrefFn']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
-    readonly cutCurrencyCodeFromPrice: UnwrapRef<typeof import('./src/shared/utils/cutCurrencyCodeFromPrice')['cutCurrencyCodeFromPrice']>
+    readonly cutCurrencyCodeFromPrice: UnwrapRef<typeof import('./src/shared/utils/formatters/cutCurrencyCodeFromPrice')['cutCurrencyCodeFromPrice']>
     readonly debouncedRef: UnwrapRef<typeof import('@vueuse/core')['debouncedRef']>
     readonly debouncedWatch: UnwrapRef<typeof import('@vueuse/core')['debouncedWatch']>
     readonly defineAsyncComponent: UnwrapRef<typeof import('vue')['defineAsyncComponent']>
@@ -334,10 +335,10 @@ declare module 'vue' {
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
-    readonly getHTMLElement: UnwrapRef<typeof import('./src/shared/utils/getHTMLElement')['getHTMLElement']>
+    readonly getHTMLElement: UnwrapRef<typeof import('./src/shared/utils/DOM/getHTMLElement')['getHTMLElement']>
     readonly getLocaleFromLanguageNavigator: UnwrapRef<typeof import('./src/shared/utils/localeHelpers')['getLocaleFromLanguageNavigator']>
-    readonly getTranslateX: UnwrapRef<typeof import('./src/shared/utils/getTranslateX')['getTranslateX']>
-    readonly getWidthHTMLElement: UnwrapRef<typeof import('./src/shared/utils/getWidthHTMLElement')['getWidthHTMLElement']>
+    readonly getTranslateX: UnwrapRef<typeof import('./src/shared/utils/DOM/getTranslateX')['getTranslateX']>
+    readonly getWidthHTMLElement: UnwrapRef<typeof import('./src/shared/utils/DOM/getWidthHTMLElement')['getWidthHTMLElement']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -371,7 +372,7 @@ declare module 'vue' {
     readonly onStartTyping: UnwrapRef<typeof import('@vueuse/core')['onStartTyping']>
     readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
     readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
-    readonly paintHTMLWords: UnwrapRef<typeof import('./src/shared/utils/paintHTMLWords')['paintHTMLWords']>
+    readonly paintHTMLWords: UnwrapRef<typeof import('./src/shared/utils/DOM/paintHTMLWords')['paintHTMLWords']>
     readonly pausableWatch: UnwrapRef<typeof import('@vueuse/core')['pausableWatch']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly reactify: UnwrapRef<typeof import('@vueuse/core')['reactify']>
@@ -403,21 +404,21 @@ declare module 'vue' {
     readonly templateRef: UnwrapRef<typeof import('@vueuse/core')['templateRef']>
     readonly throttledRef: UnwrapRef<typeof import('@vueuse/core')['throttledRef']>
     readonly throttledWatch: UnwrapRef<typeof import('@vueuse/core')['throttledWatch']>
-    readonly toCapitalize: UnwrapRef<typeof import('./src/shared/utils/toCapitalize')['toCapitalize']>
-    readonly toCapitalizeEach: UnwrapRef<typeof import('./src/shared/utils/toCapitalizeEach')['toCapitalizeEach']>
+    readonly toCapitalize: UnwrapRef<typeof import('./src/shared/utils/formatters/toCapitalize')['toCapitalize']>
+    readonly toCapitalizeEach: UnwrapRef<typeof import('./src/shared/utils/formatters/toCapitalizeEach')['toCapitalizeEach']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toReactive: UnwrapRef<typeof import('@vueuse/core')['toReactive']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
     readonly toggleDark: UnwrapRef<typeof import('./src/shared/composables/dark')['toggleDark']>
-    readonly translateXElement: UnwrapRef<typeof import('./src/shared/utils/translateXElement')['translateXElement']>
+    readonly translateXElement: UnwrapRef<typeof import('./src/shared/utils/DOM/translateXElement')['translateXElement']>
     readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
     readonly tryOnBeforeMount: UnwrapRef<typeof import('@vueuse/core')['tryOnBeforeMount']>
     readonly tryOnBeforeUnmount: UnwrapRef<typeof import('@vueuse/core')['tryOnBeforeUnmount']>
     readonly tryOnMounted: UnwrapRef<typeof import('@vueuse/core')['tryOnMounted']>
     readonly tryOnScopeDispose: UnwrapRef<typeof import('@vueuse/core')['tryOnScopeDispose']>
     readonly tryOnUnmounted: UnwrapRef<typeof import('@vueuse/core')['tryOnUnmounted']>
-    readonly u: UnwrapRef<typeof import('./src/shared/utils/u')['u']>
+    readonly u: UnwrapRef<typeof import('./src/shared/utils/formatters/u')['u']>
     readonly unref: UnwrapRef<typeof import('vue')['unref']>
     readonly unrefElement: UnwrapRef<typeof import('@vueuse/core')['unrefElement']>
     readonly until: UnwrapRef<typeof import('@vueuse/core')['until']>
@@ -483,6 +484,7 @@ declare module 'vue' {
     readonly useFullscreen: UnwrapRef<typeof import('@vueuse/core')['useFullscreen']>
     readonly useGamepad: UnwrapRef<typeof import('@vueuse/core')['useGamepad']>
     readonly useGeolocation: UnwrapRef<typeof import('@vueuse/core')['useGeolocation']>
+    readonly useHamburger: UnwrapRef<typeof import('./src/shared/composables/header/useHamburger')['useHamburger']>
     readonly useIdle: UnwrapRef<typeof import('@vueuse/core')['useIdle']>
     readonly useImage: UnwrapRef<typeof import('@vueuse/core')['useImage']>
     readonly useInfiniteScroll: UnwrapRef<typeof import('@vueuse/core')['useInfiniteScroll']>

@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { required, email, minLength, maxLength, helpers, sameAs } from '@vuelidate/validators'
-import { MaybeRef } from '@vueuse/core'
 import { useI18n } from 'vue-i18n'
-import { useSchemaValidation } from '~/libs/formValidation/useSchemaValidation'
-import { IFormInfo } from '~/libs/formValidation/useValidationHelpers'
+import { useSchemaValidation } from '~/shared/libs/formValidation/useSchemaValidation'
+import { IFormInfo } from '~/shared/libs/formValidation/useValidationHelpers'
 import { IInputClasses } from '../../atoms/inputs/AtomInput.vue'
 
 const rulesForm = computed(() => ({

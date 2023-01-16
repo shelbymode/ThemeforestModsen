@@ -6,16 +6,7 @@ import {
   numberFormats,
   supported_locales,
   TLocale,
-} from '../../shared/constants/i18n.constants'
-import {
-  useLastLocaleLS,
-  setPrefferableLocale,
-  setLastLocaleLS,
-  removeLocaleParam,
-  localeIsSupported,
-  loadLocale,
-  redirectToDefaultLocale,
-} from '../../shared/utils/localeHelpers'
+} from '~/shared/constants/i18n.constants'
 
 export const useLocale = () => {
   const i18n = createI18n({
