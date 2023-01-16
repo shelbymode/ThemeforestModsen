@@ -1,6 +1,7 @@
 import axios from 'axios'
+import { GlobalConstants } from '~/shared/constants/global.constant'
 
-const baseURL = import.meta.env.VITE_APP_BASE_DEV_API_URL as string
+const baseURL = GlobalConstants.BASE_URL
 
 export const axiosInstance = axios.create({
   baseURL: baseURL ? baseURL : 'http://localhost:4000',

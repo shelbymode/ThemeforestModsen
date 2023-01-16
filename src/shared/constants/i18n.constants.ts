@@ -1,5 +1,7 @@
-export const supported_locales: string[] = import.meta.env.VITE_APP_I18N_SUPPORTED_LOCALE?.split(',') || ['en', 'ru']
-export const default_locale: string = import.meta.env.VITE_APP_I18N_LOCALE || 'en'
+import { GlobalConstants } from './global.constant'
+
+export const supported_locales: string[] = GlobalConstants.I18N_SUPPORTED_LOCALES?.split(',') || ['en', 'ru']
+export const default_locale: string = GlobalConstants.I18N_DEFAILT_LOCALE || 'en'
 export type TLocale = 'en' | 'ru'
 
 export const dateTimeFormats = {

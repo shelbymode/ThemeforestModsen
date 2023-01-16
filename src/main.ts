@@ -12,13 +12,14 @@ import '../assets/styles/global.scss'
 import { routes } from './routes'
 import { useLocale } from './libs/i18n/useLocales'
 import { TLocale } from './shared/constants/i18n.constants'
+import { GlobalConstants } from './shared/constants/global.constant'
 
 const { i18n, setCurrentLocale } = useLocale()
 
 const app = createApp(App)
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(GlobalConstants.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
     /* if (removeLocaleParam(from.path) === removeLocaleParam(to.path)) {

@@ -10,8 +10,7 @@ import {
 } from '@paypal/paypal-js'
 import { Ref } from 'vue'
 import { IPaymentService, TPaymentData } from '~/application/ports'
-
-const PAYPAL_CLIENT_ID = import.meta.env.VITE_APP_PAYPAL_CLIENT_ID as string
+import { GlobalConstants } from '~/shared/constants/global.constant'
 
 interface IPaypalService {
   purchaseUnits?: PurchaseUnit
@@ -104,5 +103,5 @@ export class PaypalService implements IPaymentService, IPaypalService {
 }
 
 export function usePaypalPayment() {
-  return new PaypalService(PAYPAL_CLIENT_ID)
+  return new PaypalService(GlobalConstants.PAYPAL_CLIENT_ID)
 }
