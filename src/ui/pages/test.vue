@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { required, email, minLength, helpers, sameAs } from '@vuelidate/validators'
-import { useSchemaValidation } from '~/shared/libs/formValidation/useSchemaValidation'
 import { IInputClasses } from '../components/V/atoms/inputs/AtomInput.vue'
 
 const rulesEmail = computed(() => ({

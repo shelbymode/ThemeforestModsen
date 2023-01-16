@@ -1,7 +1,7 @@
 # Shared cross the project functionality & data
 
 ```typescript
-/composables - `reusable (logic + state/DOM) across application`
+/composables - `reusable/global (logic + state/DOM) across application`
 ```
 
 ```typescript
@@ -18,8 +18,4 @@
 
 ```typescript
 /utils - `things like calculating, formatters etc`
-```
-
-```typescript
-/libs - `similiar to /utils but based on external dependencies`
 ```

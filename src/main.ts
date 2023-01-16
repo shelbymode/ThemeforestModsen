@@ -12,7 +12,7 @@ import '../assets/styles/global.scss'
 import { routes } from './routes'
 import { TLocale } from './shared/constants/i18n.constants'
 import { GlobalConstants } from './shared/constants/global.constant'
-import { useLocale } from './shared/libs/i18n/useLocales'
+import { useLocale } from './shared/composables/i18n/useLocales'
 
 const { i18n, setCurrentLocale } = useLocale()
 
