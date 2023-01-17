@@ -10,13 +10,15 @@ export class _ApiBlog {
   apiConfig!: AxiosInstance
   loadAllBlogs!: TNetworkRequest<IBlogDTO[]>
 
-  constructor(apiConfig: AxiosInstance) {
+  constructor(apiConfig: AxiosInstance, sleepMs?: number) {
     if (!_ApiBlog.singletoneInstance) {
       this.apiConfig = apiConfig
+
       this.loadAllBlogs = useVFetch<IBlogDTO[]>({
         url: '/server/api/blogs.json',
         method: 'get',
         apiConfig,
+        sleepMs,
       })
 
       _ApiBlog.singletoneInstance = this
@@ -26,4 +28,4 @@ export class _ApiBlog {
   }
 }
 
-export const ApiBlog = new _ApiBlog(axiosInstance)
+export const ApiBlog = new _ApiBlog(axiosInstance, 2000)

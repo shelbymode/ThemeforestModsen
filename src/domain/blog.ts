@@ -1,11 +1,13 @@
-type TBlogCategory =
+export type TBlogId = string
+
+export type TBlogCategory =
   | `Software development`
   | 'Information Security'
   | 'Internet of things'
   | 'Digital Transformation'
   | 'Healthcate IT'
 
-type TBlogTag =
+export type TBlogTag =
   | 'App'
   | 'Management'
   | 'CMR'

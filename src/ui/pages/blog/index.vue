@@ -1,8 +1,19 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { useBlogsStore } from '~/application/store/useBlogsStore'
 
 const { locale } = useI18n()
 const route = useRoute()
+
+async function load() {
+  const blogsStore = useBlogsStore()
+
+  console.log('start...')
+  const data = await blogsStore.loadAllBlogs()
+  console.log('loaded...', data)
+}
+
+load()
 </script>
 
 <template>
