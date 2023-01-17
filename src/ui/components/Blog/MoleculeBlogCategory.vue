@@ -1,15 +1,25 @@
-<script setup>
-import { ref } from 'vue'
+<script lang="ts" setup>
 import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from '@headlessui/vue'
 
-const people = [
-  { id: 1, name: 'Durward Reynolds', unavailable: false },
-  { id: 2, name: 'Kenton Towne', unavailable: false },
-  { id: 3, name: 'Therese Wunsch', unavailable: false },
-  { id: 4, name: 'Benedict Kesser', unavailable: false },
-  { id: 5, name: 'Katelyn Rohan', unavailable: false },
-]
-const selectedPerson = ref(people[0])
+const props = defineProps<{
+  selectedBlogCategory: string
+  updateCategory: (newCategory: string) => void
+  blogsCategories: string[]
+}>()
+
+const blogsCategories = computed(() =>
+  props.blogsCategories.map((blogCategory, idx) => ({
+    id: idx,
+    name: blogCategory,
+    unavailable: false,
+  }))
+)
+
+const selectedBlogCategoryLocal = ref(props.selectedBlogCategory)
+
+watch(selectedBlogCategoryLocal, (newSelectedBlogCategoryLocal) => {
+  props.updateCategory(newSelectedBlogCategoryLocal)
+})
 </script>
 
 <template>
@@ -18,10 +28,10 @@ const selectedPerson = ref(people[0])
       {{ $t(`blogs.chooseCategoryBlog`) }}
     </AtomMiddleTitle>
 
-    <Listbox v-model="selectedPerson">
-      <div class="blog-category-listbox w-full">
+    <Listbox v-model="selectedBlogCategoryLocal">
+      <div class="blog-category-listbox w-full z-1">
         <ListboxButton class="blog-category-listbox__button">
-          {{ selectedPerson.name }}
+          {{ props.selectedBlogCategory }}
           <span class="i-ic-baseline-unfold-more text-3xl ml-10"> </span>
         </ListboxButton>
 
@@ -32,14 +42,16 @@ const selectedPerson = ref(people[0])
         >
           <ListboxOptions class="blog-category-listbox__options">
             <ListboxOption
-              v-for="person in people"
+              v-for="blogCategory in blogsCategories"
               v-slot="{ active, selected }"
-              :key="person.name"
-              :value="person"
+              :key="blogCategory.name"
+              :value="blogCategory.name"
               as="template"
             >
               <li :class="[active ? 'bg-amber-100 text-amber-900' : 'text-gray-900', 'blog-category-listbox__option ']">
-                <span :class="[selected ? 'font-medium' : 'font-normal', 'block truncate']">{{ person.name }}</span>
+                <span :class="[selected ? 'font-medium' : 'font-normal', 'block truncate']">{{
+                  blogCategory.name
+                }}</span>
                 <span v-if="selected" class="blog-category-listbox__icon-wrapper">
                   <span class="i-carbon-checkmark text-4xl h-5 w-5" aria-hidden="true" />
                 </span>

@@ -1,69 +1,97 @@
-<script setup lang="ts">
-import { required, email, minLength, helpers, sameAs } from '@vuelidate/validators'
-import { IInputClasses } from '../components/V/atoms/inputs/AtomInput.vue'
+<script setup>
+import { ref } from 'vue'
+import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from '@headlessui/vue'
 
-const rulesEmail = computed(() => ({
-  email: {
-    required: helpers.withMessage('Input an email, please', required),
-    email: helpers.withMessage("It doesn't look as email", email),
-  },
-}))
-
-const form = reactive({ email: '' })
-
-const { isFormValid, touch, getMessage, getIsDirty, getIsError, isDirtyAndError, getStatusValidation } =
-  useSchemaValidation(rulesEmail, form)
-
-const customClasses: IInputClasses = {
-  inactiveClasses: 'bg-tertiary',
-  errorClasses: 'bg-[#F6E2E2] text-cRed',
-  successClasses: 'bg-emerald-100/30 text-emerald-900',
-  errorLabelClasses: 'text-cRed',
-}
+const people = [
+  { id: 1, name: 'Durward Reynolds', unavailable: false },
+  { id: 2, name: 'Kenton Towne', unavailable: false },
+  { id: 3, name: 'Therese Wunsch', unavailable: false },
+  { id: 4, name: 'Benedict Kesser', unavailable: false },
+  { id: 5, name: 'Katelyn Rohan', unavailable: false },
+]
+const selectedPerson = ref(people[0])
 </script>
 
 <template>
-  <main class="w-full min-h-screen h-full mx-auto bg-neutral-300 flex flex-col items-center justify-center">
-    <button bg-red-500 text-dark-500 px-5 py-2 rounded-xl @click="toggleDark()">
-      Toggle theme - right know [{{ isDark === true ? 'dark' : 'light' }}]
-    </button>
+  <div class="blog-category">
+    <AtomMiddleTitle class="blog-category__title">
+      {{ $t(`blogs.chooseCategoryBlog`) }}
+    </AtomMiddleTitle>
 
-    <div flex items-center flex-wrap bg-light-800 p-10 gap-10 class="w-full">
-      <p>{{ isFormValid }}</p>
-      <p>{{ getMessage('email') }}</p>
-      <p>{{ isDirtyAndError('email') }}</p>
-      <p>{{ getStatusValidation('email') }}</p>
+    <Listbox v-model="selectedPerson">
+      <div class="blog-category-listbox w-full">
+        <ListboxButton class="blog-category-listbox__button">
+          {{ selectedPerson.name }}
+          <span class="i-ic-baseline-unfold-more text-3xl ml-10"> </span>
+        </ListboxButton>
 
-      <p text-white>isError {{ getIsError('email') }}</p>
-      <p text-white>isDirty {{ getIsDirty('email') }}</p>
-      <p text-red>{{ getIsError('email') && !getIsDirty('email') }}</p>
-
-      {{ form }}
-      <AtomInputTranslucent
-        id="email_id"
-        v-model="form.email"
-        v-bind="customClasses"
-        label="Email"
-        placeholder="Email"
-        type="text"
-        :status-validation="getStatusValidation('email')"
-        @input="touch('email')"
-      />
-
-      <AtomDropdown
-        title="What are data analytics?"
-        content="Phasellus tristique eu nisl eu consectetur. Morbi urna massa,
-        imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor
-        orci. Sed quis lobortis eros."
-        title-inactive-classes="text-black"
-        title-active-classes="text-primary"
-      />
-
-      <MoleculeSection />
-
-      <TemplateTilt w-150></TemplateTilt>
-    </div>
-  </main>
+        <transition
+          leave-active-class="transition-all duration-200 ease-in"
+          leave-from-class="opacity-100"
+          leave-to-class="opacity-0"
+        >
+          <ListboxOptions class="blog-category-listbox__options">
+            <ListboxOption
+              v-for="person in people"
+              v-slot="{ active, selected }"
+              :key="person.name"
+              :value="person"
+              as="template"
+            >
+              <li :class="[active ? 'bg-amber-100 text-amber-900' : 'text-gray-900', 'blog-category-listbox__option ']">
+                <span :class="[selected ? 'font-medium' : 'font-normal', 'block truncate']">{{ person.name }}</span>
+                <span v-if="selected" class="blog-category-listbox__icon-wrapper">
+                  <span class="i-carbon-checkmark text-4xl h-5 w-5" aria-hidden="true" />
+                </span>
+              </li>
+            </ListboxOption>
+          </ListboxOptions>
+        </transition>
+      </div>
+    </Listbox>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.blog-category {
+  @apply flex flex-col items-start gap-y-9 w-full px-6;
+  @apply sm:px-12;
+  @apply md:(w-fit);
+  @apply 2xl:(px-0);
+
+  // .blog-category__title
+
+  &__title {
+    @apply text-center w-full;
+    @apply md:(text-left);
+  }
+}
+
+.blog-category-listbox {
+  @apply relative mt-1 w-full;
+  // .blog-category-listbox__button
+
+  &__button {
+    @apply flex w-full text-black justify-between items-center relative rounded-lg pr-2 text-xl bg-white py-5 px-10 text-left shadow-md;
+    @apply focus:outline-none focus-visible:(border-indigo-500 ring-2 ring-white ring-opacity-75 ring-offset-2 ring-offset-orange-300 sm:text-sm);
+  }
+
+  // .blog-category-listbox__options
+
+  &__options {
+    @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+  }
+
+  // .blog-category-listbox__option
+
+  &__option {
+    @apply relative cursor-default select-none py-4 pl-10 pr-4 text-base;
+  }
+
+  // .blog-category-listbox__icon-wrapper
+
+  &__icon-wrapper {
+    @apply absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600;
+  }
+}
+</style>
