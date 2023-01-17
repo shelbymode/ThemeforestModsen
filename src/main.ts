@@ -13,7 +13,7 @@ import { routes } from './routes'
 import { TLocale } from './shared/constants/i18n.constants'
 import { GlobalConstants } from './shared/constants/global.constant'
 import { useLocale } from './shared/composables/i18n/useLocales'
-import { vTilt } from './shared/directive/vTilt'
+import { vTilt } from './shared/directives/vTilt'
 
 const { i18n, setCurrentLocale } = useLocale()
 

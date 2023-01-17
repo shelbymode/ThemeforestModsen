@@ -9,8 +9,17 @@ export const vTilt = {
       return isOutside.value ? '' : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`
     })
 
-    watchEffect(() => {
-      el.style.transform = cardTransform.value
+    let animationFrameId: number | null = null
+
+    watch(cardTransform, (newCardTransform) => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId)
+      }
+
+      animationFrameId = requestAnimationFrame(() => {
+        el.style.transform = newCardTransform
+        animationFrameId = null
+      })
     })
 
     el.style.transition = 'transform 0.25s ease-out'
