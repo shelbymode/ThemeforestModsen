@@ -7,14 +7,15 @@
 - [Figma design layout](https://www.figma.com/file/RH6Tg2icMlc7M2DdHEJ9Bl/Themeforest-Modsen-Template?t=uvmjByGTuqVWgrR1-0)
 - [Netlify deploy](https://modsenthemeforest.netlify.app/home)
 - Based on [vitess-lite](https://github.com/antfu/vitesse-lite) template
-<br>
+  <br>
 
 ### Main libs
 
 - [Pinia](https://pinia.vuejs.org/) - store manager
-- [ZOD](https://github.com/colinhacks/zod) - typescript first schema validation
-- [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
+- [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs (hooks)
 - [Neverthrow](https://github.com/neverthrow) - types safe handling errors
+- [Vuelidate](https://vuelidate-next.netlify.app/) - form validation
+- [ZOD](https://github.com/colinhacks/zod) - typescript first schema validation
 
 ### CSS Engine
 
@@ -28,7 +29,6 @@
 ### Vite Plugins
 
 - [Vue Router](https://github.com/vuejs/vue-router)
-- [`vite-plugin-pages`](https://github.com/hannoeru/vite-plugin-pages) - file system based routing
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
 - [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - components auto import
 - [`unplugin-vue-macros`](https://github.com/sxzz/unplugin-vue-macros) - Explore and extend more macros and syntax sugar to Vue

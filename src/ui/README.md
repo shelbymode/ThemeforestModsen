@@ -1,16 +1,9 @@
-# UI-kit folder
+# UI folder
 
-``` typescript
-/components - `stores ui components`
+```typescript
+/components - `stores ui components (UI kit)`
 ```
 
-### [Atomic design](https://atomicdesign.bradfrost.com/chapter-2/)
-* atoms
-* molecules
-* organisms
-* templates 
-* pages
-
-``` typescript
+```typescript
 /pages - `full fledged pages`
 ```

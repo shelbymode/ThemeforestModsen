@@ -1,10 +1,13 @@
 # Service logic
 
-* Services are independant and interact with external world
-* API requests, localstorage API, etc…
-*
-``` typescript
-	/api - `our fake api, that gets blog articles(?) and ensome services(?)`
+- Services are independant and interact with external world
+- API requests, localstorage API, etc…
+-
+
+```typescript
+	/api - `stores api classes (singletons) for calling network requests`
 ```
 
-* Except of our fake api this layer should to contain implementation of port interfaces from /application/ports
+```typescript
+	/adapters - `contains implementation of port interfaces from /application/ports`
+```
