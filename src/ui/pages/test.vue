@@ -60,6 +60,8 @@ const customClasses: IInputClasses = {
       />
 
       <MoleculeSection />
+
+      <TemplateTilt w-150></TemplateTilt>
     </div>
   </main>
 </template>

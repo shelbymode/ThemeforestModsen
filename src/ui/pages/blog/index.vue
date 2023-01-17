@@ -1,19 +1,17 @@
 <script setup lang="ts">
+import { useChangeCase } from '@vueuse/integrations/useChangeCase'
 import { useI18n } from 'vue-i18n'
 import { useBlogsStore } from '~/application/store/useBlogsStore'
 
 const { locale } = useI18n()
 const route = useRoute()
+const blogsStore = useBlogsStore()
 
-async function load() {
-  const blogsStore = useBlogsStore()
-
-  console.log('start...')
-  const data = await blogsStore.loadAllBlogs()
-  console.log('loaded...', data)
+function loadBlogs() {
+  blogsStore.loadAllBlogs()
 }
 
-load()
+loadBlogs()
 </script>
 
 <template>
@@ -36,16 +34,23 @@ load()
         >
 
         <template #current-posts>
-          <MoleculeBlogCard
-            v-for="(card, idx) in 5"
-            :key="card"
-            class="blog__card shadow-card-3"
-            :title="toCapitalizeEach($t(`common.machineLearning`))"
-            date="22 June 2022"
-            :tags-info="{ App: true, CIO: true, Future: true }"
-            text="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure..."
-            :link-info="{ label: 'Read more', to: `/${locale}/blog/${idx}` }"
-          />
+          <template v-if="!blogsStore.getIsLoading">
+            <MoleculeBlogCard
+              v-for="(blog, idx) in blogsStore.getAllBlogs"
+              :key="blog.id"
+              class="blog__card"
+              :title="toCapitalize($t(`blogs.${useChangeCase(blog.title, 'camelCase').value}`))"
+              :date="
+                $d(blog.date_created, {
+                  dateStyle: 'long',
+                })
+              "
+              :tags-info="blog.tags.reduce((acc, cur) => ({ ...acc, [cur]: true }), {})"
+              :text="blog.text"
+              :link-info="{ label: 'Read more', to: `/${locale}/blog/${idx}` }"
+            />
+          </template>
+          <AtomVRippleLoader2 v-else class="mx-a" />
         </template>
       </TemplateBlogPageContent>
 
@@ -56,9 +61,10 @@ load()
 
 <style lang="scss" scoped>
 .blog {
-  @apply flex flex-col items-center mt-20 bg-white;
+  @apply flex flex-col items-center mt-20 bg-[#F5F5F5];
   // .blog__card
   &__card {
+    box-shadow: 2px 2px 10px #ccc;
     @apply md:max-w-[47%];
     @apply 2xl:max-w-3/10;
   }

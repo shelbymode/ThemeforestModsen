@@ -116,7 +116,17 @@
     "contactUsText": "Остались вопросы? Свяжитесь с нами для получения бесплатной пробной консультации!",
     "ourExperience": "Мы на рынке 15 лет"
   },
-  "blog": {
-    "chooseCategoryBlog": "Выберите категорию блога"
+  "blogs": {
+    "chooseCategoryBlog": "Выберите категорию блога",
+    "bestPracticesForSoftwareDevelopment": "Лучшие практики для разработки программного обеспечения",
+    "informationSecurityInTheDigitalAge": "Безопасность информации в эпоху цифровой технологии",
+    "theFutureOfTheInternetOfThings": "Будущее Интернета вещей",
+    "digitalTransformationInHealthcare": "Цифровая трансформация в здравоохранении",
+    "theImpactOfDigitalTransformationOnBusinesses": "Влияние цифровой трансформации на бизнес",
+    "digitalTransformationInEducation": "Цифровая трансформация в образовании",
+    "theFutureOfHealthcareIt": "Будущее здравоохранения IT",
+    "agileDevelopmentForSoftwareTeams": "Гибкая разработка для команд по разработке программного обеспечения",
+    "cybersecurityBestPractices": "Лучшие практики в области информационной безопасности",
+    "theFutureOfInternetOfThings": "Будущее Интернета вещей"
   }
 }

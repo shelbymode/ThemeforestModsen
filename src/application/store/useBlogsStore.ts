@@ -11,6 +11,7 @@ const useBlogsStore = defineStore('price-cards-payment', {
     apiBlog: ApiBlog,
   }),
   getters: {
+    getIsLoading: (state) => state.isLoading,
     getAllBlogs: (state) => state.blogs,
     getBlogsByCategory: (state) => (blogCategory: TBlogCategory) => {
       return state.blogs.filter((blog) => blog.category === blogCategory)

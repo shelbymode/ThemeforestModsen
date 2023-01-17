@@ -29,6 +29,11 @@ export const routes = [
         component: () => import('~/ui/pages/blog/index.vue'),
       },
       {
+        path: 'test',
+        name: 'Test',
+        component: () => import('~/ui/pages/test.vue'),
+      },
+      {
         path: 'blog/:id',
         name: RouteNames.BLOG_ID,
         component: () => import('~/ui/pages/blog/[id].vue'),

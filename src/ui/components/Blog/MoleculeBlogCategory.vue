@@ -15,7 +15,7 @@ const selectedPerson = ref(people[0])
 <template>
   <div class="blog-category">
     <AtomMiddleTitle class="blog-category__title">
-      {{ $t(`blog.chooseCategoryBlog`) }}
+      {{ $t(`blogs.chooseCategoryBlog`) }}
     </AtomMiddleTitle>
 
     <Listbox v-model="selectedPerson">

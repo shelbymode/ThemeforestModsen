@@ -117,7 +117,17 @@
     "contactUsText": "Left questions? Contacts us now for a free consultation and free trial!",
     "ourExperience": "We work with 15 years of experience"
   },
-  "blog": {
-    "chooseCategoryBlog": "Choose category blog"
+  "blogs": {
+    "chooseCategoryBlog": "Choose category blog",
+    "bestPracticesForSoftwareDevelopment": "Best practices for software development",
+    "informationSecurityInTheDigitalAge": "Information security in the digital age",
+    "theFutureOfTheInternetOfThings": "The future of the Internet of Things",
+    "digitalTransformationInHealthcare": "Digital Transformation in Healthcare",
+    "theImpactOfDigitalTransformationOnBusinesses": "The impact of Digital Transformation on Businesses",
+    "digitalTransformationInEducation": "Digital Transformation in Education",
+    "theFutureOfHealthcareIt": "The Future of Healthcare IT",
+    "agileDevelopmentForSoftwareTeams": "Agile Development for Software Teams",
+    "cybersecurityBestPractices": "Cybersecurity Best Practices",
+    "theFutureOfInternetOfThings": "The Future of Internet of Things"
   }
 }

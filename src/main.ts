@@ -13,10 +13,13 @@ import { routes } from './routes'
 import { TLocale } from './shared/constants/i18n.constants'
 import { GlobalConstants } from './shared/constants/global.constant'
 import { useLocale } from './shared/composables/i18n/useLocales'
+import { vTilt } from './shared/directive/vTilt'
 
 const { i18n, setCurrentLocale } = useLocale()
 
 const app = createApp(App)
+
+app.directive('tilt', vTilt)
 
 const router = createRouter({
   history: createWebHistory(GlobalConstants.BASE_URL),

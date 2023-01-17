@@ -35,6 +35,7 @@ declare module '@vue/runtime-core' {
     AtomText: typeof import('./src/ui/components/V/atoms/text/AtomText.vue')['default']
     AtomToggleDarkMode: typeof import('./src/ui/components/V/atoms/switches/AtomToggleDarkMode.vue')['default']
     AtomVRippleLoader: typeof import('./src/ui/components/V/atoms/loader/AtomVRippleLoader.vue')['default']
+    AtomVRippleLoader2: typeof import('./src/ui/components/V/atoms/loader/AtomVRippleLoader2.vue')['default']
     AtomVSimpleSwitch: typeof import('./src/ui/components/V/atoms/switches/AtomVSimpleSwitch.vue')['default']
     HomePaymantOrganismPaypal: typeof import('./src/ui/components/Home/HomePayment/organisms/HomePaymantOrganismPaypal.vue')['default']
     HomePaymentAtomInputEmail: typeof import('./src/ui/components/Home/HomePayment/atoms/HomePaymentAtomInputEmail.vue')['default']
@@ -121,5 +122,8 @@ declare module '@vue/runtime-core' {
     TemplateNavLinksCompact: typeof import('./src/ui/components/V/templates/TemplateNavLinksCompact.vue')['default']
     TemplatePage: typeof import('./src/ui/components/V/templates/TemplatePage.vue')['default']
     TemplatePageRestrictor: typeof import('./src/ui/components/V/templates/TemplatePageRestrictor.vue')['default']
+    TemplateTilt: typeof import('./src/ui/components/V/templates/TemplateTilt.vue')['default']
+    Tilt: typeof import('./src/ui/components/tilt.vue')['default']
+    Titl: typeof import('./src/ui/components/tilt.vue')['default']
   }
 }

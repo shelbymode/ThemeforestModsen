@@ -28,7 +28,7 @@ const isTagsExists = computed(() => props.tagsInfo && Object.keys(props.tagsInfo
 </script>
 
 <template>
-  <RouterLink :to="linkInfo.to" class="card">
+  <RouterLink v-tilt :to="linkInfo.to" class="rounded bg-charcoal-600 card">
     <img class="card__image" :src="props.imgSrc" alt="image" @keypress="jumpToBlog" @click="jumpToBlog" />
     <span class="card__date">{{ props.date }}</span>
     <h3 class="card__title">{{ title }}</h3>
@@ -47,7 +47,7 @@ const isTagsExists = computed(() => props.tagsInfo && Object.keys(props.tagsInfo
 <style lang="scss" scoped>
 .card {
   @apply min-w-full flex flex-col gap-y-5 p-6 transition-300 rounded items-start;
-  @apply hover:scale-95;
+  @apply hover:scale-96;
   @apply md:(min-w-[300px]);
 }
 .card__image {
@@ -60,7 +60,7 @@ const isTagsExists = computed(() => props.tagsInfo && Object.keys(props.tagsInfo
   @apply text-5xl text-primary;
 }
 .card__title {
-  @apply font-bold text-black text-2xl text-left;
+  @apply font-bold text-black text-xl text-left;
 }
 .card__text {
   @apply text-cGrey text-base text-left;
