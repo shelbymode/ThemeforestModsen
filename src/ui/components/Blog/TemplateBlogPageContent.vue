@@ -14,8 +14,7 @@
 
 <style lang="scss" scoped>
 .template-blog {
-  @apply flex flex-col justify-between items-start py-10;
-  @apply md:py-15;
+  @apply flex flex-col justify-between items-start pt-5 pb-10;
   // .template-blog__categories
 
   &__categories {

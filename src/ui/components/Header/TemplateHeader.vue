@@ -22,7 +22,7 @@
 
 <style lang="scss" scoped>
 .header-container {
-  @apply fixed left-1/2 translate-x-[-50%] z-1 flex items-center justify-center w-full bg-cBackground;
+  @apply fixed left-1/2 translate-x-[-50%] z-2 flex items-center justify-center w-full bg-cBackground;
   @apply dark:(bg-secondary);
 }
 .header {

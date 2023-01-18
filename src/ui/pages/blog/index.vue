@@ -1,36 +1,15 @@
 <script setup lang="ts">
 import { useChangeCase } from '@vueuse/integrations/useChangeCase'
 import { useI18n } from 'vue-i18n'
-import { ALL_CATEGORIES_NAME, useBlogsStore } from '~/application/store/useBlogsStore'
+import { ALL_CATEGORIES_NAME } from '~/application/store/useBlogsStore'
+import { filterBlogsByCategoryUC } from '~/application/usecases/FilterBlogsByCategoryUC'
 import { TBlogCategory } from '~/domain/blog'
 
 const { locale } = useI18n()
 const route = useRoute()
-const blogsStore = useBlogsStore()
 
-async function loadBlogs() {
-  return blogsStore.loadAllBlogs()
-}
+const { blogsStore, changeBlogsDependsOnCategory, loadBlogs } = filterBlogsByCategoryUC()
 
-async function changeBlogsDependsOnCategory(category: TBlogCategory | typeof ALL_CATEGORIES_NAME) {
-  let blogsCategory
-
-  blogsStore.setLoading(true)
-
-  /**
-   * Need to load all blogs
-   */
-  if (category === ALL_CATEGORIES_NAME) {
-    blogsCategory = blogsStore.getAllBlogs
-  } else {
-    blogsCategory = blogsStore.getBlogsByCategory(category)
-  }
-
-  blogsStore.setNewCurrentBlogs(blogsCategory)
-  await new Promise((resolve) => setTimeout(resolve, 2000))
-
-  blogsStore.setLoading(false)
-}
 /**
  * Set watch after first loading cause during
  * first render by default load all categories
@@ -102,8 +81,8 @@ loadBlogs().then(() => {
   // .blog__card
   &__card {
     box-shadow: 2px 2px 10px #ccc;
-    @apply md:max-w-[47%];
-    @apply 2xl:max-w-3/10;
+    @apply md:w-[47%];
+    @apply 2xl:w-3/10;
   }
 }
 </style>
