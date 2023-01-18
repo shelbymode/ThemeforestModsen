@@ -46,6 +46,7 @@ declare module '@vue/runtime-core' {
     HomePaymentOrganism: typeof import('./src/ui/components/Home/HomePayment/organisms/HomePaymentOrganism.vue')['default']
     HomePaymentOrganismSucessfull: typeof import('./src/ui/components/Home/HomePayment/organisms/HomePaymentOrganismSucessfull.vue')['default']
     HomePaymentOrganismSummary: typeof import('./src/ui/components/Home/HomePayment/organisms/HomePaymentOrganismSummary.vue')['default']
+    InfinityScroll: typeof import('./src/ui/components/InfinityScroll.vue')['default']
     MoleculeAboutCards: typeof import('./src/ui/components/About/AboutPromo/molecules/MoleculeAboutCards.vue')['default']
     MoleculeAboutCustomers: typeof import('./src/ui/components/About/AboutPromo/molecules/MoleculeAboutCustomers.vue')['default']
     MoleculeAboutStats: typeof import('./src/ui/components/About/AboutPromo/molecules/MoleculeAboutStats.vue')['default']

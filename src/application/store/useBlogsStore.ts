@@ -7,7 +7,7 @@ export const ALL_CATEGORIES_NAME = 'All categories' as const
 
 const useBlogsStore = defineStore('blogs', {
   state: () => ({
-    blogs: [] as IBlogDTO[],
+    allBlogs: [] as IBlogDTO[],
     currentBlogs: [] as IBlogDTO[],
     isLoading: false,
     error: null as null | IResponseError,
@@ -16,13 +16,14 @@ const useBlogsStore = defineStore('blogs', {
     selectedBlogCategory: '',
   }),
   getters: {
+    getCurrentAmountBlogs: (state) => state.currentBlogs.length,
     getCurrentBlogs: (state) => state.currentBlogs,
     getIsLoading: (state) => state.isLoading,
-    getAllBlogs: (state) => state.blogs,
+    getAllBlogs: (state) => state.allBlogs,
     getBlogsCategories: (state) => state.blogCategories,
     getSelectedBlogCategory: (state) => state.selectedBlogCategory,
     getBlogsByCategory: (state) => (blogCategory: TBlogCategory) =>
-      state.blogs.filter((blog) => blog.category === blogCategory),
+      state.allBlogs.filter((blog) => blog.category === blogCategory),
   },
   actions: {
     extractBlogsCategories() {
@@ -30,13 +31,33 @@ const useBlogsStore = defineStore('blogs', {
         this.blogCategories.includes(blog.category) ? null : this.blogCategories.push(blog.category)
       })
     },
+    /**
+     * It's an emulation of such behavior (exclusively)
+     */
+    async loadMoreAmountBlogs(amountBlogs: number) {
+      this.setLoading(true)
+
+      const { data: dataBlogs, error: errorBlogs } = await ApiBlog.loadAllBlogs()
+
+      if (!errorBlogs.value && dataBlogs.value) {
+        this.allBlogs = dataBlogs.value
+
+        const cutNeedBlogs = this.allBlogs.slice(this.getCurrentAmountBlogs, this.getCurrentAmountBlogs + amountBlogs)
+        this.currentBlogs = [...this.currentBlogs, ...cutNeedBlogs]
+
+        this.setLoading(false)
+        return this.getAllBlogs
+      }
+
+      this.setError(errorBlogs.value as IResponseError)
+    },
     async loadAllBlogs() {
       this.setLoading(true)
 
       const { data: dataBlogs, error: errorBlogs } = await ApiBlog.loadAllBlogs()
 
       if (!errorBlogs.value && dataBlogs.value) {
-        this.blogs = dataBlogs.value
+        this.allBlogs = dataBlogs.value
 
         /**
          * In the first loading - current blogs are the all blogs
