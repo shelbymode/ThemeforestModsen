@@ -1,36 +1,26 @@
 import { IBlogDTO, TBlogCategory } from '~/domain/blog'
 import { ALL_CATEGORIES_NAME, useBlogsStore } from '../store/useBlogsStore'
+const blogsStore = useBlogsStore()
 
-export const filterBlogsByCategoryUC = () => {
-  const blogsStore = useBlogsStore()
+function useLoadMoreBlogsInfinityScroll(amountNewBlogs: number) {
+  const loadMoreBlogsClosure = () => blogsStore.loadMoreBlogs(amountNewBlogs, blogsStore.getSelectedBlogCategory)
+  return { loadMoreBlogsClosure }
+}
 
-  async function loadBlogs() {
-    return blogsStore.loadAllBlogs()
+export const filterBlogsByCategoryUC = (initBlogsAmount: number, amountNewBlogs: number) => {
+  const { loadMoreBlogsClosure } = useLoadMoreBlogsInfinityScroll(amountNewBlogs)
+
+  const changeBlogsDependsOnCategory = (category: TBlogCategory | typeof ALL_CATEGORIES_NAME) => {
+    /**
+     * Clean all current blogs
+     */
+    blogsStore.$state.currentBlogs = []
+    return blogsStore.loadMoreBlogs(initBlogsAmount, category)
   }
 
-  async function changeBlogsDependsOnCategory(category: TBlogCategory | typeof ALL_CATEGORIES_NAME) {
-    let blogsCategory: IBlogDTO[]
-
-    blogsStore.setLoading(true)
-
-    /**
-     * Need to load all blogs
-     */
-    if (category === ALL_CATEGORIES_NAME) {
-      blogsCategory = blogsStore.getAllBlogs
-    } else {
-      blogsCategory = blogsStore.getBlogsByCategory(category)
-    }
-
-    blogsStore.setNewCurrentBlogs(blogsCategory)
-
-    /**
-     * Sleep request to display spinner
-     */
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    blogsStore.setLoading(false)
+  return {
+    blogsStore,
+    changeBlogsDependsOnCategory,
+    loadMoreBlogsClosure,
   }
-
-  return { blogsStore, changeBlogsDependsOnCategory, loadBlogs }
 }

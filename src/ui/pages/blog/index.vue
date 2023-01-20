@@ -7,21 +7,35 @@ import { TBlogCategory } from '~/domain/blog'
 
 const { locale } = useI18n()
 const route = useRoute()
+const LOAD_MORE_BLOGS_AMOUNT = 3
+const INIT_BLOGS_AMOUNT = 4
+const isHideOverscroll = ref(true)
 
-const { blogsStore, changeBlogsDependsOnCategory, loadBlogs } = filterBlogsByCategoryUC()
+const { blogsStore, changeBlogsDependsOnCategory, loadMoreBlogsClosure } = filterBlogsByCategoryUC(
+  INIT_BLOGS_AMOUNT,
+  LOAD_MORE_BLOGS_AMOUNT
+)
 
-/**
- * Set watch after first loading cause during
- * first render by default load all categories
- */
-loadBlogs().then(() => {
+async function initLoadingBlogs() {
+  await blogsStore.loadBlogCategories()
+  await blogsStore.loadMoreBlogs(INIT_BLOGS_AMOUNT, blogsStore.getSelectedBlogCategory)
+  isHideOverscroll.value = false
+
   watch(
     () => blogsStore.getSelectedBlogCategory,
-    (newSelectedBlogCategory) => {
-      changeBlogsDependsOnCategory(newSelectedBlogCategory as TBlogCategory)
+    async (newSelectedBlogCategory) => {
+      blogsStore.allowTheScrolling()
+
+      isHideOverscroll.value = true
+
+      await changeBlogsDependsOnCategory(newSelectedBlogCategory as TBlogCategory)
+
+      isHideOverscroll.value = false
     }
   )
-})
+}
+
+initLoadingBlogs()
 </script>
 
 <template>
@@ -31,7 +45,7 @@ loadBlogs().then(() => {
         <MoleculeNavLinks />
       </TemplateNavLinksCenter>
 
-      <TemplateBlogPageContent>
+      <TemplateBlogPageContent :load-more-blogs="loadMoreBlogsClosure" :is-hide-overscroll="isHideOverscroll">
         <template #menu-categories>
           <MoleculeBlogCategory
             v-if="Object.keys(blogsStore.getBlogsCategories).length > 0 && blogsStore.getSelectedBlogCategory"
@@ -50,7 +64,7 @@ loadBlogs().then(() => {
         >
 
         <template #current-posts>
-          <template v-if="!blogsStore.getIsLoading">
+          <template v-if="blogsStore.getCurrentAmountBlogs > 0">
             <MoleculeBlogCard
               v-for="(blog, idx) in blogsStore.getCurrentBlogs"
               :key="blog.id"
@@ -66,7 +80,7 @@ loadBlogs().then(() => {
               :link-info="{ label: 'Read more', to: `/${locale}/blog/${idx}` }"
             />
           </template>
-          <AtomVRippleLoader2 v-else class="mx-a" />
+          <AtomVRippleLoader2 v-if="blogsStore.getIsLoading" class="mx-a" />
         </template>
       </TemplateBlogPageContent>
 

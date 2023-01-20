@@ -16,7 +16,7 @@ const props = withDefaults(
 
 <style lang="scss" scoped>
 .title-middle {
-  @apply text-[28px] font-bold text-black;
+  @apply text-[25px] font-bold text-black;
   @apply md:text-4xl;
 }
 </style>

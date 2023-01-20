@@ -2,10 +2,7 @@
 
 <template>
   <div class="blog-category bg-red-100">
-    <Suspense>
-      <InfinityScroll />
-      <template #fallback> Loading... </template>
-    </Suspense>
+    <InfinityScroll />
   </div>
 </template>
 

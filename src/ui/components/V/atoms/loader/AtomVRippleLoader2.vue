@@ -1,6 +1,4 @@
-<script setup lang="ts">
-onMounted(() => {})
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="cube-container">
@@ -18,7 +16,7 @@ onMounted(() => {})
 
 <style lang="scss" scoped>
 .cube-container {
-  position: relative;
+  @apply flex self-center justify-center relative py-10;
 }
 
 /* cube faces styles */

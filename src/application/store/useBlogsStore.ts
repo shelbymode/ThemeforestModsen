@@ -1,55 +1,86 @@
 import { defineStore } from 'pinia'
 import { IBlogDTO, TBlogCategory } from '~/domain/blog'
 import { ApiBlog } from '~/services/api'
-import { IResponseError } from '~/services/api/config/api.types'
+import { IResponseError, TNetworkRequest } from '~/services/api/config/api.types'
 
 export const ALL_CATEGORIES_NAME = 'All categories' as const
 
 const useBlogsStore = defineStore('blogs', {
   state: () => ({
+    isAllowTheScrolling: true,
     allBlogs: [] as IBlogDTO[],
     currentBlogs: [] as IBlogDTO[],
     isLoading: false,
     error: null as null | IResponseError,
     apiBlog: ApiBlog,
     blogCategories: [ALL_CATEGORIES_NAME] as string[],
-    selectedBlogCategory: '',
+    selectedBlogCategory: ALL_CATEGORIES_NAME as string,
   }),
   getters: {
+    getIsAllowTheScrolling: (state) => state.isAllowTheScrolling,
     getCurrentAmountBlogs: (state) => state.currentBlogs.length,
     getCurrentBlogs: (state) => state.currentBlogs,
     getIsLoading: (state) => state.isLoading,
     getAllBlogs: (state) => state.allBlogs,
     getBlogsCategories: (state) => state.blogCategories,
     getSelectedBlogCategory: (state) => state.selectedBlogCategory,
-    getBlogsByCategory: (state) => (blogCategory: TBlogCategory) =>
-      state.allBlogs.filter((blog) => blog.category === blogCategory),
   },
   actions: {
-    extractBlogsCategories() {
-      this.getAllBlogs.forEach((blog) => {
-        this.blogCategories.includes(blog.category) ? null : this.blogCategories.push(blog.category)
-      })
+    async loadMoreBlogs(amountBlogs: number, category: string) {
+      if (this.getIsAllowTheScrolling) {
+        let cutNeedBlogs: IBlogDTO[]
+        if (category === ALL_CATEGORIES_NAME) {
+          cutNeedBlogs = await this.loadMoreAllBlogs(amountBlogs)
+        } else {
+          cutNeedBlogs = await this.loadMoreBlogsByCategory(amountBlogs, category)
+        }
+
+        this.checkIfEndOfTheScrolling(cutNeedBlogs)
+
+        return cutNeedBlogs
+      }
     },
-    /**
-     * It's an emulation of such behavior (exclusively)
-     */
-    async loadMoreAmountBlogs(amountBlogs: number) {
+    async loadMoreBlogsByCategory(amountBlogs: number, category: string) {
+      this.setLoading(true)
+
+      const allBlogsByCategory = await this.loadAllBlogsByCategory(category)
+
+      const cutNeedBlogsByCategory = allBlogsByCategory.slice(
+        this.getCurrentAmountBlogs,
+        this.getCurrentAmountBlogs + amountBlogs
+      )
+
+      this.currentBlogs = [...this.currentBlogs, ...cutNeedBlogsByCategory]
+      this.setLoading(false)
+
+      return cutNeedBlogsByCategory
+    },
+    async loadMoreAllBlogs(amountBlogs: number) {
+      this.setLoading(true)
+      const allBlogs = await this.loadAllBlogs()
+
+      const cutNeedAllBlogs = allBlogs.slice(this.getCurrentAmountBlogs, this.getCurrentAmountBlogs + amountBlogs)
+      this.currentBlogs = [...this.currentBlogs, ...cutNeedAllBlogs]
+
+      this.setLoading(false)
+      return cutNeedAllBlogs
+    },
+    async loadAllBlogsByCategory(category: string) {
       this.setLoading(true)
 
       const { data: dataBlogs, error: errorBlogs } = await ApiBlog.loadAllBlogs()
 
       if (!errorBlogs.value && dataBlogs.value) {
-        this.allBlogs = dataBlogs.value
-
-        const cutNeedBlogs = this.allBlogs.slice(this.getCurrentAmountBlogs, this.getCurrentAmountBlogs + amountBlogs)
-        this.currentBlogs = [...this.currentBlogs, ...cutNeedBlogs]
+        const allBlogsByCategory = dataBlogs.value.filter((blog) => blog.category === category)
 
         this.setLoading(false)
-        return this.getAllBlogs
+
+        return allBlogsByCategory
       }
 
+      this.setLoading(false)
       this.setError(errorBlogs.value as IResponseError)
+      return []
     },
     async loadAllBlogs() {
       this.setLoading(true)
@@ -57,28 +88,42 @@ const useBlogsStore = defineStore('blogs', {
       const { data: dataBlogs, error: errorBlogs } = await ApiBlog.loadAllBlogs()
 
       if (!errorBlogs.value && dataBlogs.value) {
-        this.allBlogs = dataBlogs.value
-
         /**
          * In the first loading - current blogs are the all blogs
          */
-        this.currentBlogs = dataBlogs.value
-
-        /**
-         * Get unique categories from all blogs
-         */
-        this.extractBlogsCategories()
-
-        /**
-         * Set default selected category as the first one
-         */
-        this.selectedBlogCategory = this.$state.blogCategories[0]
 
         this.setLoading(false)
-        return this.getAllBlogs
+        return dataBlogs.value
       }
 
+      this.setLoading(false)
       this.setError(errorBlogs.value as IResponseError)
+      return []
+    },
+    async loadBlogCategories() {
+      if (this.getAllBlogs.length <= 1) {
+        this.$state.blogCategories = [
+          ...this.getBlogsCategories,
+          ...[
+            'Software development',
+            'Information Security',
+            'Internet of things',
+            'Healthcare IT',
+            'Digital Transformation',
+          ],
+        ]
+      }
+    },
+    checkIfEndOfTheScrolling(array: IBlogDTO[]) {
+      if (array.length === 0) {
+        this.forbidTheScrolling()
+      }
+    },
+    allowTheScrolling() {
+      this.isAllowTheScrolling = true
+    },
+    forbidTheScrolling() {
+      this.isAllowTheScrolling = false
     },
     setNewSelectedBlogCategory(newSelectedBlogCategory: string) {
       this.$state.selectedBlogCategory = newSelectedBlogCategory

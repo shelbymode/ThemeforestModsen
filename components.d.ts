@@ -123,8 +123,5 @@ declare module '@vue/runtime-core' {
     TemplateNavLinksCompact: typeof import('./src/ui/components/V/templates/TemplateNavLinksCompact.vue')['default']
     TemplatePage: typeof import('./src/ui/components/V/templates/TemplatePage.vue')['default']
     TemplatePageRestrictor: typeof import('./src/ui/components/V/templates/TemplatePageRestrictor.vue')['default']
-    TemplateTilt: typeof import('./src/ui/components/V/templates/TemplateTilt.vue')['default']
-    Tilt: typeof import('./src/ui/components/tilt.vue')['default']
-    Titl: typeof import('./src/ui/components/tilt.vue')['default']
   }
 }
