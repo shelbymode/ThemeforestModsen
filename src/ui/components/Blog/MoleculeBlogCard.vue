@@ -46,24 +46,24 @@ const isTagsExists = computed(() => props.tagsInfo && Object.keys(props.tagsInfo
 
 <style lang="scss" scoped>
 .card {
-  @apply min-w-full flex flex-col gap-y-5 p-6 transition-300 rounded items-start;
-  @apply hover:scale-96;
+  box-shadow: 2px 2px 10px #ccc;
+  @apply w-full h-full flex flex-col gap-y-5 p-3 transition-300 rounded items-start;
   @apply md:(min-w-[300px]);
 }
 .card__image {
   @apply object-cover w-full rounded-lg;
 }
 .card__date {
-  @apply text-base text-gray text-left;
+  @apply text-xs text-gray text-left;
 }
 .card__icon {
-  @apply text-5xl text-primary;
+  @apply text-4xl text-primary;
 }
 .card__title {
-  @apply font-bold text-black text-xl text-left;
+  @apply font-bold text-black text-sm text-left;
 }
 .card__text {
-  @apply text-cGrey text-base text-left;
+  @apply text-cGrey text-xs text-left;
 }
 .tag-wrapper {
   @apply flex w-full flex-wrap gap-3;

@@ -24,9 +24,9 @@ watch(selectedBlogCategoryLocal, (newSelectedBlogCategoryLocal) => {
 
 <template>
   <div class="blog-category">
-    <AtomMiddleTitle class="blog-category__title">
+    <AtomSmallTitle class="blog-category__title">
       {{ $t(`blogs.chooseCategoryBlog`) }}
-    </AtomMiddleTitle>
+    </AtomSmallTitle>
 
     <Listbox v-model="selectedBlogCategoryLocal">
       <div class="blog-category-listbox w-full z-1">
@@ -66,7 +66,7 @@ watch(selectedBlogCategoryLocal, (newSelectedBlogCategoryLocal) => {
 
 <style lang="scss" scoped>
 .blog-category {
-  @apply flex flex-col items-start gap-y-9 w-full px-6;
+  @apply flex flex-col items-start gap-y-3 w-full px-6;
   @apply sm:px-12;
   @apply md:(w-fit);
   @apply 2xl:(px-0);
@@ -84,20 +84,20 @@ watch(selectedBlogCategoryLocal, (newSelectedBlogCategoryLocal) => {
   // .blog-category-listbox__button
 
   &__button {
-    @apply flex w-full text-black justify-between items-center relative rounded-lg pr-2 text-xl bg-white py-5 px-10 text-left shadow-md;
+    @apply flex w-full text-black justify-between items-center relative rounded-lg pr-2 text-base bg-white py-2 px-10 text-left shadow-md;
     @apply focus:outline-none focus-visible:(border-indigo-500 ring-2 ring-white ring-opacity-75 ring-offset-2 ring-offset-orange-300 sm:text-sm);
   }
 
   // .blog-category-listbox__options
 
   &__options {
-    @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
+    @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
   }
 
   // .blog-category-listbox__option
 
   &__option {
-    @apply relative cursor-default select-none py-4 pl-10 pr-4 text-base;
+    @apply relative cursor-default select-none py-3 pl-10 pr-4 text-sm cursor-pointer;
   }
 
   // .blog-category-listbox__icon-wrapper

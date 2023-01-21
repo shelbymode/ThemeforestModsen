@@ -1,5 +1,5 @@
 {
-  "i18n-ally.localesPaths": ["public/server/locales", "src/shared/composables/i18n"],
+  "i18n-ally.localesPaths": ["public/locales", "src/shared/composables/i18n"],
   "i18n-ally.keystyle": "nested",
   "typescript.tsdk": "node_modules/typescript/lib"
 }

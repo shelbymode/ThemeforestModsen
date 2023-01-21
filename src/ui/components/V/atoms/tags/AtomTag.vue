@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<ITag>(), {
 
 <style lang="scss" scoped>
 .button-link {
-  @apply grid text-primary place-items-center border-cGrey border rounded-md font-bold transition-300 px-3 py-2 text-sm;
+  @apply grid text-primary place-items-center border-cGrey border rounded-md font-bold transition-300 px-4 py-1 text-xs;
   @apply hover:(text-white bg-primary border-primary);
 }
 .icon {

@@ -41,10 +41,10 @@ useInfiniteScroll(
   // .template-blog__content
 
   &__content {
-    @apply w-full flex min-h-[40vh] max-h-600px py-5 px-6 flex-col items-stretch gap-y-6;
-    @apply sm:(px-12 max-h-800px py-10);
-    @apply md:(flex-row flex-wrap py-15 max-h-800px justify-start gap-x-[6%] gap-y-9);
-    @apply 2xl:(flex-row flex-wrap py-20 justify-start gap-x-[5%] px-20 gap-y-12);
+    @apply w-full flex max-h-[75vh] min-h-[60vh] pt-10 pb-20 pl-6 pr-6 flex-col items-stretch gap-y-9;
+    @apply sm:(pr-12 pl-12 pb-40 gap-y-12);
+    @apply md:(flex-row flex-wrap justify-start gap-x-[6%] pb-60 pr-16);
+    @apply 2xl:(gap-x-[5%] pl-3 pr-20 gap-y-15);
   }
 }
 </style>

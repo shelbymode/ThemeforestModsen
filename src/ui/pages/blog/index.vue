@@ -7,7 +7,7 @@ import { TBlogCategory } from '~/domain/blog'
 
 const { locale } = useI18n()
 const route = useRoute()
-const LOAD_MORE_BLOGS_AMOUNT = 3
+const LOAD_MORE_BLOGS_AMOUNT = 4
 const INIT_BLOGS_AMOUNT = 4
 const isHideOverscroll = ref(true)
 
@@ -66,9 +66,8 @@ initLoadingBlogs()
         <template #current-posts>
           <TransitionGroup name="blogs" mode="out-in" appear>
             <template v-if="blogsStore.getCurrentAmountBlogs > 0">
-              <div v-for="(blog, idx) in blogsStore.getCurrentBlogs" :key="blog.id" class="w-min">
+              <div v-for="(blog, idx) in blogsStore.getCurrentBlogs" :key="blog.id" class="blog__card">
                 <MoleculeBlogCard
-                  class="blog__card"
                   :title="toCapitalize($t(`blogs.${useChangeCase(blog.title, 'camelCase').value}`))"
                   :date="
                     $d(blog.date_created, {
@@ -111,11 +110,9 @@ initLoadingBlogs()
 }
 
 .blog {
-  @apply flex flex-col items-center mt-20 bg-[#F5F5F5];
+  @apply flex flex-col h-full items-center mt-20 bg-[#F5F5F5];
   // .blog__card
   &__card {
-    @apply h-full;
-    box-shadow: 2px 2px 10px #ccc;
     @apply md:w-[47%];
     @apply 2xl:w-3/10;
   }
