@@ -13,7 +13,7 @@ useInfiniteScroll(
     console.log('trigger')
     props.loadMoreBlogs()
   },
-  { distance: 100 }
+  { distance: 10 }
 )
 </script>
 

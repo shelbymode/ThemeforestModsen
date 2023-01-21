@@ -15,7 +15,7 @@ const props = defineProps<{
 .nav-links {
   @apply flex flex-col items-center justify-center w-full gap-y-9 py-8 px-6 bg-white;
   @apply dark:(bg-secondary/95);
-  @apply lg:(py-36 bg-cBackground);
+  @apply lg:(py-20 bg-cBackground);
   // .nav-links__title
 
   &__title {
